@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>联顺 · 印度市场情报 · 报告合集</title>
+<style>
+  :root { --ink:#101828; --ink2:#475467; --ink3:#98a2b3; --line:#e4e7ec; --bg:#f7f8fa; --accent:#2f6fed; }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); font:15px/1.65 -apple-system,"Segoe UI","Microsoft YaHei",sans-serif; }
+  .wrap { max-width: 980px; margin:0 auto; padding: 44px 20px 72px; }
+  header { border-bottom:2px solid var(--ink); padding-bottom:16px; margin-bottom:24px; }
+  .eyebrow { font-size:12px; letter-spacing:.08em; color:var(--ink3); text-transform:uppercase; }
+  h1 { margin:6px 0 6px; font-size:28px; letter-spacing:-.02em; }
+  .sub { color:var(--ink2); font-size:13.5px; }
+  .kpis { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin:22px 0 26px; }
+  .kpi { background:#fff; border:1px solid var(--line); border-radius:12px; padding:14px 16px; }
+  .kpi .label { font-size:12px; color:var(--ink3); }
+  .kpi .value { font-size:21px; font-weight:700; margin-top:2px; }
+  h2 { font-size:15px; margin:28px 0 12px; color:var(--ink2); letter-spacing:.02em; }
+  .grid { display:grid; grid-template-columns:repeat(2,1fr); gap:14px; }
+  .card { display:block; background:#fff; border:1px solid var(--line); border-radius:14px; padding:16px 18px; text-decoration:none; color:inherit; transition:.15s; }
+  .card:hover { border-color:var(--accent); box-shadow:0 4px 18px rgba(47,111,237,.10); transform:translateY(-1px); }
+  .card-top { display:flex; justify-content:space-between; align-items:center; margin-bottom:8px; }
+  .tag { font-size:11.5px; padding:1px 8px; border-radius:999px; background:#eef4ff; color:#2f6fed; }
+  .date { font-size:12px; color:var(--ink3); }
+  .card h3 { margin:0 0 6px; font-size:16px; }
+  .card p { margin:0 0 10px; color:var(--ink2); font-size:13px; }
+  .more { font-size:12.5px; color:var(--accent); }
+  footer { margin-top:36px; color:var(--ink3); font-size:12px; border-top:1px solid var(--line); padding-top:14px; }
+  @media (max-width:720px){ .kpis{grid-template-columns:repeat(2,1fr);} .grid{grid-template-columns:1fr;} }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="eyebrow">Lianshun · India Market Intelligence</div>
+    <h1>印度市场情报 · 报告合集</h1>
+    <div class="sub">数据截止：零售 2026-09 · 上牌 2026-08 · 车型 2026-09　｜　自动更新</div>
+  </header>
+
+  <div class="kpis">
+    <div class="kpi"><div class="label">最新月零售</div><div class="value">427,213</div><div class="sub">2026-09 · 同比 +42.7%</div></div>
+    <div class="kpi"><div class="label">FY2026 零售</div><div class="value">4,579,880</div><div class="sub">同比 +11.9%</div></div>
+    <div class="kpi"><div class="label">最新上牌月</div><div class="value">382,950</div><div class="sub">2026-08 · 品牌合计</div></div>
+    <div class="kpi"><div class="label">报告数量</div><div class="value">3</div><div class="sub">月报 1 · 日报 2</div></div>
+  </div>
+
+  <h2>月报</h2>
+  <div class="grid">
+  <a class="card" href="reports/india-monthly-2026-11.html">
+    <div class="card-top"><span class="tag">月报</span><span class="date">2026-11</span></div>
+    <h3>2026-11 月度市场报告</h3>
+    <p>零售 427,213 辆 · 品牌 2026-08 · 车型 2026-09</p>
+    <span class="more">查看报告 →</span>
+  </a></div>
+
+  <h2>日报（最近 12 期）</h2>
+  <div class="grid">
+  <a class="card" href="reports/daily-brief-2026-11-04.html">
+    <div class="card-top"><span class="tag">日报</span><span class="date">2026-11-04</span></div>
+    <h3>2026-11-04 每日简报</h3>
+    <p>当日增量：数据/新闻/汇率变化</p>
+    <span class="more">查看报告 →</span>
+  </a>
+  <a class="card" href="reports/daily-brief-2026-11-03.html">
+    <div class="card-top"><span class="tag">日报</span><span class="date">2026-11-03</span></div>
+    <h3>2026-11-03 每日简报</h3>
+    <p>当日增量：数据/新闻/汇率变化</p>
+    <span class="more">查看报告 →</span>
+  </a></div>
+
+  <footer>
+    由 工作台/scripts/build-report-site.mjs 自动生成 · 数据源：FADA 零售 / VAHAN 上牌 / CarDekho 批发 · 口径不可混用
+  </footer>
+</div>
+</body>
+</html>
