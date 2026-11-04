@@ -32,6 +32,11 @@
   td.num, th.num { text-align:right; font-variant-numeric:tabular-nums; }
   .pill { display:inline-block; font-size:11.5px; padding:1px 8px; border-radius:999px; background:#eef2f6; color:var(--ink2); }
   .warn { background:#fffaeb; border-color:#fedf89; }
+  .insight-row { display:flex; gap:12px; padding:9px 0; border-bottom:1px dashed var(--line); }
+  .insight-row:last-child { border-bottom:0; }
+  .insight-row .label { flex:0 0 42px; color:#2f6fed; font-weight:600; font-size:12.5px; }
+  .insight-row p { margin:0; font-size:14px; }
+  .insight h2 { margin-bottom:10px; }
   footer { color:var(--ink3); font-size:12px; margin-top:22px; }
   @media (max-width: 720px) { .kpis { grid-template-columns:repeat(2,1fr); } .grid2 { grid-template-columns:1fr; } }
 </style>
@@ -50,6 +55,7 @@
     <div class="kpi"><div class="label">最新月零售</div><div class="value">427,213</div><div class="hint">2026-09 · 同比 +42.7%</div></div><div class="kpi"><div class="label">FY2026 零售</div><div class="value">4,579,880</div><div class="hint">同比 +11.9%</div></div><div class="kpi"><div class="label">最新上牌月</div><div class="value">382,950</div><div class="hint">2026-08 · 品牌合计</div></div><div class="kpi"><div class="label">前五邦占比</div><div class="value">52.9%</div><div class="hint">集中度</div></div>
   </div>
 
+  <div class="card insight"><h2>本月判断</h2><div class="insight-row"><span class="label">市场</span><p>9月零售42.7万辆同比增42.7%，节日季需求强劲</p></div><div class="insight-row"><span class="label">竞争</span><p>马鲁蒂占42.8%主导，马恒达、现代、塔塔紧随，集中度高</p></div><div class="insight-row"><span class="label">含义</span><p>优先绑定马鲁蒂、塔塔供应链，主推高性价比车机方案</p></div></div>
   <div class="card">
     <h2>零售走势（近 12 个月 · FADA）</h2>
     <p class="note">单位：辆。同比已在下方表格给出。</p>
@@ -298,11 +304,11 @@
       <li>零售（FADA）≠ 上牌（VAHAN）≠ 批发（CarDekho），三者不可混算份额</li>
       <li>汇率：美元兑卢比 94.928524、美元兑加元 1.39809（2026-11-03）</li>
       <li>批发榜缺 2025-12、2026-03（CarDekho 未发布，保留缺失）</li>
-      <li>市场快照：2026-11-03，共 10 条</li>
+      <li>市场快照：2026-11-04，共 10 条</li>
     </ul>
   </div>
 
-  <footer>由 工作台/scripts/build-monthly-html.mjs 生成于 2026-11-04T05:25:13.678Z；数据文件位于 工作台/data/。</footer>
+  <footer>由 工作台/scripts/build-monthly-html.mjs 生成于 2026-11-04T06:21:23.659Z；数据文件位于 工作台/data/。</footer>
 </div>
 </body>
 </html>
