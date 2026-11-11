@@ -1,0 +1,386 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>竞品采集说明 · 2026-11-11</title>
+<style>
+:root{--ink:#101828;--ink2:#475467;--ink3:#98a2b3;--line:#e4e7ec;--bg:#f7f8fa;--accent:#2f6fed}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.75 -apple-system,"Segoe UI","Microsoft YaHei",sans-serif}
+.wrap{max-width:1100px;margin:0 auto;padding:34px 20px 64px}
+header{border-bottom:2px solid var(--ink);padding-bottom:14px;margin-bottom:18px}
+h1{margin:0;font-size:25px}.sub{color:var(--ink3);font-size:12.5px;margin-top:6px}
+.card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px 20px;margin-bottom:16px}
+.card h2{margin:0 0 6px;font-size:15px}.note{color:var(--ink3);font-size:12px;margin:0 0 10px}
+table{width:100%;border-collapse:collapse;font-size:12.5px}th,td{padding:6px 8px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{color:var(--ink3);font-weight:500}td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+.tag{display:inline-block;padding:1px 8px;border-radius:999px;font-size:11.5px;background:#eef4ff;color:#2f6fed;margin:2px 4px 2px 0}
+.band{font-size:12.5px;color:var(--ink2);padding:3px 0}
+ol.rules{margin:6px 0 0 18px;padding:0;font-size:13px;color:var(--ink2)}ol.rules li{margin:3px 0}
+footer{color:var(--ink3);font-size:12px;margin-top:20px}
+</style></head><body><div class="wrap">
+<header><h1>竞品采集说明</h1><div class="sub">采集对象 · 选择理由 · 数据字段 ｜ 生成日期 2026-11-11</div></header>
+
+<div class="card"><h2>一、采集方法</h2>
+<ol class="rules">
+<li><b>平台</b>：印度 = Amazon.in；墨西哥 = Amazon.com.mx + Steren（本土连锁）</li>
+<li><b>入口</b>：移动端搜索结果页（规避桌面端反爬），多关键词覆盖品类</li>
+<li><b>关键词</b>：印度 carplay screen / android auto screen / car stereo carplay / 10 inch carplay screen / wireless carplay；墨西哥 carplay pantalla auto / pantalla android auto / estereo carplay / pantalla 7 pulgadas carro / android auto inalambrico</li>
+<li><b>明细</b>：对筛出的商品逐个抓详情页 → 价格、评分、评论数、类目排名（BSR）、尺寸与功能标签</li>
+<li><b>长期跟踪</b>：首次抓取后锁定 Top10 SKU（存 sku-lock.json），之后每天只跟踪同一批，保证价格可比</li>
+</ol>
+</div>
+
+<div class="card"><h2>二、选择理由（为什么是这些竞品）</h2>
+<ol class="rules">
+<li><b>搜索相关性</b>：出现在核心关键词首页 → 说明是消费者实际在看的商品</li>
+<li><b>销量代理</b>：类目 BSR 排名前 5000 → 反映真实销售排名，不是“上新凑数”</li>
+<li><b>市场热度</b>：评论数 ≥500 → 有真实购买与反馈积累</li>
+<li><b>价格带覆盖</b>：同时保留低 / 中 / 高三个价格带的代表，避免只看到便宜货</li>
+<li><b>长期可比</b>：锁定集固定后，中位价变化才反映真实市场变化，而非商品集合漂移</li>
+</ol>
+</div>
+
+<div class="card"><h2>三、印度：本次采集 20 款</h2>
+<p class="note">中位价 8,899 INR · 样本 30 款 · 采集时间 2026-11-11</p>
+<p><span class="tag">carplay 83%</span> <span class="tag">androidAuto 80%</span> <span class="tag">wireless 83%</span> <span class="tag">android 100%</span> <span class="tag">camera 53%</span> <span class="tag">gps 40%</span> <span class="tag">dsp 3%</span></p>
+<table><thead><tr><th>#</th><th>商品</th><th class="num">价格(INR)</th><th class="num">评分</th><th class="num">评论</th><th class="num">BSR</th><th>选择理由</th></tr></thead>
+<tbody><tr>
+      <td>1</td>
+      <td>Portronics Tune Prime CarPlay &amp;amp; Android Auto Adapter, Stream YouTu</td>
+      <td class="num">11,499</td>
+      <td class="num">—</td>
+      <td class="num">162</td>
+      <td class="num">#394</td>
+      <td>类目 BSR #394（真实销量代理）；高价格带代表；已纳入长期跟踪锁定集</td>
+    </tr><tr>
+      <td>2</td>
+      <td>Portronics Tune, 2-in-1 Wireless Car Receiver, Converts Wired Auto And</td>
+      <td class="num">1,799</td>
+      <td class="num">—</td>
+      <td class="num">5,322</td>
+      <td class="num">#394</td>
+      <td>类目 BSR #394（真实销量代理）；评论 5,322 条（市场热度高）；低价格带代表</td>
+    </tr><tr>
+      <td>3</td>
+      <td>Portronics Tune Lite, Mini 2-in-1 Wireless CarPlay/Android Auto Receiv</td>
+      <td class="num">1,698</td>
+      <td class="num">—</td>
+      <td class="num">238</td>
+      <td class="num">#2,810</td>
+      <td>类目 BSR #2,810（真实销量代理）；低价格带代表</td>
+    </tr><tr>
+      <td>4</td>
+      <td>plimpton Portable Carplay Android Auto Screen for Car 7 Inch IPS Touch</td>
+      <td class="num">6,749</td>
+      <td class="num">—</td>
+      <td class="num">534</td>
+      <td class="num">#4,834</td>
+      <td>类目 BSR #4,834（真实销量代理）；评论 534 条（市场热度高）；中价格带代表；已纳入长期跟踪锁定集</td>
+    </tr><tr>
+      <td>5</td>
+      <td>AUTO SNAP Portable Screen 7 Inch Car Play Android Auto Screen Touch Sc</td>
+      <td class="num">5,999</td>
+      <td class="num">—</td>
+      <td class="num">893</td>
+      <td class="num">#27,534</td>
+      <td>评论 893 条（市场热度高）；低价格带代表；已纳入长期跟踪锁定集；纯 Android 机型（对比项）</td>
+    </tr><tr>
+      <td>6</td>
+      <td>【Clearance】Haudio 7 Inch Wireless Portable Carplay Screen for Apple Ca</td>
+      <td class="num">6,674</td>
+      <td class="num">—</td>
+      <td class="num">132</td>
+      <td class="num">—</td>
+      <td>低价格带代表</td>
+    </tr><tr>
+      <td>7</td>
+      <td>Cason 9" Wireless CarPlay Screen with Net-Flix You Tube Apps,Car Andro</td>
+      <td class="num">9,000</td>
+      <td class="num">—</td>
+      <td class="num">3</td>
+      <td class="num">#45,329</td>
+      <td>中价格带代表</td>
+    </tr><tr>
+      <td>8</td>
+      <td>Carlizem Carlizem 11.26 Inch in-Cell HD IPS Touch Screen with HD Dashc</td>
+      <td class="num">10,999</td>
+      <td class="num">—</td>
+      <td class="num">43</td>
+      <td class="num">#110,620</td>
+      <td>高价格带代表；已纳入长期跟踪锁定集</td>
+    </tr><tr>
+      <td>9</td>
+      <td>HK5 Carplay Screen for Car,10.26" HD Wireless Apple Carplay &amp;amp; Andr</td>
+      <td class="num">12,095</td>
+      <td class="num">—</td>
+      <td class="num">325</td>
+      <td class="num">#257,519</td>
+      <td>高价格带代表；已纳入长期跟踪锁定集</td>
+    </tr><tr>
+      <td>10</td>
+      <td>Cason Upgraded Carplay/Car Android Auto Touch Screen 10-Inch with 4K D</td>
+      <td class="num">9,599</td>
+      <td class="num">—</td>
+      <td class="num">86</td>
+      <td class="num">#31,062</td>
+      <td>中价格带代表；已纳入长期跟踪锁定集</td>
+    </tr><tr>
+      <td>11</td>
+      <td>CarPlay Screen for Car, 9&amp;#x27;&amp;#x27; Wireless CarPlay &amp;amp; Android A</td>
+      <td class="num">10,748</td>
+      <td class="num">—</td>
+      <td class="num">388</td>
+      <td class="num">—</td>
+      <td>高价格带代表；已纳入长期跟踪锁定集</td>
+    </tr><tr>
+      <td>12</td>
+      <td>2025 Enhanced Carplay Screen for Car - 7" HD Portable Carplay &amp;amp; An</td>
+      <td class="num">8,905</td>
+      <td class="num">—</td>
+      <td class="num">478</td>
+      <td class="num">—</td>
+      <td>中价格带代表；已纳入长期跟踪锁定集</td>
+    </tr><tr>
+      <td>13</td>
+      <td>Diamond 2K Car Android System Touch Screen 4GB+64GB|4 Core|Wireless Ca</td>
+      <td class="num">9,999</td>
+      <td class="num">—</td>
+      <td class="num">232</td>
+      <td class="num">#18,420</td>
+      <td>高价格带代表；已纳入长期跟踪锁定集</td>
+    </tr><tr>
+      <td>14</td>
+      <td>iWagon Car Android System Touchscreen-9Inch| TS9Pro CarPlay | 4GB/64GB</td>
+      <td class="num">9,499</td>
+      <td class="num">—</td>
+      <td class="num">107</td>
+      <td class="num">#97,457</td>
+      <td>中价格带代表</td>
+    </tr><tr>
+      <td>15</td>
+      <td>iWagon 4GB+64GB Car Android System Touch Screen 9 Inch|TS9Pro Car Ster</td>
+      <td class="num">7,267</td>
+      <td class="num">—</td>
+      <td class="num">10</td>
+      <td class="num">#104,135</td>
+      <td>中价格带代表</td>
+    </tr><tr>
+      <td>16</td>
+      <td>JioCarSync| Wired to Wireless Converter for Apple Carplay &amp;amp; Androi</td>
+      <td class="num">2,399</td>
+      <td class="num">—</td>
+      <td class="num">439</td>
+      <td class="num">#1,196</td>
+      <td>类目 BSR #1,196（真实销量代理）；低价格带代表</td>
+    </tr><tr>
+      <td>17</td>
+      <td>Woschmann-9 Inch Car Android Double Din Player 2GB/32GB Capacitive Tou</td>
+      <td class="num">5,382</td>
+      <td class="num">—</td>
+      <td class="num">72</td>
+      <td class="num">#12,999</td>
+      <td>低价格带代表；纯 Android 机型（对比项）</td>
+    </tr><tr>
+      <td>18</td>
+      <td>Cason Upgraded Carplay/Car Android Auto Touch Screen 10-Inch with Dash</td>
+      <td class="num">8,899</td>
+      <td class="num">—</td>
+      <td class="num">20</td>
+      <td class="num">#31,062</td>
+      <td>中价格带代表</td>
+    </tr><tr>
+      <td>19</td>
+      <td>BASSOHOLIC 9" T10 Android 14 Car Stereo | 4GB+64GB | Reverse Camera | </td>
+      <td class="num">9,499</td>
+      <td class="num">—</td>
+      <td class="num">1,871</td>
+      <td class="num">#27,416</td>
+      <td>评论 1,871 条（市场热度高）；中价格带代表</td>
+    </tr><tr>
+      <td>20</td>
+      <td>Woschmann Diamond Car Android SystemTouch Screen 10.1 Inch|TS30|With F</td>
+      <td class="num">8,999</td>
+      <td class="num">—</td>
+      <td class="num">58</td>
+      <td class="num">#16,580</td>
+      <td>中价格带代表；纯 Android 机型（对比项）</td>
+    </tr></tbody></table>
+</div>
+
+<div class="card"><h2>四、墨西哥：本次采集 20 款</h2>
+<p class="note">中位价 1,256 MXN · 样本 30 款 · 采集时间 2026-11-09</p>
+<p><span class="tag">carplay 77%</span> <span class="tag">androidAuto 70%</span> <span class="tag">wireless 77%</span> <span class="tag">android 77%</span> <span class="tag">camera 50%</span> <span class="tag">gps 40%</span> <span class="tag">dsp 0%</span> <span class="tag">mirrorLink 40%</span></p>
+<div><div class="band"><b>入门 &lt; 800</b>：8 款 · 均分 4.2 · 均评 117</div><div class="band"><b>中端 800–1500</b>：15 款 · 均分 3.87 · 均评 962</div><div class="band"><b>中高 1500–2500</b>：3 款 · 均分 4.3 · 均评 3297</div><div class="band"><b>高端 &gt; 2500</b>：4 款 · 均分 3.7 · 均评 17</div></div>
+<table style="margin-top:8px"><thead><tr><th>#</th><th>商品</th><th class="num">价格(MXN)</th><th class="num">评分</th><th class="num">评论</th><th class="num">BSR</th><th>选择理由</th></tr></thead>
+<tbody><tr>
+      <td>1</td>
+      <td>MUKEAO Pantalla Auto 10.26" Compatible con CarPlay y Android Auto, Tác</td>
+      <td class="num">923</td>
+      <td class="num">3.9</td>
+      <td class="num">150</td>
+      <td class="num">#4,773</td>
+      <td>类目 BSR #4,773（真实销量代理）；中价格带代表；已纳入长期跟踪锁定集</td>
+    </tr><tr>
+      <td>2</td>
+      <td>Pantalla CarPlay para Auto 7 Pulgadas, Android Auto y Cámara de Revers</td>
+      <td class="num">690</td>
+      <td class="num">4.3</td>
+      <td class="num">149</td>
+      <td class="num">#24,630</td>
+      <td>低价格带代表</td>
+    </tr><tr>
+      <td>3</td>
+      <td>HIMICAR Autoestéreo Portátil 7 Pulgadas Apple Carplay y Android Auto |</td>
+      <td class="num">999</td>
+      <td class="num">3.9</td>
+      <td class="num">180</td>
+      <td class="num">#7,779</td>
+      <td>中价格带代表；已纳入长期跟踪锁定集</td>
+    </tr><tr>
+      <td>4</td>
+      <td>AUCARAUTO AuCar 2024 - Unidad principal de radio de coche Android 13 p</td>
+      <td class="num">19,999</td>
+      <td class="num">3.7</td>
+      <td class="num">21</td>
+      <td class="num">#310,108</td>
+      <td>高价格带代表；纯 Android 机型（对比项）</td>
+    </tr><tr>
+      <td>5</td>
+      <td>Haudio - visualización portátil Apple CarPlay de 7 pulgadas para coche</td>
+      <td class="num">899</td>
+      <td class="num">3.7</td>
+      <td class="num">131</td>
+      <td class="num">#40,288</td>
+      <td>低价格带代表</td>
+    </tr><tr>
+      <td>6</td>
+      <td>EKAT [2G+64G] Radio de coche para Mazda 3 2014-2019, Android 13 Pantal</td>
+      <td class="num">3,943</td>
+      <td class="num">3.4</td>
+      <td class="num">21</td>
+      <td class="num">#205,327</td>
+      <td>高价格带代表</td>
+    </tr><tr>
+      <td>7</td>
+      <td>WEAGP Autoestéreo para Carro de 10.26 Pulgadas, Estereo para Automovil</td>
+      <td class="num">1,499</td>
+      <td class="num">4.5</td>
+      <td class="num">37</td>
+      <td class="num">#5,323</td>
+      <td>中价格带代表；已纳入长期跟踪锁定集</td>
+    </tr><tr>
+      <td>8</td>
+      <td>Pantalla de 10 pulgadas EKAT para Radio Ford Mustang 2010 2011 2012 20</td>
+      <td class="num">4,834</td>
+      <td class="num">3.7</td>
+      <td class="num">17</td>
+      <td class="num">#425,980</td>
+      <td>高价格带代表</td>
+    </tr><tr>
+      <td>9</td>
+      <td>FINYQBET Autoestéreo 10.3 Pulgadas CarPlay Android Auto HD | adaptador</td>
+      <td class="num">1,080</td>
+      <td class="num">4</td>
+      <td class="num">366</td>
+      <td class="num">#7,438</td>
+      <td>中价格带代表；已纳入长期跟踪锁定集</td>
+    </tr><tr>
+      <td>10</td>
+      <td>Pantalla de 10 pulgadas 2+64G para Radio Ford F150 2004 2005 2006 2007</td>
+      <td class="num">3,459</td>
+      <td class="num">4</td>
+      <td class="num">10</td>
+      <td class="num">#160,259</td>
+      <td>高价格带代表</td>
+    </tr><tr>
+      <td>11</td>
+      <td>visualización portátil inalámbrica Carplay para Coche, 7 Pulgadas esté</td>
+      <td class="num">659</td>
+      <td class="num">4</td>
+      <td class="num">142</td>
+      <td class="num">#6,077</td>
+      <td>低价格带代表；已纳入长期跟踪锁定集</td>
+    </tr><tr>
+      <td>12</td>
+      <td>HYIEAR Pantalla para Auto 9" Compatible con CarPlay y Android Auto, Tá</td>
+      <td class="num">1,256</td>
+      <td class="num">3.7</td>
+      <td class="num">198</td>
+      <td class="num">#8,995</td>
+      <td>中价格带代表；已纳入长期跟踪锁定集</td>
+    </tr><tr>
+      <td>13</td>
+      <td>Rimoody Estéreo de Coche de Doble DIN, inalámbrico, Carplay, visualiza</td>
+      <td class="num">1,199</td>
+      <td class="num">4.1</td>
+      <td class="num">77</td>
+      <td class="num">#10,005</td>
+      <td>中价格带代表；已纳入长期跟踪锁定集</td>
+    </tr><tr>
+      <td>14</td>
+      <td>BOJOOM Pantalla Carplay para Auto 10.26in HD Táctil Portátil,Estereo C</td>
+      <td class="num">999</td>
+      <td class="num">3.8</td>
+      <td class="num">67</td>
+      <td class="num">#12,649</td>
+      <td>中价格带代表；已纳入长期跟踪锁定集</td>
+    </tr><tr>
+      <td>15</td>
+      <td>Aiwa Autoestéreo AW-5444BT Bluetooth 4×50W con USB, SD, AUX, Radio FM/</td>
+      <td class="num">679</td>
+      <td class="num">4.3</td>
+      <td class="num">58</td>
+      <td class="num">#4,114</td>
+      <td>类目 BSR #4,114（真实销量代理）；低价格带代表</td>
+    </tr><tr>
+      <td>16</td>
+      <td>Aiwa Autoestéreo AW-3269BT Bluetooth USB SD AUX 4×50W Potencia 200W Il</td>
+      <td class="num">691</td>
+      <td class="num">4.4</td>
+      <td class="num">57</td>
+      <td class="num">#8,205</td>
+      <td>低价格带代表</td>
+    </tr><tr>
+      <td>17</td>
+      <td>HIMICAR Autoestéreo Portátil 10.26" CarPlay y Android Auto Inalámbrico</td>
+      <td class="num">1,259</td>
+      <td class="num">3.5</td>
+      <td class="num">8</td>
+      <td class="num">#7,779</td>
+      <td>中价格带代表</td>
+    </tr><tr>
+      <td>18</td>
+      <td>9.26" Carplay Screen for Car, Wireless Portable Car Play Screen for Ap</td>
+      <td class="num">2,030</td>
+      <td class="num">4.5</td>
+      <td class="num">3,454</td>
+      <td class="num">#71,134</td>
+      <td>评论 3,454 条（市场热度高）；高价格带代表</td>
+    </tr><tr>
+      <td>19</td>
+      <td>Pantalla Carplay para Auto 10.26in HD Táctil con Tarjeta de 64G,Cámara</td>
+      <td class="num">1,467</td>
+      <td class="num">3.8</td>
+      <td class="num">67</td>
+      <td class="num">#12,649</td>
+      <td>中价格带代表</td>
+    </tr><tr>
+      <td>20</td>
+      <td>Raganet, Autoestéreo de 7 Pulgadas con Pantalla Táctil, Estereo con Co</td>
+      <td class="num">649</td>
+      <td class="num">4.2</td>
+      <td class="num">389</td>
+      <td class="num">#1,892</td>
+      <td>类目 BSR #1,892（真实销量代理）；低价格带代表</td>
+    </tr></tbody></table>
+</div>
+
+<div class="card"><h2>五、这套采集能回答什么问题</h2>
+<ol class="rules">
+<li>竞品集中在什么价格带？（中端是否为主战场）</li>
+<li>哪些功能已经标配、哪些是空白？（如 DSP 覆盖率极低）</li>
+<li>卖得最好的产品是什么形态？（车机屏 vs 记录仪 vs 适配器）</li>
+<li>我们的报价相对竞品处在什么位置？</li>
+</ol>
+<p class="note">限制：样本 20–30 款，只代表电商渠道的头部商品，不代表全渠道；评分与评论为抓取时点快照。</p>
+</div>
+
+<footer>由 工作台/scripts/build-competitor-report.mjs 生成 · 数据：data/domains/competitor-product/india.json、data/mx-competitors.json</footer>
+</div></body></html>
