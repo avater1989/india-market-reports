@@ -1,0 +1,323 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>样张 B · 控制台风格 · 印度市场 2026-10</title>
+<style>
+  :root{
+    --bg:#F4F5F7; --card:#FFFFFF; --line:#E5E7EB; --line-soft:#F1F2F4;
+    --ink:#111827; --ink-2:#4B5563; --ink-3:#9CA3AF;
+    --accent:#0B6BCB; --accent-soft:#EFF6FF;
+    --pos:#047857; --pos-soft:#ECFDF5; --neg:#B42318; --neg-soft:#FEF3F2;
+    --r:10px;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font:13.5px/1.6 -apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+    font-variant-numeric:tabular-nums;font-feature-settings:"tnum" 1}
+  .wrap{max-width:1120px;margin:0 auto;padding:26px 24px 46px}
+
+  .topbar{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:22px;flex-wrap:wrap}
+  .brand{display:flex;align-items:center;gap:10px}
+  .logo{width:28px;height:28px;border-radius:8px;background:var(--accent);color:#fff;display:grid;place-items:center;font-weight:700;font-size:13px}
+  .brand h1{margin:0;font-size:16px;font-weight:650;letter-spacing:-.01em}
+  .brand .sub{font-size:11.5px;color:var(--ink-3);margin-top:1px}
+  .meta{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+  .tag{font-size:11.5px;color:var(--ink-2);background:#fff;border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+  .tag.live{color:var(--pos);background:var(--pos-soft);border-color:#D1FADF}
+
+  .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:14px 15px}
+  .span2{grid-column:span 2}
+  .span4{grid-column:span 4}
+
+  .kpi-top{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px}
+  .kpi-label{font-size:11.5px;color:var(--ink-2);font-weight:500}
+  .pill{font-size:11px;font-weight:600;border-radius:999px;padding:2px 7px}
+  .pill.neg{color:var(--neg);background:var(--neg-soft)}
+  .pill.pos{color:var(--pos);background:var(--pos-soft)}
+  .pill.flat{color:var(--ink-2);background:var(--line-soft)}
+  .kpi-value{font-size:27px;font-weight:680;letter-spacing:-.02em;line-height:1.15}
+  .kpi-unit{font-size:11.5px;font-weight:500;color:var(--ink-3);margin-left:4px}
+  .kpi-spark{margin-top:8px;color:var(--accent);height:40px;overflow:hidden}
+  .kpi-spark svg{display:block}
+
+  .card h2{margin:0;font-size:12.5px;font-weight:600;letter-spacing:.01em}
+  .card-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px}
+  .card-head .hint{font-size:11px;color:var(--ink-3)}
+
+  table{width:100%;border-collapse:collapse}
+  th{font-size:11px;color:var(--ink-3);font-weight:600;text-align:left;padding:0 0 7px;border-bottom:1px solid var(--line)}
+  td{padding:7px 0;border-bottom:1px solid var(--line-soft);font-size:12.5px}
+  tr:last-child td{border-bottom:0}
+  .num{text-align:right}
+  .num b{font-weight:600}
+  .m{color:var(--ink-2)}
+  .rk{width:22px;color:var(--ink-3)}
+  .sm{font-size:11.5px;color:var(--ink-3)}
+  .bar-cell{position:relative}
+  .dbar{display:block;height:3px;border-radius:2px;background:var(--line-soft);margin:3px 0 4px;overflow:hidden}
+  .dbar i{display:block;height:100%;background:var(--accent);opacity:.75;border-radius:2px}
+
+  .brow{display:grid;grid-template-columns:1fr 96px 52px;align-items:center;gap:10px;padding:7px 0;border-bottom:1px solid var(--line-soft)}
+  .brow:last-child{border-bottom:0}
+  .bname{font-size:12.5px;color:var(--ink-2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .btrack{height:6px;border-radius:3px;background:var(--line-soft);overflow:hidden}
+  .btrack i{display:block;height:100%;background:var(--accent);opacity:.8}
+  .bval{text-align:right;font-size:12.5px;font-weight:600}
+
+  .judg{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .jcard{border:1px solid var(--line-soft);border-radius:8px;padding:11px 12px;background:#FCFCFD}
+  .jcard .jk{font-size:11px;font-weight:600;color:var(--accent);margin-bottom:4px}
+  .jcard p{margin:0;font-size:12.5px;line-height:1.65;color:var(--ink-2)}
+
+  .fx{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .fx-item .lab{font-size:11.5px;color:var(--ink-3)}
+  .fx-item .val{font-size:24px;font-weight:680;letter-spacing:-.02em;margin:2px 0 4px}
+  .fx-item .note{font-size:11.5px;color:var(--ink-2);line-height:1.55}
+
+  .warn{display:flex;gap:10px;align-items:flex-start;background:#FFFBEB;border:1px solid #FDE68A;border-radius:var(--r);padding:11px 13px}
+  .warn .dot{width:6px;height:6px;border-radius:50%;background:#B54708;margin-top:6px;flex:0 0 auto}
+  .warn p{margin:0;font-size:11.5px;color:#7A4B0A;line-height:1.6}
+  .warn b{color:#5C3606}
+
+  footer{margin-top:22px;font-size:11px;color:var(--ink-3);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+  @media (max-width:900px){
+    .grid{grid-template-columns:1fr 1fr}
+    .span4{grid-column:span 2}
+    .span2{grid-column:span 2}
+    .judg{grid-template-columns:1fr}
+    .fx{grid-template-columns:1fr}
+  }
+  @media (max-width:560px){
+    .wrap{padding:18px 14px 36px}
+    .grid{grid-template-columns:1fr}
+    .span2,.span4{grid-column:span 1}
+    .kpi-value{font-size:24px}
+  }
+</style></head><body><div class="wrap">
+
+  <div class="topbar">
+    <div class="brand">
+      <div class="logo">联</div>
+      <div>
+        <h1>印度市场 · 月度概览</h1>
+        <div class="sub">零售 2026-10 · 上牌 2026-08 · 批发 2026-09</div>
+      </div>
+    </div>
+    <div class="meta">
+      <span class="tag live">数据已更新</span>
+      <span class="tag">汇率 2026-11-17</span>
+      <span class="tag">样张 B</span>
+    </div>
+  </div>
+
+  <div class="grid">
+    
+      <div class="card kpi">
+        <div class="kpi-top"><span class="kpi-label">零售 · FADA</span><span class="pill neg">-14.2%</span></div>
+        <div class="kpi-value">507,768<span class="kpi-unit">辆</span></div>
+        <div class="kpi-spark"><svg viewBox="0 0 260 56" width="100%" height="56" preserveAspectRatio="none" aria-hidden="true">
+<defs><linearGradient id="g1" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="currentColor" stop-opacity=".22"/><stop offset="100%" stop-color="currentColor" stop-opacity="0"/></linearGradient></defs>
+<polygon points="1,53 1.0,52.9 52.6,49.1 104.2,46.6 155.8,53.0 207.4,41.7 259.0,5.0 259,53" fill="url(#g1)"/>
+<polyline points="1.0,52.9 52.6,49.1 104.2,46.6 155.8,53.0 207.4,41.7 259.0,5.0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/>
+</svg></div>
+      </div>
+    
+      <div class="card kpi">
+        <div class="kpi-top"><span class="kpi-label">上牌 · VAHAN</span><span class="pill flat">滞后 2 个月</span></div>
+        <div class="kpi-value">382,950<span class="kpi-unit">辆</span></div>
+        <div class="kpi-spark"><svg viewBox="0 0 260 56" width="100%" height="56" preserveAspectRatio="none" aria-hidden="true">
+<defs><linearGradient id="g2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="currentColor" stop-opacity=".22"/><stop offset="100%" stop-color="currentColor" stop-opacity="0"/></linearGradient></defs>
+<polygon points="1,53 1.0,5.0 52.6,31.8 104.2,52.3 155.8,43.2 207.4,41.2 259.0,53.0 259,53" fill="url(#g2)"/>
+<polyline points="1.0,5.0 52.6,31.8 104.2,52.3 155.8,43.2 207.4,41.2 259.0,53.0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/>
+</svg></div>
+      </div>
+    
+      <div class="card kpi">
+        <div class="kpi-top"><span class="kpi-label">批发 · Top10</span><span class="pill flat">旧源</span></div>
+        <div class="kpi-value">191,332<span class="kpi-unit">辆</span></div>
+        <div class="kpi-spark"><svg viewBox="0 0 260 56" width="100%" height="56" preserveAspectRatio="none" aria-hidden="true">
+<defs><linearGradient id="g3" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="currentColor" stop-opacity=".22"/><stop offset="100%" stop-color="currentColor" stop-opacity="0"/></linearGradient></defs>
+<polygon points="1,53 1.0,16.1 52.6,5.0 104.2,39.0 155.8,42.7 207.4,53.0 259.0,48.2 259,53" fill="url(#g3)"/>
+<polyline points="1.0,16.1 52.6,5.0 104.2,39.0 155.8,42.7 207.4,53.0 259.0,48.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/>
+</svg></div>
+      </div>
+    
+      <div class="card kpi">
+        <div class="kpi-top"><span class="kpi-label">前五邦占比</span><span class="pill flat">2026-08</span></div>
+        <div class="kpi-value">52.9<span class="kpi-unit">%</span></div>
+        <div class="kpi-spark"><svg viewBox="0 0 108 40" width="108" height="40" aria-hidden="true"><rect x="0.0" y="2.0" width="18.4" height="38.0" rx="1.5" fill="currentColor" opacity=".85"/><rect x="22.4" y="12.4" width="18.4" height="27.6" rx="1.5" fill="currentColor" opacity=".42"/><rect x="44.8" y="13.6" width="18.4" height="26.4" rx="1.5" fill="currentColor" opacity=".42"/><rect x="67.2" y="15.8" width="18.4" height="24.2" rx="1.5" fill="currentColor" opacity=".42"/><rect x="89.6" y="16.1" width="18.4" height="23.9" rx="1.5" fill="currentColor" opacity=".42"/></svg></div>
+      </div>
+
+    <div class="card span2">
+      <div class="card-head"><h2>三口径对照</h2><span class="hint">单位：辆</span></div>
+      <table>
+        <thead><tr><th>月份</th><th class="num">零售</th><th class="num">上牌</th><th class="num">批发</th></tr></thead>
+        <tbody><tr>
+        <td class="m">2026-05</td>
+        <td class="num"><span class="dbar"><i style="width:68.0%"></i></span><b>402,591</b></td>
+        <td class="num"><span class="dbar"><i style="width:64.8%"></i></span><b>383,932</b></td>
+        <td class="num"><span class="dbar"><i style="width:45.0%"></i></span><b>266,513</b></td>
+      </tr><tr>
+        <td class="m">2026-06</td>
+        <td class="num"><span class="dbar"><i style="width:69.4%"></i></span><b>411,000</b></td>
+        <td class="num"><span class="dbar"><i style="width:67.1%"></i></span><b>397,355</b></td>
+        <td class="num"><span class="dbar"><i style="width:35.0%"></i></span><b>207,399</b></td>
+      </tr><tr>
+        <td class="m">2026-07</td>
+        <td class="num"><span class="dbar"><i style="width:70.4%"></i></span><b>416,555</b></td>
+        <td class="num"><span class="dbar"><i style="width:67.6%"></i></span><b>400,338</b></td>
+        <td class="num"><span class="dbar"><i style="width:33.9%"></i></span><b>200,868</b></td>
+      </tr><tr>
+        <td class="m">2026-08</td>
+        <td class="num"><span class="dbar"><i style="width:68.0%"></i></span><b>402,398</b></td>
+        <td class="num"><span class="dbar"><i style="width:64.7%"></i></span><b>382,950</b></td>
+        <td class="num"><span class="dbar"><i style="width:30.9%"></i></span><b>183,037</b></td>
+      </tr><tr>
+        <td class="m">2026-09</td>
+        <td class="num"><span class="dbar"><i style="width:72.2%"></i></span><b>427,213</b></td>
+        <td class="num"><b>无</b></td>
+        <td class="num"><span class="dbar"><i style="width:32.3%"></i></span><b>191,332</b></td>
+      </tr><tr>
+        <td class="m">2026-10</td>
+        <td class="num"><span class="dbar"><i style="width:85.8%"></i></span><b>507,768</b></td>
+        <td class="num"><b>无</b></td>
+        <td class="num"><b>无</b></td>
+      </tr></tbody>
+      </table>
+      <p class="hint" style="margin:9px 0 0;font-size:11px;color:var(--ink-3);line-height:1.55">零售为全市场，上牌仅 12 品牌子集，批发仅前 10 车型之和，三者不可相除。</p>
+    </div>
+
+    <div class="card span2">
+      <div class="card-head"><h2>品牌份额</h2><span class="hint">2026-08 · 12 品牌子集</span></div>
+      
+        <div class="brow">
+          <span class="bname">MARUTI SUZUKI INDIA</span>
+          <span class="btrack"><i style="width:100.0%"></i></span>
+          <span class="bval">42.76%</span>
+        </div>
+        <div class="brow">
+          <span class="bname">MAHINDRA &amp; MAHINDRA</span>
+          <span class="btrack"><i style="width:38.8%"></i></span>
+          <span class="bval">16.60%</span>
+        </div>
+        <div class="brow">
+          <span class="bname">HYUNDAI MOTOR INDIA</span>
+          <span class="btrack"><i style="width:27.3%"></i></span>
+          <span class="bval">11.68%</span>
+        </div>
+        <div class="brow">
+          <span class="bname">TATA MOTORS PASSENGER VEHICLES</span>
+          <span class="btrack"><i style="width:25.0%"></i></span>
+          <span class="bval">10.69%</span>
+        </div>
+        <div class="brow">
+          <span class="bname">TOYOTA KIRLOSKAR MOTOR</span>
+          <span class="btrack"><i style="width:14.8%"></i></span>
+          <span class="bval">6.34%</span>
+        </div>
+      <p class="hint" style="margin:9px 0 0;font-size:11px;color:var(--ink-3)">分母 382,950 辆，非全国份额</p>
+    </div>
+
+    <div class="card span4">
+      <div class="card-head"><h2>本月判断</h2><span class="hint">含口径提示，数字均取自本期数据</span></div>
+      <div class="judg">
+        <div class="jcard"><div class="jk">市场</div><p>2026-10零售507,768辆，同比-14.2%，需求下滑；上牌为12品牌子集，2026-08为382,950辆，滞后零售2个月；批发为车型榜Top-N之和，2026-09为191,332辆，不可与零售相除。</p></div>
+        <div class="jcard"><div class="jk">竞争</div><p>12品牌子集内，Maruti Suzuki 42.76%、Mahindra 16.6%、Hyundai 11.68%、Tata 10.69%、Toyota 6.34%；2026-10批发Top5中Maruti占四席，Wagon R 23,747居首。</p></div>
+        <div class="jcard"><div class="jk">成本</div><p>USD/INR均值94.64，区间93.85~95.28，卢比相对美元升值；CNY/INR 14.02（-2.4%），人民币相对卢比贬值，中国出口报价换算更贵。</p></div>
+        <div class="jcard"><div class="jk">动作</div><p>本月按CNY/INR 14.02重算报价与毛利，优先保Maruti、Mahindra配套项目；针对零售同比-14.2%下调备货节奏，聚焦Maharashtra、Uttar Pradesh、Gujarat前三大邦。</p></div>
+      </div>
+    </div>
+
+    <div class="card span2">
+      <div class="card-head"><h2>车型前十</h2><span class="hint">2026-10</span></div>
+      <table>
+        <thead><tr><th class="rk">#</th><th>车型</th><th class="num">销量</th></tr></thead>
+        <tbody><tr>
+          <td class="rk">1</td>
+          <td class="mo">Maruti Wagon R</td>
+          <td class="num bar-cell"><span class="dbar"><i style="width:100.0%"></i></span><b>23,747</b></td>
+        </tr><tr>
+          <td class="rk">2</td>
+          <td class="mo">Maruti Brezza</td>
+          <td class="num bar-cell"><span class="dbar"><i style="width:94.5%"></i></span><b>22,436</b></td>
+        </tr><tr>
+          <td class="rk">3</td>
+          <td class="mo">Tata Nexon (ICE+EV)</td>
+          <td class="num bar-cell"><span class="dbar"><i style="width:92.5%"></i></span><b>21,966</b></td>
+        </tr><tr>
+          <td class="rk">4</td>
+          <td class="mo">Maruti Baleno</td>
+          <td class="num bar-cell"><span class="dbar"><i style="width:88.1%"></i></span><b>20,919</b></td>
+        </tr><tr>
+          <td class="rk">5</td>
+          <td class="mo">Maruti Dzire</td>
+          <td class="num bar-cell"><span class="dbar"><i style="width:87.0%"></i></span><b>20,649</b></td>
+        </tr><tr>
+          <td class="rk">6</td>
+          <td class="mo">Maruti Ertiga</td>
+          <td class="num bar-cell"><span class="dbar"><i style="width:86.9%"></i></span><b>20,641</b></td>
+        </tr><tr>
+          <td class="rk">7</td>
+          <td class="mo">Tata Punch (ICE+EV)</td>
+          <td class="num bar-cell"><span class="dbar"><i style="width:86.4%"></i></span><b>20,525</b></td>
+        </tr><tr>
+          <td class="rk">8</td>
+          <td class="mo">Maruti Fronx</td>
+          <td class="num bar-cell"><span class="dbar"><i style="width:84.3%"></i></span><b>20,014</b></td>
+        </tr><tr>
+          <td class="rk">9</td>
+          <td class="mo">Mahindra Scorpio (Scorpio N + Classic)</td>
+          <td class="num bar-cell"><span class="dbar"><i style="width:81.5%"></i></span><b>19,353</b></td>
+        </tr><tr>
+          <td class="rk">10</td>
+          <td class="mo">Maruti Swift</td>
+          <td class="num bar-cell"><span class="dbar"><i style="width:79.4%"></i></span><b>18,866</b></td>
+        </tr></tbody>
+      </table>
+    </div>
+
+    <div class="card span2">
+      <div class="card-head"><h2>区域前五</h2><span class="hint">2026-08</span></div>
+      <table>
+        <thead><tr><th class="rk">#</th><th>邦</th><th class="num">上牌</th><th class="num">占比</th></tr></thead>
+        <tbody>
+          <tr><td class="rk">1</td><td class="mo">Maharashtra</td><td class="num"><b>51,787</b></td><td class="num sm">14.3%</td></tr>
+          <tr><td class="rk">2</td><td class="mo">Uttar Pradesh</td><td class="num"><b>37,553</b></td><td class="num sm">10.4%</td></tr>
+          <tr><td class="rk">3</td><td class="mo">Gujarat</td><td class="num"><b>35,942</b></td><td class="num sm">10.0%</td></tr>
+          <tr><td class="rk">4</td><td class="mo">Tamil Nadu</td><td class="num"><b>33,028</b></td><td class="num sm">9.1%</td></tr>
+          <tr><td class="rk">5</td><td class="mo">Karnataka</td><td class="num"><b>32,586</b></td><td class="num sm">9.0%</td></tr></tbody>
+      </table>
+    </div>
+
+    <div class="card span2">
+      <div class="card-head"><h2>汇率</h2><span class="hint">30 日</span></div>
+      <div class="fx">
+        <div class="fx-item">
+          <div class="lab">USD / INR 均值</div>
+          <div class="val">94.64</div>
+          <div class="note">93.85 ~ 95.28 · 区间内卢比升值 2.5%</div>
+        </div>
+        <div class="fx-item">
+          <div class="lab">CNY / INR</div>
+          <div class="val">14.02</div>
+          <div class="note">人民币相对卢比贬值 2.4%，出口报价换算更贵</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card span2">
+      <div class="card-head"><h2>数据完整性</h2><span class="hint">2 项待处理</span></div>
+      <div class="warn">
+        <span class="dot"></span>
+        <p><b>上牌停更</b>：VAHAN 镜像自 2026-09-08 起未更新，品牌份额、区域、保有量均基于 2026-08。<br><b>批发口径分裂</b>：KPI 用已停更的旧导出（2026-09），车型榜用直采（2026-10），不可拼接。</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <span>样张 B · Tremor 式控制台 ｜ 数据 2026-10</span>
+    <span>生成 2026-11-18</span>
+  </footer>
+</div></body></html>

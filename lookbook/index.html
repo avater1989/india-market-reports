@@ -1,0 +1,36 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>月报改版 · 两个方向对比</title>
+<style>
+  :root{--ink:#101828;--ink2:#475467;--ink3:#98A2B3;--line:#E4E7EC;--bg:#F7F8FA}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.65 -apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif}
+  .wrap{max-width:1500px;margin:0 auto;padding:34px 22px 56px}
+  h1{margin:0 0 6px;font-size:24px;letter-spacing:-.01em}
+  .sub{color:var(--ink2);font-size:13px;margin-bottom:22px}
+  .pair{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .pane{background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+  .pane header{padding:12px 16px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:10px}
+  .pane h2{margin:0;font-size:14px}
+  .pane .tag{font-size:11px;color:var(--ink3)}
+  .pane a{font-size:12px;color:#2F6FED;text-decoration:none;font-weight:600}
+  .frame{width:100%;height:1500px;border:0;display:block;background:#fff}
+  .note{margin-top:20px;font-size:12.5px;color:var(--ink2);line-height:1.8}
+  @media (max-width:900px){.pair{grid-template-columns:1fr}.frame{height:1100px}}
+</style></head><body><div class="wrap">
+  <h1>月报改版 · 两个方向</h1>
+  <div class="sub">同一份 2026-10 数据、同一套判断文字，只换视觉语言。选一个方向，我再把 4 个生成器一起改。</div>
+  <div class="pair">
+    <div class="pane">
+      <header><h2>A · IBCS 编辑部报告</h2><a href="a.html">单独打开 →</a></header>
+      <iframe class="frame" src="a.html" title="样张 A"></iframe>
+    </div>
+    <div class="pane">
+      <header><h2>B · Tremor 式控制台</h2><a href="b.html">单独打开 →</a></header>
+      <iframe class="frame" src="b.html" title="样张 B"></iframe>
+    </div>
+  </div>
+  <div class="note">
+    A 走纸质报告逻辑：无圆角、发丝线、单色加语义红绿，适合打印和转发。<br>
+    B 走产品控制台逻辑：浅灰底、卡片、圆角 10px、单一蓝强调，适合扫视和长期盯盘。
+  </div>
+</div></body></html>
