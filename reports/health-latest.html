@@ -1,214 +1,292 @@
-<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
 <title>采集健康看板 · 2026-11-18</title>
 <style>
-:root{--ink:#101828;--ink2:#475467;--ink3:#98a2b3;--line:#e4e7ec;--bg:#f7f8fa}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.7 -apple-system,"Segoe UI","Microsoft YaHei",sans-serif}
-.wrap{max-width:1040px;margin:0 auto;padding:34px 20px 64px}
-header{border-bottom:2px solid var(--ink);padding-bottom:14px;margin-bottom:16px}
-h1{margin:0;font-size:24px}.sub{color:var(--ink3);font-size:12.5px;margin-top:6px}
-.group{margin:22px 0}
-.group h2{font-size:16px;margin:0 0 10px;padding-left:10px;border-left:4px solid #2f6fed}
-.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
-.src{background:#fff;border:1px solid var(--line);border-left:4px solid;border-radius:10px;padding:12px 16px}
-.src .head{display:flex;justify-content:space-between;align-items:baseline}
-.src .name{font-weight:600}
-.src .status{font-size:12px}
-.src .age{font-size:19px;font-weight:700;margin:2px 0 6px}
-.src .limit{font-size:12px;color:var(--ink3);font-weight:400;margin-left:6px}
-.def{font-size:12.5px;color:var(--ink2);margin-top:4px}
-.def b{color:var(--ink)}
-.script{font-size:11.5px;color:var(--ink3);margin-top:6px;border-top:1px dashed var(--line);padding-top:6px}
-.ok{background:#ecfdf3;border:1px solid #a6f4c5;border-radius:10px;padding:10px 14px;margin:14px 0;font-size:13.5px}
-.warn{background:#fffaeb;border:1px solid #fedf89;border-radius:10px;padding:10px 14px;margin:14px 0;font-size:13.5px}
-footer{color:var(--ink3);font-size:12px;margin-top:24px}
-@media(max-width:760px){.grid{grid-template-columns:1fr}}
+  :root{
+    --bg:#F4F5F7; --card:#FFFFFF; --line:#E5E7EB; --line-soft:#F1F2F4;
+    --ink:#111827; --ink2:#4B5563; --ink3:#9CA3AF;
+    --accent:#0B6BCB; --pos:#047857; --pos-soft:#ECFDF5; --neg:#B42318; --neg-soft:#FEF3F2;
+    --r:10px;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font:13.5px/1.6 -apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;font-variant-numeric:tabular-nums;font-feature-settings:"tnum" 1}
+  .wrap{max-width:1180px;margin:0 auto;padding:24px 22px 44px}
+
+  .topbar{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:16px}
+  .brand{display:flex;align-items:center;gap:10px}
+  .logo{width:26px;height:26px;border-radius:7px;background:var(--accent);color:#fff;display:grid;place-items:center;font-weight:700;font-size:12px}
+  h1{margin:0;font-size:15px;font-weight:650;letter-spacing:-.01em}
+  .sub{font-size:11px;color:var(--ink3);margin-top:1px}
+  .tags{display:flex;gap:8px;flex-wrap:wrap}
+  .tag{font-size:11px;padding:3px 9px;border:1px solid var(--line);background:var(--card);border-radius:999px;color:var(--ink2)}
+  .tag.bad{color:var(--neg);background:var(--neg-soft);border-color:#FECDCA}
+  .tag.ok{color:var(--pos);background:var(--pos-soft);border-color:#D1FADF}
+
+  .sums{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:12px}
+  .sum{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:11px 13px}
+  .sum .k{font-size:11px;color:var(--ink2)}
+  .sum .v{font-size:21px;font-weight:680;letter-spacing:-.02em;margin-top:1px}
+  .sum .v small{font-size:11px;font-weight:500;color:var(--ink3);margin-left:3px}
+
+  .banner{display:flex;gap:10px;align-items:flex-start;background:#FFFBEB;border:1px solid #FDE68A;border-radius:var(--r);padding:10px 13px;margin-bottom:18px}
+  .banner.ok{background:var(--pos-soft);border-color:#D1FADF}
+  .bdot{width:6px;height:6px;border-radius:50%;background:#B54708;margin-top:6px;flex:0 0 auto}
+  .banner.ok .bdot{background:var(--pos)}
+  .banner b{font-size:12px;color:#5C3606}
+  .banner.ok b{color:#065F46}
+  .bsub{font-size:11px;color:#7A4B0A;margin-top:2px;line-height:1.55}
+  .banner.ok .bsub{color:#047857}
+
+  .group h2{display:flex;justify-content:space-between;align-items:baseline;font-size:11px;letter-spacing:.08em;color:var(--ink3);font-weight:600;margin:22px 0 9px}
+  .group .cnt{letter-spacing:0;font-weight:500}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+
+  .src{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:12px 13px;display:flex;flex-direction:column;gap:7px}
+  .src.stale{border-color:#FECDCA;box-shadow:inset 3px 0 0 var(--neg)}
+  .src-top{display:flex;justify-content:space-between;gap:8px;align-items:baseline}
+  .name{font-size:12.5px;font-weight:600}
+  .pill{font-size:10px;padding:1px 7px;border-radius:999px;white-space:nowrap;flex:0 0 auto}
+  .pill.ok{color:var(--pos);background:var(--pos-soft)}
+  .pill.bad{color:var(--neg);background:var(--neg-soft)}
+  .age{font-size:18px;font-weight:680;letter-spacing:-.02em}
+  .age .lim{font-size:10px;color:var(--ink3);font-weight:500;margin-left:5px;letter-spacing:0}
+  .dm{display:inline-block;font-size:10.5px;color:var(--ink2);background:#F9FAFB;border:1px solid var(--line-soft);border-radius:6px;padding:2px 7px}
+  .dm.bad{color:var(--neg);background:var(--neg-soft);border-color:#FECDCA}
+  .def{font-size:10.5px;color:var(--ink2);line-height:1.55}
+  .def b{color:var(--ink);font-weight:600;margin-right:4px}
+  .script{font-size:10px;color:var(--ink3);border-top:1px solid var(--line-soft);padding-top:6px;margin-top:auto;word-break:break-all}
+
+  footer{margin-top:24px;font-size:10.5px;color:var(--ink3);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+  @media(max-width:1040px){.grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:700px){
+    .wrap{padding:16px 13px 34px}
+    .sums{grid-template-columns:1fr 1fr;gap:9px}
+    .sums .sum:last-child{grid-column:1 / -1}
+    .grid{grid-template-columns:1fr}
+  }
 </style></head><body><div class="wrap">
-<header><h1>采集健康看板</h1><div class="sub">检查时间 2026-11-18T06:36:40.975Z · 数据日 2026-11-18 · 数据源 23 项</div></header>
-<div class="warn">⚠️ 有 2 项超期：上牌（品牌 × 邦）、保有量（近似）</div>
-<section class="group"><h2>印度</h2><div class="grid">
-  <div class="src" style="border-left-color:#12b76a">
-    <div class="head"><span class="name">月度零售（FADA）</span><span class="status" style="color:#12b76a">✅ 正常</span></div>
-    <div class="age" style="color:#12b76a">7.1 小时<span class="limit">文件写入 / 阈值 40 天</span></div>
-    <div class="def" style="color:var(--ink2)"><b>数据月：</b>2026-10 · 月末距今 18 天（阈值 45 天）</div>
-    <div class="def"><b>数据：</b>FADA 官方新闻稿 PDF 的乘用车零售量（登记口径），月度</div>
-    <div class="def"><b>口径：</b>反映终端需求；≠ 批发 ≠ 上牌。节庆错位月份看 3 个月滚动</div>
-    <div class="script">采集：scripts/fetch-fada-auto.ps1 → import-fada-monthly.mjs</div>
+
+  <div class="topbar">
+    <div class="brand">
+      <div class="logo">联</div>
+      <div>
+        <h1>采集健康看板</h1>
+        <div class="sub">数据日 2026-11-18 · 检查于 2026-11-18 06:36 UTC</div>
+      </div>
+    </div>
+    <div class="tags">
+      <span class="tag">数据源 23</span>
+      <span class="tag bad">超期 2</span>
+    </div>
   </div>
-  <div class="src" style="border-left-color:#12b76a">
-    <div class="head"><span class="name">车型批发榜</span><span class="status" style="color:#12b76a">✅ 正常</span></div>
-    <div class="age" style="color:#12b76a">13.2 天<span class="limit">文件写入 / 阈值 40 天</span></div>
+
+  <div class="sums">
+    <div class="sum"><div class="k">正常</div><div class="v">21<small>/ 23 项</small></div></div>
+    <div class="sum"><div class="k">文件超期</div><div class="v">0<small>项</small></div></div>
+    <div class="sum"><div class="k">数据月停更</div><div class="v">2<small>项</small></div></div>
+  </div>
+
+  <div class="banner"><span class="bdot"></span><div><b>2 项需要处理</b>：上牌（品牌 × 邦）、保有量（近似）<div class="bsub">其中 2 项属于「文件在更新、源头没出新数」，重跑采集无效。</div></div></div>
+
+  <section class="group">
+    <h2>印度<span class="cnt">7 / 9 正常</span></h2>
+    <div class="grid">
+  <div class="src">
+    <div class="src-top"><span class="name">月度零售（FADA）</span><span class="pill ok">正常</span></div>
+    <div class="age">7.1 h<span class="lim">文件写入 / 阈值 40 天</span></div>
+    <div><span class="dm">数据月 2026-10 · 月末距今 18 天（阈值 45 天）</span></div>
+    <div class="def"><b>数据</b>FADA 官方新闻稿 PDF 的乘用车零售量（登记口径），月度</div>
+    <div class="def"><b>口径</b>反映终端需求；≠ 批发 ≠ 上牌。节庆错位月份看 3 个月滚动</div>
+    <div class="script">scripts/fetch-fada-auto.ps1 → import-fada-monthly.mjs</div>
+  </div>
+  <div class="src">
+    <div class="src-top"><span class="name">车型批发榜</span><span class="pill ok">正常</span></div>
+    <div class="age">13.2 天<span class="lim">文件写入 / 阈值 40 天</span></div>
     
-    <div class="def"><b>数据：</b>CarDekho 整理的车型月度批发量（Top-N）</div>
-    <div class="def"><b>口径：</b>已停更在 2026-09：仅 send-monthly-feishu 文案兜底；月报就绪判断与车型结构一律改用「车型榜 Top15（CarDekho）」</div>
-    <div class="script">采集：scripts/import-shared-exports.mjs</div>
+    <div class="def"><b>数据</b>CarDekho 整理的车型月度批发量（Top-N）</div>
+    <div class="def"><b>口径</b>已停更在 2026-09：仅 send-monthly-feishu 文案兜底；月报就绪判断与车型结构一律改用「车型榜 Top15（CarDekho）」</div>
+    <div class="script">scripts/import-shared-exports.mjs</div>
   </div>
-  <div class="src" style="border-left-color:#d92d20">
-    <div class="head"><span class="name">上牌（品牌 × 邦）</span><span class="status" style="color:#d92d20">⚠️ 数据停更</span></div>
-    <div class="age" style="color:#d92d20">7.1 小时<span class="limit">文件写入 / 阈值 50 天</span></div>
-    <div class="def" style="color:#d92d20"><b>数据月：</b>2026-08 · 月末距今 79 天（阈值 60 天）</div>
-    <div class="def"><b>数据：</b>VAHAN 车辆登记量，按品牌与邦汇总；月度，镜像滞后约 6 周</div>
-    <div class="def"><b>口径：</b>最接近真实需求的官方口径；用于品牌份额与区域结构</div>
-    <div class="script">采集：scripts/refresh-vahan-parquet.ps1</div>
+  <div class="src stale">
+    <div class="src-top"><span class="name">上牌（品牌 × 邦）</span><span class="pill bad">数据停更</span></div>
+    <div class="age">7.1 h<span class="lim">文件写入 / 阈值 50 天</span></div>
+    <div><span class="dm bad">数据月 2026-08 · 月末距今 79 天（阈值 60 天）</span></div>
+    <div class="def"><b>数据</b>VAHAN 车辆登记量，按品牌与邦汇总；月度，镜像滞后约 6 周</div>
+    <div class="def"><b>口径</b>最接近真实需求的官方口径；用于品牌份额与区域结构</div>
+    <div class="script">scripts/refresh-vahan-parquet.ps1</div>
   </div>
-  <div class="src" style="border-left-color:#12b76a">
-    <div class="head"><span class="name">政策 / 竞品价格</span><span class="status" style="color:#12b76a">✅ 正常</span></div>
-    <div class="age" style="color:#12b76a">7.1 小时<span class="limit">文件写入 / 阈值 30 小时</span></div>
+  <div class="src">
+    <div class="src-top"><span class="name">政策 / 竞品价格</span><span class="pill ok">正常</span></div>
+    <div class="age">7.1 h<span class="lim">文件写入 / 阈值 30 小时</span></div>
     
-    <div class="def"><b>数据：</b>CBIC/PIB 政策抓取 + Amazon.in 14 个监测 SKU 的竞品价格</div>
-    <div class="def"><b>口径：</b>政策带 LLM 概要/影响；竞品仅看中位价趋势，不做份额推断</div>
-    <div class="script">采集：scripts/collect-signals.mjs</div>
+    <div class="def"><b>数据</b>CBIC/PIB 政策抓取 + Amazon.in 14 个监测 SKU 的竞品价格</div>
+    <div class="def"><b>口径</b>政策带 LLM 概要/影响；竞品仅看中位价趋势，不做份额推断</div>
+    <div class="script">scripts/collect-signals.mjs</div>
   </div>
-  <div class="src" style="border-left-color:#12b76a">
-    <div class="head"><span class="name">媒体快照 / 重点</span><span class="status" style="color:#12b76a">✅ 正常</span></div>
-    <div class="age" style="color:#12b76a">7.1 小时<span class="limit">文件写入 / 阈值 30 小时</span></div>
+  <div class="src">
+    <div class="src-top"><span class="name">媒体快照 / 重点</span><span class="pill ok">正常</span></div>
+    <div class="age">7.1 h<span class="lim">文件写入 / 阈值 30 小时</span></div>
     
-    <div class="def"><b>数据：</b>4 家印度汽车媒体标题 → LLM 判定相关性 → 中文摘要（每日最多 2 条）</div>
-    <div class="def"><b>口径：</b>只保留有决策价值的新闻；跨天去重，同事件多源合并</div>
-    <div class="script">采集：scripts/fetch-media.ps1 → collect-highlights.mjs</div>
+    <div class="def"><b>数据</b>4 家印度汽车媒体标题 → LLM 判定相关性 → 中文摘要（每日最多 2 条）</div>
+    <div class="def"><b>口径</b>只保留有决策价值的新闻；跨天去重，同事件多源合并</div>
+    <div class="script">scripts/fetch-media.ps1 → collect-highlights.mjs</div>
   </div>
-  <div class="src" style="border-left-color:#12b76a">
-    <div class="head"><span class="name">竞品产品特征</span><span class="status" style="color:#12b76a">✅ 正常</span></div>
-    <div class="age" style="color:#12b76a">2.2 天<span class="limit">文件写入 / 阈值 8 天</span></div>
+  <div class="src">
+    <div class="src-top"><span class="name">竞品产品特征</span><span class="pill ok">正常</span></div>
+    <div class="age">2.2 天<span class="lim">文件写入 / 阈值 8 天</span></div>
     
-    <div class="def"><b>数据：</b>Amazon.in 5 个搜索词 + 30 个商品详情页：价格、评分、评论、BSR、尺寸/功能标签</div>
-    <div class="def"><b>口径：</b>每周刷新；用于功能空白（如 DSP 覆盖率）与价格带判断</div>
-    <div class="script">采集：markets/in/competitors.mjs</div>
+    <div class="def"><b>数据</b>Amazon.in 5 个搜索词 + 30 个商品详情页：价格、评分、评论、BSR、尺寸/功能标签</div>
+    <div class="def"><b>口径</b>每周刷新；用于功能空白（如 DSP 覆盖率）与价格带判断</div>
+    <div class="script">markets/in/competitors.mjs</div>
   </div>
-  <div class="src" style="border-left-color:#12b76a">
-    <div class="head"><span class="name">车型榜（CarDekho）</span><span class="status" style="color:#12b76a">✅ 正常</span></div>
-    <div class="age" style="color:#12b76a">0.1 小时<span class="limit">文件写入 / 阈值 40 天</span></div>
-    <div class="def" style="color:var(--ink2)"><b>数据月：</b>2026-10 · 月末距今 18 天（阈值 45 天）</div>
-    <div class="def"><b>数据：</b>CarDekho 月度畅销车文章（HTML 表格，自动解析）；2026 起为 Top10，2025 及以前为 Top15</div>
-    <div class="def"><b>口径：</b>批发口径、ICE+EV 合并；各月条数 10~15 不等，跨月总量不可直接比较；月更，通常次月中下旬发布</div>
-    <div class="script">采集：markets/in/model-top15.mjs</div>
+  <div class="src">
+    <div class="src-top"><span class="name">车型榜（CarDekho）</span><span class="pill ok">正常</span></div>
+    <div class="age">0.1 h<span class="lim">文件写入 / 阈值 40 天</span></div>
+    <div><span class="dm">数据月 2026-10 · 月末距今 18 天（阈值 45 天）</span></div>
+    <div class="def"><b>数据</b>CarDekho 月度畅销车文章（HTML 表格，自动解析）；2026 起为 Top10，2025 及以前为 Top15</div>
+    <div class="def"><b>口径</b>批发口径、ICE+EV 合并；各月条数 10~15 不等，跨月总量不可直接比较；月更，通常次月中下旬发布</div>
+    <div class="script">markets/in/model-top15.mjs</div>
   </div>
-  <div class="src" style="border-left-color:#d92d20">
-    <div class="head"><span class="name">保有量（近似）</span><span class="status" style="color:#d92d20">⚠️ 数据停更</span></div>
-    <div class="age" style="color:#d92d20">2.2 天<span class="limit">文件写入 / 阈值 40 天</span></div>
-    <div class="def" style="color:#d92d20"><b>数据月：</b>2026-08 · 月末距今 79 天（阈值 60 天）</div>
-    <div class="def"><b>数据：</b>VAHAN 月度登记量累加得到的品牌结构（近似，非官方保有量）</div>
-    <div class="def"><b>口径：</b>窗口仅 2025-01~2026-08，只反映近期新增车结构，不能当真实保有量</div>
-    <div class="script">采集：markets/in/parc-approx.mjs</div>
+  <div class="src stale">
+    <div class="src-top"><span class="name">保有量（近似）</span><span class="pill bad">数据停更</span></div>
+    <div class="age">2.2 天<span class="lim">文件写入 / 阈值 40 天</span></div>
+    <div><span class="dm bad">数据月 2026-08 · 月末距今 79 天（阈值 60 天）</span></div>
+    <div class="def"><b>数据</b>VAHAN 月度登记量累加得到的品牌结构（近似，非官方保有量）</div>
+    <div class="def"><b>口径</b>窗口仅 2025-01~2026-08，只反映近期新增车结构，不能当真实保有量</div>
+    <div class="script">markets/in/parc-approx.mjs</div>
   </div>
-  <div class="src" style="border-left-color:#12b76a">
-    <div class="head"><span class="name">竞品价格监测（14 SKU）</span><span class="status" style="color:#12b76a">✅ 正常</span></div>
-    <div class="age" style="color:#12b76a">7.1 小时<span class="limit">文件写入 / 阈值 2 天</span></div>
+  <div class="src">
+    <div class="src-top"><span class="name">竞品价格监测（14 SKU）</span><span class="pill ok">正常</span></div>
+    <div class="age">7.1 h<span class="lim">文件写入 / 阈值 2 天</span></div>
     
-    <div class="def"><b>数据：</b>每日抓取 14 个监测 SKU 价格；连续 3 次无价自动换替补</div>
-    <div class="def"><b>口径：</b>锁定样本口径，不是市场价基准；中位价仅反映这批商品</div>
-    <div class="script">采集：scripts/update-competitor-prices.mjs</div>
-  </div></div></section><section class="group"><h2>墨西哥</h2><div class="grid">
-  <div class="src" style="border-left-color:#12b76a">
-    <div class="head"><span class="name">官方月销（INEGI）</span><span class="status" style="color:#12b76a">✅ 正常</span></div>
-    <div class="age" style="color:#12b76a">3.8 小时<span class="limit">文件写入 / 阈值 40 天</span></div>
-    <div class="def" style="color:var(--ink2)"><b>数据月：</b>2026-10 · 月末距今 18 天（阈值 45 天）</div>
-    <div class="def"><b>数据：</b>INEGI RAIAVL：品牌 × 车型 × 月份销量（含轿车与皮卡/SUV），2005 年至今</div>
-    <div class="def"><b>口径：</b>墨西哥唯一权威车型级数据；最新月可能是「快报」，后续会修订</div>
-    <div class="script">采集：markets/mx/update-flash.mjs + update-raiavl.mjs</div>
+    <div class="def"><b>数据</b>每日抓取 14 个监测 SKU 价格；连续 3 次无价自动换替补</div>
+    <div class="def"><b>口径</b>锁定样本口径，不是市场价基准；中位价仅反映这批商品</div>
+    <div class="script">scripts/update-competitor-prices.mjs</div>
+  </div></div>
+  </section><section class="group">
+    <h2>墨西哥<span class="cnt">9 / 9 正常</span></h2>
+    <div class="grid">
+  <div class="src">
+    <div class="src-top"><span class="name">官方月销（INEGI）</span><span class="pill ok">正常</span></div>
+    <div class="age">3.8 h<span class="lim">文件写入 / 阈值 40 天</span></div>
+    <div><span class="dm">数据月 2026-10 · 月末距今 18 天（阈值 45 天）</span></div>
+    <div class="def"><b>数据</b>INEGI RAIAVL：品牌 × 车型 × 月份销量（含轿车与皮卡/SUV），2005 年至今</div>
+    <div class="def"><b>口径</b>墨西哥唯一权威车型级数据；最新月可能是「快报」，后续会修订</div>
+    <div class="script">markets/mx/update-flash.mjs + update-raiavl.mjs</div>
   </div>
-  <div class="src" style="border-left-color:#12b76a">
-    <div class="head"><span class="name">汇率 USD/MXN</span><span class="status" style="color:#12b76a">✅ 正常</span></div>
-    <div class="age" style="color:#12b76a">7.1 小时<span class="limit">文件写入 / 阈值 30 小时</span></div>
+  <div class="src">
+    <div class="src-top"><span class="name">汇率 USD/MXN</span><span class="pill ok">正常</span></div>
+    <div class="age">7.1 h<span class="lim">文件写入 / 阈值 30 小时</span></div>
     
-    <div class="def"><b>数据：</b>美元兑墨西哥比索中间价，每日</div>
-    <div class="def"><b>口径：</b>影响 CIF 到岸成本；波动 &gt;1.5% 进日报</div>
-    <div class="script">采集：markets/mx/brief.mjs（内部抓取）</div>
+    <div class="def"><b>数据</b>美元兑墨西哥比索中间价，每日</div>
+    <div class="def"><b>口径</b>影响 CIF 到岸成本；波动 &gt;1.5% 进日报</div>
+    <div class="script">markets/mx/brief.mjs（内部抓取）</div>
   </div>
-  <div class="src" style="border-left-color:#12b76a">
-    <div class="head"><span class="name">竞品价格</span><span class="status" style="color:#12b76a">✅ 正常</span></div>
-    <div class="age" style="color:#12b76a">7.1 小时<span class="limit">文件写入 / 阈值 30 小时</span></div>
+  <div class="src">
+    <div class="src-top"><span class="name">竞品价格</span><span class="pill ok">正常</span></div>
+    <div class="age">7.1 h<span class="lim">文件写入 / 阈值 30 小时</span></div>
     
-    <div class="def"><b>数据：</b>Amazon.com.mx（锁定 SKU）+ Steren 商品页价格，每日</div>
-    <div class="def"><b>口径：</b>样本量 10–12 个 SKU，只作价格带参考，不能推断品牌份额</div>
-    <div class="script">采集：markets/mx/prices.mjs</div>
+    <div class="def"><b>数据</b>Amazon.com.mx（锁定 SKU）+ Steren 商品页价格，每日</div>
+    <div class="def"><b>口径</b>样本量 10–12 个 SKU，只作价格带参考，不能推断品牌份额</div>
+    <div class="script">markets/mx/prices.mjs</div>
   </div>
-  <div class="src" style="border-left-color:#12b76a">
-    <div class="head"><span class="name">竞品深度分析</span><span class="status" style="color:#12b76a">✅ 正常</span></div>
-    <div class="age" style="color:#12b76a">3.8 小时<span class="limit">文件写入 / 阈值 8 天</span></div>
+  <div class="src">
+    <div class="src-top"><span class="name">竞品深度分析</span><span class="pill ok">正常</span></div>
+    <div class="age">3.8 h<span class="lim">文件写入 / 阈值 8 天</span></div>
     
-    <div class="def"><b>数据：</b>5 个搜索词 + 商品详情页：价格、评分、评论数、BSR、尺寸/功能标签</div>
-    <div class="def"><b>口径：</b>每周刷新；样本 30 款左右，用于功能空白与价格带判断</div>
-    <div class="script">采集：markets/mx/competitors.mjs</div>
+    <div class="def"><b>数据</b>5 个搜索词 + 商品详情页：价格、评分、评论数、BSR、尺寸/功能标签</div>
+    <div class="def"><b>口径</b>每周刷新；样本 30 款左右，用于功能空白与价格带判断</div>
+    <div class="script">markets/mx/competitors.mjs</div>
   </div>
-  <div class="src" style="border-left-color:#12b76a">
-    <div class="head"><span class="name">媒体动态</span><span class="status" style="color:#12b76a">✅ 正常</span></div>
-    <div class="age" style="color:#12b76a">7.1 小时<span class="limit">文件写入 / 阈值 30 小时</span></div>
+  <div class="src">
+    <div class="src-top"><span class="name">媒体动态</span><span class="pill ok">正常</span></div>
+    <div class="age">7.1 h<span class="lim">文件写入 / 阈值 30 小时</span></div>
     
-    <div class="def"><b>数据：</b>Google News RSS（西语/墨西哥）→ LLM 判定 → 中文摘要（每日最多 3 条）</div>
-    <div class="def"><b>口径：</b>只作市场情绪与事件提示；同一事件多源会合并</div>
-    <div class="script">采集：markets/mx/signals.mjs</div>
+    <div class="def"><b>数据</b>Google News RSS（西语/墨西哥）→ LLM 判定 → 中文摘要（每日最多 3 条）</div>
+    <div class="def"><b>口径</b>只作市场情绪与事件提示；同一事件多源会合并</div>
+    <div class="script">markets/mx/signals.mjs</div>
   </div>
-  <div class="src" style="border-left-color:#12b76a">
-    <div class="head"><span class="name">竞品全量（Amazon MX）</span><span class="status" style="color:#12b76a">✅ 正常</span></div>
-    <div class="age" style="color:#12b76a">4.9 天<span class="limit">文件写入 / 阈值 45 天</span></div>
+  <div class="src">
+    <div class="src-top"><span class="name">竞品全量（Amazon MX）</span><span class="pill ok">正常</span></div>
+    <div class="age">4.9 天<span class="lim">文件写入 / 阈值 45 天</span></div>
     
-    <div class="def"><b>数据：</b>Amazon.com.mx 畅销榜+新品榜 × 6 类目，CarPlay 车机屏 + 非 CarPlay 屏</div>
-    <div class="def"><b>口径：</b>月更，只算 CarPlay 车机屏；单渠道</div>
-    <div class="script">采集：scripts/build-mx-competitor-pool.mjs</div>
+    <div class="def"><b>数据</b>Amazon.com.mx 畅销榜+新品榜 × 6 类目，CarPlay 车机屏 + 非 CarPlay 屏</div>
+    <div class="def"><b>口径</b>月更，只算 CarPlay 车机屏；单渠道</div>
+    <div class="script">scripts/build-mx-competitor-pool.mjs</div>
   </div>
-  <div class="src" style="border-left-color:#12b76a">
-    <div class="head"><span class="name">结构（轿车/皮卡SUV）</span><span class="status" style="color:#12b76a">✅ 正常</span></div>
-    <div class="age" style="color:#12b76a">13.8 天<span class="limit">文件写入 / 阈值 45 天</span></div>
+  <div class="src">
+    <div class="src-top"><span class="name">结构（轿车/皮卡SUV）</span><span class="pill ok">正常</span></div>
+    <div class="age">13.8 天<span class="lim">文件写入 / 阈值 45 天</span></div>
     
-    <div class="def"><b>数据：</b>INEGI 官方按车型类别拆分</div>
-    <div class="def"><b>口径：</b>月更，最新月通常滞后快报 1 个月</div>
-    <div class="script">采集：markets/mx/update-raiavl.mjs</div>
+    <div class="def"><b>数据</b>INEGI 官方按车型类别拆分</div>
+    <div class="def"><b>口径</b>月更，最新月通常滞后快报 1 个月</div>
+    <div class="script">markets/mx/update-raiavl.mjs</div>
   </div>
-  <div class="src" style="border-left-color:#12b76a">
-    <div class="head"><span class="name">区域保有量（VMRC）</span><span class="status" style="color:#12b76a">✅ 正常</span></div>
-    <div class="age" style="color:#12b76a">13.1 天<span class="limit">文件写入 / 阈值 400 天</span></div>
+  <div class="src">
+    <div class="src-top"><span class="name">区域保有量（VMRC）</span><span class="pill ok">正常</span></div>
+    <div class="age">13.1 天<span class="lim">文件写入 / 阈值 400 天</span></div>
     
-    <div class="def"><b>数据：</b>VMRC 州级登记保有量</div>
-    <div class="def"><b>口径：</b>年度数据；登记≠在路</div>
-    <div class="script">采集：markets/mx/build_parc.py</div>
+    <div class="def"><b>数据</b>VMRC 州级登记保有量</div>
+    <div class="def"><b>口径</b>年度数据；登记≠在路</div>
+    <div class="script">markets/mx/build_parc.py</div>
   </div>
-  <div class="src" style="border-left-color:#12b76a">
-    <div class="head"><span class="name">政策 / 监管</span><span class="status" style="color:#12b76a">✅ 正常</span></div>
-    <div class="age" style="color:#12b76a">7.1 小时<span class="limit">文件写入 / 阈值 30 小时</span></div>
+  <div class="src">
+    <div class="src-top"><span class="name">政策 / 监管</span><span class="pill ok">正常</span></div>
+    <div class="age">7.1 h<span class="lim">文件写入 / 阈值 30 小时</span></div>
     
-    <div class="def"><b>数据：</b>墨西哥关税/进口/认证类新闻 → LLM 概要 + 影响</div>
-    <div class="def"><b>口径：</b>当前源为 Google News（西语）；DOF 官网不可达，后续可替换官方公告</div>
-    <div class="script">采集：markets/mx/policy.mjs</div>
-  </div></div></section><section class="group"><h2>公共</h2><div class="grid">
-  <div class="src" style="border-left-color:#12b76a">
-    <div class="head"><span class="name">汇率</span><span class="status" style="color:#12b76a">✅ 正常</span></div>
-    <div class="age" style="color:#12b76a">7.1 小时<span class="limit">文件写入 / 阈值 30 小时</span></div>
+    <div class="def"><b>数据</b>墨西哥关税/进口/认证类新闻 → LLM 概要 + 影响</div>
+    <div class="def"><b>口径</b>当前源为 Google News（西语）；DOF 官网不可达，后续可替换官方公告</div>
+    <div class="script">markets/mx/policy.mjs</div>
+  </div></div>
+  </section><section class="group">
+    <h2>公共<span class="cnt">5 / 5 正常</span></h2>
+    <div class="grid">
+  <div class="src">
+    <div class="src-top"><span class="name">汇率</span><span class="pill ok">正常</span></div>
+    <div class="age">7.1 h<span class="lim">文件写入 / 阈值 30 小时</span></div>
     
-    <div class="def"><b>数据：</b>USD → INR / CAD / AED 中间价，每日抓取</div>
-    <div class="def"><b>口径：</b>用于成本换算与报价参考；单日波动 &gt;1.5% 才会进日报</div>
-    <div class="script">采集：update-data.cmd（FX 步骤）</div>
+    <div class="def"><b>数据</b>USD → INR / CAD / AED 中间价，每日抓取</div>
+    <div class="def"><b>口径</b>用于成本换算与报价参考；单日波动 &gt;1.5% 才会进日报</div>
+    <div class="script">update-data.cmd（FX 步骤）</div>
   </div>
-  <div class="src" style="border-left-color:#12b76a">
-    <div class="head"><span class="name">消费者评价（印度）</span><span class="status" style="color:#12b76a">✅ 正常</span></div>
-    <div class="age" style="color:#12b76a">2.2 天<span class="limit">文件写入 / 阈值 45 天</span></div>
+  <div class="src">
+    <div class="src-top"><span class="name">消费者评价（印度）</span><span class="pill ok">正常</span></div>
+    <div class="age">2.2 天<span class="lim">文件写入 / 阈值 45 天</span></div>
     
-    <div class="def"><b>数据：</b>Amazon Customers say 摘要 + 评分/评论数</div>
-    <div class="def"><b>口径：</b>周更；仅覆盖有评价的头部商品</div>
-    <div class="script">采集：scripts/collect-consumer-voice.mjs</div>
+    <div class="def"><b>数据</b>Amazon Customers say 摘要 + 评分/评论数</div>
+    <div class="def"><b>口径</b>周更；仅覆盖有评价的头部商品</div>
+    <div class="script">scripts/collect-consumer-voice.mjs</div>
   </div>
-  <div class="src" style="border-left-color:#12b76a">
-    <div class="head"><span class="name">消费者评价（墨西哥）</span><span class="status" style="color:#12b76a">✅ 正常</span></div>
-    <div class="age" style="color:#12b76a">2.2 天<span class="limit">文件写入 / 阈值 45 天</span></div>
+  <div class="src">
+    <div class="src-top"><span class="name">消费者评价（墨西哥）</span><span class="pill ok">正常</span></div>
+    <div class="age">2.2 天<span class="lim">文件写入 / 阈值 45 天</span></div>
     
-    <div class="def"><b>数据：</b>Amazon Customers say 摘要 + 评分/评论数</div>
-    <div class="def"><b>口径：</b>周更；仅覆盖有评价的头部商品</div>
-    <div class="script">采集：scripts/collect-consumer-voice.mjs</div>
+    <div class="def"><b>数据</b>Amazon Customers say 摘要 + 评分/评论数</div>
+    <div class="def"><b>口径</b>周更；仅覆盖有评价的头部商品</div>
+    <div class="script">scripts/collect-consumer-voice.mjs</div>
   </div>
-  <div class="src" style="border-left-color:#12b76a">
-    <div class="head"><span class="name">品牌上新（Amazon）</span><span class="status" style="color:#12b76a">✅ 正常</span></div>
-    <div class="age" style="color:#12b76a">2.2 天<span class="limit">文件写入 / 阈值 10 天</span></div>
+  <div class="src">
+    <div class="src-top"><span class="name">品牌上新（Amazon）</span><span class="pill ok">正常</span></div>
+    <div class="age">2.2 天<span class="lim">文件写入 / 阈值 10 天</span></div>
     
-    <div class="def"><b>数据：</b>43 个品牌按最新上架排序的 ASIN 快照</div>
-    <div class="def"><b>口径：</b>周更；用于发现新品</div>
-    <div class="script">采集：scripts/brand-newproduct-watch.mjs</div>
+    <div class="def"><b>数据</b>43 个品牌按最新上架排序的 ASIN 快照</div>
+    <div class="def"><b>口径</b>周更；用于发现新品</div>
+    <div class="script">scripts/brand-newproduct-watch.mjs</div>
   </div>
-  <div class="src" style="border-left-color:#12b76a">
-    <div class="head"><span class="name">官网新品（sitemap）</span><span class="status" style="color:#12b76a">✅ 正常</span></div>
-    <div class="age" style="color:#12b76a">2.2 天<span class="limit">文件写入 / 阈值 10 天</span></div>
+  <div class="src">
+    <div class="src-top"><span class="name">官网新品（sitemap）</span><span class="pill ok">正常</span></div>
+    <div class="age">2.2 天<span class="lim">文件写入 / 阈值 10 天</span></div>
     
-    <div class="def"><b>数据：</b>11 个有独立站品牌的商品页快照</div>
-    <div class="def"><b>口径：</b>周更；用于发现官网新品</div>
-    <div class="script">采集：scripts/website-product-watch.mjs</div>
-  </div></div></section>
-<footer>由 工作台/scripts/build-health-page.mjs 生成 · 注册表 config/data-sources.mjs · 数据 data/health.json</footer>
+    <div class="def"><b>数据</b>11 个有独立站品牌的商品页快照</div>
+    <div class="def"><b>口径</b>周更；用于发现官网新品</div>
+    <div class="script">scripts/website-product-watch.mjs</div>
+  </div></div>
+  </section>
+
+  <footer>
+    <span>由 工作台/scripts/build-health-page.mjs 生成 · 注册表 config/data-sources.mjs</span>
+    <span>数据 data/health.json</span>
+  </footer>
 </div></body></html>
