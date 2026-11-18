@@ -16,9 +16,49 @@ ul{margin:6px 0 0 18px;padding:0;font-size:13px}li{margin:4px 0}
 .kcard{border:1px solid #e4e7ec;border-radius:10px;padding:12px 14px}
 .kcard b{font-size:18px}.hl{background:#fff8e6}
 @media(max-width:760px){.grid{grid-template-columns:repeat(2,1fr)}}
+
+  /* ===== 统一皮肤（编辑部报告）2026-11-18 ===== */
+  :root{--paper:#FAF8F4;--ink:#15171B;--ink2:#4A4E55;--ink3:#8A8579;--rule:#D9D3C7;--rule-soft:#E9E4DA;--neg:#A32B2B;--pos:#1E7A50}
+  body{background:var(--paper);color:var(--ink);font:15px/1.72 -apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;font-variant-numeric:tabular-nums;font-feature-settings:"tnum" 1}
+  .wrap{max-width:980px;margin:0 auto;padding:48px 30px 60px}
+  h1{font-size:32px;line-height:1.2;letter-spacing:-.015em;font-weight:700;margin:0 0 10px}
+  h2{font-size:15px;font-weight:700;letter-spacing:.01em;margin:34px 0 8px;padding-bottom:8px;border-bottom:1px solid var(--ink)}
+  h3{font-size:13.5px;font-weight:600}
+  .sub{color:var(--ink3);font-size:11.5px;letter-spacing:.01em}
+  .card{background:none !important;border:1px solid var(--rule);border-radius:0;padding:16px 18px;margin-bottom:12px;box-shadow:none}
+  .kpis{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--rule)}
+  .kpi{background:none;border:0;border-right:1px solid var(--rule-soft);border-radius:0;padding:15px 16px 16px 0;box-shadow:none}
+  .kpi:last-child{border-right:0}
+  .kpi .label{font-size:10.5px;letter-spacing:.06em;color:var(--ink3)}
+  .kpi .value{font-size:28px;font-weight:700;letter-spacing:-.02em;line-height:1.15}
+  table{width:100%;border-collapse:collapse;font-size:13px}
+  th,td{padding:8px 0;border-bottom:1px solid var(--rule-soft);text-align:left}
+  th{color:var(--ink3);font-weight:600;font-size:10.5px;letter-spacing:.05em;border-bottom:1px solid var(--rule)}
+  tr:last-child td{border-bottom:0}
+  td.num,th.num{text-align:right;padding-left:12px}
+  .tag{display:inline-block;font-size:10.5px;letter-spacing:.03em;padding:1px 6px;border:1px solid var(--rule);color:var(--ink2);border-radius:0;background:none}
+  .note{color:var(--ink3);font-size:11.5px;line-height:1.65}
+  .muted{color:var(--ink2);font-size:12px}
+  .item,.jrow{padding:10px 0;border-bottom:1px solid var(--rule-soft)}
+  .item:last-child,.jrow:last-child{border-bottom:0}
+  .jrow .k{color:var(--ink3);font-size:10.5px;letter-spacing:.06em;font-weight:600}
+  .grid{display:grid;gap:12px}
+  .kcard,.hl{background:none;border:1px solid var(--rule);border-radius:0;padding:14px 16px;box-shadow:none}
+  .band,.rules{padding:10px 0;border-bottom:1px solid var(--rule-soft)}
+  .new{background:none;color:var(--neg);border:1px solid #DCC0BE;border-radius:0;font-size:10px;padding:0 5px}
+  a{color:var(--ink2);text-decoration:underline;text-underline-offset:2px}
+  footer{color:var(--ink3);font-size:11px;margin-top:28px;border-top:1px solid var(--rule);padding-top:12px}
+  .rep-link{color:var(--ink2);text-decoration:underline}
+  @media(max-width:700px){
+    .wrap{padding:32px 18px 44px}
+    h1{font-size:26px}
+    .kpis{grid-template-columns:1fr 1fr}
+    .kpi:nth-child(2n){border-right:0}
+    .kpi:nth-child(n+3){border-top:1px solid var(--rule-soft)}
+  }
 </style></head><body><div class="wrap">
 <h1>墨西哥 CarPlay 车机屏 · 竞品全量分析</h1>
-<div class="sub">数据日期 2026-11-13 · 渠道：Amazon.com.mx 单渠道 · 样本 49 款（畅销榜+新品榜 ×6 类目 + 8 关键词搜索）· 另有 Android Auto 屏 1 款 / 专用车型机 63 款 / 其他屏 105 款</div>
+<div class="sub">数据日期 2026-11-18 · 渠道：Amazon.com.mx 单渠道 · 样本 49 款（畅销榜+新品榜 ×6 类目 + 8 关键词搜索）· 另有 Android Auto 屏 1 款 / 专用车型机 63 款 / 其他屏 105 款</div>
 
 <div class="card"><h2>一、一页看懂</h2>
 <div class="kpi">
@@ -28,9 +68,9 @@ ul{margin:6px 0 0 18px;padding:0;font-size:13px}li{margin:4px 0}
 <div><span>1.5–3k 占比</span><b>41%</b></div>
 <div><span>品牌数</span><b>21</b></div>
 </div>
-<ul style="margin-top:12px"><li>墨西哥Amazon车机屏49款，价格中位$1743 MXN，P25-P75为$1227-$2599，中低端主导。</li><li>≤1.5k占35%、1.5-3k占41%，合计76%集中在中低价带，高端空间有限。</li><li>CarPlay覆盖100%、无线65%，但DSP仅2%、摄像头0%，功能同质化严重。</li><li>品牌CR5仅约61%，未知品牌14款居首，Rimoody 5款，格局分散无绝对龙头。</li></ul>
+<ul style="margin-top:12px"><li>49款CarPlay屏价格中位1743比索，1.5-3k区间占41%为主力，≤1.5k占35%形成低价带。</li><li>品牌集中度低，未知品牌14款居首，Rimoody仅5款，白牌机会大但缺品牌溢价。</li><li>功能同质化严重：CarPlay 100%、无线65%，DSP仅2%、GPS 8%、摄像头0%，差异化空间明确。</li></ul>
 <h3 style="font-size:13px;margin:14px 0 4px">对我们的建议</h3>
-<ul><li>主推$1500-2500 MXN价位段，覆盖41%主流需求，避开$1227以下价格战。</li><li>以DSP+倒车摄像头差异化切入，当前渗透仅2%和0%，形成功能卖点。</li><li>对标Rimoody 5款做Listing优化，强化无线CarPlay与西语本地化内容。</li></ul>
+<ul><li>主推1499-1999比索无线CarPlay机型，卡位1.5-3k主力区间并下探低价带。</li><li>以DSP+GPS+倒车摄像头组合做差异化，对标竞品2%/8%/0%的空白点。</li><li>注册本地品牌并强化Listing，抢占14款未知品牌留下的信任缺口。</li></ul>
 </div>
 
 <div class="card"><h2>二、价格与尺寸</h2>
@@ -49,7 +89,7 @@ ul{margin:6px 0 0 18px;padding:0;font-size:13px}li{margin:4px 0}
 <div class="card"><h2>四、值得关注 10 款</h2>
 <p class="note">评分：榜单排名 40 + 功能 20 + 尺寸 5；同品牌不重复、按价格带配额。</p>
 <table><thead><tr><th>#</th><th>图</th><th>商品</th><th>品牌</th><th class="num">价格 MXN</th><th>价格带</th><th>尺寸</th><th>入榜</th></tr></thead>
-<tbody><tr class="hl"><td>1</td><td><img src="https://m.media-amazon.com/images/I/61k964omGpL._AC_SL1500_.jpg" width="36" height="36" style="object-fit:contain;border-radius:4px;background:#f2f4f7" loading="lazy"></td><td>PEMP Pantalla Linux para el Sistema NBT CIC del BMW Serie 3 F30, Compatible con CarPlay Inalámbrico y Android Auto con una Cá</td><td>PEMP</td><td class="num">7,008</td><td>&gt;5k</td><td>—</td><td>畅销榜#10、畅销榜#20</td></tr><tr class="hl"><td>2</td><td><img src="https://m.media-amazon.com/images/I/711sACzWlgL._AC_SL1500_.jpg" width="36" height="36" style="object-fit:contain;border-radius:4px;background:#f2f4f7" loading="lazy"></td><td>Rimoody 4G+64G - Radio estéreo para coche Android para Toyota FJ Cruiser | Carplay inalámbrico Android Auto, 9 pulgadas visua</td><td>Rimoody</td><td class="num">4,155</td><td>3-5k</td><td>9"</td><td>畅销榜#13、畅销榜#23</td></tr><tr class="hl"><td>3</td><td><img src="https://m.media-amazon.com/images/I/71BAm1Oj83L._AC_SL1500_.jpg" width="36" height="36" style="object-fit:contain;border-radius:4px;background:#f2f4f7" loading="lazy"></td><td>Estéreo inalámbrico de coche Carplay de 6.9 pulgadas, visualización táctil Android Auto Radio, receptor de audio Bluetooth 1 </td><td>未知</td><td class="num">1,446</td><td>≤1.5k</td><td>6.9"</td><td>畅销榜#24</td></tr><tr><td>4</td><td><img src="https://m.media-amazon.com/images/I/61hfn3KZYJL._AC_SL1500_.jpg" width="36" height="36" style="object-fit:contain;border-radius:4px;background:#f2f4f7" loading="lazy"></td><td>Junsun - Radio estéreo de coche para Ford F150 F250 F350 Fusion Edge | visualización táctil de 7 pulgadas 2G+32G con Carplay/</td><td>Junsun</td><td class="num">1,227</td><td>≤1.5k</td><td>7"</td><td>畅销榜#7、畅销榜#15</td></tr><tr><td>5</td><td><img src="https://m.media-amazon.com/images/I/51kMViAEHZL._AC_SL1000_.jpg" width="36" height="36" style="object-fit:contain;border-radius:4px;background:#f2f4f7" loading="lazy"></td><td>HIMICAR Autoestéreo Carplay &amp; Android Auto Inalámbrico Estereo Mirror Link 6.8 Pulgada MP5, Tipo C, FM/Am, GPS, AUX, Bluetoot</td><td>HIMICAR</td><td class="num">349</td><td>≤1.5k</td><td>—</td><td>畅销榜#56</td></tr><tr><td>6</td><td><img src="https://m.media-amazon.com/images/I/71aiXZRa5RL._AC_SL1500_.jpg" width="36" height="36" style="object-fit:contain;border-radius:4px;background:#f2f4f7" loading="lazy"></td><td>Volxcereo Estéreo de DIN único de 7 pulgadas con Carplay inalámbrico y | Radio de coche con visualización táctil de 1 DIN con</td><td>Volxcereo</td><td class="num">1,896</td><td>1.5-3k</td><td>7"</td><td>畅销榜#57</td></tr><tr><td>7</td><td><img src="https://m.media-amazon.com/images/I/61VuTtLAKJL._AC_SL1500_.jpg" width="36" height="36" style="object-fit:contain;border-radius:4px;background:#f2f4f7" loading="lazy"></td><td>Haudio Estéreo inalámbrico de doble DIN de 9 pulgadas, radio de coche con Apple Carplay y Android Auto, Bluetooth 5.4, cám...</td><td>Haudio</td><td class="num">2,004</td><td>1.5-3k</td><td>9"</td><td></td></tr><tr><td>8</td><td><img src="https://m.media-amazon.com/images/I/71J9g5ey0fL._AC_SL1500_.jpg" width="36" height="36" style="object-fit:contain;border-radius:4px;background:#f2f4f7" loading="lazy"></td><td>CARPURIDE 10,26 Pulgadas Inalámbrico/Cableado CarPlay, Android Auto&amp;MirrorLink-Estéreo Portátil para Automóvil Pantalla Tá...</td><td>CARPURIDE</td><td class="num">2,209</td><td>1.5-3k</td><td>—</td><td></td></tr><tr><td>9</td><td><img src="https://m.media-amazon.com/images/I/71JivEqyyWL._AC_SL1500_.jpg" width="36" height="36" style="object-fit:contain;border-radius:4px;background:#f2f4f7" loading="lazy"></td><td>Surcsa Pantalla CarPlay de 9&amp;quot; para Coche, Apple CarPlay inalámbrico y Android Auto</td><td>Surcsa</td><td class="num">1,998</td><td>1.5-3k</td><td>—</td><td></td></tr><tr><td>10</td><td><img src="https://m.media-amazon.com/images/I/51j5rxWY8vL._AC_SL1000_.jpg" width="36" height="36" style="object-fit:contain;border-radius:4px;background:#f2f4f7" loading="lazy"></td><td>CarlinKit 3 en 1 CarPlay Multimedia AI Box Android con 8core 4G+64G | CarPlay inalámbrico/Android Auto/Android 13.0, 4G/SI...</td><td>CarlinKit</td><td class="num">4,620</td><td>3-5k</td><td>—</td><td></td></tr></tbody></table>
+<tbody><tr class="hl"><td>1</td><td><img src="https://m.media-amazon.com/images/I/61k964omGpL._AC_SL1500_.jpg" width="36" height="36" style="object-fit:contain;border-radius:4px;background:#f2f4f7" loading="lazy"></td><td>PEMP Pantalla Linux para el Sistema NBT CIC del BMW Serie 3 F30, Compatible con CarPlay Inalámbrico y Android Auto con una Cá</td><td>PEMP</td><td class="num">7,008</td><td>&gt;5k</td><td>·</td><td>畅销榜#10、畅销榜#20</td></tr><tr class="hl"><td>2</td><td><img src="https://m.media-amazon.com/images/I/711sACzWlgL._AC_SL1500_.jpg" width="36" height="36" style="object-fit:contain;border-radius:4px;background:#f2f4f7" loading="lazy"></td><td>Rimoody 4G+64G - Radio estéreo para coche Android para Toyota FJ Cruiser | Carplay inalámbrico Android Auto, 9 pulgadas visua</td><td>Rimoody</td><td class="num">4,155</td><td>3-5k</td><td>9"</td><td>畅销榜#13、畅销榜#23</td></tr><tr class="hl"><td>3</td><td><img src="https://m.media-amazon.com/images/I/71BAm1Oj83L._AC_SL1500_.jpg" width="36" height="36" style="object-fit:contain;border-radius:4px;background:#f2f4f7" loading="lazy"></td><td>Estéreo inalámbrico de coche Carplay de 6.9 pulgadas, visualización táctil Android Auto Radio, receptor de audio Bluetooth 1 </td><td>未知</td><td class="num">1,446</td><td>≤1.5k</td><td>6.9"</td><td>畅销榜#24</td></tr><tr><td>4</td><td><img src="https://m.media-amazon.com/images/I/61hfn3KZYJL._AC_SL1500_.jpg" width="36" height="36" style="object-fit:contain;border-radius:4px;background:#f2f4f7" loading="lazy"></td><td>Junsun - Radio estéreo de coche para Ford F150 F250 F350 Fusion Edge | visualización táctil de 7 pulgadas 2G+32G con Carplay/</td><td>Junsun</td><td class="num">1,227</td><td>≤1.5k</td><td>7"</td><td>畅销榜#7、畅销榜#15</td></tr><tr><td>5</td><td><img src="https://m.media-amazon.com/images/I/51kMViAEHZL._AC_SL1000_.jpg" width="36" height="36" style="object-fit:contain;border-radius:4px;background:#f2f4f7" loading="lazy"></td><td>HIMICAR Autoestéreo Carplay &amp; Android Auto Inalámbrico Estereo Mirror Link 6.8 Pulgada MP5, Tipo C, FM/Am, GPS, AUX, Bluetoot</td><td>HIMICAR</td><td class="num">349</td><td>≤1.5k</td><td>·</td><td>畅销榜#56</td></tr><tr><td>6</td><td><img src="https://m.media-amazon.com/images/I/71aiXZRa5RL._AC_SL1500_.jpg" width="36" height="36" style="object-fit:contain;border-radius:4px;background:#f2f4f7" loading="lazy"></td><td>Volxcereo Estéreo de DIN único de 7 pulgadas con Carplay inalámbrico y | Radio de coche con visualización táctil de 1 DIN con</td><td>Volxcereo</td><td class="num">1,896</td><td>1.5-3k</td><td>7"</td><td>畅销榜#57</td></tr><tr><td>7</td><td><img src="https://m.media-amazon.com/images/I/61VuTtLAKJL._AC_SL1500_.jpg" width="36" height="36" style="object-fit:contain;border-radius:4px;background:#f2f4f7" loading="lazy"></td><td>Haudio Estéreo inalámbrico de doble DIN de 9 pulgadas, radio de coche con Apple Carplay y Android Auto, Bluetooth 5.4, cám...</td><td>Haudio</td><td class="num">2,004</td><td>1.5-3k</td><td>9"</td><td></td></tr><tr><td>8</td><td><img src="https://m.media-amazon.com/images/I/71J9g5ey0fL._AC_SL1500_.jpg" width="36" height="36" style="object-fit:contain;border-radius:4px;background:#f2f4f7" loading="lazy"></td><td>CARPURIDE 10,26 Pulgadas Inalámbrico/Cableado CarPlay, Android Auto&amp;MirrorLink-Estéreo Portátil para Automóvil Pantalla Tá...</td><td>CARPURIDE</td><td class="num">2,209</td><td>1.5-3k</td><td>·</td><td></td></tr><tr><td>9</td><td><img src="https://m.media-amazon.com/images/I/71JivEqyyWL._AC_SL1500_.jpg" width="36" height="36" style="object-fit:contain;border-radius:4px;background:#f2f4f7" loading="lazy"></td><td>Surcsa Pantalla CarPlay de 9&amp;quot; para Coche, Apple CarPlay inalámbrico y Android Auto</td><td>Surcsa</td><td class="num">1,998</td><td>1.5-3k</td><td>·</td><td></td></tr><tr><td>10</td><td><img src="https://m.media-amazon.com/images/I/51j5rxWY8vL._AC_SL1000_.jpg" width="36" height="36" style="object-fit:contain;border-radius:4px;background:#f2f4f7" loading="lazy"></td><td>CarlinKit 3 en 1 CarPlay Multimedia AI Box Android con 8core 4G+64G | CarPlay inalámbrico/Android Auto/Android 13.0, 4G/SI...</td><td>CarlinKit</td><td class="num">4,620</td><td>3-5k</td><td>·</td><td></td></tr></tbody></table>
 </div>
 
 <div class="card"><h2>五、明细清单（按形态折叠）</h2>
@@ -62,9 +102,9 @@ ul{margin:6px 0 0 18px;padding:0;font-size:13px}li{margin:4px 0}
     <td>Rimoody</td>
     <td class="num">818</td>
     <td>≤1.5k</td>
-    <td>—</td>
-    <td class="num">—</td>
-    <td class="num">—</td>
+    <td>·</td>
+    <td class="num">·</td>
+    <td class="num">·</td>
     <td></td>
   </tr><tr>
     <td><img src="https://m.media-amazon.com/images/I/71nZNW8t0EL._AC_SL1500_.jpg" width="44" height="44" style="object-fit:contain;border-radius:6px;background:#f2f4f7" loading="lazy"></td>
@@ -74,8 +114,8 @@ ul{margin:6px 0 0 18px;padding:0;font-size:13px}li{margin:4px 0}
     <td class="num">899</td>
     <td>≤1.5k</td>
     <td>5"</td>
-    <td class="num">—</td>
-    <td class="num">—</td>
+    <td class="num">·</td>
+    <td class="num">·</td>
     <td></td>
   </tr><tr>
     <td><img src="https://m.media-amazon.com/images/I/71rtHvl7lqL._AC_SL1500_.jpg" width="44" height="44" style="object-fit:contain;border-radius:6px;background:#f2f4f7" loading="lazy"></td>
@@ -85,8 +125,8 @@ ul{margin:6px 0 0 18px;padding:0;font-size:13px}li{margin:4px 0}
     <td class="num">1,193</td>
     <td>≤1.5k</td>
     <td>7"</td>
-    <td class="num">—</td>
-    <td class="num">—</td>
+    <td class="num">·</td>
+    <td class="num">·</td>
     <td></td>
   </tr><tr>
     <td><img src="https://m.media-amazon.com/images/I/81v28DORjXL._AC_SL1500_.jpg" width="44" height="44" style="object-fit:contain;border-radius:6px;background:#f2f4f7" loading="lazy"></td>
@@ -96,8 +136,8 @@ ul{margin:6px 0 0 18px;padding:0;font-size:13px}li{margin:4px 0}
     <td class="num">1,199</td>
     <td>≤1.5k</td>
     <td>7"</td>
-    <td class="num">—</td>
-    <td class="num">—</td>
+    <td class="num">·</td>
+    <td class="num">·</td>
     <td>畅销榜#55</td>
   </tr><tr>
     <td><img src="https://m.media-amazon.com/images/I/61hfn3KZYJL._AC_SL1500_.jpg" width="44" height="44" style="object-fit:contain;border-radius:6px;background:#f2f4f7" loading="lazy"></td>
@@ -107,8 +147,8 @@ ul{margin:6px 0 0 18px;padding:0;font-size:13px}li{margin:4px 0}
     <td class="num">1,227</td>
     <td>≤1.5k</td>
     <td>7"</td>
-    <td class="num">—</td>
-    <td class="num">—</td>
+    <td class="num">·</td>
+    <td class="num">·</td>
     <td>畅销榜#7、畅销榜#15</td>
   </tr><tr>
     <td><img src="https://m.media-amazon.com/images/I/61PZZOXptSL._AC_SL1000_.jpg" width="44" height="44" style="object-fit:contain;border-radius:6px;background:#f2f4f7" loading="lazy"></td>
@@ -118,8 +158,8 @@ ul{margin:6px 0 0 18px;padding:0;font-size:13px}li{margin:4px 0}
     <td class="num">1,234</td>
     <td>≤1.5k</td>
     <td>7"</td>
-    <td class="num">—</td>
-    <td class="num">—</td>
+    <td class="num">·</td>
+    <td class="num">·</td>
     <td>畅销榜#16</td>
   </tr><tr>
     <td><img src="https://m.media-amazon.com/images/I/71lKh4JPq1L._AC_SL1500_.jpg" width="44" height="44" style="object-fit:contain;border-radius:6px;background:#f2f4f7" loading="lazy"></td>
@@ -129,8 +169,8 @@ ul{margin:6px 0 0 18px;padding:0;font-size:13px}li{margin:4px 0}
     <td class="num">1,379</td>
     <td>≤1.5k</td>
     <td>6.9"</td>
-    <td class="num">—</td>
-    <td class="num">—</td>
+    <td class="num">·</td>
+    <td class="num">·</td>
     <td></td>
   </tr><tr>
     <td><img src="https://m.media-amazon.com/images/I/71BAm1Oj83L._AC_SL1500_.jpg" width="44" height="44" style="object-fit:contain;border-radius:6px;background:#f2f4f7" loading="lazy"></td>
@@ -140,8 +180,8 @@ ul{margin:6px 0 0 18px;padding:0;font-size:13px}li{margin:4px 0}
     <td class="num">1,446</td>
     <td>≤1.5k</td>
     <td>6.9"</td>
-    <td class="num">—</td>
-    <td class="num">—</td>
+    <td class="num">·</td>
+    <td class="num">·</td>
     <td>畅销榜#24</td>
   </tr><tr>
     <td><img src="https://m.media-amazon.com/images/I/71HfQd7eD9L._AC_SL1500_.jpg" width="44" height="44" style="object-fit:contain;border-radius:6px;background:#f2f4f7" loading="lazy"></td>
@@ -151,8 +191,8 @@ ul{margin:6px 0 0 18px;padding:0;font-size:13px}li{margin:4px 0}
     <td class="num">1,523</td>
     <td>1.5-3k</td>
     <td>9"</td>
-    <td class="num">—</td>
-    <td class="num">—</td>
+    <td class="num">·</td>
+    <td class="num">·</td>
     <td></td>
   </tr><tr>
     <td><img src="https://m.media-amazon.com/images/I/51gU9p8JleL._AC_SL1000_.jpg" width="44" height="44" style="object-fit:contain;border-radius:6px;background:#f2f4f7" loading="lazy"></td>
@@ -162,8 +202,8 @@ ul{margin:6px 0 0 18px;padding:0;font-size:13px}li{margin:4px 0}
     <td class="num">1,599</td>
     <td>1.5-3k</td>
     <td>9"</td>
-    <td class="num">—</td>
-    <td class="num">—</td>
+    <td class="num">·</td>
+    <td class="num">·</td>
     <td></td>
   </tr><tr>
     <td><img src="https://m.media-amazon.com/images/I/718aLfES6YL._AC_SL1500_.jpg" width="44" height="44" style="object-fit:contain;border-radius:6px;background:#f2f4f7" loading="lazy"></td>
@@ -173,8 +213,8 @@ ul{margin:6px 0 0 18px;padding:0;font-size:13px}li{margin:4px 0}
     <td class="num">1,616</td>
     <td>1.5-3k</td>
     <td>6.9"</td>
-    <td class="num">—</td>
-    <td class="num">—</td>
+    <td class="num">·</td>
+    <td class="num">·</td>
     <td></td>
   </tr><tr>
     <td><img src="https://m.media-amazon.com/images/I/71K1ye0nDyL._AC_SL1254_.jpg" width="44" height="44" style="object-fit:contain;border-radius:6px;background:#f2f4f7" loading="lazy"></td>
@@ -184,8 +224,8 @@ ul{margin:6px 0 0 18px;padding:0;font-size:13px}li{margin:4px 0}
     <td class="num">1,619</td>
     <td>1.5-3k</td>
     <td>9"</td>
-    <td class="num">—</td>
-    <td class="num">—</td>
+    <td class="num">·</td>
+    <td class="num">·</td>
     <td></td>
   </tr><tr>
     <td><img src="https://m.media-amazon.com/images/I/61yj2PO4cOL._AC_SL1000_.jpg" width="44" height="44" style="object-fit:contain;border-radius:6px;background:#f2f4f7" loading="lazy"></td>
@@ -195,8 +235,8 @@ ul{margin:6px 0 0 18px;padding:0;font-size:13px}li{margin:4px 0}
     <td class="num">1,671</td>
     <td>1.5-3k</td>
     <td>9"</td>
-    <td class="num">—</td>
-    <td class="num">—</td>
+    <td class="num">·</td>
+    <td class="num">·</td>
     <td></td>
   </tr><tr>
     <td><img src="https://m.media-amazon.com/images/I/61XEPM71AlL._AC_SL1000_.jpg" width="44" height="44" style="object-fit:contain;border-radius:6px;background:#f2f4f7" loading="lazy"></td>
@@ -206,8 +246,8 @@ ul{margin:6px 0 0 18px;padding:0;font-size:13px}li{margin:4px 0}
     <td class="num">1,743</td>
     <td>1.5-3k</td>
     <td>10"</td>
-    <td class="num">—</td>
-    <td class="num">—</td>
+    <td class="num">·</td>
+    <td class="num">·</td>
     <td></td>
   </tr><tr>
     <td><img src="https://m.media-amazon.com/images/I/71Yxy2X3wkL._AC_SL1500_.jpg" width="44" height="44" style="object-fit:contain;border-radius:6px;background:#f2f4f7" loading="lazy"></td>
@@ -217,8 +257,8 @@ ul{margin:6px 0 0 18px;padding:0;font-size:13px}li{margin:4px 0}
     <td class="num">1,809</td>
     <td>1.5-3k</td>
     <td>7"</td>
-    <td class="num">—</td>
-    <td class="num">—</td>
+    <td class="num">·</td>
+    <td class="num">·</td>
     <td></td>
   </tr><tr>
     <td><img src="https://m.media-amazon.com/images/I/71fk4SDFYBL._AC_SL1500_.jpg" width="44" height="44" style="object-fit:contain;border-radius:6px;background:#f2f4f7" loading="lazy"></td>
@@ -227,9 +267,9 @@ ul{margin:6px 0 0 18px;padding:0;font-size:13px}li{margin:4px 0}
     <td>未知</td>
     <td class="num">1,884</td>
     <td>1.5-3k</td>
-    <td>—</td>
-    <td class="num">—</td>
-    <td class="num">—</td>
+    <td>·</td>
+    <td class="num">·</td>
+    <td class="num">·</td>
     <td></td>
   </tr><tr>
     <td><img src="https://m.media-amazon.com/images/I/71aiXZRa5RL._AC_SL1500_.jpg" width="44" height="44" style="object-fit:contain;border-radius:6px;background:#f2f4f7" loading="lazy"></td>
@@ -239,8 +279,8 @@ ul{margin:6px 0 0 18px;padding:0;font-size:13px}li{margin:4px 0}
     <td class="num">1,896</td>
     <td>1.5-3k</td>
     <td>7"</td>
-    <td class="num">—</td>
-    <td class="num">—</td>
+    <td class="num">·</td>
+    <td class="num">·</td>
     <td>畅销榜#57</td>
   </tr><tr>
     <td><img src="https://m.media-amazon.com/images/I/61zKU07Cn0L._AC_SL1500_.jpg" width="44" height="44" style="object-fit:contain;border-radius:6px;background:#f2f4f7" loading="lazy"></td>
@@ -250,8 +290,8 @@ ul{margin:6px 0 0 18px;padding:0;font-size:13px}li{margin:4px 0}
     <td class="num">1,990</td>
     <td>1.5-3k</td>
     <td>9"</td>
-    <td class="num">—</td>
-    <td class="num">—</td>
+    <td class="num">·</td>
+    <td class="num">·</td>
     <td></td>
   </tr><tr>
     <td><img src="https://m.media-amazon.com/images/I/61VuTtLAKJL._AC_SL1500_.jpg" width="44" height="44" style="object-fit:contain;border-radius:6px;background:#f2f4f7" loading="lazy"></td>
@@ -261,8 +301,8 @@ ul{margin:6px 0 0 18px;padding:0;font-size:13px}li{margin:4px 0}
     <td class="num">2,004</td>
     <td>1.5-3k</td>
     <td>9"</td>
-    <td class="num">—</td>
-    <td class="num">—</td>
+    <td class="num">·</td>
+    <td class="num">·</td>
     <td></td>
   </tr><tr>
     <td><img src="https://m.media-amazon.com/images/I/611TwkT7cuL._AC_SL1404_.jpg" width="44" height="44" style="object-fit:contain;border-radius:6px;background:#f2f4f7" loading="lazy"></td>
@@ -272,8 +312,8 @@ ul{margin:6px 0 0 18px;padding:0;font-size:13px}li{margin:4px 0}
     <td class="num">2,404</td>
     <td>1.5-3k</td>
     <td>11"</td>
-    <td class="num">—</td>
-    <td class="num">—</td>
+    <td class="num">·</td>
+    <td class="num">·</td>
     <td></td>
   </tr><tr>
     <td><img src="https://m.media-amazon.com/images/I/71e7z69uF+L._AC_SL1500_.jpg" width="44" height="44" style="object-fit:contain;border-radius:6px;background:#f2f4f7" loading="lazy"></td>
@@ -282,9 +322,9 @@ ul{margin:6px 0 0 18px;padding:0;font-size:13px}li{margin:4px 0}
     <td>LSLYA</td>
     <td class="num">2,404</td>
     <td>1.5-3k</td>
-    <td>—</td>
-    <td class="num">—</td>
-    <td class="num">—</td>
+    <td>·</td>
+    <td class="num">·</td>
+    <td class="num">·</td>
     <td></td>
   </tr><tr>
     <td><img src="https://m.media-amazon.com/images/I/61T5M50mRWL._AC_SL1024_.jpg" width="44" height="44" style="object-fit:contain;border-radius:6px;background:#f2f4f7" loading="lazy"></td>
@@ -293,9 +333,9 @@ ul{margin:6px 0 0 18px;padding:0;font-size:13px}li{margin:4px 0}
     <td>未知</td>
     <td class="num">2,599</td>
     <td>1.5-3k</td>
-    <td>—</td>
-    <td class="num">—</td>
-    <td class="num">—</td>
+    <td>·</td>
+    <td class="num">·</td>
+    <td class="num">·</td>
     <td></td>
   </tr><tr>
     <td><img src="https://m.media-amazon.com/images/I/51fmTYwnOyL._AC_SL1500_.jpg" width="44" height="44" style="object-fit:contain;border-radius:6px;background:#f2f4f7" loading="lazy"></td>
@@ -304,9 +344,9 @@ ul{margin:6px 0 0 18px;padding:0;font-size:13px}li{margin:4px 0}
     <td>未知</td>
     <td class="num">3,514</td>
     <td>3-5k</td>
-    <td>—</td>
-    <td class="num">—</td>
-    <td class="num">—</td>
+    <td>·</td>
+    <td class="num">·</td>
+    <td class="num">·</td>
     <td></td>
   </tr><tr>
     <td><img src="https://m.media-amazon.com/images/I/71COdQ4vDeL._AC_SL1500_.jpg" width="44" height="44" style="object-fit:contain;border-radius:6px;background:#f2f4f7" loading="lazy"></td>
@@ -315,9 +355,9 @@ ul{margin:6px 0 0 18px;padding:0;font-size:13px}li{margin:4px 0}
     <td>未知</td>
     <td class="num">3,894</td>
     <td>3-5k</td>
-    <td>—</td>
-    <td class="num">—</td>
-    <td class="num">—</td>
+    <td>·</td>
+    <td class="num">·</td>
+    <td class="num">·</td>
     <td></td>
   </tr><tr>
     <td><img src="https://m.media-amazon.com/images/I/711sACzWlgL._AC_SL1500_.jpg" width="44" height="44" style="object-fit:contain;border-radius:6px;background:#f2f4f7" loading="lazy"></td>
@@ -327,8 +367,8 @@ ul{margin:6px 0 0 18px;padding:0;font-size:13px}li{margin:4px 0}
     <td class="num">4,155</td>
     <td>3-5k</td>
     <td>9"</td>
-    <td class="num">—</td>
-    <td class="num">—</td>
+    <td class="num">·</td>
+    <td class="num">·</td>
     <td>畅销榜#13、畅销榜#23</td>
   </tr><tr>
     <td><img src="https://m.media-amazon.com/images/I/61zkGXxborL._AC_SL1500_.jpg" width="44" height="44" style="object-fit:contain;border-radius:6px;background:#f2f4f7" loading="lazy"></td>
@@ -338,8 +378,8 @@ ul{margin:6px 0 0 18px;padding:0;font-size:13px}li{margin:4px 0}
     <td class="num">5,735</td>
     <td>&gt;5k</td>
     <td>6.8"</td>
-    <td class="num">—</td>
-    <td class="num">—</td>
+    <td class="num">·</td>
+    <td class="num">·</td>
     <td></td>
   </tr><tr>
     <td><img src="https://m.media-amazon.com/images/I/61PLNjNs5JL._AC_SL1500_.jpg" width="44" height="44" style="object-fit:contain;border-radius:6px;background:#f2f4f7" loading="lazy"></td>
@@ -349,8 +389,8 @@ ul{margin:6px 0 0 18px;padding:0;font-size:13px}li{margin:4px 0}
     <td class="num">6,740</td>
     <td>&gt;5k</td>
     <td>6.8"</td>
-    <td class="num">—</td>
-    <td class="num">—</td>
+    <td class="num">·</td>
+    <td class="num">·</td>
     <td></td>
   </tr><tr>
     <td><img src="https://m.media-amazon.com/images/I/61-FnMtKhYL._AC_SL1500_.jpg" width="44" height="44" style="object-fit:contain;border-radius:6px;background:#f2f4f7" loading="lazy"></td>
@@ -360,8 +400,8 @@ ul{margin:6px 0 0 18px;padding:0;font-size:13px}li{margin:4px 0}
     <td class="num">13,212</td>
     <td>&gt;5k</td>
     <td>10.2"</td>
-    <td class="num">—</td>
-    <td class="num">—</td>
+    <td class="num">·</td>
+    <td class="num">·</td>
     <td>畅销榜#30</td>
   </tr></tbody></table></details><details ><summary><b>便携屏</b>（11 款）</summary>
   <table><thead><tr><th>图</th><th>ASIN</th><th>标题</th><th>品牌</th><th class="num">价格 MXN</th><th>价格带</th><th>尺寸</th><th class="num">评分</th><th class="num">评论</th><th>入榜</th></tr></thead><tbody><tr>
@@ -372,8 +412,8 @@ ul{margin:6px 0 0 18px;padding:0;font-size:13px}li{margin:4px 0}
     <td class="num">659</td>
     <td>≤1.5k</td>
     <td>7"</td>
-    <td class="num">—</td>
-    <td class="num">—</td>
+    <td class="num">·</td>
+    <td class="num">·</td>
     <td></td>
   </tr><tr>
     <td><img src="https://m.media-amazon.com/images/I/710BAX3vI3L._AC_SL1500_.jpg" width="44" height="44" style="object-fit:contain;border-radius:6px;background:#f2f4f7" loading="lazy"></td>
@@ -383,8 +423,8 @@ ul{margin:6px 0 0 18px;padding:0;font-size:13px}li{margin:4px 0}
     <td class="num">923</td>
     <td>≤1.5k</td>
     <td>7"</td>
-    <td class="num">—</td>
-    <td class="num">—</td>
+    <td class="num">·</td>
+    <td class="num">·</td>
     <td></td>
   </tr><tr>
     <td><img src="https://m.media-amazon.com/images/I/710YUihkTmL._AC_SL1500_.jpg" width="44" height="44" style="object-fit:contain;border-radius:6px;background:#f2f4f7" loading="lazy"></td>
@@ -394,8 +434,8 @@ ul{margin:6px 0 0 18px;padding:0;font-size:13px}li{margin:4px 0}
     <td class="num">999</td>
     <td>≤1.5k</td>
     <td>7"</td>
-    <td class="num">—</td>
-    <td class="num">—</td>
+    <td class="num">·</td>
+    <td class="num">·</td>
     <td>畅销榜#63</td>
   </tr><tr>
     <td><img src="https://m.media-amazon.com/images/I/713TE-MkNsL._AC_SL1500_.jpg" width="44" height="44" style="object-fit:contain;border-radius:6px;background:#f2f4f7" loading="lazy"></td>
@@ -404,9 +444,9 @@ ul{margin:6px 0 0 18px;padding:0;font-size:13px}li{margin:4px 0}
     <td>BOJOOM</td>
     <td class="num">999</td>
     <td>≤1.5k</td>
-    <td>—</td>
-    <td class="num">—</td>
-    <td class="num">—</td>
+    <td>·</td>
+    <td class="num">·</td>
+    <td class="num">·</td>
     <td></td>
   </tr><tr>
     <td><img src="https://m.media-amazon.com/images/I/71A8ynk50lL._AC_SL1500_.jpg" width="44" height="44" style="object-fit:contain;border-radius:6px;background:#f2f4f7" loading="lazy"></td>
@@ -415,9 +455,9 @@ ul{margin:6px 0 0 18px;padding:0;font-size:13px}li{margin:4px 0}
     <td>BOJOOM</td>
     <td class="num">999</td>
     <td>≤1.5k</td>
-    <td>—</td>
-    <td class="num">—</td>
-    <td class="num">—</td>
+    <td>·</td>
+    <td class="num">·</td>
+    <td class="num">·</td>
     <td></td>
   </tr><tr>
     <td><img src="https://m.media-amazon.com/images/I/71thSd6S-gL._AC_SL1500_.jpg" width="44" height="44" style="object-fit:contain;border-radius:6px;background:#f2f4f7" loading="lazy"></td>
@@ -427,8 +467,8 @@ ul{margin:6px 0 0 18px;padding:0;font-size:13px}li{margin:4px 0}
     <td class="num">1,139</td>
     <td>≤1.5k</td>
     <td>7"</td>
-    <td class="num">—</td>
-    <td class="num">—</td>
+    <td class="num">·</td>
+    <td class="num">·</td>
     <td></td>
   </tr><tr>
     <td><img src="https://m.media-amazon.com/images/I/61J8aV7rUmL._AC_SL1300_.jpg" width="44" height="44" style="object-fit:contain;border-radius:6px;background:#f2f4f7" loading="lazy"></td>
@@ -437,9 +477,9 @@ ul{margin:6px 0 0 18px;padding:0;font-size:13px}li{margin:4px 0}
     <td>HIMICAR</td>
     <td class="num">1,259</td>
     <td>≤1.5k</td>
-    <td>—</td>
-    <td class="num">—</td>
-    <td class="num">—</td>
+    <td>·</td>
+    <td class="num">·</td>
+    <td class="num">·</td>
     <td></td>
   </tr><tr>
     <td><img src="https://m.media-amazon.com/images/I/71-HHy4HrNL._AC_SL1300_.jpg" width="44" height="44" style="object-fit:contain;border-radius:6px;background:#f2f4f7" loading="lazy"></td>
@@ -448,9 +488,9 @@ ul{margin:6px 0 0 18px;padding:0;font-size:13px}li{margin:4px 0}
     <td>HIMICAR</td>
     <td class="num">1,599</td>
     <td>1.5-3k</td>
-    <td>—</td>
-    <td class="num">—</td>
-    <td class="num">—</td>
+    <td>·</td>
+    <td class="num">·</td>
+    <td class="num">·</td>
     <td></td>
   </tr><tr>
     <td><img src="https://m.media-amazon.com/images/I/71J9g5ey0fL._AC_SL1500_.jpg" width="44" height="44" style="object-fit:contain;border-radius:6px;background:#f2f4f7" loading="lazy"></td>
@@ -459,9 +499,9 @@ ul{margin:6px 0 0 18px;padding:0;font-size:13px}li{margin:4px 0}
     <td>CARPURIDE</td>
     <td class="num">2,209</td>
     <td>1.5-3k</td>
-    <td>—</td>
-    <td class="num">—</td>
-    <td class="num">—</td>
+    <td>·</td>
+    <td class="num">·</td>
+    <td class="num">·</td>
     <td></td>
   </tr><tr>
     <td><img src="https://m.media-amazon.com/images/I/71TesJ3w0FL._AC_SL1500_.jpg" width="44" height="44" style="object-fit:contain;border-radius:6px;background:#f2f4f7" loading="lazy"></td>
@@ -470,9 +510,9 @@ ul{margin:6px 0 0 18px;padding:0;font-size:13px}li{margin:4px 0}
     <td>未知</td>
     <td class="num">2,389</td>
     <td>1.5-3k</td>
-    <td>—</td>
-    <td class="num">—</td>
-    <td class="num">—</td>
+    <td>·</td>
+    <td class="num">·</td>
+    <td class="num">·</td>
     <td></td>
   </tr><tr>
     <td><img src="https://m.media-amazon.com/images/I/61z5dJi6fuL._AC_SL1500_.jpg" width="44" height="44" style="object-fit:contain;border-radius:6px;background:#f2f4f7" loading="lazy"></td>
@@ -482,8 +522,8 @@ ul{margin:6px 0 0 18px;padding:0;font-size:13px}li{margin:4px 0}
     <td class="num">5,577</td>
     <td>&gt;5k</td>
     <td>8.9"</td>
-    <td class="num">—</td>
-    <td class="num">—</td>
+    <td class="num">·</td>
+    <td class="num">·</td>
     <td>新品榜#29</td>
   </tr></tbody></table></details><details ><summary><b>后视镜屏</b>（3 款）</summary>
   <table><thead><tr><th>图</th><th>ASIN</th><th>标题</th><th>品牌</th><th class="num">价格 MXN</th><th>价格带</th><th>尺寸</th><th class="num">评分</th><th class="num">评论</th><th>入榜</th></tr></thead><tbody><tr>
@@ -493,9 +533,9 @@ ul{margin:6px 0 0 18px;padding:0;font-size:13px}li{margin:4px 0}
     <td>HIMICAR</td>
     <td class="num">349</td>
     <td>≤1.5k</td>
-    <td>—</td>
-    <td class="num">—</td>
-    <td class="num">—</td>
+    <td>·</td>
+    <td class="num">·</td>
+    <td class="num">·</td>
     <td>畅销榜#56</td>
   </tr><tr>
     <td><img src="https://m.media-amazon.com/images/I/81+kLjAUNsL._AC_SL1500_.jpg" width="44" height="44" style="object-fit:contain;border-radius:6px;background:#f2f4f7" loading="lazy"></td>
@@ -504,9 +544,9 @@ ul{margin:6px 0 0 18px;padding:0;font-size:13px}li{margin:4px 0}
     <td>Rimoody</td>
     <td class="num">998</td>
     <td>≤1.5k</td>
-    <td>—</td>
-    <td class="num">—</td>
-    <td class="num">—</td>
+    <td>·</td>
+    <td class="num">·</td>
+    <td class="num">·</td>
     <td></td>
   </tr><tr>
     <td><img src="https://m.media-amazon.com/images/I/71JY9I352-L._AC_SL1500_.jpg" width="44" height="44" style="object-fit:contain;border-radius:6px;background:#f2f4f7" loading="lazy"></td>
@@ -516,8 +556,8 @@ ul{margin:6px 0 0 18px;padding:0;font-size:13px}li{margin:4px 0}
     <td class="num">1,859</td>
     <td>1.5-3k</td>
     <td>9"</td>
-    <td class="num">—</td>
-    <td class="num">—</td>
+    <td class="num">·</td>
+    <td class="num">·</td>
     <td></td>
   </tr></tbody></table></details><details ><summary><b>其他屏</b>（7 款）</summary>
   <table><thead><tr><th>图</th><th>ASIN</th><th>标题</th><th>品牌</th><th class="num">价格 MXN</th><th>价格带</th><th>尺寸</th><th class="num">评分</th><th class="num">评论</th><th>入榜</th></tr></thead><tbody><tr>
@@ -528,8 +568,8 @@ ul{margin:6px 0 0 18px;padding:0;font-size:13px}li{margin:4px 0}
     <td class="num">1,634</td>
     <td>1.5-3k</td>
     <td>7"</td>
-    <td class="num">—</td>
-    <td class="num">—</td>
+    <td class="num">·</td>
+    <td class="num">·</td>
     <td></td>
   </tr><tr>
     <td><img src="https://m.media-amazon.com/images/I/71JivEqyyWL._AC_SL1500_.jpg" width="44" height="44" style="object-fit:contain;border-radius:6px;background:#f2f4f7" loading="lazy"></td>
@@ -538,9 +578,9 @@ ul{margin:6px 0 0 18px;padding:0;font-size:13px}li{margin:4px 0}
     <td>Surcsa</td>
     <td class="num">1,998</td>
     <td>1.5-3k</td>
-    <td>—</td>
-    <td class="num">—</td>
-    <td class="num">—</td>
+    <td>·</td>
+    <td class="num">·</td>
+    <td class="num">·</td>
     <td></td>
   </tr><tr>
     <td><img src="https://m.media-amazon.com/images/I/51j5rxWY8vL._AC_SL1000_.jpg" width="44" height="44" style="object-fit:contain;border-radius:6px;background:#f2f4f7" loading="lazy"></td>
@@ -549,9 +589,9 @@ ul{margin:6px 0 0 18px;padding:0;font-size:13px}li{margin:4px 0}
     <td>CarlinKit</td>
     <td class="num">4,620</td>
     <td>3-5k</td>
-    <td>—</td>
-    <td class="num">—</td>
-    <td class="num">—</td>
+    <td>·</td>
+    <td class="num">·</td>
+    <td class="num">·</td>
     <td></td>
   </tr><tr>
     <td><img src="https://m.media-amazon.com/images/I/61+1VSY1XuL._AC_SL1200_.jpg" width="44" height="44" style="object-fit:contain;border-radius:6px;background:#f2f4f7" loading="lazy"></td>
@@ -560,9 +600,9 @@ ul{margin:6px 0 0 18px;padding:0;font-size:13px}li{margin:4px 0}
     <td>未知</td>
     <td class="num">5,688</td>
     <td>&gt;5k</td>
-    <td>—</td>
-    <td class="num">—</td>
-    <td class="num">—</td>
+    <td>·</td>
+    <td class="num">·</td>
+    <td class="num">·</td>
     <td></td>
   </tr><tr>
     <td><img src="https://m.media-amazon.com/images/I/510zSAOMQoL._AC_SL1500_.jpg" width="44" height="44" style="object-fit:contain;border-radius:6px;background:#f2f4f7" loading="lazy"></td>
@@ -571,9 +611,9 @@ ul{margin:6px 0 0 18px;padding:0;font-size:13px}li{margin:4px 0}
     <td>未知</td>
     <td class="num">5,799</td>
     <td>&gt;5k</td>
-    <td>—</td>
-    <td class="num">—</td>
-    <td class="num">—</td>
+    <td>·</td>
+    <td class="num">·</td>
+    <td class="num">·</td>
     <td></td>
   </tr><tr>
     <td><img src="https://m.media-amazon.com/images/I/61k964omGpL._AC_SL1500_.jpg" width="44" height="44" style="object-fit:contain;border-radius:6px;background:#f2f4f7" loading="lazy"></td>
@@ -582,9 +622,9 @@ ul{margin:6px 0 0 18px;padding:0;font-size:13px}li{margin:4px 0}
     <td>PEMP</td>
     <td class="num">7,008</td>
     <td>&gt;5k</td>
-    <td>—</td>
-    <td class="num">—</td>
-    <td class="num">—</td>
+    <td>·</td>
+    <td class="num">·</td>
+    <td class="num">·</td>
     <td>畅销榜#10、畅销榜#20</td>
   </tr><tr>
     <td><img src="https://m.media-amazon.com/images/I/61rLYgVCL1L._AC_SL1500_.jpg" width="44" height="44" style="object-fit:contain;border-radius:6px;background:#f2f4f7" loading="lazy"></td>
@@ -593,16 +633,16 @@ ul{margin:6px 0 0 18px;padding:0;font-size:13px}li{margin:4px 0}
     <td>Pioneer</td>
     <td class="num">12,533</td>
     <td>&gt;5k</td>
-    <td>—</td>
-    <td class="num">—</td>
-    <td class="num">—</td>
+    <td>·</td>
+    <td class="num">·</td>
+    <td class="num">·</td>
     <td></td>
   </tr></tbody></table></details>
 </div>
 
 <div class="card"><h2>六、历史对比</h2><p class="note">首期快照：下月起可对比价格中位与上榜变化。</p></div>
 
-<div class="card"><h2>六、消费者评价与声量</h2><p class="note">来源：Amazon「Customers say」摘要 + 评分/评论数；样本 49 款，有摘要 28 款；数据日期 2026-11-13</p><div class="kpi"><div><span>总评论数</span><b>10,782</b></div><div><span>平均评分</span><b>4.04</b></div><div><span>有摘要商品</span><b>28</b></div></div><p style="margin-top:10px"><b>正面主题</b>：<span class="tag">性价比高 8</span><span class="tag">安装简便 4</span><span class="tag">运行良好 4</span><span class="tag">音质好 3</span><span class="tag">质量好 2</span><span class="tag">屏幕质量好 2</span></p><p><b>负面主题</b>：<span class="tag" style="background:#fff1f0;color:#d92d20">功能评价不一 5</span><span class="tag" style="background:#fff1f0;color:#d92d20">性价比评价不一 4</span><span class="tag" style="background:#fff1f0;color:#d92d20">连接性评价不一 3</span><span class="tag" style="background:#fff1f0;color:#d92d20">整体质量评价不一 2</span><span class="tag" style="background:#fff1f0;color:#d92d20">质量评价不一 2</span><span class="tag" style="background:#fff1f0;color:#d92d20">按键手感廉价 1</span></p><h3 style="font-size:13px;margin:14px 0 6px">品牌口碑</h3><table><thead><tr><th>品牌</th><th class="num">商品</th><th class="num">评论数</th><th class="num">均分</th><th>正面点</th><th>负面点</th></tr></thead><tbody><tr><td>Podofo</td><td class="num">1</td><td class="num">1,658</td><td class="num">4</td><td>易于使用 / 性价比好 / 值得购买</td><td>长期耐用性存疑</td></tr><tr><td>HIMICAR</td><td class="num">4</td><td class="num">836</td><td class="num">3.65</td><td>性价比高 / 安装简便 / 易用</td><td>信号接收差 / 整体质量评价不一 / 功能评价不一</td></tr><tr><td>CarpodGo</td><td class="num">1</td><td class="num">602</td><td class="num">4.4</td><td>运行出色 / 屏幕稳定 / 画面清晰</td><td></td></tr><tr><td>Pioneer</td><td class="num">3</td><td class="num">508</td><td class="num">4.3</td><td>性价比高 / 音质好 / 音效佳</td><td>连接性评价不一 / 调节评价不一</td></tr><tr><td>CARPURIDE</td><td class="num">2</td><td class="num">482</td><td class="num">3.85</td><td>GPS导航很好 / 与描述相符 / 物有所值</td><td>部分方面评价不一 / 功能评价不一</td></tr><tr><td>Volam</td><td class="num">1</td><td class="num">293</td><td class="num">4.1</td><td>AV接收器运行良好 / CarPlay和Android Auto / 屏幕清晰明亮</td><td></td></tr><tr><td>NHOPEEW</td><td class="num">1</td><td class="num">241</td><td class="num">4.2</td><td></td><td></td></tr><tr><td>Haudio</td><td class="num">4</td><td class="num">161</td><td class="num">3.92</td><td>性价比高 / AV接收器质量不错 / 运行良好</td><td></td></tr></tbody></table><h3 style="font-size:13px;margin:16px 0 6px">评论最多的商品</h3><table><thead><tr><th>商品</th><th>品牌</th><th class="num">评分</th><th class="num">评论</th><th>评价摘要</th><th>正面</th><th>负面</th></tr></thead><tbody><tr><td>9.26&amp;quot; Carplay Screen for Car, Wireless Portable Car Play Screen for Apple CarPlay &amp; Android Auto, OTA Updates, Backup Came...</td><td>未知</td><td class="num">4.5</td><td class="num">3,507</td><td>AV接收器出色运行好，安装简便配件齐全，屏幕清晰美观，连接充电正常。</td><td>运行出色 / 安装简便 / 配件齐全</td><td></td></tr><tr><td>Podofo Estéreo de Coche Portátil Inalámbrico Carplay Android Auto, Radio de Coche con Pantalla Táctil de 7 Pulgadas con Bl...</td><td>Podofo</td><td class="num">4</td><td class="num">1,658</td><td>客户认为该接收器易用、性价比好，是值得的购买，但部分用户担忧长期耐用性。</td><td>易于使用 / 性价比好 / 值得购买</td><td>长期耐用性存疑</td></tr><tr><td>Boss Audio Systems BVCP9700A - Estéreo de Coche - Apple CarPlay, Android Auto, Doble DIN, visualización táctil de 7 Pulgad...</td><td>未知</td><td class="num">4.1</td><td class="num">1,201</td><td>AV接收器质量出色、音质好，但设备控制令人不满，功能与可靠性评价不一。</td><td>质量出色 / 音质好</td><td>设备控制令人不满 / 功能与可靠性评价不一</td></tr><tr><td>HIMICAR Autoestéreo Carplay &amp; Android Auto Inalámbrico Estereo Mirror Link 6.8 Pulgada MP5, Tipo C, FM/Am, GPS, AUX, Bluetoot</td><td>HIMICAR</td><td class="num">4.1</td><td class="num">646</td><td>AV接收器性价比高，安装简便易用；但用户对信号接收不满。</td><td>性价比高 / 安装简便 / 易用</td><td>信号接收差</td></tr><tr><td>CarpodGo T4 8.9 pulgadas 1000-Nit 60 fps Pantalla CarPlay Portátil para Auto, Apple Car Play Inalámbrico y Android Auto, Sopo</td><td>CarpodGo</td><td class="num">4.4</td><td class="num">602</td><td>运行出色屏幕稳定，画面清晰，性价比高，值得购买。</td><td>运行出色 / 屏幕稳定 / 画面清晰</td><td></td></tr><tr><td>Volam - Pantalla inalámbrica Carplay de 11 pulgadas para auto con aplicaciones integradas de Net-Flix y YouTube, estéreo p...</td><td>Volam</td><td class="num">4.1</td><td class="num">293</td><td>AV接收器运行良好，CarPlay和Android Auto正常，屏幕清晰明亮、大而实用。</td><td>AV接收器运行良好 / CarPlay和Android Auto / 屏幕清晰明亮</td><td></td></tr><tr><td>CARPURIDE Pantalla Carplay de 9 Pulgadas para Coche, Compatible con Modo | Apple CarPlay, Android Auto y Mirror Link - Aud...</td><td>CARPURIDE</td><td class="num">3.7</td><td class="num">248</td><td>客户认为该接收器出色且令人满意，易于设置和使用，屏幕和音质好，但功能评价不一。</td><td>整体出色 / 令人满意 / 易于设置</td><td>功能评价不一</td></tr><tr><td>NHOPEEW Radio 1 DIN con Carplay y Android Auto - 9 Pulgadas Pantalla Táctil Autoradio Pantalla 1 DIN con Igualador, Enlace...</td><td>NHOPEEW</td><td class="num">4.2</td><td class="num">241</td><td>用户对1 DIN CarPlay收音机有不同看法。</td><td></td><td></td></tr><tr><td>CARPURIDE 10,26 Pulgadas Inalámbrico/Cableado CarPlay, Android Auto&amp;MirrorLink-Estéreo Portátil para Automóvil Pantalla Tá...</td><td>CARPURIDE</td><td class="num">4</td><td class="num">234</td><td>GPS导航很好，产品与描述相符，物有所值，兼容性好，但部分方面评价不一。</td><td>GPS导航很好 / 与描述相符 / 物有所值</td><td>部分方面评价不一</td></tr><tr><td>Pioneer DMH-WT3800NEX Receptor Multimedia Digital con Apple CarPlay y Android Auto, visualización Flotante capacitiva de 9...</td><td>Pioneer</td><td class="num">4.3</td><td class="num">213</td><td>AV接收器优秀、性价比高，屏幕好、外观提升车内档次。</td><td>性价比高 / 屏幕质量好 / 外观美观</td><td></td></tr><tr><td>HIMICAR Autoestéreo Portátil 7 Pulgadas Apple Carplay y Android Auto | Mirror Link, Pantalla Completa Táctil IPS HD, Control </td><td>HIMICAR</td><td class="num">4</td><td class="num">181</td><td>屏幕质量受认可；但整体质量、功能、性价比及连接性评价不一。</td><td>屏幕质量好</td><td>整体质量评价不一 / 功能评价不一 / 性价比评价不一</td></tr><tr><td>Pioneer DMH-1600NEX Receptor Multimedia Digital Doble DIN de 6.8 Pulgadas, Bluetooth Integrado, Apple CarPlay y Android Au...</td><td>Pioneer</td><td class="num">4.2</td><td class="num">170</td><td>客户认为该AV接收器出色，收音机悦耳，性价比高，多媒体升级实用，音质获一致好评。</td><td>整体出色 / 收音机悦耳 / 性价比高</td><td></td></tr><tr><td>visualización portátil inalámbrica Carplay para Coche, 7 Pulgadas estéreo de Coche inalámbrico Carplay y Android Auto, cám...</td><td>未知</td><td class="num">4</td><td class="num">144</td><td>AV接收器质量好性价比高，但连接性差，蓝牙常断连。</td><td>质量好 / 性价比高</td><td>连接性差 / 蓝牙频繁断连</td></tr><tr><td>Surcsa Pantalla CarPlay de 9&amp;quot; para Coche, Apple CarPlay inalámbrico y Android Auto</td><td>Surcsa</td><td class="num">4.1</td><td class="num">144</td><td>GPS导航出色、质量高，运行良好，安装配置方便，连接简单。</td><td>GPS导航出色 / 质量高 / 运行良好</td><td></td></tr><tr><td>Pioneer DMH-1800NEX Receptor Multimedia Digital Doble DIN de 6.8 Pulgadas, Bluetooth Integrado, Apple CarPlay y Android Au...</td><td>Pioneer</td><td class="num">4.4</td><td class="num">125</td><td>音质好音效佳，安装操作简便，物有所值，但连接与调节评价不一。</td><td>音质好 / 音效佳 / 安装简便</td><td>连接性评价不一 / 调节评价不一</td></tr></tbody></table></div>
+<div class="card"><h2>六、消费者评价与声量</h2><p class="note">来源：Amazon「Customers say」摘要 + 评分/评论数；样本 49 款，有摘要 28 款；数据日期 2026-11-16</p><div class="kpi"><div><span>总评论数</span><b>10,805</b></div><div><span>平均评分</span><b>4.05</b></div><div><span>有摘要商品</span><b>28</b></div></div><p style="margin-top:10px"><b>正面主题</b>：<span class="tag">性价比高 9</span><span class="tag">安装简便 4</span><span class="tag">运行良好 4</span><span class="tag">易用 3</span><span class="tag">音质好 3</span><span class="tag">整体优秀 3</span></p><p><b>负面主题</b>：<span class="tag" style="background:#fff1f0;color:#d92d20">功能评价不一 6</span><span class="tag" style="background:#fff1f0;color:#d92d20">性价比评价不一 4</span><span class="tag" style="background:#fff1f0;color:#d92d20">质量评价不一 3</span><span class="tag" style="background:#fff1f0;color:#d92d20">连接评价不一 3</span><span class="tag" style="background:#fff1f0;color:#d92d20">控制按键手感廉价 1</span><span class="tag" style="background:#fff1f0;color:#d92d20">缺少物理按键 1</span></p><h3 style="font-size:13px;margin:14px 0 6px">品牌口碑</h3><table><thead><tr><th>品牌</th><th class="num">商品</th><th class="num">评论数</th><th class="num">均分</th><th>正面点</th><th>负面点</th></tr></thead><tbody><tr><td>未知</td><td class="num">14</td><td class="num">5,339</td><td class="num">4.14</td><td>音质好 / 性价比高 / 表现出色</td><td>功能评价不一 / 连接不稳定 / 蓝牙频繁断连</td></tr><tr><td>Podofo</td><td class="num">1</td><td class="num">1,658</td><td class="num">4</td><td>易用 / 性价比高 / 值得购买</td><td>长期耐用性存疑</td></tr><tr><td>HIMICAR</td><td class="num">4</td><td class="num">836</td><td class="num">3.65</td><td>性价比高 / 安装简便 / 易用</td><td>接收效果差 / 整体质量评价不一 / 功能评价不一</td></tr><tr><td>CarpodGo</td><td class="num">1</td><td class="num">603</td><td class="num">4.4</td><td>运行出色 / 屏幕稳定 / 画面清晰</td><td></td></tr><tr><td>Pioneer</td><td class="num">3</td><td class="num">508</td><td class="num">4.3</td><td>性价比高 / 音质出色 / 安装简便</td><td>连接评价不一 / 调节评价不一</td></tr><tr><td>CARPURIDE</td><td class="num">2</td><td class="num">482</td><td class="num">3.85</td><td>GPS导航好 / 物有所值 / 兼容性好</td><td>部分方面评价不一 / 功能评价不一 / 连接评价不一</td></tr><tr><td>Volam</td><td class="num">1</td><td class="num">294</td><td class="num">4.1</td><td>AV接收器运行良好 / CarPlay正常 / Android Auto正常</td><td></td></tr><tr><td>NHOPEEW</td><td class="num">1</td><td class="num">242</td><td class="num">4.2</td><td></td><td>评价存在分歧</td></tr></tbody></table><h3 style="font-size:13px;margin:16px 0 6px">评论最多的商品</h3><table><thead><tr><th>商品</th><th>品牌</th><th class="num">评分</th><th class="num">评论</th><th>评价摘要</th><th>正面</th><th>负面</th></tr></thead><tbody><tr><td>9.26&amp;quot; Carplay Screen for Car, Wireless Portable Car Play Screen for Apple CarPlay &amp; Android Auto, OTA Updates, Backup Came...</td><td>未知</td><td class="num">4.5</td><td class="num">3,524</td><td>表现出色，安装简便配件齐全，屏幕清晰美观，连接充电正常</td><td>表现出色 / 安装简便 / 配件齐全</td><td></td></tr><tr><td>Podofo Estéreo de Coche Portátil Inalámbrico Carplay Android Auto, Radio de Coche con Pantalla Táctil de 7 Pulgadas con Bl...</td><td>Podofo</td><td class="num">4</td><td class="num">1,658</td><td>用户认为产品易用、性价比高，是值得买的好选择，但部分人担心长期耐用性。</td><td>易用 / 性价比高 / 值得购买</td><td>长期耐用性存疑</td></tr><tr><td>Boss Audio Systems BVCP9700A - Estéreo de Coche - Apple CarPlay, Android Auto, Doble DIN, visualización táctil de 7 Pulgad...</td><td>未知</td><td class="num">4.1</td><td class="num">1,201</td><td>AV接收器质量优秀，音质好，但设备控制令人不满，功能评价不一。</td><td>质量优秀 / 音质好</td><td>设备控制不满 / 功能评价不一</td></tr><tr><td>HIMICAR Autoestéreo Carplay &amp; Android Auto Inalámbrico Estereo Mirror Link 6.8 Pulgada MP5, Tipo C, FM/Am, GPS, AUX, Bluetoot</td><td>HIMICAR</td><td class="num">4.1</td><td class="num">646</td><td>AV接收器性价比高，安装简便易用；但用户对接收效果不满。</td><td>性价比高 / 安装简便 / 易用</td><td>接收效果差</td></tr><tr><td>CarpodGo T4 8.9 pulgadas 1000-Nit 60 fps Pantalla CarPlay Portátil para Auto, Apple Car Play Inalámbrico y Android Auto, Sopo</td><td>CarpodGo</td><td class="num">4.4</td><td class="num">603</td><td>运行出色，屏幕稳定清晰，性价比高，值得购买。</td><td>运行出色 / 屏幕稳定 / 画面清晰</td><td></td></tr><tr><td>Volam - Pantalla inalámbrica Carplay de 11 pulgadas para auto con aplicaciones integradas de Net-Flix y YouTube, estéreo p...</td><td>Volam</td><td class="num">4.1</td><td class="num">294</td><td>AV接收器运行良好，CarPlay和Android Auto正常，屏幕清晰明亮、大而实用。</td><td>AV接收器运行良好 / CarPlay正常 / Android Auto正常</td><td></td></tr><tr><td>CARPURIDE Pantalla Carplay de 9 Pulgadas para Coche, Compatible con Modo | Apple CarPlay, Android Auto y Mirror Link - Aud...</td><td>CARPURIDE</td><td class="num">3.7</td><td class="num">248</td><td>用户认为产品优秀且喜欢，设置简单易用，屏幕和音质好，但功能与连接评价不一。</td><td>整体优秀 / 设置简单 / 易用</td><td>功能评价不一 / 连接评价不一</td></tr><tr><td>NHOPEEW Radio 1 DIN con Carplay y Android Auto - 9 Pulgadas Pantalla Táctil Autoradio Pantalla 1 DIN con Igualador, Enlace...</td><td>NHOPEEW</td><td class="num">4.2</td><td class="num">242</td><td>用户对这款1 DIN CarPlay收音机持有不同看法。</td><td></td><td>评价存在分歧</td></tr><tr><td>CARPURIDE 10,26 Pulgadas Inalámbrico/Cableado CarPlay, Android Auto&amp;MirrorLink-Estéreo Portátil para Automóvil Pantalla Tá...</td><td>CARPURIDE</td><td class="num">4</td><td class="num">234</td><td>GPS导航很好，物有所值，兼容性好，但部分方面评价不一。</td><td>GPS导航好 / 物有所值 / 兼容性好</td><td>部分方面评价不一</td></tr><tr><td>Pioneer DMH-WT3800NEX Receptor Multimedia Digital con Apple CarPlay y Android Auto, visualización Flotante capacitiva de 9...</td><td>Pioneer</td><td class="num">4.3</td><td class="num">213</td><td>AV接收器出色，性价比高，屏幕够好且外观美观，彻底改变车内氛围。</td><td>表现出色 / 性价比高 / 屏幕质量好</td><td></td></tr><tr><td>HIMICAR Autoestéreo Portátil 7 Pulgadas Apple Carplay y Android Auto | Mirror Link, Pantalla Completa Táctil IPS HD, Control </td><td>HIMICAR</td><td class="num">4</td><td class="num">181</td><td>屏幕质量受认可；但整体质量、功能、性价比、连接性等评价不一。</td><td>屏幕质量好</td><td>整体质量评价不一 / 功能评价不一 / 性价比评价不一</td></tr><tr><td>Pioneer DMH-1600NEX Receptor Multimedia Digital Doble DIN de 6.8 Pulgadas, Bluetooth Integrado, Apple CarPlay y Android Au...</td><td>Pioneer</td><td class="num">4.2</td><td class="num">170</td><td>用户认为该AV接收器优秀，收音机悦耳，性价比高，是实惠的多媒体升级，音质获好评。</td><td>整体优秀 / 收音机悦耳 / 性价比高</td><td></td></tr><tr><td>Surcsa Pantalla CarPlay de 9&amp;quot; para Coche, Apple CarPlay inalámbrico y Android Auto</td><td>Surcsa</td><td class="num">4.2</td><td class="num">146</td><td>GPS导航出色，质量高，运行良好，安装配置简便，连接容易。</td><td>导航出色 / 质量高 / 运行良好</td><td></td></tr><tr><td>visualización portátil inalámbrica Carplay para Coche, 7 Pulgadas estéreo de Coche inalámbrico Carplay y Android Auto, cám...</td><td>未知</td><td class="num">4</td><td class="num">144</td><td>音质好性价比高，但连接不稳定常断连</td><td>音质好 / 性价比高</td><td>连接不稳定 / 蓝牙频繁断连</td></tr><tr><td>Pioneer DMH-1800NEX Receptor Multimedia Digital Doble DIN de 6.8 Pulgadas, Bluetooth Integrado, Apple CarPlay y Android Au...</td><td>Pioneer</td><td class="num">4.4</td><td class="num">125</td><td>音质出色安装简便物有所值，连接与调节评价不一</td><td>音质出色 / 安装简便 / 物有所值</td><td>连接评价不一 / 调节评价不一</td></tr></tbody></table></div>
 
 <div class="card"><h2>七、数据口径与限制</h2>
 <ul>

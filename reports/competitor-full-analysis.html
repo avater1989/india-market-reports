@@ -16,9 +16,49 @@ ul{margin:6px 0 0 18px;padding:0;font-size:13px}li{margin:4px 0}
 .kcard{border:1px solid #e4e7ec;border-radius:10px;padding:12px 14px}
 .kcard b{font-size:18px}.hl{background:#fff8e6}
 @media(max-width:760px){.grid{grid-template-columns:repeat(2,1fr)}}
+
+  /* ===== 统一皮肤（编辑部报告）2026-11-18 ===== */
+  :root{--paper:#FAF8F4;--ink:#15171B;--ink2:#4A4E55;--ink3:#8A8579;--rule:#D9D3C7;--rule-soft:#E9E4DA;--neg:#A32B2B;--pos:#1E7A50}
+  body{background:var(--paper);color:var(--ink);font:15px/1.72 -apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;font-variant-numeric:tabular-nums;font-feature-settings:"tnum" 1}
+  .wrap{max-width:980px;margin:0 auto;padding:48px 30px 60px}
+  h1{font-size:32px;line-height:1.2;letter-spacing:-.015em;font-weight:700;margin:0 0 10px}
+  h2{font-size:15px;font-weight:700;letter-spacing:.01em;margin:34px 0 8px;padding-bottom:8px;border-bottom:1px solid var(--ink)}
+  h3{font-size:13.5px;font-weight:600}
+  .sub{color:var(--ink3);font-size:11.5px;letter-spacing:.01em}
+  .card{background:none !important;border:1px solid var(--rule);border-radius:0;padding:16px 18px;margin-bottom:12px;box-shadow:none}
+  .kpis{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--rule)}
+  .kpi{background:none;border:0;border-right:1px solid var(--rule-soft);border-radius:0;padding:15px 16px 16px 0;box-shadow:none}
+  .kpi:last-child{border-right:0}
+  .kpi .label{font-size:10.5px;letter-spacing:.06em;color:var(--ink3)}
+  .kpi .value{font-size:28px;font-weight:700;letter-spacing:-.02em;line-height:1.15}
+  table{width:100%;border-collapse:collapse;font-size:13px}
+  th,td{padding:8px 0;border-bottom:1px solid var(--rule-soft);text-align:left}
+  th{color:var(--ink3);font-weight:600;font-size:10.5px;letter-spacing:.05em;border-bottom:1px solid var(--rule)}
+  tr:last-child td{border-bottom:0}
+  td.num,th.num{text-align:right;padding-left:12px}
+  .tag{display:inline-block;font-size:10.5px;letter-spacing:.03em;padding:1px 6px;border:1px solid var(--rule);color:var(--ink2);border-radius:0;background:none}
+  .note{color:var(--ink3);font-size:11.5px;line-height:1.65}
+  .muted{color:var(--ink2);font-size:12px}
+  .item,.jrow{padding:10px 0;border-bottom:1px solid var(--rule-soft)}
+  .item:last-child,.jrow:last-child{border-bottom:0}
+  .jrow .k{color:var(--ink3);font-size:10.5px;letter-spacing:.06em;font-weight:600}
+  .grid{display:grid;gap:12px}
+  .kcard,.hl{background:none;border:1px solid var(--rule);border-radius:0;padding:14px 16px;box-shadow:none}
+  .band,.rules{padding:10px 0;border-bottom:1px solid var(--rule-soft)}
+  .new{background:none;color:var(--neg);border:1px solid #DCC0BE;border-radius:0;font-size:10px;padding:0 5px}
+  a{color:var(--ink2);text-decoration:underline;text-underline-offset:2px}
+  footer{color:var(--ink3);font-size:11px;margin-top:28px;border-top:1px solid var(--rule);padding-top:12px}
+  .rep-link{color:var(--ink2);text-decoration:underline}
+  @media(max-width:700px){
+    .wrap{padding:32px 18px 44px}
+    h1{font-size:26px}
+    .kpis{grid-template-columns:1fr 1fr}
+    .kpi:nth-child(2n){border-right:0}
+    .kpi:nth-child(n+3){border-top:1px solid var(--rule-soft)}
+  }
 </style></head><body><div class="wrap">
 <h1>印度 CarPlay 车机屏 · 竞品全量分析</h1>
-<div class="sub">数据日期 2026-11-13 · 下次刷新 2026-11-月内 · 渠道：Amazon.in 单渠道 · 样本 67 款（畅销榜 + 新品榜 × 12 类目）</div>
+<div class="sub">数据日期 2026-11-18 · 下次刷新 2026-11-月内 · 渠道：Amazon.in 单渠道 · 样本 67 款（畅销榜 + 新品榜 × 12 类目）</div>
 
 <div class="card"><h2>一、一页看懂</h2>
 <div class="kpi">
@@ -28,9 +68,9 @@ ul{margin:6px 0 0 18px;padding:0;font-size:13px}li{margin:4px 0}
 <div><span>9 寸占比</span><b>63%</b></div>
 <div><span>DSP 覆盖</span><b>6%</b></div>
 </div>
-<ul style="margin-top:12px"><li>价格中位₹8499，6-10k段占48%，中端市场是主战场，低价段₹5999以下空间有限。</li><li>9寸屏占63%，carplay覆盖67%但dsp仅6%，功能同质化严重，差异化机会在音频与触控。</li><li>Modorwy以21款居首，通用车机36款主导，专用车型机17款尚属蓝海。</li><li>wireless仅54%，gps 21%、camera 10%覆盖低，高价值功能渗透不足。</li><li>便携屏仅3款，其他屏11款，细分形态竞争弱，可作切入试点。</li></ul>
+<ul style="margin-top:12px"><li>67款中6-10k占48%，中位₹8499，价格战集中在中低端，利润空间被压缩。</li><li>9寸占63%，carplay覆盖67%但dsp仅6%，功能同质化严重，差异化机会在音频与触控。</li><li>Modorwy以21款居首，头部集中度高，gps仅21%、camera仅10%，高价值功能渗透不足。</li></ul>
 <h3 style="font-size:13px;margin:14px 0 4px">对我们的建议</h3>
-<ul><li>主推₹7999-8999价位9寸carplay+wireless机型，直击48%主流价格带。</li><li>以dsp+高触控（46%基础上提升）为卖点，避开67%carplay红海同质竞争。</li><li>布局17款专用车型机蓝海，优先覆盖gps与camera，提升10%低覆盖短板。</li><li>对标Modorwy 21款矩阵，精简至12-15款SKU，聚焦6-10k段集中资源。</li><li>试点3款便携屏低价引流，验证₹5999以下需求，再决定是否扩品。</li></ul>
+<ul><li>主推9寸carplay机型定价₹7999，卡位6-10k主流带，抢48%份额。</li><li>补齐dsp与gps功能，以6%和21%的低渗透为卖点，做差异化溢价。</li><li>对标Modorwy 21款做SKU精简，聚焦3-5款爆款，避免资源分散。</li></ul>
 </div>
 
 <div class="card"><h2>二、价格与尺寸</h2>
@@ -49,7 +89,7 @@ ul{margin:6px 0 0 18px;padding:0;font-size:13px}li{margin:4px 0}
 <div class="card"><h2>四、值得关注 10 款</h2>
 <p class="note">评分：榜单排名 40 + 功能 20 + 尺寸 5；同品牌不重复、按价格带配额。</p>
 <table><thead><tr><th>#</th><th>图</th><th>商品</th><th>品牌</th><th class="num">价格 ₹</th><th>价格带</th><th>尺寸</th><th>入榜</th></tr></thead>
-<tbody><tr class="hl"><td>1</td><td><img src="https://m.media-amazon.com/images/I/71YeKUstCaL._SL1500_.jpg" width="36" height="36" style="object-fit:contain;border-radius:4px;background:#f2f4f7" loading="lazy"></td><td>plimpton Portable Carplay Android Auto Screen for Car 7 Inch IPS Touch Screen Wireless Car Play for iOS Driveplay Multimedia </td><td>Plimpton</td><td class="num">6,749</td><td>6-10k</td><td>7"</td><td>畅销榜#2、畅销榜#14、畅销榜#24</td></tr><tr class="hl"><td>2</td><td><img src="https://m.media-amazon.com/images/I/61sheqcf0ZL._SL1000_.jpg" width="36" height="36" style="object-fit:contain;border-radius:4px;background:#f2f4f7" loading="lazy"></td><td>Haudio 7 Inch Double DIN Car Stereo, Wireless Apple CarPlay &amp; Android Auto, Android 13 Touchscreen Car Radio with GPS Navigat</td><td>Haudio</td><td class="num">13,398</td><td>10-20k</td><td>7"</td><td>畅销榜#9</td></tr><tr class="hl"><td>3</td><td>—</td><td>AUTO SNAP 9 Inch HD 1280 Android Display Double Din Stereo Player 15 Android Auto Wireless Car Play Gorilla Glass IPS Display</td><td>AUTO SNAP</td><td class="num">8,009</td><td>6-10k</td><td>9"</td><td>畅销榜#8、新品榜#1</td></tr><tr><td>4</td><td><img src="https://m.media-amazon.com/images/I/61LJKWKpUqL._SL1500_.jpg" width="36" height="36" style="object-fit:contain;border-radius:4px;background:#f2f4f7" loading="lazy"></td><td>BASSOHOLIC 9" T10 Android 14 Car Stereo | 4GB+64GB | Reverse Camera | | 1280x800 HD Touchscreen | Wireless CarPlay &amp; Android </td><td>BASSOHOLIC</td><td class="num">9,499</td><td>6-10k</td><td>9"</td><td>畅销榜#7、畅销榜#67</td></tr><tr><td>5</td><td><img src="https://m.media-amazon.com/images/I/61c-nB1AfKL._SL1500_.jpg" width="36" height="36" style="object-fit:contain;border-radius:4px;background:#f2f4f7" loading="lazy"></td><td>Audio Wheels Wireless CarPlay &amp; Multimedia Auto 9-Inch 1280P Car Android Display with Gorilla Glass | Android 13 | TS-9 Proce</td><td>Audio Wheels</td><td class="num">8,050</td><td>6-10k</td><td>8"</td><td>畅销榜#7</td></tr><tr><td>6</td><td><img src="https://m.media-amazon.com/images/I/71Tn91x9RQL._SL1500_.jpg" width="36" height="36" style="object-fit:contain;border-radius:4px;background:#f2f4f7" loading="lazy"></td><td>HK5 Carplay Screen for Car,10.26" HD Wireless Apple Carplay &amp; Android Auto | with 1080P Backup Camera, Night Vision, Car Play</td><td>HK</td><td class="num">12,095</td><td>10-20k</td><td>10.26"</td><td>畅销榜#25</td></tr><tr><td>7</td><td><img src="https://m.media-amazon.com/images/I/5128l2fsR7L._SL1000_.jpg" width="36" height="36" style="object-fit:contain;border-radius:4px;background:#f2f4f7" loading="lazy"></td><td>for BMW 3 Series E90 E91 E92 E93 Radio 2005-2011 Wireless CarPlay &amp; Android Auto 9 Inch Touchscreen Android Head Unit Car Ste</td><td>for</td><td class="num">31,037</td><td>&gt;20k</td><td>9"</td><td>畅销榜#76</td></tr><tr><td>8</td><td><img src="https://m.media-amazon.com/images/I/71IVpMFLwpL._SL1306_.jpg" width="36" height="36" style="object-fit:contain;border-radius:4px;background:#f2f4f7" loading="lazy"></td><td>Cason 9 Inch Car Stereo Android System with Touch Screen |Car Android Player with CarPlay and Wireless Android Auto Bluetooth</td><td>Cason</td><td class="num">11,499</td><td>10-20k</td><td>9"</td><td>畅销榜#62</td></tr><tr><td>9</td><td><img src="https://m.media-amazon.com/images/I/61TjWN37PYL._SL1080_.jpg" width="36" height="36" style="object-fit:contain;border-radius:4px;background:#f2f4f7" loading="lazy"></td><td>Modowry 9 inch Car Android System | Android 13 Wireless CarPlay - Android Auto Car Touch Screen | Double Din Car Android Medi</td><td>Modorwy</td><td class="num">5,382</td><td>≤6k</td><td>9"</td><td>畅销榜#56</td></tr><tr><td>10</td><td><img src="https://m.media-amazon.com/images/I/51+5CVKWUcL._SL1080_.jpg" width="36" height="36" style="object-fit:contain;border-radius:4px;background:#f2f4f7" loading="lazy"></td><td>ModishOmbre Modorwy Toyata Corolla Altis 2014+ Wireless Carplay&amp;Android Auto 9Inch 1280P HD Car Android Display with Gorilla </td><td>ModishOmbre</td><td class="num">5,382</td><td>≤6k</td><td>9"</td><td>畅销榜#73</td></tr></tbody></table>
+<tbody><tr class="hl"><td>1</td><td><img src="https://m.media-amazon.com/images/I/71YeKUstCaL._SL1500_.jpg" width="36" height="36" style="object-fit:contain;border-radius:4px;background:#f2f4f7" loading="lazy"></td><td>plimpton Portable Carplay Android Auto Screen for Car 7 Inch IPS Touch Screen Wireless Car Play for iOS Driveplay Multimedia </td><td>Plimpton</td><td class="num">6,749</td><td>6-10k</td><td>7"</td><td>畅销榜#2、畅销榜#14、畅销榜#24</td></tr><tr class="hl"><td>2</td><td><img src="https://m.media-amazon.com/images/I/61sheqcf0ZL._SL1000_.jpg" width="36" height="36" style="object-fit:contain;border-radius:4px;background:#f2f4f7" loading="lazy"></td><td>Haudio 7 Inch Double DIN Car Stereo, Wireless Apple CarPlay &amp; Android Auto, Android 13 Touchscreen Car Radio with GPS Navigat</td><td>Haudio</td><td class="num">13,398</td><td>10-20k</td><td>7"</td><td>畅销榜#9</td></tr><tr class="hl"><td>3</td><td>·</td><td>AUTO SNAP 9 Inch HD 1280 Android Display Double Din Stereo Player 15 Android Auto Wireless Car Play Gorilla Glass IPS Display</td><td>AUTO SNAP</td><td class="num">8,009</td><td>6-10k</td><td>9"</td><td>畅销榜#8、新品榜#1</td></tr><tr><td>4</td><td><img src="https://m.media-amazon.com/images/I/61LJKWKpUqL._SL1500_.jpg" width="36" height="36" style="object-fit:contain;border-radius:4px;background:#f2f4f7" loading="lazy"></td><td>BASSOHOLIC 9" T10 Android 14 Car Stereo | 4GB+64GB | Reverse Camera | | 1280x800 HD Touchscreen | Wireless CarPlay &amp; Android </td><td>BASSOHOLIC</td><td class="num">9,499</td><td>6-10k</td><td>9"</td><td>畅销榜#7、畅销榜#67</td></tr><tr><td>5</td><td><img src="https://m.media-amazon.com/images/I/61c-nB1AfKL._SL1500_.jpg" width="36" height="36" style="object-fit:contain;border-radius:4px;background:#f2f4f7" loading="lazy"></td><td>Audio Wheels Wireless CarPlay &amp; Multimedia Auto 9-Inch 1280P Car Android Display with Gorilla Glass | Android 13 | TS-9 Proce</td><td>Audio Wheels</td><td class="num">8,050</td><td>6-10k</td><td>8"</td><td>畅销榜#7</td></tr><tr><td>6</td><td><img src="https://m.media-amazon.com/images/I/71Tn91x9RQL._SL1500_.jpg" width="36" height="36" style="object-fit:contain;border-radius:4px;background:#f2f4f7" loading="lazy"></td><td>HK5 Carplay Screen for Car,10.26" HD Wireless Apple Carplay &amp; Android Auto | with 1080P Backup Camera, Night Vision, Car Play</td><td>HK</td><td class="num">12,095</td><td>10-20k</td><td>10.26"</td><td>畅销榜#25</td></tr><tr><td>7</td><td><img src="https://m.media-amazon.com/images/I/5128l2fsR7L._SL1000_.jpg" width="36" height="36" style="object-fit:contain;border-radius:4px;background:#f2f4f7" loading="lazy"></td><td>for BMW 3 Series E90 E91 E92 E93 Radio 2005-2011 Wireless CarPlay &amp; Android Auto 9 Inch Touchscreen Android Head Unit Car Ste</td><td>for</td><td class="num">31,037</td><td>&gt;20k</td><td>9"</td><td>畅销榜#76</td></tr><tr><td>8</td><td><img src="https://m.media-amazon.com/images/I/71IVpMFLwpL._SL1306_.jpg" width="36" height="36" style="object-fit:contain;border-radius:4px;background:#f2f4f7" loading="lazy"></td><td>Cason 9 Inch Car Stereo Android System with Touch Screen |Car Android Player with CarPlay and Wireless Android Auto Bluetooth</td><td>Cason</td><td class="num">11,499</td><td>10-20k</td><td>9"</td><td>畅销榜#62</td></tr><tr><td>9</td><td><img src="https://m.media-amazon.com/images/I/61TjWN37PYL._SL1080_.jpg" width="36" height="36" style="object-fit:contain;border-radius:4px;background:#f2f4f7" loading="lazy"></td><td>Modowry 9 inch Car Android System | Android 13 Wireless CarPlay - Android Auto Car Touch Screen | Double Din Car Android Medi</td><td>Modorwy</td><td class="num">5,382</td><td>≤6k</td><td>9"</td><td>畅销榜#56</td></tr><tr><td>10</td><td><img src="https://m.media-amazon.com/images/I/51+5CVKWUcL._SL1080_.jpg" width="36" height="36" style="object-fit:contain;border-radius:4px;background:#f2f4f7" loading="lazy"></td><td>ModishOmbre Modorwy Toyata Corolla Altis 2014+ Wireless Carplay&amp;Android Auto 9Inch 1280P HD Car Android Display with Gorilla </td><td>ModishOmbre</td><td class="num">5,382</td><td>≤6k</td><td>9"</td><td>畅销榜#73</td></tr></tbody></table>
 </div>
 
 <div class="card"><h2>五、明细清单（按形态折叠）</h2>
@@ -98,8 +138,8 @@ ul{margin:6px 0 0 18px;padding:0;font-size:13px}li{margin:4px 0}
     <td>≤6k</td>
     <td>9"</td>
     <td>畅销榜#21、畅销榜#25、畅销榜#57</td>
-    <td class="num">—</td>
-    <td class="num">—</td>
+    <td class="num">·</td>
+    <td class="num">·</td>
   </tr><tr>
     <td><img src="https://m.media-amazon.com/images/I/61G0e0ggJuL._AC_QL10_SX980_SY55_FMwebp_.jpg" width="44" height="44" style="object-fit:contain;border-radius:6px;background:#f2f4f7" loading="lazy"></td>
     <td><a href="https://www.amazon.in/dp/B0987G28JC" target="_blank" rel="noopener">B0987G28JC</a></td>
@@ -110,7 +150,7 @@ ul{margin:6px 0 0 18px;padding:0;font-size:13px}li{margin:4px 0}
     <td>8"</td>
     <td>畅销榜#64</td>
     <td class="num">4.3</td>
-    <td class="num">—</td>
+    <td class="num">·</td>
   </tr><tr>
     <td><img src="https://m.media-amazon.com/images/I/512WY+2+EhL._SL1000_.jpg" width="44" height="44" style="object-fit:contain;border-radius:6px;background:#f2f4f7" loading="lazy"></td>
     <td><a href="https://www.amazon.in/dp/B0C7L49MWF" target="_blank" rel="noopener">B0C7L49MWF</a></td>
@@ -143,9 +183,9 @@ ul{margin:6px 0 0 18px;padding:0;font-size:13px}li{margin:4px 0}
     <td>9"</td>
     <td>新品榜#19</td>
     <td class="num">3.3</td>
-    <td class="num">—</td>
+    <td class="num">·</td>
   </tr><tr>
-    <td>—</td>
+    <td>·</td>
     <td><a href="https://www.amazon.in/dp/B0BX77F5GV" target="_blank" rel="noopener">B0BX77F5GV</a></td>
     <td>AUTO SNAP 9 Inch HD 1280 Android Display Double Din Stereo Player 15 Android Auto Wireless Car Play Gorilla Glass IPS Display</td>
     <td>AUTO SNAP</td>
@@ -176,7 +216,7 @@ ul{margin:6px 0 0 18px;padding:0;font-size:13px}li{margin:4px 0}
     <td>8"</td>
     <td>畅销榜#54、畅销榜#66</td>
     <td class="num">3.9</td>
-    <td class="num">—</td>
+    <td class="num">·</td>
   </tr><tr>
     <td><img src="https://m.media-amazon.com/images/I/61SlQtpJJaL._SL1500_.jpg" width="44" height="44" style="object-fit:contain;border-radius:6px;background:#f2f4f7" loading="lazy"></td>
     <td><a href="https://www.amazon.in/dp/B0F4XHH5WM" target="_blank" rel="noopener">B0F4XHH5WM</a></td>
@@ -197,8 +237,8 @@ ul{margin:6px 0 0 18px;padding:0;font-size:13px}li{margin:4px 0}
     <td>6-10k</td>
     <td>9"</td>
     <td>畅销榜#69</td>
-    <td class="num">—</td>
-    <td class="num">—</td>
+    <td class="num">·</td>
+    <td class="num">·</td>
   </tr><tr>
     <td><img src="https://m.media-amazon.com/images/I/613BYOP78bL._SL1500_.jpg" width="44" height="44" style="object-fit:contain;border-radius:6px;background:#f2f4f7" loading="lazy"></td>
     <td><a href="https://www.amazon.in/dp/B0HK3L3BPN" target="_blank" rel="noopener">B0HK3L3BPN</a></td>
@@ -209,7 +249,7 @@ ul{margin:6px 0 0 18px;padding:0;font-size:13px}li{margin:4px 0}
     <td>9"</td>
     <td>新品榜#20</td>
     <td class="num">3.9</td>
-    <td class="num">—</td>
+    <td class="num">·</td>
   </tr><tr>
     <td><img src="https://m.media-amazon.com/images/I/613BYOP78bL._SL1500_.jpg" width="44" height="44" style="object-fit:contain;border-radius:6px;background:#f2f4f7" loading="lazy"></td>
     <td><a href="https://www.amazon.in/dp/B0HJWY1SMM" target="_blank" rel="noopener">B0HJWY1SMM</a></td>
@@ -220,7 +260,7 @@ ul{margin:6px 0 0 18px;padding:0;font-size:13px}li{margin:4px 0}
     <td>9"</td>
     <td>新品榜#21</td>
     <td class="num">3.2</td>
-    <td class="num">—</td>
+    <td class="num">·</td>
   </tr><tr>
     <td><img src="https://m.media-amazon.com/images/I/61idTnl55pL._SL1332_.jpg" width="44" height="44" style="object-fit:contain;border-radius:6px;background:#f2f4f7" loading="lazy"></td>
     <td><a href="https://www.amazon.in/dp/B0F6D16947" target="_blank" rel="noopener">B0F6D16947</a></td>
@@ -263,8 +303,8 @@ ul{margin:6px 0 0 18px;padding:0;font-size:13px}li{margin:4px 0}
     <td>6-10k</td>
     <td>9"</td>
     <td>畅销榜#79</td>
-    <td class="num">—</td>
-    <td class="num">—</td>
+    <td class="num">·</td>
+    <td class="num">·</td>
   </tr><tr>
     <td><img src="https://m.media-amazon.com/images/I/61cP3UEFD0L._SL1254_.jpg" width="44" height="44" style="object-fit:contain;border-radius:6px;background:#f2f4f7" loading="lazy"></td>
     <td><a href="https://www.amazon.in/dp/B0DMK5NKW6" target="_blank" rel="noopener">B0DMK5NKW6</a></td>
@@ -275,7 +315,7 @@ ul{margin:6px 0 0 18px;padding:0;font-size:13px}li{margin:4px 0}
     <td>9"</td>
     <td>畅销榜#27</td>
     <td class="num">3.9</td>
-    <td class="num">—</td>
+    <td class="num">·</td>
   </tr><tr>
     <td><img src="https://m.media-amazon.com/images/I/61g9-k4rd8L._SL1500_.jpg" width="44" height="44" style="object-fit:contain;border-radius:6px;background:#f2f4f7" loading="lazy"></td>
     <td><a href="https://www.amazon.in/dp/B0F544X6MB" target="_blank" rel="noopener">B0F544X6MB</a></td>
@@ -297,7 +337,7 @@ ul{margin:6px 0 0 18px;padding:0;font-size:13px}li{margin:4px 0}
     <td>9"</td>
     <td>畅销榜#65、新品榜#8</td>
     <td class="num">4.3</td>
-    <td class="num">—</td>
+    <td class="num">·</td>
   </tr><tr>
     <td><img src="https://m.media-amazon.com/images/I/51vPXQEU-qL._SL1359_.jpg" width="44" height="44" style="object-fit:contain;border-radius:6px;background:#f2f4f7" loading="lazy"></td>
     <td><a href="https://www.amazon.in/dp/B0DJM97V6B" target="_blank" rel="noopener">B0DJM97V6B</a></td>
@@ -327,7 +367,7 @@ ul{margin:6px 0 0 18px;padding:0;font-size:13px}li{margin:4px 0}
     <td>myTVS</td>
     <td class="num">9,499</td>
     <td>6-10k</td>
-    <td>—</td>
+    <td>·</td>
     <td>新品榜#3、新品榜#29、新品榜#53</td>
     <td class="num">4.2</td>
     <td class="num">2*</td>
@@ -340,8 +380,8 @@ ul{margin:6px 0 0 18px;padding:0;font-size:13px}li{margin:4px 0}
     <td>6-10k</td>
     <td>9"</td>
     <td>新品榜#14</td>
-    <td class="num">—</td>
-    <td class="num">—</td>
+    <td class="num">·</td>
+    <td class="num">·</td>
   </tr><tr>
     <td><img src="https://m.media-amazon.com/images/I/71M7lPv4p1L._SL1500_.jpg" width="44" height="44" style="object-fit:contain;border-radius:6px;background:#f2f4f7" loading="lazy"></td>
     <td><a href="https://www.amazon.in/dp/B0DZ2FBX8G" target="_blank" rel="noopener">B0DZ2FBX8G</a></td>
@@ -373,8 +413,8 @@ ul{margin:6px 0 0 18px;padding:0;font-size:13px}li{margin:4px 0}
     <td>6-10k</td>
     <td>10.1"</td>
     <td>畅销榜#72</td>
-    <td class="num">—</td>
-    <td class="num">—</td>
+    <td class="num">·</td>
+    <td class="num">·</td>
   </tr><tr>
     <td><img src="https://m.media-amazon.com/images/I/51jQgEgzMbL._SL1280_.jpg" width="44" height="44" style="object-fit:contain;border-radius:6px;background:#f2f4f7" loading="lazy"></td>
     <td><a href="https://www.amazon.in/dp/B0DJMJ7NKZ" target="_blank" rel="noopener">B0DJMJ7NKZ</a></td>
@@ -429,7 +469,7 @@ ul{margin:6px 0 0 18px;padding:0;font-size:13px}li{margin:4px 0}
     <td>8"</td>
     <td>畅销榜#67</td>
     <td class="num">4.3</td>
-    <td class="num">—</td>
+    <td class="num">·</td>
   </tr><tr>
     <td><img src="https://m.media-amazon.com/images/I/51vHpvBDL3L._SL1000_.jpg" width="44" height="44" style="object-fit:contain;border-radius:6px;background:#f2f4f7" loading="lazy"></td>
     <td><a href="https://www.amazon.in/dp/B0D9FJMP2V" target="_blank" rel="noopener">B0D9FJMP2V</a></td>
@@ -440,7 +480,7 @@ ul{margin:6px 0 0 18px;padding:0;font-size:13px}li{margin:4px 0}
     <td>10.1"</td>
     <td>畅销榜#74</td>
     <td class="num">4.2</td>
-    <td class="num">—</td>
+    <td class="num">·</td>
   </tr><tr>
     <td><img src="https://m.media-amazon.com/images/I/616Zzt64C5L._SL1500_.jpg" width="44" height="44" style="object-fit:contain;border-radius:6px;background:#f2f4f7" loading="lazy"></td>
     <td><a href="https://www.amazon.in/dp/B0H8NWV2F7" target="_blank" rel="noopener">B0H8NWV2F7</a></td>
@@ -448,7 +488,7 @@ ul{margin:6px 0 0 18px;padding:0;font-size:13px}li{margin:4px 0}
     <td>myTVS</td>
     <td class="num">36,328</td>
     <td>&gt;20k</td>
-    <td>—</td>
+    <td>·</td>
     <td>新品榜#6</td>
     <td class="num">4.1</td>
     <td class="num">1*</td>
@@ -531,8 +571,8 @@ ul{margin:6px 0 0 18px;padding:0;font-size:13px}li{margin:4px 0}
     <td>≤6k</td>
     <td>9"</td>
     <td>畅销榜#80</td>
-    <td class="num">—</td>
-    <td class="num">—</td>
+    <td class="num">·</td>
+    <td class="num">·</td>
   </tr><tr>
     <td><img src="https://m.media-amazon.com/images/I/513MzQkbbxL._SL1080_.jpg" width="44" height="44" style="object-fit:contain;border-radius:6px;background:#f2f4f7" loading="lazy"></td>
     <td><a href="https://www.amazon.in/dp/B0D7CLBTVD" target="_blank" rel="noopener">B0D7CLBTVD</a></td>
@@ -672,7 +712,7 @@ ul{margin:6px 0 0 18px;padding:0;font-size:13px}li{margin:4px 0}
     <td>CoreG</td>
     <td class="num">44,817</td>
     <td>&gt;20k</td>
-    <td>—</td>
+    <td>·</td>
     <td>畅销榜#54</td>
     <td class="num">4.1</td>
     <td class="num">6*</td>
@@ -804,7 +844,7 @@ ul{margin:6px 0 0 18px;padding:0;font-size:13px}li{margin:4px 0}
 
 <div class="card"><h2>六、历史对比</h2><p class="note">首期快照：下月起可对比价格中位与上榜变化。</p></div>
 
-<div class="card"><h2>六、消费者评价与声量</h2><p class="note">来源：Amazon「Customers say」摘要 + 评分/评论数；样本 60 款，有摘要 18 款；数据日期 2026-11-13</p><div class="kpi"><div><span>总评论数</span><b>5,695</b></div><div><span>平均评分</span><b>3.67</b></div><div><span>有摘要商品</span><b>18</b></div></div><p style="margin-top:10px"><b>正面主题</b>：<span class="tag">性价比 10</span><span class="tag">产品质量 8</span><span class="tag">音质 4</span><span class="tag">连接性 3</span><span class="tag">屏幕画质 2</span><span class="tag">触控流畅 2</span></p><p><b>负面主题</b>：<span class="tag" style="background:#fff1f0;color:#d92d20">延迟问题 2</span><span class="tag" style="background:#fff1f0;color:#d92d20">延迟 1</span><span class="tag" style="background:#fff1f0;color:#d92d20">可靠性参差 1</span><span class="tag" style="background:#fff1f0;color:#d92d20">连接不稳定 1</span><span class="tag" style="background:#fff1f0;color:#d92d20">音质评价不一 1</span><span class="tag" style="background:#fff1f0;color:#d92d20">可靠性评价不一 1</span></p><h3 style="font-size:13px;margin:14px 0 6px">品牌口碑</h3><table><thead><tr><th>品牌</th><th class="num">商品</th><th class="num">评论数</th><th class="num">均分</th><th>正面点</th><th>负面点</th></tr></thead><tbody><tr><td>BASSOHOLIC</td><td class="num">3</td><td class="num">1,874</td><td class="num">3.87</td><td>产品质量 / 性价比 / 音质</td><td></td></tr><tr><td>AUTO SNAP</td><td class="num">2</td><td class="num">1,666</td><td class="num">3.8</td><td>性价比 / 屏幕画质 / 触控流畅</td><td></td></tr><tr><td>Plimpton</td><td class="num">3</td><td class="num">685</td><td class="num">4.03</td><td>产品质量 / 连接性 / 性价比</td><td></td></tr><tr><td>Haudio</td><td class="num">1</td><td class="num">579</td><td class="num">4.1</td><td>安装简便 / 外观好 / 质量好</td><td>连接不稳定 / 音质评价不一 / 可靠性评价不一</td></tr><tr><td>HK</td><td class="num">1</td><td class="num">325</td><td class="num">4.1</td><td>安装简便 / 屏幕明亮清晰 / 导航音乐表现好</td><td>可靠性参差</td></tr><tr><td>JXL</td><td class="num">3</td><td class="num">229</td><td class="num">3.53</td><td>产品质量 / 音质 / 性价比</td><td>延迟问题 / 延迟 / 可靠性一般</td></tr><tr><td>iWagon</td><td class="num">1</td><td class="num">107</td><td class="num">3</td><td></td><td>质量评价中性 / 连接评价中性 / 性能评价中性</td></tr><tr><td>Cason</td><td class="num">1</td><td class="num">47</td><td class="num">4.1</td><td>无线CarPlay兼容性 / 连接性 / 性价比</td><td></td></tr></tbody></table><h3 style="font-size:13px;margin:16px 0 6px">评论最多的商品</h3><table><thead><tr><th>商品</th><th>品牌</th><th class="num">评分</th><th class="num">评论</th><th>评价摘要</th><th>正面</th><th>负面</th></tr></thead><tbody><tr><td>BASSOHOLIC 9" T10 Android 14 Car Stereo | 4GB+64GB | Reverse Camera | | 1280x800 HD Touchscreen | Wireless CarPlay &amp; Android </td><td>BASSOHOLIC</td><td class="num">3.8</td><td class="num">1,870</td><td>安卓系统出色，性价比高，音质获好评。</td><td>安卓系统出色 / 性价比高 / 音质好</td><td></td></tr><tr><td>AUTO SNAP Portable Screen 7 Inch Car Play Android Auto Screen Touch Screen Wirelss Voice Control Bluetooth Mirror Multimedia</td><td>AUTO SNAP</td><td class="num">3.8</td><td class="num">833</td><td>用户认为该车机性价比高，屏幕画质清晰、触控流畅，无线连接无缝。</td><td>性价比 / 屏幕画质 / 触控流畅</td><td></td></tr><tr><td>AUTO SNAP 9 Inch HD 1280 Android Display Double Din Stereo Player 15 Android Auto Wireless Car Play Gorilla Glass IPS Display</td><td>AUTO SNAP</td><td class="num">3.8</td><td class="num">833</td><td>用户认为该车机性价比高，屏幕画质清晰、触控流畅，无线连接无缝。</td><td>性价比 / 屏幕画质 / 触控流畅</td><td></td></tr><tr><td>Haudio 7 Inch Double DIN Car Stereo, Wireless Apple CarPlay &amp; Android Auto, Android 13 Touchscreen Car Radio with GPS Navigat</td><td>Haudio</td><td class="num">4.1</td><td class="num">579</td><td>安装简便，外观质量好，但连接不稳定，音质与可靠性评价不一。</td><td>安装简便 / 外观好 / 质量好</td><td>连接不稳定 / 音质评价不一 / 可靠性评价不一</td></tr><tr><td>plimpton Portable Carplay Android Auto Screen for Car 7 Inch IPS Touch Screen Wireless Car Play for iOS Driveplay Multimedia </td><td>Plimpton</td><td class="num">4.3</td><td class="num">551</td><td>用户认可Plimpton产品质量、连接性、性价比、性能和触控响应。</td><td>产品质量 / 连接性 / 性价比</td><td></td></tr><tr><td>HK5 Carplay Screen for Car,10.26" HD Wireless Apple Carplay &amp; Android Auto | with 1080P Backup Camera, Night Vision, Car Play</td><td>HK</td><td class="num">4.1</td><td class="num">325</td><td>安装简便，屏幕明亮清晰，导航音乐表现好，但可靠性参差。</td><td>安装简便 / 屏幕明亮清晰 / 导航音乐表现好</td><td>可靠性参差</td></tr><tr><td>iWagon Car Android System Touchscreen-9Inch| TS9Pro CarPlay | 4GB/64GB|4th Gen|4Core| IPS Display | GPS &amp; Bluetooth | WiFi &amp; </td><td>iWagon</td><td class="num">3</td><td class="num">107</td><td>用户对产品质量、连接、性能和性价比评价中性。</td><td></td><td>质量评价中性 / 连接评价中性 / 性能评价中性</td></tr><tr><td>JXL 9 Inch HD 1280P Car Android Stereo 4GB RAM/64GB ROM with MTK (TS9) Processor Wireless Android Auto and Wireless Apple Car</td><td>JXL</td><td class="num">3.6</td><td class="num">101</td><td>用户认可JXL产品质量、音质和性价比，但可靠性评价中性，延迟问题受批评。</td><td>产品质量 / 音质 / 性价比</td><td>延迟</td></tr><tr><td>plimpton Upgraded Wireless Carplay, Android Auto Screen for Car, 9 Inch IPS Touch Screen Car Play Driveplay Multimedia Player</td><td>Plimpton</td><td class="num">4.1</td><td class="num">91</td><td>超出预期，CarPlay连接无缝，性能流畅，安装简便，性价比高。</td><td>超出预期 / CarPlay连接无缝 / 性能流畅</td><td></td></tr><tr><td>JXL 9 inch Car Android Player 4GB/64GB, Apple Car Play, DSP 32 Band EQ,IPS 2.5D Capacitive Touch, Octa Core Processor 1280P H</td><td>JXL</td><td class="num">3.4</td><td class="num">70</td><td>质量、音质和性价比获认可，但可靠性中性，延迟受批评。</td><td>质量好 / 音质好 / 性价比高</td><td>可靠性一般 / 延迟问题</td></tr><tr><td>JXL (New Launch) Dual Knob 10.1 Inch 2K FHD Bluetooth Car Android Player/ TS10/Andoid Auto/Apple Car Play/ 4GB/32 GB ROM/AHD </td><td>JXL</td><td class="num">3.6</td><td class="num">58</td><td>用户认可质量、音质和性价比，可靠性评价中性，延迟获负面反馈。</td><td>产品质量 / 音质 / 性价比</td><td>延迟问题</td></tr><tr><td>Cason 9 Inch Car Stereo Android System with Touch Screen |Car Android Player with CarPlay and Wireless Android Auto Bluetooth</td><td>Cason</td><td class="num">4.1</td><td class="num">47</td><td>用户认可无线CarPlay兼容性、连接性、性价比和性能，音质评价中性。</td><td>无线CarPlay兼容性 / 连接性 / 性价比</td><td></td></tr><tr><td>Plimpton Upgraded Portable Carplay for Android Auto Screen for Car, 9 Inch IPS Touch Screen Wireless Car Play Driveplay Multi</td><td>Plimpton</td><td class="num">3.7</td><td class="num">43</td><td>用户认可产品质量、连接性、性价比、性能及触控响应。</td><td>产品质量 / 连接性 / 性价比</td><td></td></tr><tr><td>Dulcet DC-F500X Universal Fit Double Din 7 inch HD Touch Screen Car Stereo with Wired Apple CarPlay, Android Auto &amp; Screen Mi</td><td>Dulcet</td><td class="num">3.1</td><td class="num">28</td><td>质量获好评，但功能评价不一，部分屏幕完全无法工作，性价比看法分化。</td><td>产品质量</td><td>功能评价不一 / 屏幕无法工作 / 性价比看法分化</td></tr><tr><td>Wagzo Car Android System Touch Screen 9 Inch Car Play Android Auto Wireless|TS9Pro Player|4GB/64GB|4th Gen|4Core|IPS Display|</td><td>Wagzo</td><td class="num">3</td><td class="num">24</td><td>用户称赞视频质量和屏幕显示，但性价比评价分化。</td><td>视频质量 / 屏幕显示</td><td>性价比评价分化</td></tr></tbody></table></div>
+<div class="card"><h2>六、消费者评价与声量</h2><p class="note">来源：Amazon「Customers say」摘要 + 评分/评论数；样本 60 款，有摘要 17 款；数据日期 2026-11-16</p><div class="kpi"><div><span>总评论数</span><b>5,701</b></div><div><span>平均评分</span><b>3.68</b></div><div><span>有摘要商品</span><b>17</b></div></div><p style="margin-top:10px"><b>正面主题</b>：<span class="tag">性价比 6</span><span class="tag">性价比高 4</span><span class="tag">音质好 4</span><span class="tag">产品品质 3</span><span class="tag">安装简便 3</span><span class="tag">音质 2</span></p><p><b>负面主题</b>：<span class="tag" style="background:#fff1f0;color:#d92d20">延迟 1</span><span class="tag" style="background:#fff1f0;color:#d92d20">可靠性参差 1</span><span class="tag" style="background:#fff1f0;color:#d92d20">连接不稳定 1</span><span class="tag" style="background:#fff1f0;color:#d92d20">音质反馈不一 1</span><span class="tag" style="background:#fff1f0;color:#d92d20">可靠性反馈不一 1</span><span class="tag" style="background:#fff1f0;color:#d92d20">软件功能反馈不一 1</span></p><h3 style="font-size:13px;margin:14px 0 6px">品牌口碑</h3><table><thead><tr><th>品牌</th><th class="num">商品</th><th class="num">评论数</th><th class="num">均分</th><th>正面点</th><th>负面点</th></tr></thead><tbody><tr><td>BASSOHOLIC</td><td class="num">3</td><td class="num">1,873</td><td class="num">3.87</td><td>性价比高 / 音质好 / 产品品质</td><td>性能表现评价中性</td></tr><tr><td>AUTO SNAP</td><td class="num">2</td><td class="num">1,666</td><td class="num">3.8</td><td>性价比 / 显示画质 / 高清清晰度</td><td></td></tr><tr><td>Plimpton</td><td class="num">3</td><td class="num">688</td><td class="num">4.03</td><td>产品品质 / 连接性 / 性价比</td><td>屏幕画质评价不一 / 摄像头画质差 / 倒车影像褒贬不一</td></tr><tr><td>Haudio</td><td class="num">1</td><td class="num">580</td><td class="num">4.1</td><td>安装简便 / 外观好 / 质量好</td><td>连接不稳定 / 音质反馈不一 / 可靠性反馈不一</td></tr><tr><td>HK</td><td class="num">1</td><td class="num">325</td><td class="num">4.1</td><td>安装简便 / 屏幕明亮清晰 / 导航音乐表现好</td><td>可靠性参差</td></tr><tr><td>JXL</td><td class="num">3</td><td class="num">230</td><td class="num">3.53</td><td>音质好 / 产品品质 / 音质</td><td>延迟 / 软件功能反馈不一 / 性价比反馈不一</td></tr><tr><td>iWagon</td><td class="num">1</td><td class="num">107</td><td class="num">3</td><td></td><td></td></tr><tr><td>Cason</td><td class="num">1</td><td class="num">47</td><td class="num">4.1</td><td>无线CarPlay兼容性 / 连接性 / 性价比</td><td></td></tr></tbody></table><h3 style="font-size:13px;margin:16px 0 6px">评论最多的商品</h3><table><thead><tr><th>商品</th><th>品牌</th><th class="num">评分</th><th class="num">评论</th><th>评价摘要</th><th>正面</th><th>负面</th></tr></thead><tbody><tr><td>BASSOHOLIC 9" T10 Android 14 Car Stereo | 4GB+64GB | Reverse Camera | | 1280x800 HD Touchscreen | Wireless CarPlay &amp; Android </td><td>BASSOHOLIC</td><td class="num">3.8</td><td class="num">1,869</td><td>安卓系统出色，性价比高，音质获好评。</td><td>安卓系统出色 / 性价比高 / 音质好</td><td></td></tr><tr><td>AUTO SNAP Portable Screen 7 Inch Car Play Android Auto Screen Touch Screen Wirelss Voice Control Bluetooth Mirror Multimedia</td><td>AUTO SNAP</td><td class="num">3.8</td><td class="num">833</td><td>用户认为性价比高，认可显示画质、高清清晰度与触控流畅，无线连接无缝。</td><td>性价比 / 显示画质 / 高清清晰度</td><td></td></tr><tr><td>AUTO SNAP 9 Inch HD 1280 Android Display Double Din Stereo Player 15 Android Auto Wireless Car Play Gorilla Glass IPS Display</td><td>AUTO SNAP</td><td class="num">3.8</td><td class="num">833</td><td>用户认为性价比高，认可显示画质、高清清晰度与触控流畅，无线连接无缝。</td><td>性价比 / 显示画质 / 高清清晰度</td><td></td></tr><tr><td>Haudio 7 Inch Double DIN Car Stereo, Wireless Apple CarPlay &amp; Android Auto, Android 13 Touchscreen Car Radio with GPS Navigat</td><td>Haudio</td><td class="num">4.1</td><td class="num">580</td><td>安装简便，外观质量好；连接不稳定，音质与可靠性反馈不一。</td><td>安装简便 / 外观好 / 质量好</td><td>连接不稳定 / 音质反馈不一 / 可靠性反馈不一</td></tr><tr><td>plimpton Portable Carplay Android Auto Screen for Car 7 Inch IPS Touch Screen Wireless Car Play for iOS Driveplay Multimedia </td><td>Plimpton</td><td class="num">4.3</td><td class="num">554</td><td>用户认可品质、连接性、性价比、性能与触控响应。</td><td>产品品质 / 连接性 / 性价比</td><td></td></tr><tr><td>HK5 Carplay Screen for Car,10.26" HD Wireless Apple Carplay &amp; Android Auto | with 1080P Backup Camera, Night Vision, Car Play</td><td>HK</td><td class="num">4.1</td><td class="num">325</td><td>安装简便，屏幕明亮清晰，导航音乐表现好；但可靠性参差。</td><td>安装简便 / 屏幕明亮清晰 / 导航音乐表现好</td><td>可靠性参差</td></tr><tr><td>iWagon Car Android System Touchscreen-9Inch| TS9Pro CarPlay | 4GB/64GB|4th Gen|4Core| IPS Display | GPS &amp; Bluetooth | WiFi &amp; </td><td>iWagon</td><td class="num">3</td><td class="num">107</td><td>用户对产品质量、连接、性能和性价比评价中性。</td><td></td><td></td></tr><tr><td>JXL 9 Inch HD 1280P Car Android Stereo 4GB RAM/64GB ROM with MTK (TS9) Processor Wireless Android Auto and Wireless Apple Car</td><td>JXL</td><td class="num">3.6</td><td class="num">102</td><td>用户认可品质、音质与性价比，可靠性评价中性，延迟问题受批评。</td><td>产品品质 / 音质 / 性价比</td><td>延迟</td></tr><tr><td>plimpton Upgraded Wireless Carplay, Android Auto Screen for Car, 9 Inch IPS Touch Screen Car Play Driveplay Multimedia Player</td><td>Plimpton</td><td class="num">4.1</td><td class="num">91</td><td>质量、连接、性价比、性能和触控反应获好评，支持语音与倒车影像。</td><td>质量好 / 连接好 / 性价比高</td><td></td></tr><tr><td>JXL 9 inch Car Android Player 4GB/64GB, Apple Car Play, DSP 32 Band EQ,IPS 2.5D Capacitive Touch, Octa Core Processor 1280P H</td><td>JXL</td><td class="num">3.4</td><td class="num">70</td><td>质量媲美大牌，音质好、触控灵敏、无卡顿，全高清屏；软件功能与性价比反馈不一。</td><td>质量媲美大牌 / 音质好 / 触控灵敏</td><td>软件功能反馈不一 / 性价比反馈不一</td></tr><tr><td>JXL (New Launch) Dual Knob 10.1 Inch 2K FHD Bluetooth Car Android Player/ TS10/Andoid Auto/Apple Car Play/ 4GB/32 GB ROM/AHD </td><td>JXL</td><td class="num">3.6</td><td class="num">58</td><td>音质、产品质量与性价比获好评；可靠性评价中性，延迟问题受负面反馈。</td><td>音质好 / 产品质量好 / 性价比高</td><td>延迟问题 / 可靠性评价中性</td></tr><tr><td>Cason 9 Inch Car Stereo Android System with Touch Screen |Car Android Player with CarPlay and Wireless Android Auto Bluetooth</td><td>Cason</td><td class="num">4.1</td><td class="num">47</td><td>用户认可无线CarPlay兼容性、连接性、性价比与性能，音质评价中性。</td><td>无线CarPlay兼容性 / 连接性 / 性价比</td><td></td></tr><tr><td>Plimpton Upgraded Portable Carplay for Android Auto Screen for Car, 9 Inch IPS Touch Screen Wireless Car Play Driveplay Multi</td><td>Plimpton</td><td class="num">3.7</td><td class="num">43</td><td>安装简便，CarPlay与安卓互联即连；屏幕画质评价不一，摄像头画质差评多，倒车影像褒贬不一。</td><td>安装简便 / CarPlay/安卓互联即连</td><td>屏幕画质评价不一 / 摄像头画质差 / 倒车影像褒贬不一</td></tr><tr><td>Dulcet DC-F500X Universal Fit Double Din 7 inch HD Touch Screen Car Stereo with Wired Apple CarPlay, Android Auto &amp; Screen Mi</td><td>Dulcet</td><td class="num">3.1</td><td class="num">29</td><td>做工质量好，但功能评价分化：部分称功能正常，部分称屏幕完全不亮；性价比看法分歧。</td><td>做工质量好</td><td>屏幕可能完全不工作 / 功能评价分化 / 性价比看法分歧</td></tr><tr><td>Wagzo Car Android System Touch Screen 9 Inch Car Play Android Auto Wireless|TS9Pro Player|4GB/64GB|4th Gen|4Core|IPS Display|</td><td>Wagzo</td><td class="num">3</td><td class="num">24</td><td>视频画质与屏幕显示获好评；性价比评价分化，部分满意低价，部分不满。</td><td>视频画质好 / 屏幕显示好</td><td>性价比评价分化</td></tr></tbody></table></div>
 
 <div class="card"><h2>七、数据口径与限制</h2>
 <ul>
