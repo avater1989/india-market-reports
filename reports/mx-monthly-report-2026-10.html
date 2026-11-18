@@ -1,164 +1,235 @@
-<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light">
 <title>墨西哥市场月报 · 2026 年 10 月</title>
 <style>
-:root{--ink:#101828;--ink2:#475467;--ink3:#98a2b3;--line:#e4e7ec;--bg:#f7f8fa;--accent:#2f6fed}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.75 -apple-system,"Segoe UI","Microsoft YaHei",sans-serif}
-.wrap{max-width:1040px;margin:0 auto;padding:34px 20px 64px}
-header{border-bottom:2px solid var(--ink);padding-bottom:14px;margin-bottom:18px}
-h1{margin:0;font-size:25px}.sub{color:var(--ink3);font-size:12.5px;margin-top:6px}
-.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:18px 0}
-.kpi{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px}
-.kpi .label{font-size:12px;color:var(--ink3)}.kpi .value{font-size:21px;font-weight:700}
-.card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px 20px;margin-bottom:16px}
-.card h2{margin:0 0 4px;font-size:15px;position:relative}.rep-link{float:right;font-size:12.5px;color:#2f6fed;text-decoration:none;font-weight:500}.note{color:var(--ink3);font-size:12px;margin:0 0 10px}
-.jrow{display:flex;gap:14px;padding:9px 0;border-bottom:1px dashed var(--line)}.jrow:last-child{border:0}
-.jrow .k{flex:0 0 56px;color:var(--accent);font-weight:600;font-size:12.5px;padding-top:2px}.jrow p{margin:0}
-table{width:100%;border-collapse:collapse;font-size:13px}th,td{padding:6px 8px;border-bottom:1px solid var(--line);text-align:left}
-th{color:var(--ink3);font-weight:500}td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
-.item{padding:7px 0;border-bottom:1px dashed var(--line)}.item:last-child{border:0}
-.muted{color:var(--ink2);font-size:12.5px}
-.tag{display:inline-block;padding:1px 8px;border-radius:999px;font-size:11.5px;background:#eef4ff;color:#2f6fed;margin-left:6px}
-footer{color:var(--ink3);font-size:12px;margin-top:18px}
-@media(max-width:760px){.kpis{grid-template-columns:repeat(2,1fr)}}
-
-  /* ===== 统一皮肤（编辑部报告）2026-11-18 ===== */
-  :root{--paper:#FAF8F4;--ink:#15171B;--ink2:#4A4E55;--ink3:#8A8579;--rule:#D9D3C7;--rule-soft:#E9E4DA;--neg:#A32B2B;--pos:#1E7A50}
-  body{background:var(--paper);color:var(--ink);font:15px/1.72 -apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;font-variant-numeric:tabular-nums;font-feature-settings:"tnum" 1}
-  .wrap{max-width:980px;margin:0 auto;padding:48px 30px 60px}
-  h1{font-size:32px;line-height:1.2;letter-spacing:-.015em;font-weight:700;margin:0 0 10px}
-  h2{font-size:15px;font-weight:700;letter-spacing:.01em;margin:34px 0 8px;padding-bottom:8px;border-bottom:1px solid var(--ink)}
-  h3{font-size:13.5px;font-weight:600}
-  .sub{color:var(--ink3);font-size:11.5px;letter-spacing:.01em}
-  .card{background:none !important;border:1px solid var(--rule);border-radius:0;padding:16px 18px;margin-bottom:12px;box-shadow:none}
-  .kpis{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--rule)}
-  .kpi{background:none;border:0;border-right:1px solid var(--rule-soft);border-radius:0;padding:15px 16px 16px 0;box-shadow:none}
-  .kpi:last-child{border-right:0}
-  .kpi .label{font-size:10.5px;letter-spacing:.06em;color:var(--ink3)}
-  .kpi .value{font-size:28px;font-weight:700;letter-spacing:-.02em;line-height:1.15}
-  table{width:100%;border-collapse:collapse;font-size:13px}
-  th,td{padding:8px 0;border-bottom:1px solid var(--rule-soft);text-align:left}
-  th{color:var(--ink3);font-weight:600;font-size:10.5px;letter-spacing:.05em;border-bottom:1px solid var(--rule)}
-  tr:last-child td{border-bottom:0}
-  td.num,th.num{text-align:right;padding-left:12px}
-  .tag{display:inline-block;font-size:10.5px;letter-spacing:.03em;padding:1px 6px;border:1px solid var(--rule);color:var(--ink2);border-radius:0;background:none}
-  .note{color:var(--ink3);font-size:11.5px;line-height:1.65}
-  .muted{color:var(--ink2);font-size:12px}
-  .item,.jrow{padding:10px 0;border-bottom:1px solid var(--rule-soft)}
-  .item:last-child,.jrow:last-child{border-bottom:0}
-  .jrow .k{color:var(--ink3);font-size:10.5px;letter-spacing:.06em;font-weight:600}
-  .grid{display:grid;gap:12px}
-  .kcard,.hl{background:none;border:1px solid var(--rule);border-radius:0;padding:14px 16px;box-shadow:none}
-  .band,.rules{padding:10px 0;border-bottom:1px solid var(--rule-soft)}
-  .new{background:none;color:var(--neg);border:1px solid #DCC0BE;border-radius:0;font-size:10px;padding:0 5px}
-  a{color:var(--ink2);text-decoration:underline;text-underline-offset:2px}
-  footer{color:var(--ink3);font-size:11px;margin-top:28px;border-top:1px solid var(--rule);padding-top:12px}
-  .rep-link{color:var(--ink2);text-decoration:underline}
-  @media(max-width:700px){
-    .wrap{padding:32px 18px 44px}
-    h1{font-size:26px}
-    .kpis{grid-template-columns:1fr 1fr}
-    .kpi:nth-child(2n){border-right:0}
-    .kpi:nth-child(n+3){border-top:1px solid var(--rule-soft)}
-  }
-
-  /* ===== 内联着色清理 2026-11-18 ===== */
-  [style*="background:#f2f4f7"]{background:var(--rule-soft) !important;border-radius:0 !important}
-  [style*="background:#7a5af8"]{background:var(--bar-2) !important;border-radius:0 !important}
-  [style*="background:#12b76a"]{background:var(--bar) !important;border-radius:0 !important}
-  [style*="background:#0ba5ec"]{background:var(--bar-3) !important;border-radius:0 !important}
-  [style*="background:#eef4ff"]{background:none !important}
-  [style*="background:#fff1f0"]{background:none !important}
-  [style*="background:#fff8e6"]{background:none !important}
-  [style*="background:#f7f8fa"]{background:none !important}
-  [style*="color:#2f6fed"]{color:var(--ink2) !important}
-  [style*="color:#d92d20"]{color:var(--neg) !important}
-  [style*="color:#101828"]{color:var(--ink) !important}
+:root{
+  --paper:#FAF8F4; --ink:#15171B; --ink2:#4A4E55; --ink3:#8A8579;
+  --rule:#D9D3C7; --rule-soft:#E9E4DA; --neg:#A32B2B; --pos:#1E7A50;
+  --bar:#15171B; --bar-2:#6E6A61; --bar-3:#B7B1A4; --bar-r:0px;
+  --fx-a:#15171B; --fx-b:#8A8579;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font:15px/1.72 -apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+  font-variant-numeric:tabular-nums;font-feature-settings:"tnum" 1}
+.wrap{max-width:980px;margin:0 auto;padding:48px 30px 64px}
+.masthead{display:flex;justify-content:space-between;align-items:baseline;
+  border-bottom:2px solid var(--ink);padding-bottom:10px;
+  font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink3)}
+.masthead .issue{letter-spacing:.05em}
+h1{margin:22px 0 10px;font-size:34px;line-height:1.2;letter-spacing:-.015em;font-weight:700}
+.dek{margin:0;color:var(--ink2);font-size:14px;line-height:1.75;max-width:66ch}
+.cuts{margin-top:12px;font-size:11.5px;color:var(--ink3);line-height:1.7}
+.cuts b{font-weight:600;color:var(--ink2)}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);margin:26px 0 8px}
+.kpi{padding:13px 12px 14px 0;border-right:1px solid var(--rule-soft)}
+.kpi:last-child{border-right:0}
+.kpi .label{font-size:10px;letter-spacing:.05em;color:var(--ink3);line-height:1.5}
+.kpi .value{font-size:26px;line-height:1.15;font-weight:700;letter-spacing:-.02em;margin-top:3px}
+.kpi .sub{margin-top:4px;color:var(--ink2);font-size:10.5px;line-height:1.5}
+.card{background:none;border:0;padding:0;margin:0 0 40px}
+.card h2{margin:0 0 4px;padding:0 0 8px;font-size:15px;font-weight:700;letter-spacing:.01em;border-bottom:1px solid var(--ink);overflow:hidden}
+.card h2 .tag,.card h2 .rep-link{float:right;margin-left:12px}
+h3{font-size:13px;font-weight:700;margin:22px 0 8px;letter-spacing:.01em}
+h3 .cnt{color:var(--ink3);font-weight:500;margin-left:8px;font-size:11.5px;letter-spacing:0}
+.note{color:var(--ink3);font-size:11.5px;line-height:1.7;margin:8px 0 14px}
+.muted{color:var(--ink2);font-size:12.5px;line-height:1.65}
+.takeaway{margin-top:14px;padding:12px 0 0;border-top:1px solid var(--rule);font-size:13.5px;line-height:1.7;color:var(--ink2)}
+.takeaway b{color:var(--ink);font-weight:700}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th,td{padding:8px 10px 8px 0;border-bottom:1px solid var(--rule-soft);text-align:left;vertical-align:top}
+th{color:var(--ink3);font-weight:600;font-size:10.5px;letter-spacing:.05em;border-bottom:1px solid var(--rule);white-space:nowrap}
+tr:last-child td{border-bottom:0}
+td.num,th.num{text-align:right;padding-left:12px;white-space:nowrap}
+table.caliber{font-size:12.5px}
+table.caliber td:first-child{white-space:nowrap}
+.tscroll{overflow-x:auto}
+.tag{display:inline-block;font-size:10.5px;letter-spacing:.03em;padding:1px 6px;border:1px solid var(--rule);color:var(--ink2);background:none;margin-left:6px;white-space:nowrap}
+.item{padding:10px 0;border-bottom:1px solid var(--rule-soft)}
+.item:last-child{border-bottom:0}
+.insight{padding:14px 0 4px;border-bottom:1px solid var(--rule-soft)}
+.insight:last-child{border-bottom:0}
+.insight-head{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:8px}
+.insight-no{font-size:11px;letter-spacing:.06em;color:var(--ink3);font-weight:600}
+.insight-head h3{margin:0;font-size:14.5px;font-weight:700;letter-spacing:.01em}
+.insight-kicker{font-size:11.5px;color:var(--ink3)}
+.insight-body{display:grid;grid-template-columns:76px 1fr;gap:5px 14px;margin:0}
+.insight-body dt{font-size:10.5px;letter-spacing:.05em;color:var(--ink3);font-weight:600;padding-top:3px}
+.insight-body dd{margin:0;font-size:13.5px;line-height:1.72;color:var(--ink2)}
+.insight-body dd:first-of-type{color:var(--ink)}
+svg{max-width:100%;height:auto}
+a{color:var(--ink2);text-decoration:underline;text-underline-offset:2px}
+footer{color:var(--ink3);font-size:11px;margin-top:28px;border-top:1px solid var(--rule);padding-top:12px}
+@media(max-width:760px){
+  .wrap{padding:32px 18px 48px}
+  h1{font-size:26px}
+  .kpis{grid-template-columns:1fr 1fr}
+  .kpi:nth-child(2n){border-right:0}
+  .kpi:nth-child(n+3){border-top:1px solid var(--rule-soft);padding-top:12px}
+  .insight-body{grid-template-columns:1fr;gap:2px}
+  .insight-body dt{padding-top:6px}
+  table{font-size:11.5px;min-width:560px}
+}
 </style></head><body><div class="wrap">
-<header><h1>墨西哥市场月报 · 2026 年 10 月</h1><div class="sub">报告期 2026-10 · 销量与结构 2026-10 · 竞品价 2026-11-18 · 生成 2026-11-18 ｜ 数据：INEGI RAIAVL 官方（262 个月）· 保有量 VMRC 2023 · 价格 Amazon MX/Steren · 媒体 Google News</div></header>
+
+<div class="masthead"><span>Lianshun · Mexico Desk</span><span class="issue">No. 2026-10</span></div>
+<h1>墨西哥市场月报 · 2026 年 10 月</h1>
+<p class="dek">2026-10 快报销量 137,438 辆（同比 +3.1%，INEGI 快报口径）；1–10 月累计 1,281,426 辆（同比 +4.9%，本库修订序列）。品牌、车型与结构数据最新到 2026-09，比销量快报滞后 1 个月；保有量、竞品、汇率各自另有时点，见「数据口径与来源」。</p>
+<div class="cuts">数据截止 ｜ 销量快报 2026-10 · 车型/结构 2026-09 · VMRC 2023 · 品牌累加 2026-10 · 竞品 2026-11-18 · 价格监控 2026-11-18 · 声量 2026-11-16 · 汇率 2026-11-17 · 媒体政策 2026-11-18 ｜ 生成 2026-11-18</div>
 
 <div class="kpis">
-<div class="kpi"><div class="label">最新月销量</div><div class="value">137,438</div><div class="sub">2026-10 · 同比 +3.1%</div></div>
-<div class="kpi"><div class="label">2026 年累计</div><div class="value">1,281,426</div><div class="sub">同比 +4.9%</div></div>
-<div class="kpi"><div class="label">竞品中位价</div><div class="value">999 MXN</div><div class="sub">截至 2026-11-18</div></div>
+<div class="kpi"><div class="label">最新月销量（快报）</div><div class="value">137,438</div><div class="sub">2026-10 · 同比 +3.1%（快报） · 本库 +3.6%</div></div>
+<div class="kpi"><div class="label">2026 年 1–10 月累计</div><div class="value">1,281,426</div><div class="sub">同比 +4.9% · 快报 YTD 1,287,268</div></div>
+<div class="kpi"><div class="label">竞品中位价（全量池 40 款）</div><div class="value">1,599 <span style="font-size:13px;font-weight:500">MXN</span></div><div class="sub">2026-11-18 · P25 1,193 / P75 2,056</div></div>
+<div class="kpi"><div class="label">USD/MXN（窗口 2026-07-31 起）</div><div class="value">18.46</div><div class="sub">+6.3% · 比索贬值 · CNY/MXN +7.6%</div></div>
 </div>
 
-<div class="card"><h2>本月判断</h2>
-<div class="jrow"><span class="k">市场</span><p>墨西哥10月新车13.7万辆同比增3.1%，累计增4.9%，市场温和扩张，皮卡SUV占比近六成，消费偏向实用与多功能车型。</p></div><div class="jrow"><span class="k">结构</span><p>皮卡SUV占58.9%，车载电子应优先适配NP300等皮卡及SUV中控、倒车影像与耐用型方案。</p></div><div class="jrow"><span class="k">动作</span><p>本月锁定Nissan NP300与Versa适配方案，联合墨西哥城经销商做安装促销，验证999 MXN价位带反应。</p></div>
+<div class="card"><h2>核心洞察</h2>
+<p class="note">5 条发现全部由现有数据计算，逐条标注数据月份、范围与限制；销量、登记存量与后装需求严格区分，价格样本数不等于市场份额。</p>
+<div class="insight">
+  <div class="insight-head"><span class="insight-no">01</span><h3>市场规模与趋势</h3><span class="insight-kicker">2026-10 快报 137,438 辆</span></div>
+  <dl class="insight-body">
+    <dt>核心发现</dt><dd>2026-10 快报 137,438 辆，同比 +3.1%（INEGI 快报）；按本库修订基期（2025-10 132,686 辆）计算为 +3.6%；1–10 月累计 1,281,426 辆、同比 +4.9%。单月环比 +6.3%，是近 6 个月最大的一个月。</dd>
+    <dt>数据依据</dt><dd>INEGI RAIAVL：2026-10 137,438（Cifras preliminares 快报）；2026-05 / 2026-06 / 2026-07 / 2026-08 / 2026-09 / 2026-10 依次为 127,107 / 126,902 / 130,835 / 129,361 / 129,274 / 137,438；快报 YTD 1,287,268，比本库累计多 5,842 辆。</dd>
+    <dt>业务参考</dt><dd>这是一个温和增长市场（累计约 +4.9%，不是高增长）；10 月单月环比 +6.3% 需等修订数据确认，不宜据此上调备货或年度目标。</dd>
+    <dt>分析限制</dt><dd>快报与本库序列基期不同：官方 10 月同比 +3.1%，本库按修订后的 2025-10（132,686 辆）算 +3.6%，差 0.5pp；YTD 差 5,842 辆（0.5%）。两套数都保留标注，不合并。快报没有车型明细。</dd>
+  </dl>
+</div><div class="insight">
+  <div class="insight-head"><span class="insight-no">02</span><h3>品牌及车型结构</h3><span class="insight-kicker">2026-09 · Nissan 18.7%</span></div>
+  <dl class="insight-body">
+    <dt>核心发现</dt><dd>2026-09（修订月）品牌前五：Nissan 18.7%、General Motors 12.8%、Volkswagen 8.7%、Toyota 7.9%、KIA 6.8%，合计 54.9%；车型榜首 Versa 7,985 辆。</dd>
+    <dt>数据依据</dt><dd>INEGI 开放数据 2026-09（60 款 / 20 品牌，Cifras Revisadas）；近 6 期份额 2026-04~2026-09 见「品牌份额 Top10」下的「近 6 期品牌份额」表。</dd>
+    <dt>业务参考</dt><dd>品牌集中度中等：前五合计 54.9%，Nissan/通用/大众三家合计约 40.2%，是车机适配与渠道覆盖的第一梯队。车型榜前 15 名里轿车 7 款（27,822 辆）、轻型车 8 款（18,985 辆）——轿车在头部更集中，但整体结构仍以轻型车为主，两类都要覆盖。</dd>
+    <dt>分析限制</dt><dd>份额 = 品牌销量 ÷ 当月 INEGI 轻型车合计（129,274），只覆盖 INEGI 上报口径；车型明细比销量快报滞后 1 个月（最新明细 2026-09），不能代表 2026-10 的品牌结构。</dd>
+  </dl>
+</div><div class="insight">
+  <div class="insight-head"><span class="insight-no">03</span><h3>车辆类型与产品适配方向</h3><span class="insight-kicker">2026-09 · 轻型车 58.9%</span></div>
+  <dl class="insight-body">
+    <dt>核心发现</dt><dd>2026-09 结构：轿车 53,105（41.1%）／皮卡/SUV/轻卡（INEGI camiones ligeros） 76,169（58.9%）；车型榜前 15 名中轻型车 8 款（18,985 辆）、轿车 7 款（27,822 辆）。</dd>
+    <dt>数据依据</dt><dd>INEGI 开放数据 2026-09：automóviles 53,105、camiones ligeros 76,169，合计 129,274（两类互补，无重复计数）。</dd>
+    <dt>业务参考</dt><dd>后装屏与车机的适配研究优先看皮卡与 SUV（中控台空间、倒车影像与耐用性需求）；轿车以通用 9/10 英寸机为主。销量只作调研参考，不能直接推导后装需求。</dd>
+    <dt>分析限制</dt><dd>「轻型车」是合并口径（含皮卡、SUV、轻卡/厢货），不能与「SUV」单列混用；SUV/皮卡细分按车型名关键词识别，不是官方 TIPO；结构数据比销量快报滞后 1 个月。</dd>
+  </dl>
+</div><div class="insight">
+  <div class="insight-head"><span class="insight-no">04</span><h3>区域市场结构</h3><span class="insight-kicker">VMRC 2023 · 前五州 44.4%</span></div>
+  <dl class="insight-body">
+    <dt>核心发现</dt><dd>INEGI VMRC 2023 登记车辆 58,199,293 辆；本文件覆盖 12 个州、占全国 67.8%；前五州占 44.4%，墨西哥州 + 墨西哥城合计 28.3%。</dd>
+    <dt>数据依据</dt><dd>INEGI VMRC 2023（登记在册口径，12 州）：México 9,988,109（17.2%）、Ciudad de México 6,471,738（11.1%）、Jalisco 4,609,531（7.9%）、Guanajuato 2,406,553（4.1%）、Baja California 2,404,000（4.1%）。</dd>
+    <dt>业务参考</dt><dd>渠道、安装服务与经销商调研优先墨西哥城都市圈（México 州 + CDMX 合计 28.3%），其次 Jalisco、Guanajuato、Baja California；这是车辆存量分布，不是新车销量，也不是后装需求。</dd>
+    <dt>分析限制</dt><dd>只有 2023 年单点数据，无同比/环比；文件仅覆盖 12 州；登记制含未注销旧车，高于在路估计（IDF 2025：36.1M），不能当市场规模或销量使用。</dd>
+  </dl>
+</div><div class="insight">
+  <div class="insight-head"><span class="insight-no">05</span><h3>竞争与经营环境</h3><span class="insight-kicker">40 款池 · 中位 1,599 MXN</span></div>
+  <dl class="insight-body">
+    <dt>核心发现</dt><dd>全量池 40 款 CarPlay 屏（2026-11-18），中位 1,599 MXN（P25 1,193 / P75 2,056）；上期 49 款、中位 1,743。汇率窗口 USD/MXN +6.3%、CNY/MXN +7.6%：比索对美元与人民币同时走弱。</dd>
+    <dt>数据依据</dt><dd>mx-competitor-pool 2026-11-18（40 款，0 款有评分）；上期快照 2026-11-13（49 款）；汇率 2026-07-31~2026-11-17（78 个观测）；消费者声量 2026-11-16（49 款样本、28 款有摘要、评论 10,805 条、均分 4.05）。</dd>
+    <dt>业务参考</dt><dd>1,200–2,100 MXN 是主价格带；本期覆盖缩小且评分缺失，只能做价格带与形态观察，不能判断「降价」或「口碑恶化」。汇率上要分开算：固定人民币报价时墨西哥客户的价格上升 7.6%（竞争力下降），固定比索报价折算人民币收入 -7.1%，美元结算时客户比索成本上升 6.3%、我方美元收入折人民币约 -1.3%。</dd>
+    <dt>分析限制</dt><dd>商品数是样本内数量，不是销量或市场份额；本期池评分/评论字段未获取（0/40），功能字段来自标题关键词；上期与本期样本不同，中位价变化含结构效应，不能读成同款降价。</dd>
+  </dl>
+</div>
 </div>
 
-<div class="card"><h2>销量与结构 <a class="rep-link" href="https://avater1989.github.io/india-market-reports/reports/mx-monthly-bi-2026-10.html">BI 明细 →</a></h2>
-<p class="note">官方口径；最新月为快报数据。结构（2026-09）：轿车 41.1% · 皮卡/SUV 58.9%</p>
-
-<h3 style="font-size:13px;margin:16px 0 6px">近 6 月明细</h3>
-<table><thead><tr><th>月份</th><th class="num">销量</th><th class="num">同比</th><th class="num">环比</th></tr></thead><tbody><tr><td>2026-10</td><td class="num">137,438</td><td class="num">+3.6%</td><td class="num">+6.3%</td></tr><tr><td>2026-09</td><td class="num">129,274</td><td class="num">+7.9%</td><td class="num">-0.1%</td></tr><tr><td>2026-08</td><td class="num">129,361</td><td class="num">+2.2%</td><td class="num">-1.1%</td></tr><tr><td>2026-07</td><td class="num">130,835</td><td class="num">+3.4%</td><td class="num">+3.1%</td></tr><tr><td>2026-06</td><td class="num">126,902</td><td class="num">+7.7%</td><td class="num">-0.2%</td></tr><tr><td>2026-05</td><td class="num">127,107</td><td class="num">+5%</td><td class="num">·</td></tr></tbody></table>
-<p class="muted" style="margin-top:10px">判断：皮卡SUV占58.9%，车载电子应优先适配NP300等皮卡及SUV中控、倒车影像与耐用型方案。</p>
+<div class="card"><h2>数据口径与来源</h2>
+<p class="note">同一个市场里有 3 套「车」的数字（销量 / 登记存量 / 销量累加）和 3 套竞品价格口径，跨口径相除、相加或互相替代都会得出错误结论，先看这张表。</p>
+<table class="caliber"><thead><tr><th>指标</th><th>实际数据月 / 日</th><th>统计范围</th><th>来源</th><th>口径要点</th></tr></thead><tbody><tr><td><b>INEGI 快报（销量/同比/YTD）</b></td><td>2026-10</td><td>轻型车销量（轿车 + 轻型车）</td><td>INEGI RAIAVL 快报（Cifras preliminares）</td><td>137,438 辆 · 同比 +3.1% · YTD 1,287,268；无车型明细</td></tr><tr><td><b>INEGI 修订序列（本库）</b></td><td>2025-01 ~ 2026-10</td><td>同上</td><td>INEGI RAIAVL 月度（修订 + 快报）</td><td>2025-10 基期 132,686 → 同比 +3.6%；YTD 1,281,426（+4.9%）</td></tr><tr><td><b>车型明细</b></td><td>2026-09</td><td>60 款 / 20 品牌</td><td>INEGI 开放数据（Cifras Revisadas）</td><td>比销量快报滞后 1 个月</td></tr><tr><td><b>结构（轿车/轻型车）</b></td><td>2026-09</td><td>轿车 53,105 + 轻型车 76,169</td><td>同上（开放数据 zip）</td><td>合计 129,274，两类互补无重复</td></tr><tr><td><b>VMRC 登记车辆（州级）</b></td><td>2023</td><td>12 州 / 全国 58,199,293</td><td>INEGI VMRC</td><td>登记在册口径，含未注销旧车</td></tr><tr><td><b>品牌销量累加（近似）</b></td><td>2010-01 ~ 2026-10</td><td>48 品牌 / 20,756,548 辆</td><td>RAIAVL 月度销量累加</td><td>非在册保有量；2026 年为 1–10 月</td></tr><tr><td><b>价格监控线</b></td><td>2026-11-18</td><td>Amazon 7/10 SKU + Steren 2</td><td>mx-prices.json（固定 SKU）</td><td>中位 999 MXN；用于同款价格变动跟踪</td></tr><tr><td><b>详情样本线</b></td><td>2026-11-18</td><td>30 款（Amazon 28 + Steren 2）</td><td>mx-competitors.json</td><td>中位 1,099 MXN；28 款有评分</td></tr><tr><td><b>全量池</b></td><td>2026-11-18</td><td>40 款 CarPlay 屏</td><td>mx-competitor-pool.json（类目爬取）</td><td>中位 1,599 MXN；评分/评论本期未获取</td></tr><tr><td><b>汇率</b></td><td>2026-11-17（窗口 2026-07-31 起）</td><td>78 个观测</td><td>汇率接口（mx-fx-trends）</td><td>USD/MXN +6.3%、CNY/MXN +7.6%；区间变化非月均价</td></tr><tr><td><b>消费者声量</b></td><td>2026-11-16</td><td>49 款样本 / 28 有摘要</td><td>Amazon「Customers say」摘要 + 评分评论</td><td>样本非全量</td></tr><tr><td><b>媒体 / 政策</b></td><td>2026-11-18</td><td>近 7 天归档</td><td>Google News / 媒体</td><td>标题级信号，未核实原文与税号</td></tr></tbody></table>
 </div>
 
-
-
-<div class="card"><h2>车型 Top15<span class="tag">2026-09</span></h2>
-<table><thead><tr><th>#</th><th>车型</th><th>品牌</th><th>类别</th><th class="num">销量</th></tr></thead><tbody><tr><td>1</td><td>Versa</td><td>Nissan</td><td>轿车</td><td class="num">7,985</td></tr><tr><td>2</td><td>Aveo</td><td>General Motors</td><td>轿车</td><td class="num">5,854</td></tr><tr><td>3</td><td>NP300</td><td>Nissan</td><td>皮卡/SUV</td><td class="num">5,550</td></tr><tr><td>4</td><td>KIA K3 Sedán</td><td>KIA</td><td>轿车</td><td class="num">3,753</td></tr><tr><td>5</td><td>March</td><td>Nissan</td><td>轿车</td><td class="num">3,287</td></tr><tr><td>6</td><td>CX-30</td><td>Mazda</td><td>皮卡/SUV</td><td class="num">2,741</td></tr><tr><td>7</td><td>Virtus</td><td>Volkswagen</td><td>轿车</td><td class="num">2,690</td></tr><tr><td>8</td><td>MG5</td><td>MG Motor</td><td>轿车</td><td class="num">2,425</td></tr><tr><td>9</td><td>RAM 1200</td><td>Chrysler</td><td>皮卡/SUV</td><td class="num">1,957</td></tr><tr><td>10</td><td>Captiva SUV</td><td>General Motors</td><td>皮卡/SUV</td><td class="num">1,864</td></tr><tr><td>11</td><td>Kwid</td><td>Renault</td><td>轿车</td><td class="num">1,828</td></tr><tr><td>12</td><td>Seltos-</td><td>KIA</td><td>皮卡/SUV</td><td class="num">1,806</td></tr><tr><td>13</td><td>Creta</td><td>Hyundai</td><td>皮卡/SUV</td><td class="num">1,727</td></tr><tr><td>14</td><td>Groove SUV</td><td>General Motors</td><td>皮卡/SUV</td><td class="num">1,683</td></tr><tr><td>15</td><td>Xtrail</td><td>Nissan</td><td>皮卡/SUV</td><td class="num">1,657</td></tr></tbody></table>
+<div class="card"><h2>销量与结构<span class="tag">销量 2026-10 · 结构 2026-09</span></h2>
+<p class="note">销量为 INEGI RAIAVL 口径；2026-10 是快报（Cifras preliminares），结构数据来自开放数据、最新 2026-09。结构：轿车 41.1%（53,105 辆）· 皮卡/SUV/轻卡（INEGI camiones ligeros） 58.9%（76,169 辆），两类合计 129,274 辆，互补无重复。</p>
+<h3>近 24 月销量<span class="cnt">INEGI RAIAVL · 月度</span></h3>
+<svg viewBox="0 0 940 230" width="100%" height="230"><line x1="50" y1="194" x2="920" y2="194" stroke="#D9D3C7" stroke-dasharray="3 4"/><text x="44" y="198" font-size="10" fill="#8A8579" text-anchor="end">10.9万</text><line x1="50" y1="104" x2="920" y2="104" stroke="#D9D3C7" stroke-dasharray="3 4"/><text x="44" y="108" font-size="10" fill="#8A8579" text-anchor="end">13.2万</text><line x1="50" y1="14" x2="920" y2="14" stroke="#D9D3C7" stroke-dasharray="3 4"/><text x="44" y="18" font-size="10" fill="#8A8579" text-anchor="end">15.4万</text><path d="M54.0,36.3 L91.7,43.2 L129.3,147.9 L167.0,157.3 L204.6,118.0 L242.3,194.0 L279.9,147.3 L317.6,160.6 L355.2,125.6 L392.9,125.5 L430.5,152.4 L468.2,101.0 L505.8,38.3 L543.5,14.0 L581.1,104.6 L618.8,158.5 L656.4,105.5 L694.1,156.3 L731.7,123.3 L769.4,124.1 L807.0,108.4 L844.7,114.3 L882.3,114.6 L920.0,82.0" fill="none" stroke="#15171B" stroke-width="2.2"/><text x="54" y="212" font-size="10" fill="#8A8579" text-anchor="middle">24-11</text><text x="166.95652173913044" y="212" font-size="10" fill="#8A8579" text-anchor="middle">25-02</text><text x="279.9130434782609" y="212" font-size="10" fill="#8A8579" text-anchor="middle">25-05</text><text x="392.8695652173913" y="212" font-size="10" fill="#8A8579" text-anchor="middle">25-08</text><text x="505.82608695652175" y="212" font-size="10" fill="#8A8579" text-anchor="middle">25-11</text><text x="618.7826086956521" y="212" font-size="10" fill="#8A8579" text-anchor="middle">26-02</text><text x="731.7391304347826" y="212" font-size="10" fill="#8A8579" text-anchor="middle">26-05</text><text x="844.695652173913" y="212" font-size="10" fill="#8A8579" text-anchor="middle">26-08</text></svg>
+<p class="note">曲线为近 24 个月 INEGI 轻型车月销量（含各月修订值），用于看季节性；不要用单月峰值外推全年。</p>
+<h3>近 6 月明细<span class="cnt">同比按本库修订序列计算</span></h3>
+<div class="tscroll"><table><thead><tr><th>月份</th><th class="num">销量</th><th class="num">同比（本库）</th><th class="num">环比</th><th>数据状态</th></tr></thead><tbody><tr><td>2026-10</td><td class="num">137,438</td><td class="num">+3.6%</td><td class="num">+6.3%</td><td>Cifras preliminares</td></tr><tr><td>2026-09</td><td class="num">129,274</td><td class="num">+7.9%</td><td class="num">-0.1%</td><td>Cifras Revisadas</td></tr><tr><td>2026-08</td><td class="num">129,361</td><td class="num">+2.2%</td><td class="num">-1.1%</td><td>Cifras Revisadas</td></tr><tr><td>2026-07</td><td class="num">130,835</td><td class="num">+3.4%</td><td class="num">+3.1%</td><td>Cifras Revisadas</td></tr><tr><td>2026-06</td><td class="num">126,902</td><td class="num">+7.7%</td><td class="num">-0.2%</td><td>Cifras Revisadas</td></tr><tr><td>2026-05</td><td class="num">127,107</td><td class="num">+5.0%</td><td class="num">+6.9%</td><td>Cifras Revisadas</td></tr></tbody></table></div>
+<p class="note">2026-10 行为 INEGI 快报：官方口径同比 +3.1%；本表按本库已修订的 2025-10（132,686 辆）计算为 +3.6%，差 0.5pp。差异来自基期修订，不是两个市场口径。</p>
 </div>
+
+<div class="card"><h2>车型 Top15<span class="tag">2026-09 · 明细滞后 1 个月</span></h2>
+<p class="note">INEGI 开放数据，车型明细比销量快报滞后 1 个月（最新 2026-09）；「类别」为官方 TIPO 的粗分类（轿车 / 轻型车），不是后装品类。</p>
+<div class="tscroll"><table><thead><tr><th>#</th><th>车型</th><th>品牌</th><th>类别</th><th class="num">销量</th></tr></thead><tbody><tr><td>1</td><td>Versa</td><td>Nissan</td><td>轿车</td><td class="num">7,985</td></tr><tr><td>2</td><td>Aveo</td><td>General Motors</td><td>轿车</td><td class="num">5,854</td></tr><tr><td>3</td><td>NP300</td><td>Nissan</td><td>轻型车</td><td class="num">5,550</td></tr><tr><td>4</td><td>KIA K3 Sedán</td><td>KIA</td><td>轿车</td><td class="num">3,753</td></tr><tr><td>5</td><td>March</td><td>Nissan</td><td>轿车</td><td class="num">3,287</td></tr><tr><td>6</td><td>CX-30</td><td>Mazda</td><td>轻型车</td><td class="num">2,741</td></tr><tr><td>7</td><td>Virtus</td><td>Volkswagen</td><td>轿车</td><td class="num">2,690</td></tr><tr><td>8</td><td>MG5</td><td>MG Motor</td><td>轿车</td><td class="num">2,425</td></tr><tr><td>9</td><td>RAM 1200</td><td>Chrysler</td><td>轻型车</td><td class="num">1,957</td></tr><tr><td>10</td><td>Captiva SUV</td><td>General Motors</td><td>轻型车</td><td class="num">1,864</td></tr><tr><td>11</td><td>Kwid</td><td>Renault</td><td>轿车</td><td class="num">1,828</td></tr><tr><td>12</td><td>Seltos</td><td>KIA</td><td>轻型车</td><td class="num">1,806</td></tr><tr><td>13</td><td>Creta</td><td>Hyundai</td><td>轻型车</td><td class="num">1,727</td></tr><tr><td>14</td><td>Groove SUV</td><td>General Motors</td><td>轻型车</td><td class="num">1,683</td></tr><tr><td>15</td><td>Xtrail</td><td>Nissan</td><td>轻型车</td><td class="num">1,657</td></tr></tbody></table></div>
+</div>
+
 <div class="card"><h2>车型分类排名<span class="tag">2026-09</span></h2>
-<p class="note">按官方 TIPO 先分轿车/轻型车，再按车型名细分 SUV 与皮卡。</p>
+<p class="note">按官方 TIPO 先分轿车/轻型车，再按车型名关键词细分 SUV 与皮卡；关键词识别结果不等于官方分类。</p>
 <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px">
-<div><h3 style="font-size:13px;margin:0 0 6px">轿车</h3><table><thead><tr><th>#</th><th>车型</th><th class="num">销量</th></tr></thead><tbody><tr><td>1</td><td>Versa</td><td class="num">7,985</td></tr><tr><td>2</td><td>Aveo</td><td class="num">5,854</td></tr><tr><td>3</td><td>KIA K3 Sedán</td><td class="num">3,753</td></tr><tr><td>4</td><td>March</td><td class="num">3,287</td></tr><tr><td>5</td><td>Virtus</td><td class="num">2,690</td></tr><tr><td>6</td><td>MG5</td><td class="num">2,425</td></tr><tr><td>7</td><td>Kwid</td><td class="num">1,828</td></tr><tr><td>8</td><td>Mazda 2 Sedán</td><td class="num">1,612</td></tr><tr><td>9</td><td>Nuevo Attitude</td><td class="num">1,582</td></tr><tr><td>10</td><td>Emgrand</td><td class="num">1,555</td></tr></tbody></table></div>
-<div><h3 style="font-size:13px;margin:0 0 6px">SUV</h3><table><thead><tr><th>#</th><th>车型</th><th class="num">销量</th></tr></thead><tbody><tr><td>1</td><td>CX-30</td><td class="num">2,741</td></tr><tr><td>2</td><td>Captiva SUV</td><td class="num">1,864</td></tr><tr><td>3</td><td>Seltos</td><td class="num">1,806</td></tr><tr><td>4</td><td>Creta</td><td class="num">1,727</td></tr><tr><td>5</td><td>Groove SUV</td><td class="num">1,683</td></tr><tr><td>6</td><td>Xtrail</td><td class="num">1,657</td></tr><tr><td>7</td><td>Magnite</td><td class="num">1,579</td></tr><tr><td>8</td><td>Territory</td><td class="num">1,563</td></tr><tr><td>9</td><td>CX-5</td><td class="num">1,516</td></tr><tr><td>10</td><td>Tiguan</td><td class="num">1,492</td></tr></tbody></table></div>
-<div><h3 style="font-size:13px;margin:0 0 6px">皮卡</h3><table><thead><tr><th>#</th><th>车型</th><th class="num">销量</th></tr></thead><tbody><tr><td>1</td><td>NP300</td><td class="num">5,550</td></tr><tr><td>2</td><td>RAM 1200</td><td class="num">1,957</td></tr><tr><td>3</td><td>S10</td><td class="num">1,638</td></tr><tr><td>4</td><td>RAM 700</td><td class="num">1,450</td></tr><tr><td>5</td><td>Hilux Dc</td><td class="num">1,421</td></tr><tr><td>6</td><td>Saveiro</td><td class="num">1,213</td></tr><tr><td>7</td><td>Tacoma</td><td class="num">915</td></tr><tr><td>8</td><td>L200</td><td class="num">844</td></tr><tr><td>9</td><td>Ranger</td><td class="num">611</td></tr></tbody></table></div>
+<div><h3 style="margin-top:0">轿车</h3><table><thead><tr><th>#</th><th>车型</th><th class="num">销量</th></tr></thead><tbody><tr><td>1</td><td>Versa</td><td class="num">7,985</td></tr><tr><td>2</td><td>Aveo</td><td class="num">5,854</td></tr><tr><td>3</td><td>KIA K3 Sedán</td><td class="num">3,753</td></tr><tr><td>4</td><td>March</td><td class="num">3,287</td></tr><tr><td>5</td><td>Virtus</td><td class="num">2,690</td></tr><tr><td>6</td><td>MG5</td><td class="num">2,425</td></tr><tr><td>7</td><td>Kwid</td><td class="num">1,828</td></tr><tr><td>8</td><td>Mazda 2 Sedán</td><td class="num">1,612</td></tr><tr><td>9</td><td>Nuevo Attitude</td><td class="num">1,582</td></tr><tr><td>10</td><td>Emgrand</td><td class="num">1,555</td></tr></tbody></table></div>
+<div><h3 style="margin-top:0">SUV</h3><table><thead><tr><th>#</th><th>车型</th><th class="num">销量</th></tr></thead><tbody><tr><td>1</td><td>CX-30</td><td class="num">2,741</td></tr><tr><td>2</td><td>Captiva SUV</td><td class="num">1,864</td></tr><tr><td>3</td><td>Seltos</td><td class="num">1,806</td></tr><tr><td>4</td><td>Creta</td><td class="num">1,727</td></tr><tr><td>5</td><td>Groove SUV</td><td class="num">1,683</td></tr><tr><td>6</td><td>Xtrail</td><td class="num">1,657</td></tr><tr><td>7</td><td>Magnite</td><td class="num">1,579</td></tr><tr><td>8</td><td>Territory</td><td class="num">1,563</td></tr><tr><td>9</td><td>CX-5</td><td class="num">1,516</td></tr><tr><td>10</td><td>Tiguan</td><td class="num">1,492</td></tr></tbody></table></div>
+<div><h3 style="margin-top:0">皮卡</h3><table><thead><tr><th>#</th><th>车型</th><th class="num">销量</th></tr></thead><tbody><tr><td>1</td><td>NP300</td><td class="num">5,550</td></tr><tr><td>2</td><td>RAM 1200</td><td class="num">1,957</td></tr><tr><td>3</td><td>S10</td><td class="num">1,638</td></tr><tr><td>4</td><td>RAM 700</td><td class="num">1,450</td></tr><tr><td>5</td><td>Hilux Dc</td><td class="num">1,421</td></tr><tr><td>6</td><td>Saveiro</td><td class="num">1,213</td></tr><tr><td>7</td><td>Tacoma</td><td class="num">915</td></tr><tr><td>8</td><td>L200</td><td class="num">844</td></tr><tr><td>9</td><td>Ranger</td><td class="num">611</td></tr></tbody></table></div>
 </div></div>
 
 <div class="card"><h2>品牌份额 Top10<span class="tag">2026-09</span></h2>
-<table><thead><tr><th>品牌</th><th class="num">销量</th><th class="num">份额</th></tr></thead><tbody><tr><td>Nissan</td><td class="num">24,139</td><td class="num">18.7%</td></tr><tr><td>General Motors</td><td class="num">16,528</td><td class="num">12.8%</td></tr><tr><td>Volkswagen</td><td class="num">11,288</td><td class="num">8.7%</td></tr><tr><td>Toyota</td><td class="num">10,205</td><td class="num">7.9%</td></tr><tr><td>KIA</td><td class="num">8,773</td><td class="num">6.8%</td></tr><tr><td>Mazda</td><td class="num">8,539</td><td class="num">6.6%</td></tr><tr><td>Chrysler</td><td class="num">6,913</td><td class="num">5.3%</td></tr><tr><td>Ford Motor</td><td class="num">4,477</td><td class="num">3.5%</td></tr><tr><td>Geely</td><td class="num">4,306</td><td class="num">3.3%</td></tr><tr><td>Hyundai</td><td class="num">4,273</td><td class="num">3.3%</td></tr></tbody></table>
-<p class="muted" style="margin-top:10px">判断：Nissan、通用、大众、丰田、KIA合计超五成，日韩美系主导，需绑定主机厂渠道与后装兼容性。</p>
+<p class="note">份额 = 品牌销量 ÷ 当月 INEGI 轻型车合计（129,274 辆），只覆盖 INEGI 上报口径。</p>
+<div class="tscroll"><table><thead><tr><th>品牌</th><th class="num">销量</th><th class="num">份额</th></tr></thead><tbody><tr><td>Nissan</td><td class="num">24,139</td><td class="num">18.7%</td></tr><tr><td>General Motors</td><td class="num">16,528</td><td class="num">12.8%</td></tr><tr><td>Volkswagen</td><td class="num">11,288</td><td class="num">8.7%</td></tr><tr><td>Toyota</td><td class="num">10,205</td><td class="num">7.9%</td></tr><tr><td>KIA</td><td class="num">8,773</td><td class="num">6.8%</td></tr><tr><td>Mazda</td><td class="num">8,539</td><td class="num">6.6%</td></tr><tr><td>Chrysler</td><td class="num">6,913</td><td class="num">5.3%</td></tr><tr><td>Ford Motor</td><td class="num">4,477</td><td class="num">3.5%</td></tr><tr><td>Geely</td><td class="num">4,306</td><td class="num">3.3%</td></tr><tr><td>Hyundai</td><td class="num">4,273</td><td class="num">3.3%</td></tr></tbody></table></div>
+<h3>近 6 期品牌份额<span class="cnt">2026-04 ~ 2026-09 · 颜色越深份额越高</span></h3>
+<div class="tscroll"><table><thead><tr><th>品牌</th><th class="num">26-04</th><th class="num">26-05</th><th class="num">26-06</th><th class="num">26-07</th><th class="num">26-08</th><th class="num">26-09</th></tr></thead><tbody><tr><td>Nissan</td><td class="num" style="background:rgba(21,23,27,0.17)">16.2%</td><td class="num" style="background:rgba(21,23,27,0.17)">16.9%</td><td class="num" style="background:rgba(21,23,27,0.16)">15.2%</td><td class="num" style="background:rgba(21,23,27,0.18)">17.9%</td><td class="num" style="background:rgba(21,23,27,0.18)">17.3%</td><td class="num" style="background:rgba(21,23,27,0.19)">18.7%</td></tr><tr><td>General Motors</td><td class="num" style="background:rgba(21,23,27,0.14)">13.3%</td><td class="num" style="background:rgba(21,23,27,0.14)">12.6%</td><td class="num" style="background:rgba(21,23,27,0.13)">11.7%</td><td class="num" style="background:rgba(21,23,27,0.14)">12.4%</td><td class="num" style="background:rgba(21,23,27,0.14)">13.2%</td><td class="num" style="background:rgba(21,23,27,0.14)">12.8%</td></tr><tr><td>Volkswagen</td><td class="num" style="background:rgba(21,23,27,0.10)">8.7%</td><td class="num" style="background:rgba(21,23,27,0.10)">8.3%</td><td class="num" style="background:rgba(21,23,27,0.11)">8.9%</td><td class="num" style="background:rgba(21,23,27,0.11)">8.9%</td><td class="num" style="background:rgba(21,23,27,0.11)">9.1%</td><td class="num" style="background:rgba(21,23,27,0.10)">8.7%</td></tr><tr><td>Toyota</td><td class="num" style="background:rgba(21,23,27,0.11)">9%</td><td class="num" style="background:rgba(21,23,27,0.10)">8.5%</td><td class="num" style="background:rgba(21,23,27,0.10)">8.4%</td><td class="num" style="background:rgba(21,23,27,0.10)">8.5%</td><td class="num" style="background:rgba(21,23,27,0.10)">8.4%</td><td class="num" style="background:rgba(21,23,27,0.10)">7.9%</td></tr><tr><td>KIA</td><td class="num" style="background:rgba(21,23,27,0.09)">7.2%</td><td class="num" style="background:rgba(21,23,27,0.09)">7.3%</td><td class="num" style="background:rgba(21,23,27,0.09)">7.5%</td><td class="num" style="background:rgba(21,23,27,0.09)">7.1%</td><td class="num" style="background:rgba(21,23,27,0.09)">7%</td><td class="num" style="background:rgba(21,23,27,0.09)">6.8%</td></tr></tbody></table></div>
 </div>
 
-
-<div class="card"><h2>品牌保有量（近似）</h2>
-<p class="note">方法：RAIAVL 月度销量累加（2010-01 ~ 2026-12，约 2076 万辆）。不是真实在册保有量，仅作现代车段品牌结构参考。</p>
-<p>前三：Nissan 21.4% · General Motors 16.28% · Volkswagen 11.28%（完整明细见品牌保有量 BI）</p>
+<div class="card"><h2>州级市场结构<span class="tag">VMRC 2023 · 登记口径</span></h2>
+<p class="note">INEGI VMRC（Registro de Vehículos Motor en Circulación）登记在册车辆，2023 年：全国 58,199,293 辆。本文件覆盖 12 个州（占全国 67.8%），前五州合计 44.4%，México 州 + Ciudad de México 28.3%。只有单一年份，<b>不做同比/环比</b>。</p>
+<div class="tscroll"><table><thead><tr><th>#</th><th>州</th><th class="num">2023 登记车辆</th><th class="num">占全国</th></tr></thead><tbody><tr><td>1</td><td>México</td><td class="num">9,988,109</td><td class="num">17.2%</td></tr><tr><td>2</td><td>Ciudad de México</td><td class="num">6,471,738</td><td class="num">11.1%</td></tr><tr><td>3</td><td>Jalisco</td><td class="num">4,609,531</td><td class="num">7.9%</td></tr><tr><td>4</td><td>Guanajuato</td><td class="num">2,406,553</td><td class="num">4.1%</td></tr><tr><td>5</td><td>Baja California</td><td class="num">2,404,000</td><td class="num">4.1%</td></tr><tr><td>6</td><td>Veracruz de Ignacio de la Llave</td><td class="num">2,341,051</td><td class="num">4%</td></tr><tr><td>7</td><td>Nuevo León</td><td class="num">2,232,607</td><td class="num">3.8%</td></tr><tr><td>8</td><td>Michoacán de Ocampo</td><td class="num">2,064,273</td><td class="num">3.5%</td></tr><tr><td>9</td><td>Chihuahua</td><td class="num">1,879,130</td><td class="num">3.2%</td></tr><tr><td>10</td><td>Sonora</td><td class="num">1,822,090</td><td class="num">3.1%</td></tr></tbody></table></div>
+<p class="note">这是官方登记存量，可用于判断渠道与安装服务的空间分布，<b>不是新车销量、也不是在路车辆</b>：登记制含未注销旧车，高于在路估计（IDF 2025 约 36.1M）。文件仅含 12 州，其余州未纳入，占比之和为 67.8%，不能当全国结构。无州级品牌/车型字段，故不做州 × 品牌分析。</p>
 </div>
 
+<div class="card"><h2>品牌销量累加（近似）<span class="tag">2010-01 ~ 2026-10</span></h2>
+<p class="note">方法：RAIAVL 月度销量累加（2010-01 起），不是登记保有量、也不是在路车辆：不含注销/报废，也不含 2010 年前老车。窗口按实际数据截止到 2026-10（文件原标注 2026-12 为占位，已按有效月份修正）；2026 年为 1–10 月，不是全年。</p>
+<div class="tscroll"><table><thead><tr><th>#</th><th>品牌</th><th class="num">累加销量（2026 为部分年度）</th><th class="num">占累加总量</th><th class="num">SUV 占比</th></tr></thead><tbody><tr><td>1</td><td>Nissan</td><td class="num">4,442,149</td><td class="num">21.4%</td><td class="num">37%</td></tr><tr><td>2</td><td>General Motors</td><td class="num">3,378,578</td><td class="num">16.3%</td><td class="num">35.9%</td></tr><tr><td>3</td><td>Volkswagen</td><td class="num">2,340,680</td><td class="num">11.3%</td><td class="num">26.2%</td></tr><tr><td>4</td><td>Toyota</td><td class="num">1,502,366</td><td class="num">7.2%</td><td class="num">55.7%</td></tr><tr><td>5</td><td>Chrysler</td><td class="num">1,154,460</td><td class="num">5.6%</td><td class="num">74.3%</td></tr><tr><td>6</td><td>Ford Motor</td><td class="num">1,127,487</td><td class="num">5.4%</td><td class="num">67.4%</td></tr><tr><td>7</td><td>KIA</td><td class="num">981,511</td><td class="num">4.7%</td><td class="num">39.1%</td></tr><tr><td>8</td><td>Mazda</td><td class="num">942,115</td><td class="num">4.5%</td><td class="num">45.6%</td></tr></tbody></table></div>
+<p class="note">累加总量 20,756,548 辆（实际窗口 2010-01 ~ 2026-10；数据文件里的 2010-01 ~ 2026-12 标注含未来月份占位，已按有效月份修正）。2026 年累加 1,143,988 辆，只含已发布月份。</p>
+</div>
 
-
-
-<div class="card"><h2>消费者评价与声量</h2><p class="note">来源：Amazon 商品页「Customers say」摘要 + 评分/评论数；样本 49 款，其中有评价摘要 28 款。数据日期 2026-11-16。</p><div style="display:flex;gap:28px;flex-wrap:wrap;margin:6px 0 10px"><div><span class="note">总评论数</span><div style="font-size:20px;font-weight:700">10,805</div></div><div><span class="note">平均评分</span><div style="font-size:20px;font-weight:700">4.05</div></div><div><span class="note">有摘要商品</span><div style="font-size:20px;font-weight:700">28</div></div></div><p><b>正面主题</b>：<span class="tag">性价比高 9</span><span class="tag">安装简便 4</span><span class="tag">运行良好 4</span><span class="tag">易用 3</span><span class="tag">音质好 3</span><span class="tag">整体优秀 3</span></p><p><b>负面主题</b>：<span class="tag neg">功能评价不一 6</span><span class="tag neg">性价比评价不一 4</span><span class="tag neg">质量评价不一 3</span><span class="tag neg">连接评价不一 3</span><span class="tag neg">控制按键手感廉价 1</span><span class="tag neg">缺少物理按键 1</span></p><table style="margin-top:10px"><thead><tr><th>品牌</th><th class="num">商品</th><th class="num">评论数</th><th class="num">均分</th><th>正面点</th><th>负面点</th></tr></thead><tbody><tr><td>未知</td><td class="num">14</td><td class="num">5,339</td><td class="num">4.14</td><td>音质好 / 性价比高 / 表现出色</td><td>功能评价不一 / 连接不稳定 / 蓝牙频繁断连</td></tr><tr><td>Podofo</td><td class="num">1</td><td class="num">1,658</td><td class="num">4</td><td>易用 / 性价比高 / 值得购买</td><td>长期耐用性存疑</td></tr><tr><td>HIMICAR</td><td class="num">4</td><td class="num">836</td><td class="num">3.65</td><td>性价比高 / 安装简便 / 易用</td><td>接收效果差 / 整体质量评价不一 / 功能评价不一</td></tr><tr><td>CarpodGo</td><td class="num">1</td><td class="num">603</td><td class="num">4.4</td><td>运行出色 / 屏幕稳定 / 画面清晰</td><td>·</td></tr><tr><td>Pioneer</td><td class="num">3</td><td class="num">508</td><td class="num">4.3</td><td>性价比高 / 音质出色 / 安装简便</td><td>连接评价不一 / 调节评价不一</td></tr><tr><td>CARPURIDE</td><td class="num">2</td><td class="num">482</td><td class="num">3.85</td><td>GPS导航好 / 物有所值 / 兼容性好</td><td>部分方面评价不一 / 功能评价不一 / 连接评价不一</td></tr></tbody></table></div>
-<div class="card"><h2>汇率与成本</h2>
-<table><tbody>
-<tr><td>当前 USD/MXN</td><td class="num">18.4639</td></tr>
-<tr><td>当前 CNY/MXN</td><td class="num">2.7698</td></tr>
-<tr><td>USD/MXN 近 30 日区间</td><td class="num">18.013 ~ 18.908</td></tr>
-</tbody></table>
+<div class="card"><h2>汇率与成本<span class="tag">窗口 2026-07-31~2026-11-17</span></h2>
+<div class="tscroll"><table><tbody>
+<tr><td>USD/MXN</td><td class="num">17.3715 → 18.4639（+6.3%）</td></tr>
+<tr><td>USD/MXN 区间</td><td class="num">16.898 ~ 18.908</td></tr>
+<tr><td>CNY/MXN</td><td class="num">2.5731 → 2.7698（+7.6%）</td></tr>
+<tr><td>隐含 USD/CNY</td><td class="num">6.751 → 6.666（-1.3%）</td></tr>
+</tbody></table></div>
+<div class="takeaway"><b>对报价的影响：</b>
+固定人民币报价时，墨西哥客户看到的比索价格上升 7.6%（价格竞争力下降，需与客户重新议价或让利）；
+固定墨西哥比索报价时，折算人民币收入 -7.1%（比索走弱吃掉利润，敞口在这里，回强则反向）；
+美元结算时，墨西哥客户的比索成本上升 6.3%（对成交不利），我方美元收入折人民币 -1.3%，两端方向相反、整体偏中性到略负。
+</div>
 <div style="margin:10px 0 4px">
-    <div style="font-size:13px;color:#101828"><b>汇率趋势（指数化比较）</b>
+    <div style="font-size:13px;color:#101828"><b>汇率趋势（2026-07-31 起指数化）</b>
       <span style="font-size:12px;color:#475467;font-weight:400;margin-left:8px">
-        USD/MXN 18.464（2026-11-17，2.0%）·
-        CNY/MXN 2.770（2026-11-17，2.6%）
+        USD/MXN 18.464（2026-11-17，6.3%）·
+        CNY/MXN 2.770（2026-11-17，7.6%）
       </span>
     </div>
-    <svg viewBox="0 0 940 250" width="100%" height="250"><line x1="56" y1="182.30769230769232" x2="916" y2="182.30769230769232" stroke="#D9D3C7" stroke-dasharray="3 4"/><text x="52" y="186.30769230769232" font-size="10" style="fill:var(--ink3, #667085)" text-anchor="end">99.5</text><line x1="56" y1="170.9866935844421" x2="916" y2="170.9866935844421" stroke="#8A8579" stroke-dasharray="3 4"/><text x="52" y="174.9866935844421" font-size="10" style="fill:var(--ink3, #667085)" text-anchor="end">100.0</text><line x1="56" y1="37.69230769230765" x2="916" y2="37.69230769230765" stroke="#D9D3C7" stroke-dasharray="3 4"/><text x="52" y="41.69230769230765" font-size="10" style="fill:var(--ink3, #667085)" text-anchor="end">105.3</text>
-      <path d="M60.0,171.0 L89.5,182.3 L119.0,156.3 L148.6,136.6 L178.1,137.6 L207.6,133.4 L237.1,111.6 L266.6,130.9 L296.1,117.0 L325.7,111.7 L355.2,117.2 L384.7,78.4 L414.2,75.5 L443.7,98.7 L473.2,95.7 L502.8,96.5 L532.3,80.4 L561.8,58.1 L591.3,84.2 L620.8,101.2 L650.3,94.4 L679.9,102.1 L709.4,86.4 L738.9,99.0 L768.4,107.3 L797.9,92.6 L827.4,88.3 L857.0,101.8 L886.5,106.3 L916.0,119.7" fill="none" style="stroke:var(--fx-a, #2f6fed)" stroke-width="2.2" stroke-linejoin="round"/>
-      <path d="M60.0,171.0 L89.5,181.5 L119.0,151.6 L148.6,132.2 L178.1,133.5 L207.6,128.8 L237.1,106.3 L266.6,123.8 L296.1,107.8 L325.7,101.5 L355.2,106.2 L384.7,66.6 L414.2,62.2 L443.7,84.6 L473.2,81.3 L502.8,81.7 L532.3,63.6 L561.8,37.7 L591.3,62.2 L620.8,88.8 L650.3,81.9 L679.9,88.1 L709.4,73.4 L738.9,86.7 L768.4,94.1 L797.9,79.5 L827.4,74.2 L857.0,89.1 L886.5,91.5 L916.0,104.9" fill="none" style="stroke:var(--fx-b, #12b76a)" stroke-width="2.2" stroke-linejoin="round"/>
-      <text x="60" y="224" font-size="10" style="fill:var(--ink3, #667085)" text-anchor="middle">10-07</text><text x="207.58620689655172" y="224" font-size="10" style="fill:var(--ink3, #667085)" text-anchor="middle">10-14</text><text x="355.17241379310343" y="224" font-size="10" style="fill:var(--ink3, #667085)" text-anchor="middle">10-21</text><text x="502.7586206896552" y="224" font-size="10" style="fill:var(--ink3, #667085)" text-anchor="middle">10-28</text><text x="650.3448275862069" y="224" font-size="10" style="fill:var(--ink3, #667085)" text-anchor="middle">11-04</text><text x="797.9310344827586" y="224" font-size="10" style="fill:var(--ink3, #667085)" text-anchor="middle">11-11</text><g transform="translate(60,242)">
-    <rect width="9" height="9" y="-8" rx="2" style="fill:var(--fx-a, #2f6fed)"/><text x="13" font-size="11" style="fill:var(--ink2, #475467)">USD/MXN（2026-10-07=100）</text>
-    <rect x="250" width="9" height="9" y="-8" rx="2" style="fill:var(--fx-b, #12b76a)"/><text x="263" font-size="11" style="fill:var(--ink2, #475467)">CNY/MXN（2026-10-07=100）</text>
+    <svg viewBox="0 0 940 250" width="100%" height="250"><line x1="56" y1="182.35455583041318" x2="916" y2="182.35455583041318" stroke="#D9D3C7" stroke-dasharray="3 4"/><text x="52" y="186.35455583041318" font-size="10" style="fill:var(--ink3, #667085)" text-anchor="end">97.3</text><line x1="56" y1="152.40018100861352" x2="916" y2="152.40018100861352" stroke="#8A8579" stroke-dasharray="3 4"/><text x="52" y="156.40018100861352" font-size="10" style="fill:var(--ink3, #667085)" text-anchor="end">100.0</text><line x1="56" y1="37.73966200209114" x2="916" y2="37.73966200209114" stroke="#D9D3C7" stroke-dasharray="3 4"/><text x="52" y="41.73966200209114" font-size="10" style="fill:var(--ink3, #667085)" text-anchor="end">110.5</text>
+      <path d="M60.0,152.4 L71.1,155.6 L82.2,157.7 L93.4,162.5 L104.5,160.0 L115.6,166.1 L126.7,166.3 L137.8,168.1 L148.9,172.0 L160.1,172.5 L171.2,176.1 L182.3,175.3 L193.4,172.5 L204.5,173.6 L215.6,176.5 L226.8,182.3 L237.9,180.4 L249.0,179.2 L260.1,180.2 L271.2,177.6 L282.3,179.1 L293.5,175.3 L304.6,175.8 L315.7,175.8 L326.8,175.1 L337.9,182.2 L349.0,181.4 L360.2,179.0 L371.3,182.0 L382.4,179.4 L393.5,177.3 L404.6,171.3 L415.7,166.0 L426.9,167.1 L438.0,164.0 L449.1,164.6 L460.2,163.8 L471.3,160.1 L482.4,148.1 L493.6,139.0 L504.7,131.7 L515.8,127.5 L526.9,119.2 L538.0,104.8 L549.1,102.2 L560.3,91.5 L571.4,103.2 L582.5,116.2 L593.6,106.7 L604.7,111.9 L615.8,100.1 L627.0,91.1 L638.1,91.6 L649.2,89.6 L660.3,79.7 L671.4,88.5 L682.5,82.2 L693.7,79.8 L704.8,82.2 L715.9,64.6 L727.0,63.3 L738.1,73.8 L749.2,72.5 L760.4,72.8 L771.5,65.5 L782.6,55.4 L793.7,67.2 L804.8,75.0 L815.9,71.9 L827.1,75.4 L838.2,68.2 L849.3,74.0 L860.4,77.7 L871.5,71.1 L882.6,69.1 L893.8,75.2 L904.9,77.3 L916.0,83.4" fill="none" style="stroke:var(--fx-a, #2f6fed)" stroke-width="2.2" stroke-linejoin="round"/>
+      <path d="M60.0,152.4 L71.1,155.9 L82.2,158.0 L93.4,162.3 L104.5,159.6 L115.6,165.5 L126.7,165.2 L137.8,167.2 L148.9,170.7 L160.1,171.2 L171.2,174.5 L182.3,173.4 L193.4,171.1 L204.5,171.5 L215.6,172.1 L226.8,177.4 L237.9,175.9 L249.0,174.2 L260.1,175.3 L271.2,172.6 L282.3,174.3 L293.5,170.3 L304.6,171.2 L315.7,171.1 L326.8,170.0 L337.9,175.8 L349.0,175.0 L360.2,172.5 L371.3,175.1 L382.4,172.3 L393.5,170.4 L404.6,164.4 L415.7,159.6 L426.9,160.0 L438.0,156.9 L449.1,156.0 L460.2,154.7 L471.3,151.8 L482.4,140.9 L493.6,132.6 L504.7,125.4 L515.8,120.8 L526.9,111.2 L538.0,96.8 L549.1,94.2 L560.3,83.5 L571.4,95.3 L582.5,108.3 L593.6,98.8 L604.7,103.6 L615.8,89.9 L627.0,81.0 L638.1,81.6 L649.2,79.5 L660.3,69.2 L671.4,77.2 L682.5,69.8 L693.7,66.9 L704.8,69.1 L715.9,51.0 L727.0,48.9 L738.1,59.2 L749.2,57.7 L760.4,57.9 L771.5,49.5 L782.6,37.7 L793.7,48.9 L804.8,61.1 L815.9,57.9 L827.1,60.8 L838.2,54.1 L849.3,60.2 L860.4,63.5 L871.5,56.8 L882.6,54.4 L893.8,61.3 L904.9,62.4 L916.0,68.5" fill="none" style="stroke:var(--fx-b, #12b76a)" stroke-width="2.2" stroke-linejoin="round"/>
+      <text x="60" y="224" font-size="10" style="fill:var(--ink3, #667085)" text-anchor="middle">07-31</text><text x="204.5194805194805" y="224" font-size="10" style="fill:var(--ink3, #667085)" text-anchor="middle">08-19</text><text x="349.038961038961" y="224" font-size="10" style="fill:var(--ink3, #667085)" text-anchor="middle">09-07</text><text x="493.5584415584416" y="224" font-size="10" style="fill:var(--ink3, #667085)" text-anchor="middle">09-24</text><text x="638.077922077922" y="224" font-size="10" style="fill:var(--ink3, #667085)" text-anchor="middle">10-13</text><text x="782.5974025974026" y="224" font-size="10" style="fill:var(--ink3, #667085)" text-anchor="middle">10-30</text><g transform="translate(60,242)">
+    <rect width="9" height="9" y="-8" rx="2" style="fill:var(--fx-a, #2f6fed)"/><text x="13" font-size="11" style="fill:var(--ink2, #475467)">USD/MXN（2026-07-31=100）</text>
+    <rect x="250" width="9" height="9" y="-8" rx="2" style="fill:var(--fx-b, #12b76a)"/><text x="263" font-size="11" style="fill:var(--ink2, #475467)">CNY/MXN（2026-07-31=100）</text>
   </g></svg>
-    <p class="note">指数化后两条线可直接比涨跌幅。USD/MXN 上行 = 比索贬值（美元成本上升）；CNY/MXN 上行 = 人民币相对比索升值（中国出口报价换算更有竞争力）。</p>
+    <p class="note">指数化后两条线可直接比涨跌幅。USD/MXN 上行 = 比索贬值（美元成本上升）；CNY/MXN 上行 = 人民币相对比索升值 → 中国出口的比索报价上升、价格竞争力下降；CNY/MXN 下行则相反。</p>
   </div>
 </div>
-<div class="card"><h2>政策 / 监管（当月汇总）</h2><div class="item"><b>1. Aranceles de EU restan fuerza a la integración automotriz del T-MEC: CSIS - El Economista</b><div class="muted">概要：美对墨汽车关税削弱T-MEC一体化</div><div class="muted">影响：或间接影响中国零部件经墨转口与供应链布局</div></div><div class="item"><b>2. México suspende los aranceles a las autopartes para dar un respiro a la industria automotriz - EL PAÍS</b><div class="muted">概要：墨西哥暂停汽车零部件关税以缓解汽车业压力</div><div class="muted">影响：中国汽车零部件出口商短期关税成本降低，利好对墨出口</div></div><div class="item"><b>3. México confía que EU reduzca arancel a autos y aluminio antes de acabar 2026: ‘Hay inversión en suspenso’ - El Financiero</b><div class="muted">概要：墨西哥期望美国2026年底前降低汽车和铝关税</div><div class="muted">影响：中国汽车及配件经墨西哥转口美国可能受美关税政策间接影响</div></div><div class="item"><b>4. BYD sigue abierta a producir en México y, mientras decide, importará autos desde Brasil para evitar el arancel del 50% - El Economista</b><div class="muted">概要：比亚迪拟从巴西进口汽车至墨西哥以规避50%关税</div><div class="muted">影响：中国车企借道巴西规避墨西哥高关税，出口商需关注原产地规则风险</div></div><div class="item"><b>5. México sigue en la pelea por reducir a 15% los aranceles a los autos: Luis Rosendo Gutiérrez - EL CEO</b><div class="muted">概要：墨西哥继续争取将汽车关税降至15%</div><div class="muted">影响：若关税下调，中国汽车及配件出口墨西哥成本有望降低，但需关注原产地规则限制。</div></div><div class="item"><b>6. EEUU castiga con aranceles la exportación de vehículos de México: AMDA - Imagen Radio</b><div class="muted">概要：美国对墨西哥出口车辆加征关税</div><div class="muted">影响：中国车企经墨西哥转口美国成本上升，需调整布局</div></div></div>
-<div class="card"><h2>本月媒体要点</h2><div class="item">1. 墨西哥汽车销量预计2026年破纪录<span class="muted">（24-horas）</span></div><div class="item">2. 墨西哥10月汽车累计销量创纪录，日产保持领先<span class="muted">（El Economista）</span></div><div class="item">3. 墨西哥10月汽车销量创纪录但仍呈负增长<span class="muted">（Imagen Radio）</span></div><div class="item">4. 墨西哥10月汽车累计销量创纪录，日产居首<span class="muted">（El Economista）</span></div><div class="item">5. 墨西哥9月汽车销量创114.4万辆纪录<span class="muted">（El Financiero）</span></div><div class="item">6. 墨西哥10月汽车销量创纪录但整体仍呈负增长<span class="muted">（Imagen Radio）</span></div><div class="item">7. 墨西哥汽车销量2026年有望创纪录<span class="muted">（24-horas）</span></div><div class="item">8. 墨西哥2026上半年汽车销量创纪录<span class="muted">（Autocosmos）</span></div></div>
 
-<div class="card"><h2>竞品市场格局（Amazon MX 全量 · CarPlay 车机屏 49 款）<a class="rep-link" href="https://avater1989.github.io/india-market-reports/reports/mx-competitor-full-analysis.html">完整报告 →</a></h2><p class="note">来源：Amazon.com.mx 畅销榜 + 新品榜 × 6 个车机类目；数据日期 2026-11-13（每月刷新）。含 Android Auto 屏与专用车型机分组统计。</p><p>价格中位 <b>$1,743 MXN</b>（P25 $1,227 / P75 $2,599，有效价格 49 款）</p><div style="display:flex;align-items:center;gap:8px;margin:4px 0"><div style="flex:0 0 90px;font-size:12px">≤1.5k</div><div style="flex:1;background:var(--rule-soft, #f2f4f7);border-radius:var(--bar-r, 4px)"><div style="width:85%;height:12px;background:var(--bar-2, #7a5af8);border-radius:var(--bar-r, 4px)"></div></div><div style="flex:0 0 50px;font-size:12px;text-align:right;color:var(--ink2, #475467)">17 款</div></div><div style="display:flex;align-items:center;gap:8px;margin:4px 0"><div style="flex:0 0 90px;font-size:12px">1.5-3k</div><div style="flex:1;background:var(--rule-soft, #f2f4f7);border-radius:var(--bar-r, 4px)"><div style="width:100%;height:12px;background:var(--bar-2, #7a5af8);border-radius:var(--bar-r, 4px)"></div></div><div style="flex:0 0 50px;font-size:12px;text-align:right;color:var(--ink2, #475467)">20 款</div></div><div style="display:flex;align-items:center;gap:8px;margin:4px 0"><div style="flex:0 0 90px;font-size:12px">3-5k</div><div style="flex:1;background:var(--rule-soft, #f2f4f7);border-radius:var(--bar-r, 4px)"><div style="width:20%;height:12px;background:var(--bar-2, #7a5af8);border-radius:var(--bar-r, 4px)"></div></div><div style="flex:0 0 50px;font-size:12px;text-align:right;color:var(--ink2, #475467)">4 款</div></div><div style="display:flex;align-items:center;gap:8px;margin:4px 0"><div style="flex:0 0 90px;font-size:12px">&gt;5k</div><div style="flex:1;background:var(--rule-soft, #f2f4f7);border-radius:var(--bar-r, 4px)"><div style="width:40%;height:12px;background:var(--bar-2, #7a5af8);border-radius:var(--bar-r, 4px)"></div></div><div style="flex:0 0 50px;font-size:12px;text-align:right;color:var(--ink2, #475467)">8 款</div></div><div style="display:flex;align-items:center;gap:8px;margin:4px 0"><div style="flex:0 0 90px;font-size:12px">未知</div><div style="flex:1;background:var(--rule-soft, #f2f4f7);border-radius:var(--bar-r, 4px)"><div style="width:2%;height:12px;background:var(--bar-2, #7a5af8);border-radius:var(--bar-r, 4px)"></div></div><div style="flex:0 0 50px;font-size:12px;text-align:right;color:var(--ink2, #475467)">0 款</div></div><p style="margin-top:8px">品牌：<span class="tag">Rimoody 5</span><span class="tag">HIMICAR 4</span><span class="tag">Haudio 4</span><span class="tag">Pioneer 3</span><span class="tag">Volxcereo 2</span><span class="tag">BOJOOM 2</span></p><p class="note">分组：CarPlay 车机屏 49 · Android Auto 屏 1 · 专用车型机 63 · 其他屏 105</p><p>功能覆盖（标题关键词）：<span class="tag">carplay 100%</span><span class="tag">android auto 80%</span><span class="tag">inalámbrico 65%</span><span class="tag">dsp 2%</span><span class="tag">táctil 43%</span><span class="tag">gps 8%</span></p><ul class="muted" style="margin:10px 0 0;padding-left:18px"><li><b>判断</b>：竞品中位价999 MXN，价格带偏低，功能以基础影音导航为主，差异化需靠稳定性与本地适配。</li><li>样本 30 款（Amazon MX 28 + Steren 2），多渠道价格 P25/P50/P75 = 659 / 1,099 / 1,599 MXN</li><li>价格集中在 800–1500 MXN，2500 MXN 以上产品少见，以价格敏感的通路产品为主</li><li>CarPlay / Android Auto 已近标配（约 77%），差异化看无线稳定性、倒车影像与 DSP</li><li>DSP 覆盖率约 6%，是明显的功能空白点</li></ul><p class="note">完整清单（49 款明细）：<a href="https://avater1989.github.io/india-market-reports/reports/mx-competitor-full-analysis.html">竞品全量分析</a></p></div>
+<div class="card"><h2>政策 / 监管（截至 2026-11-18）</h2>
+<p class="note">按阶段归类：同一事件的多家转载已归并；抓取内容只有标题与摘要，未核实原文条款、HS 税号、生效日期与适用条件，<b>不据此推算任何品类的进口成本变化</b>。</p>
+<h3>已实施（美方）<span class="cnt">1 条</span></h3><div class="item"><b>1. EEUU castiga con aranceles la exportación de vehículos de México: AMDA - Imagen Radio</b><div class="muted">概要：美国对墨西哥出口车辆加征关税</div><div class="muted">适用范围：美国对墨西哥出口车辆；适用范围以美方公告为准</div></div><h3>已宣布·暂停<span class="cnt">1 条</span></h3><div class="item"><b>1. México suspende los aranceles a las autopartes para dar un respiro a la industria automotriz - EL PAÍS</b><div class="muted">概要：墨西哥暂停汽车零部件关税以缓解汽车业压力</div><div class="muted">适用范围：汽车零部件；暂停范围、期限与税号未在抓取内容中给出</div></div><h3>谈判 / 表态<span class="cnt">2 条</span></h3><div class="item"><b>1. México confía que EU reduzca arancel a autos y aluminio antes de acabar 2026: ‘Hay inversión en suspenso’ - El Financiero</b><div class="muted">概要：墨西哥期望美国2026年底前降低汽车和铝关税</div><div class="muted">适用范围：美国对汽车与铝的关税；属谈判/预期，未形成可执行条款</div></div><div class="item"><b>2. México sigue en la pelea por reducir a 15% los aranceles a los autos: Luis Rosendo Gutiérrez - EL CEO</b><div class="muted">概要：墨西哥继续争取将汽车关税降至15%</div><div class="muted">适用范围：汽车关税税率谈判；适用对象与税号未在抓取内容中明确，未形成可执行条款</div></div><h3>企业应对<span class="cnt">1 条</span></h3><div class="item"><b>1. BYD sigue abierta a producir en México y, mientras decide, importará autos desde Brasil para evitar el arancel del 50% - El Economista</b><div class="muted">概要：比亚迪拟从巴西进口汽车至墨西哥以规避50%关税</div><div class="muted">适用范围：整车（媒体口径），不涉及车机/汽车电子税号</div></div><h3>研究 / 解读<span class="cnt">1 条</span></h3><div class="item"><b>1. Aranceles de EU restan fuerza a la integración automotriz del T-MEC: CSIS - El Economista</b><div class="muted">概要：美对墨汽车关税削弱T-MEC一体化</div><div class="muted">适用范围：智库对 T-MEC 一体化的评估，非政策文本</div></div>
+</div>
 
+<div class="card"><h2>本月媒体要点（截至 2026-11-18）</h2>
+<p class="note">同一事件的多家转载已归并；标注为媒体解读的条目与本报告数据未必一致，需以 INEGI 官方数据为准。</p>
+<div class="item"><b>1. 2026 全年销量预计创纪录</b><span class="tag">媒体预测</span><div class="muted">来源：24-horas</div></div><div class="item"><b>2. 10 月累计销量创纪录、日产领先</b><span class="tag">媒体解读</span><div class="muted">来源：El Economista</div></div><div class="item"><b>3. 10 月单月「创纪录但仍负增长」</b><span class="tag">媒体解读（与本报告数据方向不一致，未采信）</span><div class="muted">来源：Imagen Radio</div></div><div class="item"><b>4. 9 月累计 114.4 万辆创纪录</b><span class="tag">媒体解读</span><div class="muted">来源：El Financiero</div></div><div class="item"><b>5. 2026 上半年销量创纪录</b><span class="tag">媒体解读</span><div class="muted">来源：Autocosmos</div></div>
+</div>
+
+<div class="card"><h2>竞品市场格局（Amazon MX 全量 · CarPlay 车机屏 40 款）<a class="rep-link" href="https://avater1989.github.io/india-market-reports/reports/mx-competitor-full-analysis.html">完整报告 →</a></h2><p class="note">来源：Amazon.com.mx 畅销榜 + 新品榜 × 6 个车机类目；数据日期 2026-11-18（周更检查、池龄 ≥7 天重建；本期为 2026-11-18 刷新，评分/评论字段未成功获取）。含 Android Auto 屏与专用车型机分组统计。</p><p>价格中位 <b>$1,599 MXN</b>（P25 $1,193 / P75 $2,056，有效价格 40 款）</p><div style="display:flex;align-items:center;gap:8px;margin:4px 0"><div style="flex:0 0 90px;font-size:12px">≤1.5k</div><div style="flex:1;background:var(--rule-soft, #f2f4f7);border-radius:var(--bar-r, 4px)"><div style="width:100%;height:12px;background:var(--bar-2, #7a5af8);border-radius:var(--bar-r, 4px)"></div></div><div style="flex:0 0 50px;font-size:12px;text-align:right;color:var(--ink2, #475467)">18 款</div></div><div style="display:flex;align-items:center;gap:8px;margin:4px 0"><div style="flex:0 0 90px;font-size:12px">1.5-3k</div><div style="flex:1;background:var(--rule-soft, #f2f4f7);border-radius:var(--bar-r, 4px)"><div style="width:100%;height:12px;background:var(--bar-2, #7a5af8);border-radius:var(--bar-r, 4px)"></div></div><div style="flex:0 0 50px;font-size:12px;text-align:right;color:var(--ink2, #475467)">18 款</div></div><div style="display:flex;align-items:center;gap:8px;margin:4px 0"><div style="flex:0 0 90px;font-size:12px">3-5k</div><div style="flex:1;background:var(--rule-soft, #f2f4f7);border-radius:var(--bar-r, 4px)"><div style="width:5.555555555555555%;height:12px;background:var(--bar-2, #7a5af8);border-radius:var(--bar-r, 4px)"></div></div><div style="flex:0 0 50px;font-size:12px;text-align:right;color:var(--ink2, #475467)">1 款</div></div><div style="display:flex;align-items:center;gap:8px;margin:4px 0"><div style="flex:0 0 90px;font-size:12px">&gt;5k</div><div style="flex:1;background:var(--rule-soft, #f2f4f7);border-radius:var(--bar-r, 4px)"><div style="width:16.666666666666668%;height:12px;background:var(--bar-2, #7a5af8);border-radius:var(--bar-r, 4px)"></div></div><div style="flex:0 0 50px;font-size:12px;text-align:right;color:var(--ink2, #475467)">3 款</div></div><div style="display:flex;align-items:center;gap:8px;margin:4px 0"><div style="flex:0 0 90px;font-size:12px">未知</div><div style="flex:1;background:var(--rule-soft, #f2f4f7);border-radius:var(--bar-r, 4px)"><div style="width:2%;height:12px;background:var(--bar-2, #7a5af8);border-radius:var(--bar-r, 4px)"></div></div><div style="flex:0 0 50px;font-size:12px;text-align:right;color:var(--ink2, #475467)">0 款</div></div><p style="margin-top:8px">品牌：<span class="tag">HIMICAR 5</span><span class="tag">Rimoody 5</span><span class="tag">Haudio 4</span><span class="tag">BOJOOM 2</span><span class="tag">FINYQBET 2</span><span class="tag">Radio 2</span></p><p class="note">分组：CarPlay 车机屏 40 · Android Auto 屏 1 · 专用车型机 11 · 其他屏 21</p><p>功能覆盖（标题关键词）：<span class="tag">carplay 98%</span><span class="tag">android auto 80%</span><span class="tag">inalámbrico 70%</span><span class="tag">táctil 43%</span><span class="tag">gps 13%</span></p><ul class="muted" style="margin:10px 0 0;padding-left:18px"><li><b>口径</b>：全量池 40 款 CarPlay 车机屏，价格 P25/P50/P75 = 1,193 / 1,599 / 2,056 MXN；另有价格监控线（7 个 Amazon SKU，中位 999）与 30 款详情样本线（中位 1,099），三者样本与用途不同，不可互相替代</li><li><b>覆盖变化</b>：上期（2026-11-13）CarPlay 屏 49 款、中位 1,743；本期 40 款。池总量 623 → 180、专用车型机 63 → 11，本期采集覆盖明显下降，中位价变化含结构效应</li><li><b>字段完整度</b>：本期评分 0/40、评论 0/40 未成功获取，因此不对评分与口碑做任何判断；功能字段来自标题关键词，不代表真实配置</li><li>商品数是样本内商品数量，不是销量或市场份额；消费者声量（49 款样本、均分 4.05）来自另一条 60 日样本线，不能与池内商品一一对应</li></ul><p class="note">完整清单（40 款明细）：<a href="https://avater1989.github.io/india-market-reports/reports/mx-competitor-full-analysis.html">竞品全量分析</a></p></div>
+
+<div class="card"><h2>竞品消费者评价与声量（2026-11-16）</h2><p class="note">来源：Amazon 商品页「Customers say」摘要 + 评分/评论数；样本 49 款，其中有评价摘要 28 款。数据日期 2026-11-16。</p><div style="display:flex;gap:28px;flex-wrap:wrap;margin:6px 0 10px"><div><span class="note">总评论数</span><div style="font-size:20px;font-weight:700">10,805</div></div><div><span class="note">平均评分</span><div style="font-size:20px;font-weight:700">4.05</div></div><div><span class="note">有摘要商品</span><div style="font-size:20px;font-weight:700">28</div></div></div><p><b>正面主题</b>：<span class="tag">性价比高 9</span><span class="tag">安装简便 4</span><span class="tag">运行良好 4</span><span class="tag">易用 3</span><span class="tag">音质好 3</span><span class="tag">整体优秀 3</span></p><p><b>负面主题</b>：<span class="tag neg">功能评价不一 6</span><span class="tag neg">性价比评价不一 4</span><span class="tag neg">质量评价不一 3</span><span class="tag neg">连接评价不一 3</span><span class="tag neg">控制按键手感廉价 1</span><span class="tag neg">缺少物理按键 1</span></p><table style="margin-top:10px"><thead><tr><th>品牌</th><th class="num">商品</th><th class="num">评论数</th><th class="num">均分</th><th>正面点</th><th>负面点</th></tr></thead><tbody><tr><td>未知</td><td class="num">14</td><td class="num">5,339</td><td class="num">4.14</td><td>音质好 / 性价比高 / 表现出色</td><td>功能评价不一 / 连接不稳定 / 蓝牙频繁断连</td></tr><tr><td>Podofo</td><td class="num">1</td><td class="num">1,658</td><td class="num">4</td><td>易用 / 性价比高 / 值得购买</td><td>长期耐用性存疑</td></tr><tr><td>HIMICAR</td><td class="num">4</td><td class="num">836</td><td class="num">3.65</td><td>性价比高 / 安装简便 / 易用</td><td>接收效果差 / 整体质量评价不一 / 功能评价不一</td></tr><tr><td>CarpodGo</td><td class="num">1</td><td class="num">603</td><td class="num">4.4</td><td>运行出色 / 屏幕稳定 / 画面清晰</td><td>·</td></tr><tr><td>Pioneer</td><td class="num">3</td><td class="num">508</td><td class="num">4.3</td><td>性价比高 / 音质出色 / 安装简便</td><td>连接评价不一 / 调节评价不一</td></tr><tr><td>CARPURIDE</td><td class="num">2</td><td class="num">482</td><td class="num">3.85</td><td>GPS导航好 / 物有所值 / 兼容性好</td><td>部分方面评价不一 / 功能评价不一 / 连接评价不一</td></tr></tbody></table></div>
 
 <div class="card"><h2>数据完整性</h2>
 <ul class="muted">
-<li>销量：262 个月（2005-01 ~ 2026-10），其中最新月为 INEGI 快报，车型明细待开放数据发布</li>
-<li>结构：截至 2026-09（依赖开放数据 zip）</li>
-<li>保有量：1980–2023，登记口径 ≠ 在路口径</li>
-<li>竞品价格：Amazon MX 7/10 + Steren 2，样本有限，仅作趋势参考</li>
+<li>销量：262 个月（2005-01 ~ 2026-10）；2026-10 为 INEGI 快报，官方同比 +3.1%、快报 YTD 1,287,268；本库按修订基期算 +3.6%、累计 1,281,426（+4.9%），差异 0.5pp / 5,842 辆均来自基期修订</li>
+<li>车型明细、品牌份额、车型结构：最新 2026-09（比销量快报滞后 1 个月）；2026-10 快报无明细</li>
+<li>保有量分两种且都不是「在路车辆」：VMRC 2023 登记存量（12 州、全国 58,199,293，含未注销旧车）；RAIAVL 累加近似（2010-01 ~ 2026-10，20,756,548 辆，2026 年为部分年度）</li>
+<li>竞品：全量池 40 款（2026-11-18，评分/评论未获取）／详情样本 30 款（中位 1,099，28 款有评分）／价格监控 9 个有效报价（中位 999），三套口径并列使用，不互相替代</li>
+<li>消费者声量 2026-11-16（49 款样本 / 28 有摘要）、媒体与政策截至 2026-11-18、汇率截至 2026-11-17（窗口 2026-07-31 起）</li>
 </ul>
 </div>
 
-<footer>由 工作台/markets/mx/build-monthly.mjs 生成 · 2026-11-18T13:38:22.342Z</footer>
+<footer>由 工作台/markets/mx/build-monthly.mjs 生成 · 2026-11-18T15:59:23.951Z</footer>
 </div></body></html>
