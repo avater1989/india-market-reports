@@ -23,12 +23,12 @@ h1{margin:0;font-size:24px}.sub{color:var(--ink3);font-size:12.5px;margin-top:6p
 footer{color:var(--ink3);font-size:12px;margin-top:24px}
 @media(max-width:760px){.grid{grid-template-columns:1fr}}
 </style></head><body><div class="wrap">
-<header><h1>采集健康看板</h1><div class="sub">检查时间 2026-11-18T06:32:57.954Z · 数据日 2026-11-18 · 数据源 23 项</div></header>
+<header><h1>采集健康看板</h1><div class="sub">检查时间 2026-11-18T06:36:40.975Z · 数据日 2026-11-18 · 数据源 23 项</div></header>
 <div class="warn">⚠️ 有 2 项超期：上牌（品牌 × 邦）、保有量（近似）</div>
 <section class="group"><h2>印度</h2><div class="grid">
   <div class="src" style="border-left-color:#12b76a">
     <div class="head"><span class="name">月度零售（FADA）</span><span class="status" style="color:#12b76a">✅ 正常</span></div>
-    <div class="age" style="color:#12b76a">7.0 小时<span class="limit">文件写入 / 阈值 40 天</span></div>
+    <div class="age" style="color:#12b76a">7.1 小时<span class="limit">文件写入 / 阈值 40 天</span></div>
     <div class="def" style="color:var(--ink2)"><b>数据月：</b>2026-10 · 月末距今 18 天（阈值 45 天）</div>
     <div class="def"><b>数据：</b>FADA 官方新闻稿 PDF 的乘用车零售量（登记口径），月度</div>
     <div class="def"><b>口径：</b>反映终端需求；≠ 批发 ≠ 上牌。节庆错位月份看 3 个月滚动</div>
@@ -44,7 +44,7 @@ footer{color:var(--ink3);font-size:12px;margin-top:24px}
   </div>
   <div class="src" style="border-left-color:#d92d20">
     <div class="head"><span class="name">上牌（品牌 × 邦）</span><span class="status" style="color:#d92d20">⚠️ 数据停更</span></div>
-    <div class="age" style="color:#d92d20">7.0 小时<span class="limit">文件写入 / 阈值 50 天</span></div>
+    <div class="age" style="color:#d92d20">7.1 小时<span class="limit">文件写入 / 阈值 50 天</span></div>
     <div class="def" style="color:#d92d20"><b>数据月：</b>2026-08 · 月末距今 79 天（阈值 60 天）</div>
     <div class="def"><b>数据：</b>VAHAN 车辆登记量，按品牌与邦汇总；月度，镜像滞后约 6 周</div>
     <div class="def"><b>口径：</b>最接近真实需求的官方口径；用于品牌份额与区域结构</div>
@@ -52,7 +52,7 @@ footer{color:var(--ink3);font-size:12px;margin-top:24px}
   </div>
   <div class="src" style="border-left-color:#12b76a">
     <div class="head"><span class="name">政策 / 竞品价格</span><span class="status" style="color:#12b76a">✅ 正常</span></div>
-    <div class="age" style="color:#12b76a">7.0 小时<span class="limit">文件写入 / 阈值 30 小时</span></div>
+    <div class="age" style="color:#12b76a">7.1 小时<span class="limit">文件写入 / 阈值 30 小时</span></div>
     
     <div class="def"><b>数据：</b>CBIC/PIB 政策抓取 + Amazon.in 14 个监测 SKU 的竞品价格</div>
     <div class="def"><b>口径：</b>政策带 LLM 概要/影响；竞品仅看中位价趋势，不做份额推断</div>
@@ -60,7 +60,7 @@ footer{color:var(--ink3);font-size:12px;margin-top:24px}
   </div>
   <div class="src" style="border-left-color:#12b76a">
     <div class="head"><span class="name">媒体快照 / 重点</span><span class="status" style="color:#12b76a">✅ 正常</span></div>
-    <div class="age" style="color:#12b76a">7.0 小时<span class="limit">文件写入 / 阈值 30 小时</span></div>
+    <div class="age" style="color:#12b76a">7.1 小时<span class="limit">文件写入 / 阈值 30 小时</span></div>
     
     <div class="def"><b>数据：</b>4 家印度汽车媒体标题 → LLM 判定相关性 → 中文摘要（每日最多 2 条）</div>
     <div class="def"><b>口径：</b>只保留有决策价值的新闻；跨天去重，同事件多源合并</div>
@@ -75,11 +75,11 @@ footer{color:var(--ink3);font-size:12px;margin-top:24px}
     <div class="script">采集：markets/in/competitors.mjs</div>
   </div>
   <div class="src" style="border-left-color:#12b76a">
-    <div class="head"><span class="name">车型榜 Top15（CarDekho）</span><span class="status" style="color:#12b76a">✅ 正常</span></div>
-    <div class="age" style="color:#12b76a">0.0 小时<span class="limit">文件写入 / 阈值 40 天</span></div>
+    <div class="head"><span class="name">车型榜（CarDekho）</span><span class="status" style="color:#12b76a">✅ 正常</span></div>
+    <div class="age" style="color:#12b76a">0.1 小时<span class="limit">文件写入 / 阈值 40 天</span></div>
     <div class="def" style="color:var(--ink2)"><b>数据月：</b>2026-10 · 月末距今 18 天（阈值 45 天）</div>
-    <div class="def"><b>数据：</b>CarDekho 月度 Top15 畅销车文章（HTML 表格，自动解析）</div>
-    <div class="def"><b>口径：</b>批发口径、Top15 截断、ICE+EV 合并；月更，通常次月中下旬发布</div>
+    <div class="def"><b>数据：</b>CarDekho 月度畅销车文章（HTML 表格，自动解析）；2026 起为 Top10，2025 及以前为 Top15</div>
+    <div class="def"><b>口径：</b>批发口径、ICE+EV 合并；各月条数 10~15 不等，跨月总量不可直接比较；月更，通常次月中下旬发布</div>
     <div class="script">采集：markets/in/model-top15.mjs</div>
   </div>
   <div class="src" style="border-left-color:#d92d20">
@@ -92,7 +92,7 @@ footer{color:var(--ink3);font-size:12px;margin-top:24px}
   </div>
   <div class="src" style="border-left-color:#12b76a">
     <div class="head"><span class="name">竞品价格监测（14 SKU）</span><span class="status" style="color:#12b76a">✅ 正常</span></div>
-    <div class="age" style="color:#12b76a">7.0 小时<span class="limit">文件写入 / 阈值 2 天</span></div>
+    <div class="age" style="color:#12b76a">7.1 小时<span class="limit">文件写入 / 阈值 2 天</span></div>
     
     <div class="def"><b>数据：</b>每日抓取 14 个监测 SKU 价格；连续 3 次无价自动换替补</div>
     <div class="def"><b>口径：</b>锁定样本口径，不是市场价基准；中位价仅反映这批商品</div>
@@ -100,7 +100,7 @@ footer{color:var(--ink3);font-size:12px;margin-top:24px}
   </div></div></section><section class="group"><h2>墨西哥</h2><div class="grid">
   <div class="src" style="border-left-color:#12b76a">
     <div class="head"><span class="name">官方月销（INEGI）</span><span class="status" style="color:#12b76a">✅ 正常</span></div>
-    <div class="age" style="color:#12b76a">3.7 小时<span class="limit">文件写入 / 阈值 40 天</span></div>
+    <div class="age" style="color:#12b76a">3.8 小时<span class="limit">文件写入 / 阈值 40 天</span></div>
     <div class="def" style="color:var(--ink2)"><b>数据月：</b>2026-10 · 月末距今 18 天（阈值 45 天）</div>
     <div class="def"><b>数据：</b>INEGI RAIAVL：品牌 × 车型 × 月份销量（含轿车与皮卡/SUV），2005 年至今</div>
     <div class="def"><b>口径：</b>墨西哥唯一权威车型级数据；最新月可能是「快报」，后续会修订</div>
@@ -108,7 +108,7 @@ footer{color:var(--ink3);font-size:12px;margin-top:24px}
   </div>
   <div class="src" style="border-left-color:#12b76a">
     <div class="head"><span class="name">汇率 USD/MXN</span><span class="status" style="color:#12b76a">✅ 正常</span></div>
-    <div class="age" style="color:#12b76a">7.0 小时<span class="limit">文件写入 / 阈值 30 小时</span></div>
+    <div class="age" style="color:#12b76a">7.1 小时<span class="limit">文件写入 / 阈值 30 小时</span></div>
     
     <div class="def"><b>数据：</b>美元兑墨西哥比索中间价，每日</div>
     <div class="def"><b>口径：</b>影响 CIF 到岸成本；波动 &gt;1.5% 进日报</div>
@@ -116,7 +116,7 @@ footer{color:var(--ink3);font-size:12px;margin-top:24px}
   </div>
   <div class="src" style="border-left-color:#12b76a">
     <div class="head"><span class="name">竞品价格</span><span class="status" style="color:#12b76a">✅ 正常</span></div>
-    <div class="age" style="color:#12b76a">7.0 小时<span class="limit">文件写入 / 阈值 30 小时</span></div>
+    <div class="age" style="color:#12b76a">7.1 小时<span class="limit">文件写入 / 阈值 30 小时</span></div>
     
     <div class="def"><b>数据：</b>Amazon.com.mx（锁定 SKU）+ Steren 商品页价格，每日</div>
     <div class="def"><b>口径：</b>样本量 10–12 个 SKU，只作价格带参考，不能推断品牌份额</div>
@@ -124,7 +124,7 @@ footer{color:var(--ink3);font-size:12px;margin-top:24px}
   </div>
   <div class="src" style="border-left-color:#12b76a">
     <div class="head"><span class="name">竞品深度分析</span><span class="status" style="color:#12b76a">✅ 正常</span></div>
-    <div class="age" style="color:#12b76a">3.7 小时<span class="limit">文件写入 / 阈值 8 天</span></div>
+    <div class="age" style="color:#12b76a">3.8 小时<span class="limit">文件写入 / 阈值 8 天</span></div>
     
     <div class="def"><b>数据：</b>5 个搜索词 + 商品详情页：价格、评分、评论数、BSR、尺寸/功能标签</div>
     <div class="def"><b>口径：</b>每周刷新；样本 30 款左右，用于功能空白与价格带判断</div>
@@ -132,7 +132,7 @@ footer{color:var(--ink3);font-size:12px;margin-top:24px}
   </div>
   <div class="src" style="border-left-color:#12b76a">
     <div class="head"><span class="name">媒体动态</span><span class="status" style="color:#12b76a">✅ 正常</span></div>
-    <div class="age" style="color:#12b76a">7.0 小时<span class="limit">文件写入 / 阈值 30 小时</span></div>
+    <div class="age" style="color:#12b76a">7.1 小时<span class="limit">文件写入 / 阈值 30 小时</span></div>
     
     <div class="def"><b>数据：</b>Google News RSS（西语/墨西哥）→ LLM 判定 → 中文摘要（每日最多 3 条）</div>
     <div class="def"><b>口径：</b>只作市场情绪与事件提示；同一事件多源会合并</div>
@@ -164,7 +164,7 @@ footer{color:var(--ink3);font-size:12px;margin-top:24px}
   </div>
   <div class="src" style="border-left-color:#12b76a">
     <div class="head"><span class="name">政策 / 监管</span><span class="status" style="color:#12b76a">✅ 正常</span></div>
-    <div class="age" style="color:#12b76a">7.0 小时<span class="limit">文件写入 / 阈值 30 小时</span></div>
+    <div class="age" style="color:#12b76a">7.1 小时<span class="limit">文件写入 / 阈值 30 小时</span></div>
     
     <div class="def"><b>数据：</b>墨西哥关税/进口/认证类新闻 → LLM 概要 + 影响</div>
     <div class="def"><b>口径：</b>当前源为 Google News（西语）；DOF 官网不可达，后续可替换官方公告</div>
@@ -172,7 +172,7 @@ footer{color:var(--ink3);font-size:12px;margin-top:24px}
   </div></div></section><section class="group"><h2>公共</h2><div class="grid">
   <div class="src" style="border-left-color:#12b76a">
     <div class="head"><span class="name">汇率</span><span class="status" style="color:#12b76a">✅ 正常</span></div>
-    <div class="age" style="color:#12b76a">7.0 小时<span class="limit">文件写入 / 阈值 30 小时</span></div>
+    <div class="age" style="color:#12b76a">7.1 小时<span class="limit">文件写入 / 阈值 30 小时</span></div>
     
     <div class="def"><b>数据：</b>USD → INR / CAD / AED 中间价，每日抓取</div>
     <div class="def"><b>口径：</b>用于成本换算与报价参考；单日波动 &gt;1.5% 才会进日报</div>
