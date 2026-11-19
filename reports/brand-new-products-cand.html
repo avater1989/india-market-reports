@@ -1,0 +1,303 @@
+<!doctype html>
+<!--lsa-report-shell-v2-->
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>品牌上新监测 · 2026-11-16</title>
+<style>
+:root{
+  --paper:#FAF8F4; --paper-2:#F3EFE8;
+  --ink:#15171B; --ink2:#4A4E55; --ink3:#8A8579;
+  --rule:#D9D3C7; --rule-soft:#E9E4DA;
+  --pos:#1E7A50; --neg:#A32B2B; --warn:#8A5A00;
+  --bar:#15171B; --bar-2:#6E6A61; --bar-3:#B7B1A4; --bar-r:2px;
+  --max:1080px; --read:760px; --pad:32px;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --paper:#141517; --paper-2:#1B1D20;
+    --ink:#ECEAE5; --ink2:#B9B5AC; --ink3:#8A8579;
+    --rule:#3A3B3E; --rule-soft:#2A2C2F;
+    --pos:#5BBF8D; --neg:#E28A84; --warn:#D9A441;
+    --bar:#ECEAE5; --bar-2:#A9A49B; --bar-3:#6E6A61;
+  }
+}
+@media (max-width:1000px){ :root{ --pad:24px } }
+@media (max-width:768px){ :root{ --pad:16px } }
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font:15px/1.7 "Inter",-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+  font-variant-numeric:tabular-nums; font-feature-settings:"tnum" 1;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:var(--max); margin:0 auto; padding:36px var(--pad) 72px}
+
+/* ---------- 头部 ---------- */
+.masthead{
+  display:flex; justify-content:space-between; align-items:baseline; gap:16px;
+  border-bottom:1px solid var(--ink); padding-bottom:8px;
+  font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--ink3);
+}
+.masthead .issue{letter-spacing:.06em}
+h1{font-size:34px; line-height:1.18; margin:18px 0 8px; font-weight:700; letter-spacing:-.015em}
+.lead{font-size:19px; line-height:1.55; font-weight:650; letter-spacing:-.01em; margin:0 0 12px; max-width:46ch}
+.scope{font-size:12.5px; line-height:1.65; color:var(--ink3); margin:0 0 6px; max-width:var(--read)}
+.kpi.secondary .value{font-size:22px; letter-spacing:0; color:var(--ink2); font-weight:600}
+.kpi.secondary .label{color:var(--ink3)}
+.dek{font-size:15px; line-height:1.7; color:var(--ink); margin:0 0 10px; max-width:var(--read)}
+.cuts{font-size:12px; color:var(--ink3); line-height:1.6; margin:0 0 4px}
+.cuts b{color:var(--ink2); font-weight:600}
+
+/* ---------- 目录 ---------- */
+/* 目录：宽屏完整换行；窄屏折叠为「当前章节」单选 */
+.toc{
+  position:sticky; top:0; z-index:6;
+  background:color-mix(in srgb, var(--paper) 95%, transparent);
+  backdrop-filter:saturate(140%) blur(8px);
+  border-bottom:1px solid var(--rule-soft);
+  margin:18px 0 26px; padding:7px 0;
+  font-size:12px; color:var(--ink2);
+}
+.toc-list{display:flex; flex-wrap:wrap; gap:6px 18px; list-style:none; margin:0; padding:0}
+.toc-list a{color:inherit; text-decoration:none; border-bottom:1px solid transparent; padding-bottom:1px; white-space:nowrap}
+.toc-list a:hover{border-bottom-color:var(--ink3)}
+.toc-list a.cur{color:var(--ink); font-weight:600; border-bottom-color:var(--ink)}
+.toc-fold{display:none}
+.toc-fold>summary{
+  cursor:pointer; list-style:none; display:flex; align-items:center; gap:8px;
+  font-size:12px; color:var(--ink2); padding:2px 0;
+}
+.toc-fold>summary::-webkit-details-marker{display:none}
+.toc-fold>summary:after{content:"▾"; margin-left:auto; color:var(--ink3)}
+.toc-fold[open]>summary:after{content:"▴"}
+.toc-fold .toc-cur{color:var(--ink); font-weight:600}
+.toc-fold ol{list-style:none; margin:8px 0 4px; padding:0; display:flex; flex-direction:column; gap:7px; max-height:56vh; overflow:auto}
+.toc-fold a{color:inherit; text-decoration:none}
+.toc-fold a.cur{color:var(--ink); font-weight:600}
+h2[id^="sec-"]{scroll-margin-top:64px}
+@media (max-width:979px){
+  .toc-list{display:none}
+  .toc-fold{display:block}
+}
+
+/* ---------- KPI ---------- */
+.kpis{
+  display:grid; grid-template-columns:repeat(4,minmax(0,1fr));
+  border-top:1px solid var(--rule); border-bottom:1px solid var(--rule);
+  margin:0 0 28px;
+}
+.kpi{padding:14px 16px 16px; border-left:1px solid var(--rule-soft); min-width:0}
+.kpi:first-child{border-left:0; padding-left:0}
+.kpi .label,.kpi .l{font-size:12px; letter-spacing:.04em; color:var(--ink3); line-height:1.5}
+.kpi .value,.kpi .v{
+  font-size:32px; line-height:1.15; font-weight:700; letter-spacing:-.02em;
+  margin:4px 0 3px; color:var(--ink);
+}
+.kpi .value.sm{font-size:22px; letter-spacing:0}
+.kpi .sub,.kpi .s{font-size:12px; line-height:1.5; color:var(--ink2)}
+@media (max-width:980px){ .kpis{grid-template-columns:repeat(2,minmax(0,1fr))} .kpi:nth-child(odd){border-left:0; padding-left:0} }
+@media (max-width:560px){ .kpis{grid-template-columns:repeat(2,minmax(0,1fr))} }
+
+/* ---------- 章节 ---------- */
+section{margin:0}
+.card{margin:0 0 34px}
+.card>h2,h2{
+  font-size:22px; line-height:1.35; font-weight:650; letter-spacing:-.01em;
+  margin:0 0 10px; padding-top:14px; border-top:1px solid var(--ink);
+}
+.sec-head{display:flex; align-items:baseline; justify-content:space-between; gap:12px; border-top:1px solid var(--ink); padding-top:12px; margin:38px 0 10px}
+.sec-head h2{border:0; padding:0; margin:0}
+.sec-head .no,.no{font-size:12px; letter-spacing:.12em; color:var(--ink3); font-weight:500; margin-right:8px}
+.sec-en{font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--ink3)}
+h3{font-size:16.5px; line-height:1.45; font-weight:650; margin:22px 0 8px; letter-spacing:-.005em}
+h3 .cnt,.sec-head .cnt{font-size:12px; color:var(--ink3); font-weight:400; margin-left:8px; letter-spacing:0}
+h4{font-size:14px; margin:16px 0 6px}
+
+/* ---------- 正文 ---------- */
+p{margin:0 0 12px; max-width:var(--read)}
+.card>p,.card>ul,.card>ol{max-width:var(--read)}
+ul,ol{margin:0 0 12px; padding-left:20px}
+li{margin:4px 0}
+ul.tight li,ol.tight li{margin:3px 0}
+strong,b{font-weight:600}
+a{color:inherit; text-decoration:none; border-bottom:1px solid var(--rule)}
+a:hover{border-bottom-color:var(--ink3)}
+code,.mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:.88em; background:var(--paper-2); padding:1px 5px; border-radius:2px}
+
+/* ---------- 说明文字 ---------- */
+.note{font-size:12.5px; line-height:1.65; color:var(--ink2); max-width:var(--read)}
+.note b,.note strong{color:var(--ink2); font-weight:600}
+.muted{color:var(--ink2)}
+.flag{border-left:2px solid var(--warn); padding:8px 0 8px 12px; font-size:13px; color:var(--ink2); margin:12px 0; max-width:var(--read)}
+.check{display:flex; gap:18px; flex-wrap:wrap; font-size:12px; color:var(--ink3); border-top:1px solid var(--rule-soft); padding-top:8px; margin-top:12px}
+
+/* ---------- 核心洞察 ---------- */
+.insight{border-top:1px solid var(--rule-soft); padding:14px 0 4px}
+.insight-head{display:flex; align-items:baseline; gap:10px; flex-wrap:wrap; margin-bottom:6px}
+.insight-no{font-size:12px; letter-spacing:.12em; color:var(--ink3)}
+.insight-head h3{margin:0; font-size:17px}
+.insight-kicker{font-size:12px; color:var(--ink3)}
+.insight-body{display:grid; grid-template-columns:4.4em minmax(0,1fr); gap:4px 12px; margin:0 0 4px; max-width:var(--read)}
+.insight-body dt{font-size:12px; color:var(--ink3); line-height:1.9}
+.insight-body dd{margin:0; font-size:15px; line-height:1.7}
+.insight-body dt:first-of-type+dd{font-weight:600}
+@media (max-width:768px){
+  .insight-body{grid-template-columns:1fr; gap:2px}
+  .insight-body dt{margin-top:6px}
+}
+
+/* ---------- 表格 ---------- */
+.table-wrap{overflow-x:auto; -webkit-overflow-scrolling:touch; margin:8px 0 14px; max-width:100%}
+table{width:100%; border-collapse:collapse; font-size:13px; line-height:1.55}
+thead th{
+  position:sticky; top:0; z-index:1;
+  background:var(--paper); color:var(--ink3);
+  font-size:12px; font-weight:600; letter-spacing:.04em; text-align:left;
+  padding:8px 10px; border-bottom:1px solid var(--ink); white-space:nowrap;
+}
+tbody th{text-align:left; font-weight:600; padding:9px 10px; border-bottom:1px solid var(--rule-soft)}
+td{padding:9px 10px; border-bottom:1px solid var(--rule-soft); vertical-align:top}
+td.num,th.num,.num{text-align:right; white-space:nowrap; font-variant-numeric:tabular-nums}
+tbody tr:hover td{background:var(--paper-2)}
+table caption{caption-side:top; text-align:left; font-size:12px; color:var(--ink3); padding-bottom:6px}
+
+/* ---------- 标签 / 状态（去胶囊，改文字） ---------- */
+.tag,.chip{
+  display:inline; border:0!important; background:none!important; padding:0!important;
+  border-radius:0!important; font-size:12px; color:var(--ink2); font-weight:500;
+}
+.tag+.tag:before,.chip+.chip:before{content:" / "; color:var(--ink3); font-weight:400}
+.tag.neg,.chip.neg,.is-bad .tag{color:var(--neg)}
+.tag.ok,.is-ok .tag{color:var(--ink2)}
+.state-bad{color:var(--neg); font-weight:600}
+.state-bad:before{content:"▍"; margin-right:2px}
+
+/* ---------- 分组 / 折叠 ---------- */
+details.grp{border-top:1px solid var(--rule-soft); padding:8px 0}
+details.grp>summary{cursor:pointer; font-size:14px; font-weight:600; padding:4px 0; list-style:none}
+details.grp>summary::-webkit-details-marker{display:none}
+details.grp>summary:before{content:"▸"; color:var(--ink3); margin-right:8px; font-size:11px}
+details.grp[open]>summary:before{content:"▾"}
+.brand{margin:0 0 18px}
+.bhead{display:flex; justify-content:space-between; align-items:baseline; gap:12px; flex-wrap:wrap; padding:8px 0; border-bottom:1px solid var(--rule-soft)}
+.bhead b{font-size:15px}
+.bhead span{font-size:12px; color:var(--ink3)}
+
+/* ---------- 页脚 ---------- */
+footer{margin-top:36px; border-top:1px solid var(--ink); padding-top:12px; font-size:12px; color:var(--ink3); display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap}
+
+/* ---------- 打印 ---------- */
+@media print{
+  :root{--paper:#fff;--paper-2:#fff;--ink:#000;--ink2:#333;--ink3:#666;--rule:#bbb;--rule-soft:#ddd;--neg:#8a1c1c;--pos:#14603c}
+  .toc{display:none}
+  .table-wrap{overflow:visible}
+  thead th{position:static}
+  table{page-break-inside:auto}
+  tr,img{page-break-inside:avoid}
+  h2,h3{page-break-after:avoid}
+  .card{page-break-inside:auto}
+  body{font-size:10.5pt}
+  h1{font-size:20pt}
+  a{border-bottom:0; text-decoration:none}
+}
+
+.tscroll{overflow-x:auto; -webkit-overflow-scrolling:touch; margin:8px 0 12px}
+.panel{border-top:1px solid var(--rule-soft); padding:12px 0 4px; margin:10px 0}
+.panel h3{font-size:14px; margin:0 0 6px}
+.kv{display:grid; grid-template-columns:7em minmax(0,1fr); gap:4px 12px; font-size:13px}
+.tags{display:flex; flex-wrap:wrap; gap:6px 10px}
+.st{font-size:12px; color:var(--ink2)}
+.st-diff{color:var(--ink)}
+.st-ok{color:var(--ink2)}
+.st-empty,.st-error{color:var(--neg); font-weight:600}
+.st-empty:before,.st-error:before{content:"▍"; margin-right:2px}
+.st-baseline{color:var(--ink3)}
+.caliber{font-size:12px; color:var(--ink3)}
+.item{padding:8px 0; border-bottom:1px solid var(--rule-soft)}
+.rep-link{font-size:12px}
+.takeaway{border-left:2px solid var(--ink); padding:8px 0 8px 12px; margin:10px 0; font-size:14px; max-width:var(--read)}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="masthead"><span>Lianshun · 市场情报</span><span class="issue">BRAND WATCH</span></div>
+  <h1>品牌上新监测 · 2026-11-16</h1>
+  <p class="lead">本期确认新增 35 条（印度 0 / 墨西哥 35），另有 45 条为首次监测基线，不计入新增。</p>
+  
+  
+  
+</header><nav class="toc" aria-label="章节目录">
+  <ol class="toc-list"><li><a href="#sec-1-一-本期监测概况">一、本期监测概况</a></li><li><a href="#sec-2-二-重点品牌动态">二、重点品牌动态</a></li><li><a href="#sec-3-三-产品布局分析">三、产品布局分析</a></li><li><a href="#sec-4-四-印度新增商品">四、印度新增商品</a></li><li><a href="#sec-5-五-墨西哥新增商品">五、墨西哥新增商品</a></li><li><a href="#sec-6-六-首次监测基线记录">六、首次监测基线记录</a></li><li><a href="#sec-7-七-监测覆盖与数据限制">七、监测覆盖与数据限制</a></li></ol>
+  <details class="toc-fold">
+    <summary><span>章节目录</span><span class="toc-cur">一、本期监测概况</span></summary>
+    <ol><li><a href="#sec-1-一-本期监测概况">一、本期监测概况</a></li><li><a href="#sec-2-二-重点品牌动态">二、重点品牌动态</a></li><li><a href="#sec-3-三-产品布局分析">三、产品布局分析</a></li><li><a href="#sec-4-四-印度新增商品">四、印度新增商品</a></li><li><a href="#sec-5-五-墨西哥新增商品">五、墨西哥新增商品</a></li><li><a href="#sec-6-六-首次监测基线记录">六、首次监测基线记录</a></li><li><a href="#sec-7-七-监测覆盖与数据限制">七、监测覆盖与数据限制</a></li></ol>
+  </details>
+</nav>
+<div class="sub">数据日期 2026-11-16 · 本批执行 16 / 44 个「市场×品牌」组合 · 已确认新增 35 条 · 首次监测基线 45 条</div>
+
+<div class="card"><h2 id="sec-1-一-本期监测概况">一、本期监测概况</h2><div class="kpi">
+  <div><b>35</b><span>已确认新增</span></div>
+  <div><b>0</b><span>印度</span></div>
+  <div><b>35</b><span>墨西哥</span></div>
+  <div><b>3</b><span>涉及品牌</span></div>
+  <div><b>45</b><span>首次监测基线</span></div>
+</div><p class="muted">监测配置共 44 个市场×品牌组合，本批实际执行 16 个。其余组合未在本批运行，无数据不代表无新品。</p></div>
+
+<div class="card"><h2 id="sec-2-二-重点品牌动态">二、重点品牌动态</h2><div class="table-wrap"><table class="tbl"><thead><tr><th>品牌</th><th>市场</th><th>新增记录</th><th>价格区间（本币）</th></tr></thead><tbody><tr><td><b>Haudio</b></td><td>MX</td><td>19</td><td>MXN 759–4,770（中位 MXN 1,619）</td></tr><tr><td><b>Rimoody</b></td><td>MX</td><td>13</td><td>MXN 2,188–9,015（中位 MXN 3,492）</td></tr><tr><td><b>Volxcereo</b></td><td>MX</td><td>3</td><td>MXN 2,886–5,550（中位 MXN 3,017）</td></tr></tbody></table></div><p class="muted">价格按市场本币分别统计，不做跨币种汇总；品牌新增数量可跨市场相加。</p></div>
+
+<div class="card"><h2 id="sec-3-三-产品布局分析">三、产品布局分析</h2><p class="muted">类型、尺寸、适配车型均由商品标题关键词识别，不代表真实功能或官方分类。</p>
+  <div class="table-wrap"><table class="tbl"><thead><tr><th>产品类型</th><th>记录数</th></tr></thead><tbody><tr><td>专用车型机</td><td>14</td></tr><tr><td>通用车机</td><td>14</td></tr><tr><td>便携屏</td><td>4</td></tr><tr><td>后视镜屏</td><td>3</td></tr></tbody></table></div>
+  <div style="height:10px"></div><div class="table-wrap"><table class="tbl"><thead><tr><th>标称尺寸</th><th>记录数</th></tr></thead><tbody><tr><td>9″</td><td>10</td></tr><tr><td>未识别</td><td>9</td></tr><tr><td>7″</td><td>7</td></tr><tr><td>10.1″</td><td>5</td></tr><tr><td>6.86″</td><td>1</td></tr><tr><td>9.3″</td><td>1</td></tr><tr><td>6.8″</td><td>1</td></tr><tr><td>10″</td><td>1</td></tr></tbody></table></div>
+  <p class="muted">尺寸仅取标题中可明确识别的小数/整数英寸，识别不到记为未识别，不做推测。</p></div>
+
+<div class="card"><h2 id="sec-4-四-印度新增商品">四、印度新增商品</h2><p class="muted">印度本期无已确认新增记录。</p></div>
+<div class="card"><h2 id="sec-5-五-墨西哥新增商品">五、墨西哥新增商品</h2><div class="table-wrap"><table class="tbl"><thead><tr><th>品牌</th><th>新增记录</th><th>价格区间（本币）</th></tr></thead><tbody><tr><td><b>Haudio</b></td><td>19</td><td>MXN 759–4,770（中位 MXN 1,619）</td></tr><tr><td><b>Rimoody</b></td><td>13</td><td>MXN 2,188–9,015（中位 MXN 3,492）</td></tr><tr><td><b>Volxcereo</b></td><td>3</td><td>MXN 2,886–5,550（中位 MXN 3,017）</td></tr></tbody></table></div><div class="brand"><div class="bhead"><b>Haudio</b><span>19 条 · MXN 759–4,770（中位 MXN 1,619）</span></div><div class="table-wrap"><table class="tbl"><thead><tr><th>商品</th><th>类型</th><th>尺寸</th><th>适配车型</th><th>价格</th></tr></thead><tbody><tr><td><a href="https://www.amazon.com.mx/dp/B0HGXZLVTQ" target="_blank" rel="noreferrer">Haudio 2G+64G Radio de coche para Honda Civic 2006-2011 estéreo inalámbrico …</a></td><td>专用车型机</td><td>未识别</td><td>Honda</td><td>MXN 4,770</td></tr><tr><td><a href="https://www.amazon.com.mx/dp/B0H2HM9M7M" target="_blank" rel="noreferrer">Haudio Estéreo de doble DIN de 7 pulgadas, para VW Golf/Touran/Tiguan/Magota…</a></td><td>专用车型机</td><td>7″</td><td>Skoda</td><td>MXN 2,750</td></tr><tr><td><a href="https://www.amazon.com.mx/dp/B0GHW4W161" target="_blank" rel="noreferrer">Radio de Coche DIN con Carplay y Android Auto, Pantalla de 9 Pulgadas con EQ…</a></td><td>通用车机</td><td>9″</td><td>未识别</td><td>MXN 3,019</td></tr><tr><td><a href="https://www.amazon.com.mx/dp/B0GHRCWVD3" target="_blank" rel="noreferrer">Radio de Coche inalámbrica Carplay para VW Polo T5 Golf 5 6 Tiguan Skoda Pas…</a></td><td>专用车型机</td><td>未识别</td><td>Skoda</td><td>MXN 3,398</td></tr><tr><td><a href="https://www.amazon.com.mx/dp/B0FS7QGYPC" target="_blank" rel="noreferrer">Haudio 10.1&amp;quot; Rotatable Android Car Stereo, 2GB+64GB, Wireless CarPlay &amp;…</a></td><td>通用车机</td><td>10.1″</td><td>未识别</td><td>MXN 3,907</td></tr><tr><td><a href="https://www.amazon.com.mx/dp/B0FVXBYHVS" target="_blank" rel="noreferrer">Haudio Estéreo 10.1&amp;quot; con Pantalla táctil 360° rotatable, CarPlay y Andr…</a></td><td>通用车机</td><td>10.1″</td><td>未识别</td><td>MXN 4,003</td></tr><tr><td><a href="https://www.amazon.com.mx/dp/B0FP2FGDLS" target="_blank" rel="noreferrer">Estéreo portátil inalámbrico CarPlay y Android para coche con cámara de resp…</a></td><td>便携屏</td><td>未识别</td><td>未识别</td><td>MXN 1,081</td></tr><tr><td><a href="https://www.amazon.com.mx/dp/B0FPF6PHL5" target="_blank" rel="noreferrer">Haudio 7-Inch Double DIN Car Stereo with Wireless CarPlay &amp; Android Auto, Bl…</a></td><td>通用车机</td><td>未识别</td><td>未识别</td><td>MXN 1,376</td></tr><tr><td><a href="https://www.amazon.com.mx/dp/B0FS1CLYCG" target="_blank" rel="noreferrer">Haudio visualización de Radio estéreo para Coche de 7 Pulgadas, Doble DIN, i…</a></td><td>通用车机</td><td>7″</td><td>未识别</td><td>MXN 1,344</td></tr><tr><td><a href="https://www.amazon.com.mx/dp/B0FQBT31RX" target="_blank" rel="noreferrer">Haudio Estéreo de coche doble DIN de 9 pulgadas, CarPlay inalámbrico y | La …</a></td><td>通用车机</td><td>9″</td><td>未识别</td><td>MXN 1,619</td></tr><tr><td><a href="https://www.amazon.com.mx/dp/B0FNQ3WSBV" target="_blank" rel="noreferrer">Genérico Haudio 9.3&amp;quot; Pantalla Táctil HD para Autoestereo, CarPlay Inalá…</a></td><td>便携屏</td><td>9.3″</td><td>未识别</td><td>MXN 1,327</td></tr><tr><td><a href="https://www.amazon.com.mx/dp/B0FNRJ9YJW" target="_blank" rel="noreferrer">Haudio Autoradio, pantalla Carplay de 7 pulgadas para Apple y Android Auto, …</a></td><td>便携屏</td><td>7″</td><td>未识别</td><td>MXN 899</td></tr><tr><td><a href="https://www.amazon.com.mx/dp/B0FS1KK2TB" target="_blank" rel="noreferrer">Estéreo Haudio inalámbrico Doble DIN con Bluetooth, Wireless CarPlay, Androi…</a></td><td>通用车机</td><td>未识别</td><td>未识别</td><td>MXN 1,777</td></tr><tr><td><a href="https://www.amazon.com.mx/dp/B0FK9DQWXN" target="_blank" rel="noreferrer">2025 Hodozzy Inalámbrico Carplay - Radio de Coche 1 DIN Android con Pantalla…</a></td><td>后视镜屏</td><td>6.8″</td><td>未识别</td><td>MXN 2,946</td></tr><tr><td><a href="https://www.amazon.com.mx/dp/B0FS1M87CM" target="_blank" rel="noreferrer">Haudio Estéreo 7&amp;quot; inalámbrico Doble DIN con Bluetooth, Wireless CarPlay…</a></td><td>通用车机</td><td>7″</td><td>未识别</td><td>MXN 1,327</td></tr><tr><td><a href="https://www.amazon.com.mx/dp/B0FR4F3KKG" target="_blank" rel="noreferrer">Haudio Estéreo de Coche de Doble DIN de 10 Pulgadas Android (RAM 4GB+ROM 64G…</a></td><td>通用车机</td><td>10″</td><td>未识别</td><td>MXN 1,743</td></tr><tr><td><a href="https://www.amazon.com.mx/dp/B0FNMT6ZWD" target="_blank" rel="noreferrer">Haudio P07B estéreo portátil de 7 pulgadas, visualización táctil HD para tod…</a></td><td>便携屏</td><td>7″</td><td>未识别</td><td>MXN 759</td></tr><tr><td><a href="https://www.amazon.com.mx/dp/B0FJXR9DTK" target="_blank" rel="noreferrer">Haudio Estéreo de Coche de 7 Pulgadas con Apple CarPlay Inalámbrico y Androi…</a></td><td>通用车机</td><td>7″</td><td>未识别</td><td>MXN 1,316</td></tr><tr><td><a href="https://www.amazon.com.mx/dp/B0FHCS8L8V" target="_blank" rel="noreferrer">Genérico Pantalla Doble DIN CarPlay Inalámbrico para Coche, Pantalla Táctil …</a></td><td>通用车机</td><td>7″</td><td>未识别</td><td>MXN 1,602</td></tr></tbody></table></div></div><div class="brand"><div class="bhead"><b>Rimoody</b><span>13 条 · MXN 2,188–9,015（中位 MXN 3,492）</span></div><div class="table-wrap"><table class="tbl"><thead><tr><th>商品</th><th>类型</th><th>尺寸</th><th>适配车型</th><th>价格</th></tr></thead><tbody><tr><td><a href="https://www.amazon.com.mx/dp/B0HPNMBFSN" target="_blank" rel="noreferrer">Rimoody Radio de Coche para Ford Focus Mk2 Mk3 Exi MT 2 3 2004 – 2011 CarPla…</a></td><td>专用车型机</td><td>9″</td><td>Ford</td><td>MXN 3,946</td></tr><tr><td><a href="https://www.amazon.com.mx/dp/B0HQBD8M9J" target="_blank" rel="noreferrer">Rimoody Radio de Coche 2 DIN para Audi A3 8P/S3/RS3 (2003-2012) – Wireless C…</a></td><td>专用车型机</td><td>未识别</td><td>Audi</td><td>MXN 4,268</td></tr><tr><td><a href="https://www.amazon.com.mx/dp/B0HPNZNBSV" target="_blank" rel="noreferrer">Rimoody Radio de Coche 1 DIN con Wireless CarPlay &amp; Android Auto – Pantalla …</a></td><td>通用车机</td><td>6.86″</td><td>未识别</td><td>MXN 3,527</td></tr><tr><td><a href="https://www.amazon.com.mx/dp/B0HPNJC4TD" target="_blank" rel="noreferrer">Rimoody Radio de Coche para Toyota RAV4 2001-2006 Wireless CarPlay Android |…</a></td><td>后视镜屏</td><td>9″</td><td>Toyota</td><td>MXN 3,981</td></tr><tr><td><a href="https://www.amazon.com.mx/dp/B0HL7VDVDP" target="_blank" rel="noreferrer">Rimoody - Radio estéreo de coche de 9 pulgadas para Toyota RAV4 2001-2006 | …</a></td><td>专用车型机</td><td>9″</td><td>Toyota</td><td>MXN 2,272</td></tr><tr><td><a href="https://www.amazon.com.mx/dp/B0HPNLD644" target="_blank" rel="noreferrer">Rimoody Radio de Coche para Ford Transit Custom Tourneo 2013 – 2018 CarPlay …</a></td><td>专用车型机</td><td>9″</td><td>Ford</td><td>MXN 4,506</td></tr><tr><td><a href="https://www.amazon.com.mx/dp/B0HMCXGDBJ" target="_blank" rel="noreferrer">Radio estéreo de coche de 10.1 pulgadas para Nissan Versa Sedan 2015-2019 | …</a></td><td>专用车型机</td><td>10.1″</td><td>Nissan</td><td>MXN 2,586</td></tr><tr><td><a href="https://www.amazon.com.mx/dp/B0HLK5Y21F" target="_blank" rel="noreferrer">Rimoody - Radio estéreo de coche de 10.1 pulgadas para Toyota Camry 2006 | C…</a></td><td>专用车型机</td><td>10.1″</td><td>Toyota</td><td>MXN 2,201</td></tr><tr><td><a href="https://www.amazon.com.mx/dp/B0HLCY59LL" target="_blank" rel="noreferrer">Rimoody - Radio estéreo de coche de 10.1 pulgadas para Suzuki Swift 2005 | I…</a></td><td>专用车型机</td><td>10.1″</td><td>Suzuki</td><td>MXN 2,203</td></tr><tr><td><a href="https://www.amazon.com.mx/dp/B0HJTS9W4X" target="_blank" rel="noreferrer">Rimoody - Estéreo de coche de 9 pulgadas para Toyota Corolla 2009-2013 | Car…</a></td><td>专用车型机</td><td>9″</td><td>Toyota</td><td>MXN 2,188</td></tr><tr><td><a href="https://www.amazon.com.mx/dp/B0HLCRXPJ3" target="_blank" rel="noreferrer">Rimoody - Radio estéreo para coche Suzuki Swift 2005-2010 Carplay Android | …</a></td><td>通用车机</td><td>未识别</td><td>Suzuki</td><td>MXN 3,021</td></tr><tr><td><a href="https://www.amazon.com.mx/dp/B0HKVXVHS1" target="_blank" rel="noreferrer">Rimoody 4G+64G Android 15 Estéreo para coche Toyota RAV4 Radio 2003-2005 | C…</a></td><td>后视镜屏</td><td>9″</td><td>Toyota</td><td>MXN 3,492</td></tr><tr><td><a href="https://www.amazon.com.mx/dp/B0HCZ5LZK8" target="_blank" rel="noreferrer">Rimoody 8 Core 6G+128G Radio estéreo para coche Android para Chevy Camaro | …</a></td><td>通用车机</td><td>未识别</td><td>未识别</td><td>MXN 9,015</td></tr></tbody></table></div></div><div class="brand"><div class="bhead"><b>Volxcereo</b><span>3 条 · MXN 2,886–5,550（中位 MXN 3,017）</span></div><div class="table-wrap"><table class="tbl"><thead><tr><th>商品</th><th>类型</th><th>尺寸</th><th>适配车型</th><th>价格</th></tr></thead><tbody><tr><td><a href="https://www.amazon.com.mx/dp/B0GX14MTC3" target="_blank" rel="noreferrer">Volxcereo Radio de Coche para Volkswagen VW Beetle 2004-2010 con Carplay Ina…</a></td><td>专用车型机</td><td>未识别</td><td>Volkswagen</td><td>MXN 3,017</td></tr><tr><td><a href="https://www.amazon.com.mx/dp/B0FV8HPS2X" target="_blank" rel="noreferrer">2G+64G Volxcereo Radio Estéreo para Audi Q5 Carplay 2010-2018 | Estéreo de v…</a></td><td>专用车型机</td><td>9″</td><td>Audi</td><td>MXN 5,550</td></tr><tr><td><a href="https://www.amazon.com.mx/dp/B0FVKM8FN2" target="_blank" rel="noreferrer">Volxcereo - Radio de coche Android para Mazda 6 2007-2012 con Carplay | Esté…</a></td><td>专用车型机</td><td>9″</td><td>Mazda</td><td>MXN 2,886</td></tr></tbody></table></div></div></div>
+
+<div class="card"><h2 id="sec-6-六-首次监测基线记录">六、首次监测基线记录</h2><p class="muted">以下 45 条为首次监测基线：来自首次进入监测的品牌，商品全部为本批首次出现，<b>不计入新增</b>。</p><div class="table-wrap"><table class="tbl"><thead><tr><th>市场</th><th>品牌</th><th>记录数</th></tr></thead><tbody><tr><td>IN</td><td>Modorwy</td><td>23</td></tr><tr><td>IN</td><td>Haudio</td><td>15</td></tr><tr><td>IN</td><td>BASSOHOLIC</td><td>3</td></tr><tr><td>IN</td><td>Plimpton</td><td>3</td></tr><tr><td>IN</td><td>myTVS</td><td>1</td></tr></tbody></table></div><details><summary>展开 45 条基线记录</summary><div class="table-wrap"><table class="tbl"><thead><tr><th>市场</th><th>品牌</th><th>ASIN</th><th>标题</th></tr></thead><tbody><tr><td>IN</td><td>Modorwy</td><td>B0HKDBJLKM</td><td>Modorwy Original QLED 9” Zlink Car Android Stereo | OS 13 | 4GB+64GB |</td></tr><tr><td>IN</td><td>Modorwy</td><td>B0HK85N2TK</td><td>Modorwy Original QLED 9” Zlink Car Android Stereo Compatible with Tiag</td></tr><tr><td>IN</td><td>Modorwy</td><td>B0HK3L3BPN</td><td>Modorwy Original QLED 9” Zlink Car Android Stereo System (4GB+32GB) OS</td></tr><tr><td>IN</td><td>Modorwy</td><td>B0HJWY1SMM</td><td>Modorwy Original QLED 9” Zlink Car Android Stereo System | OS 13 | 4GB</td></tr><tr><td>IN</td><td>Modorwy</td><td>B0HJLVDMBL</td><td>Modorwy Original QLED 9” Zlink Car Android Stereo | OS 13 | 4GB+32GB |</td></tr><tr><td>IN</td><td>Modorwy</td><td>B0G9MXXN5L</td><td>Modorwy Gemstone 2K Car Android System | 10.1inch Full HD Touchscreen|</td></tr><tr><td>IN</td><td>Modorwy</td><td>B0G2CG7RNT</td><td>Modorwy Original QLED 9” Zlink Car Android Stereo | OS 13 | 4GB+64GB |</td></tr><tr><td>IN</td><td>Modorwy</td><td>B0G2SNT1VP</td><td>Modorwy Original QLED 9” Zlink Car Android Stereo | OS 13 | 4GB+64GB |</td></tr><tr><td>IN</td><td>Modorwy</td><td>B0G2SM5965</td><td>Modorwy Figo Freestyle Original QLED 9” Zlink Car Android Stereo | OS </td></tr><tr><td>IN</td><td>Modorwy</td><td>B0G2GQQ4YT</td><td>Modorwy Original QLED 9” Zlink Car Android Stereo | OS 13 | 4GB+32GB |</td></tr><tr><td>IN</td><td>Modorwy</td><td>B0G2RVK6VX</td><td>Modorwy Nissan Old Micra Original QLED 9” Zlink Car Android Stereo | O</td></tr><tr><td>IN</td><td>Modorwy</td><td>B0G2Y4FXHP</td><td>Modorwy Renault New Kwid Original QLED 9” Zlink Car Android Stereo | O</td></tr><tr><td>IN</td><td>Modorwy</td><td>B0G2Y4SF5G</td><td>Modorwy Renault New Kwid Original QLED 9” Zlink Car Android Stereo | O</td></tr><tr><td>IN</td><td>Modorwy</td><td>B0G2SQXLTR</td><td>Modorwy Original QLED 9” Zlink Car Android Stereo | OS 13 | 4GB+32GB |</td></tr><tr><td>IN</td><td>Modorwy</td><td>B0G2Y4WMQZ</td><td>Modorwy Original QLED 9” Zlink Car Android Stereo | OS 13 | 4GB+64GB |</td></tr><tr><td>IN</td><td>Modorwy</td><td>B0G2GPW734</td><td>Modorwy Mahindra TUV 300 Original QLED 9” Zlink Car Android Stereo | O</td></tr><tr><td>IN</td><td>Modorwy</td><td>B0FHQ7MKWX</td><td>Modorwy Gemstone 2K Car Android System | 10.1inch Full HD Touchscreen|</td></tr><tr><td>IN</td><td>Modorwy</td><td>B0F2TLJLXS</td><td>Modorwy Diamond 10.1&amp;quot; 2K Android Car Multimedia Player with 360° </td></tr><tr><td>IN</td><td>Modorwy</td><td>B0F94B8HLC</td><td>Modorwy Maruti Eeco Original QLED 9” Zlink Car Android Stereo | OS 13 </td></tr><tr><td>IN</td><td>Modorwy</td><td>B0DQWSH7ZP</td><td>Modorwy Original QLED 9” Zlink Car Android Stereo | OS 13 | 2GB+32GB |</td></tr><tr><td>IN</td><td>Modorwy</td><td>B0DMK5NKW6</td><td>Modorwy Chevrolet Sail 2004 Original QLED 9” Zlink Car Android Stereo </td></tr><tr><td>IN</td><td>Modorwy</td><td>B0DBDPRRCS</td><td>Modorwy Maruti Swift 2018 Original QLED 9” Zlink Car Android Stereo | </td></tr><tr><td>IN</td><td>Modorwy</td><td>B0D1H2GKVF</td><td>Modorwy Original QLED 9” Zlink Car Android Stereo | OS 13 | 4GB+64GB |</td></tr><tr><td>IN</td><td>Haudio</td><td>B0FNQGDNMT</td><td>Haudio 9&amp;quot; Wireless Double Din Car Stereo with Bluetooth, Wireless</td></tr><tr><td>IN</td><td>Haudio</td><td>B0H13XHKWP</td><td>7&amp;quot; Touch Screen Car Stereo for Nissan Juke 2010 2011 2012 2013 20</td></tr><tr><td>IN</td><td>Haudio</td><td>B0F61TBZCW</td><td>Haudio 10.1&amp;quot; Double Din Car Stereo with Wireless CarPlay &amp; Androi</td></tr><tr><td>IN</td><td>Haudio</td><td>B0FF9ZCYYD</td><td>Haudio 2 Din Car Stereo with Wireless Apple CarPlay &amp; Android Auto, 7 </td></tr><tr><td>IN</td><td>Haudio</td><td>B0FP2FGDLS</td><td>Haudio Portable CarPlay Screen for Apple CarPlay &amp; Android Auto，7 Inch</td></tr><tr><td>IN</td><td>Haudio</td><td>B0F6TZ5PNC</td><td>Haudio 7-Inch Car Stereo with Knob, Wireless CarPlay &amp; Android Auto An</td></tr><tr><td>IN</td><td>Haudio</td><td>B0FVXBYHVS</td><td>Haudio 10.1&amp;quot; Single Din Car Radio with Rotatable Touchscreen, Wir</td></tr><tr><td>IN</td><td>Haudio</td><td>B0FR4F3KKG</td><td>Haudio C10E 10.1 Inch Double din car Screen,with wireles CarPlay and A</td></tr><tr><td>IN</td><td>Haudio</td><td>B0F62PPNLX</td><td>Haudio 10.1&amp;quot; Rotatable Single Din Car Stereo, 720 * 1280 Touchscr</td></tr><tr><td>IN</td><td>Haudio</td><td>B0DWFR7Z4G</td><td>9&amp;quot; HD car Radio Touchscreen for CarPlay &amp; Android Auto/Backup/Cam</td></tr><tr><td>IN</td><td>Haudio</td><td>B0FHD36JYR</td><td>Haudio Double Din Car Stereo - Wireless Apple CarPlay &amp; Android Auto, </td></tr><tr><td>IN</td><td>Haudio</td><td>B0FBX1MPZ9</td><td>Haudio 7 Inch Double DIN Car Stereo with Wireless Apple CarPlay and An</td></tr><tr><td>IN</td><td>Haudio</td><td>B0FBWCZWZ6</td><td>Haudio Double Din Car Stereo Radio with 7 inch IPS Touchscreen,Wireles</td></tr><tr><td>IN</td><td>Haudio</td><td>B0FS1CLYCG</td><td>Haudio C10D 7 inch Double Din Car Stereo - Wireless Apple CarPlay &amp; An</td></tr><tr><td>IN</td><td>Haudio</td><td>B0DG8TQ54K</td><td>Haudio 9 Inch Double Din Car Stereo, Android 13 Touchscreen Radio with</td></tr><tr><td>IN</td><td>BASSOHOLIC</td><td>B0GJZ8LXFK</td><td>BASSOHOLIC 9&amp;quot; Android 14 Car Stereo | 4GB+64GB | | 1280x800 IPS H</td></tr><tr><td>IN</td><td>BASSOHOLIC</td><td>B0G134LHBL</td><td>BASSOHOLIC 9&amp;quot; Android 14 Car Stereo for Toyota Glanza 2022 | 4GB+</td></tr><tr><td>IN</td><td>BASSOHOLIC</td><td>B0G13B197R</td><td>BASSOHOLIC 9&amp;quot; Android 14 Car Stereo for Ford Old Figo | 4GB+64GB </td></tr><tr><td>IN</td><td>Plimpton</td><td>B0HLS1LFWX</td><td>Plimpton 2026 Carplay for Android Auto Screen for Car, 7'' Touch Scree</td></tr><tr><td>IN</td><td>Plimpton</td><td>B0F62Y3NRP</td><td>2025 Enhanced Carplay Screen for Car - 7&amp;quot; HD Portable Carplay &amp; A</td></tr><tr><td>IN</td><td>Plimpton</td><td>B0FHHJ1M5P</td><td>Plimpton Upgraded Portable 9 inch Carplay for Android Auto Screen for </td></tr><tr><td>IN</td><td>myTVS</td><td>B0H8NPGXSV</td><td>myTVS AP-92 9-inch Android Car Stereo | Wireless Apple CarPlay &amp; Andro</td></tr></tbody></table></div></details></div>
+
+<div class="card"><h2 id="sec-7-七-监测覆盖与数据限制">七、监测覆盖与数据限制</h2>
+  <p class="muted">抓取方式：按品牌在 Amazon 搜索「最新上架」排序，与上次快照比对 ASIN 差异。上架时间取快照差异时间，非平台真实上架时间。</p>
+  <p class="muted">状态区分：正常抓取无新增（返回结果但与上期相同）/ 抓取结果为零（返回空）/ 首次监测基线（无可比快照）/ 无法确认（品牌未在本批执行）。本期印度 45 条属首次监测基线，不能据此判断印度市场没有新品。</p>
+  <p class="muted">价格缺失记为「—」，不做推测；币种按市场区分（印度 ₹ / 墨西哥 MXN）。</p>
+  <details><summary>完整记录（80 条）</summary><div class="table-wrap"><table class="tbl"><thead><tr><th>市场</th><th>品牌</th><th>ASIN</th><th>标题</th><th>价格</th><th>状态</th></tr></thead><tbody><tr><td>IN</td><td>Modorwy</td><td>B0HKDBJLKM</td><td>Modorwy Original QLED 9” Zlink Car Android Stereo | OS 13 | </td><td>₹9,499</td><td>基线</td></tr><tr><td>IN</td><td>Modorwy</td><td>B0HK85N2TK</td><td>Modorwy Original QLED 9” Zlink Car Android Stereo Compatible</td><td>₹8,299</td><td>基线</td></tr><tr><td>IN</td><td>Modorwy</td><td>B0HK3L3BPN</td><td>Modorwy Original QLED 9” Zlink Car Android Stereo System (4G</td><td>₹8,299</td><td>基线</td></tr><tr><td>IN</td><td>Modorwy</td><td>B0HJWY1SMM</td><td>Modorwy Original QLED 9” Zlink Car Android Stereo System | O</td><td>₹8,299</td><td>基线</td></tr><tr><td>IN</td><td>Modorwy</td><td>B0HJLVDMBL</td><td>Modorwy Original QLED 9” Zlink Car Android Stereo | OS 13 | </td><td>₹8,299</td><td>基线</td></tr><tr><td>IN</td><td>Modorwy</td><td>B0G9MXXN5L</td><td>Modorwy Gemstone 2K Car Android System | 10.1inch Full HD To</td><td>₹9,999</td><td>基线</td></tr><tr><td>IN</td><td>Modorwy</td><td>B0G2CG7RNT</td><td>Modorwy Original QLED 9” Zlink Car Android Stereo | OS 13 | </td><td>₹9,299</td><td>基线</td></tr><tr><td>IN</td><td>Modorwy</td><td>B0G2SNT1VP</td><td>Modorwy Original QLED 9” Zlink Car Android Stereo | OS 13 | </td><td>₹9,499</td><td>基线</td></tr><tr><td>IN</td><td>Modorwy</td><td>B0G2SM5965</td><td>Modorwy Figo Freestyle Original QLED 9” Zlink Car Android St</td><td>₹8,299</td><td>基线</td></tr><tr><td>IN</td><td>Modorwy</td><td>B0G2GQQ4YT</td><td>Modorwy Original QLED 9” Zlink Car Android Stereo | OS 13 | </td><td>₹8,799</td><td>基线</td></tr><tr><td>IN</td><td>Modorwy</td><td>B0G2RVK6VX</td><td>Modorwy Nissan Old Micra Original QLED 9” Zlink Car Android </td><td>₹8,299</td><td>基线</td></tr><tr><td>IN</td><td>Modorwy</td><td>B0G2Y4FXHP</td><td>Modorwy Renault New Kwid Original QLED 9” Zlink Car Android </td><td>₹8,799</td><td>基线</td></tr><tr><td>IN</td><td>Modorwy</td><td>B0G2Y4SF5G</td><td>Modorwy Renault New Kwid Original QLED 9” Zlink Car Android </td><td>₹8,299</td><td>基线</td></tr><tr><td>IN</td><td>Modorwy</td><td>B0G2SQXLTR</td><td>Modorwy Original QLED 9” Zlink Car Android Stereo | OS 13 | </td><td>₹8,799</td><td>基线</td></tr><tr><td>IN</td><td>Modorwy</td><td>B0G2Y4WMQZ</td><td>Modorwy Original QLED 9” Zlink Car Android Stereo | OS 13 | </td><td>₹9,499</td><td>基线</td></tr><tr><td>IN</td><td>Modorwy</td><td>B0G2GPW734</td><td>Modorwy Mahindra TUV 300 Original QLED 9” Zlink Car Android </td><td>₹8,299</td><td>基线</td></tr><tr><td>IN</td><td>Modorwy</td><td>B0FHQ7MKWX</td><td>Modorwy Gemstone 2K Car Android System | 10.1inch Full HD To</td><td>₹9,999</td><td>基线</td></tr><tr><td>IN</td><td>Modorwy</td><td>B0F2TLJLXS</td><td>Modorwy Diamond 10.1&amp;quot; 2K Android Car Multimedia Player </td><td>₹9,999</td><td>基线</td></tr><tr><td>IN</td><td>Modorwy</td><td>B0F94B8HLC</td><td>Modorwy Maruti Eeco Original QLED 9” Zlink Car Android Stere</td><td>₹9,299</td><td>基线</td></tr><tr><td>IN</td><td>Modorwy</td><td>B0DQWSH7ZP</td><td>Modorwy Original QLED 9” Zlink Car Android Stereo | OS 13 | </td><td>₹8,299</td><td>基线</td></tr><tr><td>IN</td><td>Modorwy</td><td>B0DMK5NKW6</td><td>Modorwy Chevrolet Sail 2004 Original QLED 9” Zlink Car Andro</td><td>₹8,799</td><td>基线</td></tr><tr><td>IN</td><td>Modorwy</td><td>B0DBDPRRCS</td><td>Modorwy Maruti Swift 2018 Original QLED 9” Zlink Car Android</td><td>₹8,799</td><td>基线</td></tr><tr><td>IN</td><td>Modorwy</td><td>B0D1H2GKVF</td><td>Modorwy Original QLED 9” Zlink Car Android Stereo | OS 13 | </td><td>₹8,999</td><td>基线</td></tr><tr><td>MX</td><td>Rimoody</td><td>B0HPNMBFSN</td><td>Rimoody Radio de Coche para Ford Focus Mk2 Mk3 Exi MT 2 3 20</td><td>MXN 3,946</td><td>新增</td></tr><tr><td>MX</td><td>Rimoody</td><td>B0HQBD8M9J</td><td>Rimoody Radio de Coche 2 DIN para Audi A3 8P/S3/RS3 (2003-20</td><td>MXN 4,268</td><td>新增</td></tr><tr><td>MX</td><td>Rimoody</td><td>B0HPNZNBSV</td><td>Rimoody Radio de Coche 1 DIN con Wireless CarPlay &amp; Android </td><td>MXN 3,527</td><td>新增</td></tr><tr><td>MX</td><td>Rimoody</td><td>B0HPNJC4TD</td><td>Rimoody Radio de Coche para Toyota RAV4 2001-2006 Wireless C</td><td>MXN 3,981</td><td>新增</td></tr><tr><td>MX</td><td>Rimoody</td><td>B0HL7VDVDP</td><td>Rimoody - Radio estéreo de coche de 9 pulgadas para Toyota R</td><td>MXN 2,272</td><td>新增</td></tr><tr><td>MX</td><td>Rimoody</td><td>B0HPNLD644</td><td>Rimoody Radio de Coche para Ford Transit Custom Tourneo 2013</td><td>MXN 4,506</td><td>新增</td></tr><tr><td>MX</td><td>Rimoody</td><td>B0HMCXGDBJ</td><td>Radio estéreo de coche de 10.1 pulgadas para Nissan Versa Se</td><td>MXN 2,586</td><td>新增</td></tr><tr><td>MX</td><td>Rimoody</td><td>B0HLK5Y21F</td><td>Rimoody - Radio estéreo de coche de 10.1 pulgadas para Toyot</td><td>MXN 2,201</td><td>新增</td></tr><tr><td>MX</td><td>Rimoody</td><td>B0HLCY59LL</td><td>Rimoody - Radio estéreo de coche de 10.1 pulgadas para Suzuk</td><td>MXN 2,203</td><td>新增</td></tr><tr><td>MX</td><td>Rimoody</td><td>B0HJTS9W4X</td><td>Rimoody - Estéreo de coche de 9 pulgadas para Toyota Corolla</td><td>MXN 2,188</td><td>新增</td></tr><tr><td>MX</td><td>Rimoody</td><td>B0HLCRXPJ3</td><td>Rimoody - Radio estéreo para coche Suzuki Swift 2005-2010 Ca</td><td>MXN 3,021</td><td>新增</td></tr><tr><td>MX</td><td>Rimoody</td><td>B0HKVXVHS1</td><td>Rimoody 4G+64G Android 15 Estéreo para coche Toyota RAV4 Rad</td><td>MXN 3,492</td><td>新增</td></tr><tr><td>MX</td><td>Rimoody</td><td>B0HCZ5LZK8</td><td>Rimoody 8 Core 6G+128G Radio estéreo para coche Android para</td><td>MXN 9,015</td><td>新增</td></tr><tr><td>MX</td><td>Haudio</td><td>B0HGXZLVTQ</td><td>Haudio 2G+64G Radio de coche para Honda Civic 2006-2011 esté</td><td>MXN 4,770</td><td>新增</td></tr><tr><td>MX</td><td>Haudio</td><td>B0H2HM9M7M</td><td>Haudio Estéreo de doble DIN de 7 pulgadas, para VW Golf/Tour</td><td>MXN 2,750</td><td>新增</td></tr><tr><td>MX</td><td>Haudio</td><td>B0GHW4W161</td><td>Radio de Coche DIN con Carplay y Android Auto, Pantalla de 9</td><td>MXN 3,019</td><td>新增</td></tr><tr><td>MX</td><td>Haudio</td><td>B0GHRCWVD3</td><td>Radio de Coche inalámbrica Carplay para VW Polo T5 Golf 5 6 </td><td>MXN 3,398</td><td>新增</td></tr><tr><td>MX</td><td>Haudio</td><td>B0FS7QGYPC</td><td>Haudio 10.1&amp;quot; Rotatable Android Car Stereo, 2GB+64GB, Wi</td><td>MXN 3,907</td><td>新增</td></tr><tr><td>MX</td><td>Haudio</td><td>B0FVXBYHVS</td><td>Haudio Estéreo 10.1&amp;quot; con Pantalla táctil 360° rotatable</td><td>MXN 4,003</td><td>新增</td></tr><tr><td>MX</td><td>Haudio</td><td>B0FP2FGDLS</td><td>Estéreo portátil inalámbrico CarPlay y Android para coche co</td><td>MXN 1,081</td><td>新增</td></tr><tr><td>MX</td><td>Haudio</td><td>B0FPF6PHL5</td><td>Haudio 7-Inch Double DIN Car Stereo with Wireless CarPlay &amp; </td><td>MXN 1,376</td><td>新增</td></tr><tr><td>MX</td><td>Haudio</td><td>B0FS1CLYCG</td><td>Haudio visualización de Radio estéreo para Coche de 7 Pulgad</td><td>MXN 1,344</td><td>新增</td></tr><tr><td>MX</td><td>Haudio</td><td>B0FQBT31RX</td><td>Haudio Estéreo de coche doble DIN de 9 pulgadas, CarPlay ina</td><td>MXN 1,619</td><td>新增</td></tr><tr><td>MX</td><td>Haudio</td><td>B0FNQ3WSBV</td><td>Genérico Haudio 9.3&amp;quot; Pantalla Táctil HD para Autoestere</td><td>MXN 1,327</td><td>新增</td></tr><tr><td>MX</td><td>Haudio</td><td>B0FNRJ9YJW</td><td>Haudio Autoradio, pantalla Carplay de 7 pulgadas para Apple </td><td>MXN 899</td><td>新增</td></tr><tr><td>MX</td><td>Haudio</td><td>B0FS1KK2TB</td><td>Estéreo Haudio inalámbrico Doble DIN con Bluetooth, Wireless</td><td>MXN 1,777</td><td>新增</td></tr><tr><td>MX</td><td>Haudio</td><td>B0FK9DQWXN</td><td>2025 Hodozzy Inalámbrico Carplay - Radio de Coche 1 DIN Andr</td><td>MXN 2,946</td><td>新增</td></tr><tr><td>MX</td><td>Haudio</td><td>B0FS1M87CM</td><td>Haudio Estéreo 7&amp;quot; inalámbrico Doble DIN con Bluetooth, </td><td>MXN 1,327</td><td>新增</td></tr><tr><td>MX</td><td>Haudio</td><td>B0FR4F3KKG</td><td>Haudio Estéreo de Coche de Doble DIN de 10 Pulgadas Android </td><td>MXN 1,743</td><td>新增</td></tr><tr><td>MX</td><td>Haudio</td><td>B0FNMT6ZWD</td><td>Haudio P07B estéreo portátil de 7 pulgadas, visualización tá</td><td>MXN 759</td><td>新增</td></tr><tr><td>MX</td><td>Haudio</td><td>B0FJXR9DTK</td><td>Haudio Estéreo de Coche de 7 Pulgadas con Apple CarPlay Inal</td><td>MXN 1,316</td><td>新增</td></tr><tr><td>MX</td><td>Haudio</td><td>B0FHCS8L8V</td><td>Genérico Pantalla Doble DIN CarPlay Inalámbrico para Coche, </td><td>MXN 1,602</td><td>新增</td></tr><tr><td>IN</td><td>Haudio</td><td>B0FNQGDNMT</td><td>Haudio 9&amp;quot; Wireless Double Din Car Stereo with Bluetooth</td><td>₹23,417</td><td>基线</td></tr><tr><td>IN</td><td>Haudio</td><td>B0H13XHKWP</td><td>7&amp;quot; Touch Screen Car Stereo for Nissan Juke 2010 2011 20</td><td>₹31,830</td><td>基线</td></tr><tr><td>IN</td><td>Haudio</td><td>B0F61TBZCW</td><td>Haudio 10.1&amp;quot; Double Din Car Stereo with Wireless CarPla</td><td>₹23,139</td><td>基线</td></tr><tr><td>IN</td><td>Haudio</td><td>B0FF9ZCYYD</td><td>Haudio 2 Din Car Stereo with Wireless Apple CarPlay &amp; Androi</td><td>₹26,978</td><td>基线</td></tr><tr><td>IN</td><td>Haudio</td><td>B0FP2FGDLS</td><td>Haudio Portable CarPlay Screen for Apple CarPlay &amp; Android A</td><td>₹11,173</td><td>基线</td></tr><tr><td>IN</td><td>Haudio</td><td>B0F6TZ5PNC</td><td>Haudio 7-Inch Car Stereo with Knob, Wireless CarPlay &amp; Andro</td><td>₹13,777</td><td>基线</td></tr><tr><td>IN</td><td>Haudio</td><td>B0FVXBYHVS</td><td>Haudio 10.1&amp;quot; Single Din Car Radio with Rotatable Touchs</td><td>₹34,147</td><td>基线</td></tr><tr><td>IN</td><td>Haudio</td><td>B0FR4F3KKG</td><td>Haudio C10E 10.1 Inch Double din car Screen,with wireles Car</td><td>₹17,889</td><td>基线</td></tr><tr><td>IN</td><td>Haudio</td><td>B0F62PPNLX</td><td>Haudio 10.1&amp;quot; Rotatable Single Din Car Stereo, 720 * 128</td><td>₹26,159</td><td>基线</td></tr><tr><td>IN</td><td>Haudio</td><td>B0DWFR7Z4G</td><td>9&amp;quot; HD car Radio Touchscreen for CarPlay &amp; Android Auto/</td><td>₹17,539</td><td>基线</td></tr><tr><td>IN</td><td>Haudio</td><td>B0FHD36JYR</td><td>Haudio Double Din Car Stereo - Wireless Apple CarPlay &amp; Andr</td><td>₹13,042</td><td>基线</td></tr><tr><td>IN</td><td>Haudio</td><td>B0FBX1MPZ9</td><td>Haudio 7 Inch Double DIN Car Stereo with Wireless Apple CarP</td><td>₹13,341</td><td>基线</td></tr><tr><td>IN</td><td>Haudio</td><td>B0FBWCZWZ6</td><td>Haudio Double Din Car Stereo Radio with 7 inch IPS Touchscre</td><td>₹13,337</td><td>基线</td></tr><tr><td>IN</td><td>Haudio</td><td>B0FS1CLYCG</td><td>Haudio C10D 7 inch Double Din Car Stereo - Wireless Apple Ca</td><td>₹15,480</td><td>基线</td></tr><tr><td>IN</td><td>Haudio</td><td>B0DG8TQ54K</td><td>Haudio 9 Inch Double Din Car Stereo, Android 13 Touchscreen </td><td>₹16,706</td><td>基线</td></tr><tr><td>IN</td><td>BASSOHOLIC</td><td>B0GJZ8LXFK</td><td>BASSOHOLIC 9&amp;quot; Android 14 Car Stereo | 4GB+64GB | | 1280</td><td>₹9,999</td><td>基线</td></tr><tr><td>IN</td><td>BASSOHOLIC</td><td>B0G134LHBL</td><td>BASSOHOLIC 9&amp;quot; Android 14 Car Stereo for Toyota Glanza 2</td><td>₹10,449</td><td>基线</td></tr><tr><td>IN</td><td>BASSOHOLIC</td><td>B0G13B197R</td><td>BASSOHOLIC 9&amp;quot; Android 14 Car Stereo for Ford Old Figo |</td><td>₹10,999</td><td>基线</td></tr><tr><td>IN</td><td>Plimpton</td><td>B0HLS1LFWX</td><td>Plimpton 2026 Carplay for Android Auto Screen for Car, 7'' T</td><td>₹8,550</td><td>基线</td></tr><tr><td>IN</td><td>Plimpton</td><td>B0F62Y3NRP</td><td>2025 Enhanced Carplay Screen for Car - 7&amp;quot; HD Portable C</td><td>₹8,929</td><td>基线</td></tr><tr><td>IN</td><td>Plimpton</td><td>B0FHHJ1M5P</td><td>Plimpton Upgraded Portable 9 inch Carplay for Android Auto S</td><td>₹14,500</td><td>基线</td></tr><tr><td>IN</td><td>myTVS</td><td>B0H8NPGXSV</td><td>myTVS AP-92 9-inch Android Car Stereo | Wireless Apple CarPl</td><td>₹12,000</td><td>基线</td></tr><tr><td>MX</td><td>Volxcereo</td><td>B0GX14MTC3</td><td>Volxcereo Radio de Coche para Volkswagen VW Beetle 2004-2010</td><td>MXN 3,017</td><td>新增</td></tr><tr><td>MX</td><td>Volxcereo</td><td>B0FV8HPS2X</td><td>2G+64G Volxcereo Radio Estéreo para Audi Q5 Carplay 2010-201</td><td>MXN 5,550</td><td>新增</td></tr><tr><td>MX</td><td>Volxcereo</td><td>B0FVKM8FN2</td><td>Volxcereo - Radio de coche Android para Mazda 6 2007-2012 co</td><td>MXN 2,886</td><td>新增</td></tr></tbody></table></div></details></div>
+
+</div>
+<footer>
+  <span>Lianshun · 市场情报 ｜ 展示规范 v1</span>
+  <span>数据与结论同源；生成于 2026-11-19</span>
+</footer>
+</div>
+<script>
+(function () {
+  var all = Array.prototype.slice.call(document.querySelectorAll('.toc a[href^="#"]'))
+  if (!all.length) return
+  var seen = {}, uniq = []
+  all.forEach(function (a) {
+    var h = a.getAttribute('href')
+    if (!seen[h]) { seen[h] = 1; uniq.push(a) }
+  })
+  var targets = uniq.map(function (a) { return document.querySelector(a.getAttribute('href')) })
+  var cur = document.querySelector('.toc-cur')
+  var fold = document.querySelector('.toc-fold')
+  var raf = 0
+  function update () {
+    raf = 0
+    var idx = 0
+    targets.forEach(function (el, i) { if (el && el.getBoundingClientRect().top <= 72) idx = i })
+    var active = '#' + (targets[idx] ? targets[idx].id : '')
+    all.forEach(function (a) { a.classList.toggle('cur', a.getAttribute('href') === active) })
+    if (cur && uniq[idx]) cur.textContent = uniq[idx].textContent
+  }
+  window.addEventListener('scroll', function () { if (!raf) raf = requestAnimationFrame(update) }, { passive: true })
+  if (fold) fold.addEventListener('click', function (e) { if (e.target.closest('a')) fold.open = false })
+  update()
+})()
+</script>
+</body>
+</html>

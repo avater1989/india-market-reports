@@ -1,0 +1,722 @@
+<!doctype html>
+<!--lsa-report-shell-v2-->
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>墨西哥 CarPlay 车机屏 · 竞品全量分析</title>
+<style>
+:root{
+  --paper:#FAF8F4; --paper-2:#F3EFE8;
+  --ink:#15171B; --ink2:#4A4E55; --ink3:#8A8579;
+  --rule:#D9D3C7; --rule-soft:#E9E4DA;
+  --pos:#1E7A50; --neg:#A32B2B; --warn:#8A5A00;
+  --bar:#15171B; --bar-2:#6E6A61; --bar-3:#B7B1A4; --bar-r:2px;
+  --max:1080px; --read:760px; --pad:32px;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --paper:#141517; --paper-2:#1B1D20;
+    --ink:#ECEAE5; --ink2:#B9B5AC; --ink3:#8A8579;
+    --rule:#3A3B3E; --rule-soft:#2A2C2F;
+    --pos:#5BBF8D; --neg:#E28A84; --warn:#D9A441;
+    --bar:#ECEAE5; --bar-2:#A9A49B; --bar-3:#6E6A61;
+  }
+}
+@media (max-width:1000px){ :root{ --pad:24px } }
+@media (max-width:768px){ :root{ --pad:16px } }
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font:15px/1.7 "Inter",-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+  font-variant-numeric:tabular-nums; font-feature-settings:"tnum" 1;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:var(--max); margin:0 auto; padding:36px var(--pad) 72px}
+
+/* ---------- 头部 ---------- */
+.masthead{
+  display:flex; justify-content:space-between; align-items:baseline; gap:16px;
+  border-bottom:1px solid var(--ink); padding-bottom:8px;
+  font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--ink3);
+}
+.masthead .issue{letter-spacing:.06em}
+h1{font-size:34px; line-height:1.18; margin:18px 0 8px; font-weight:700; letter-spacing:-.015em}
+.lead{font-size:19px; line-height:1.55; font-weight:650; letter-spacing:-.01em; margin:0 0 12px; max-width:46ch}
+.scope{font-size:12.5px; line-height:1.65; color:var(--ink3); margin:0 0 6px; max-width:var(--read)}
+.kpi.secondary .value{font-size:22px; letter-spacing:0; color:var(--ink2); font-weight:600}
+.kpi.secondary .label{color:var(--ink3)}
+.dek{font-size:15px; line-height:1.7; color:var(--ink); margin:0 0 10px; max-width:var(--read)}
+.cuts{font-size:12px; color:var(--ink3); line-height:1.6; margin:0 0 4px}
+.cuts b{color:var(--ink2); font-weight:600}
+
+/* ---------- 目录 ---------- */
+/* 目录：宽屏完整换行；窄屏折叠为「当前章节」单选 */
+.toc{
+  position:sticky; top:0; z-index:6;
+  background:color-mix(in srgb, var(--paper) 95%, transparent);
+  backdrop-filter:saturate(140%) blur(8px);
+  border-bottom:1px solid var(--rule-soft);
+  margin:18px 0 26px; padding:7px 0;
+  font-size:12px; color:var(--ink2);
+}
+.toc-list{display:flex; flex-wrap:wrap; gap:6px 18px; list-style:none; margin:0; padding:0}
+.toc-list a{color:inherit; text-decoration:none; border-bottom:1px solid transparent; padding-bottom:1px; white-space:nowrap}
+.toc-list a:hover{border-bottom-color:var(--ink3)}
+.toc-list a.cur{color:var(--ink); font-weight:600; border-bottom-color:var(--ink)}
+.toc-fold{display:none}
+.toc-fold>summary{
+  cursor:pointer; list-style:none; display:flex; align-items:center; gap:8px;
+  font-size:12px; color:var(--ink2); padding:2px 0;
+}
+.toc-fold>summary::-webkit-details-marker{display:none}
+.toc-fold>summary:after{content:"▾"; margin-left:auto; color:var(--ink3)}
+.toc-fold[open]>summary:after{content:"▴"}
+.toc-fold .toc-cur{color:var(--ink); font-weight:600}
+.toc-fold ol{list-style:none; margin:8px 0 4px; padding:0; display:flex; flex-direction:column; gap:7px; max-height:56vh; overflow:auto}
+.toc-fold a{color:inherit; text-decoration:none}
+.toc-fold a.cur{color:var(--ink); font-weight:600}
+h2[id^="sec-"]{scroll-margin-top:64px}
+@media (max-width:979px){
+  .toc-list{display:none}
+  .toc-fold{display:block}
+}
+
+/* ---------- KPI ---------- */
+.kpis{
+  display:grid; grid-template-columns:repeat(4,minmax(0,1fr));
+  border-top:1px solid var(--rule); border-bottom:1px solid var(--rule);
+  margin:0 0 28px;
+}
+.kpi{padding:14px 16px 16px; border-left:1px solid var(--rule-soft); min-width:0}
+.kpi:first-child{border-left:0; padding-left:0}
+.kpi .label,.kpi .l{font-size:12px; letter-spacing:.04em; color:var(--ink3); line-height:1.5}
+.kpi .value,.kpi .v{
+  font-size:32px; line-height:1.15; font-weight:700; letter-spacing:-.02em;
+  margin:4px 0 3px; color:var(--ink);
+}
+.kpi .value.sm{font-size:22px; letter-spacing:0}
+.kpi .sub,.kpi .s{font-size:12px; line-height:1.5; color:var(--ink2)}
+@media (max-width:980px){ .kpis{grid-template-columns:repeat(2,minmax(0,1fr))} .kpi:nth-child(odd){border-left:0; padding-left:0} }
+@media (max-width:560px){ .kpis{grid-template-columns:repeat(2,minmax(0,1fr))} }
+
+/* ---------- 章节 ---------- */
+section{margin:0}
+.card{margin:0 0 34px}
+.card>h2,h2{
+  font-size:22px; line-height:1.35; font-weight:650; letter-spacing:-.01em;
+  margin:0 0 10px; padding-top:14px; border-top:1px solid var(--ink);
+}
+.sec-head{display:flex; align-items:baseline; justify-content:space-between; gap:12px; border-top:1px solid var(--ink); padding-top:12px; margin:38px 0 10px}
+.sec-head h2{border:0; padding:0; margin:0}
+.sec-head .no,.no{font-size:12px; letter-spacing:.12em; color:var(--ink3); font-weight:500; margin-right:8px}
+.sec-en{font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--ink3)}
+h3{font-size:16.5px; line-height:1.45; font-weight:650; margin:22px 0 8px; letter-spacing:-.005em}
+h3 .cnt,.sec-head .cnt{font-size:12px; color:var(--ink3); font-weight:400; margin-left:8px; letter-spacing:0}
+h4{font-size:14px; margin:16px 0 6px}
+
+/* ---------- 正文 ---------- */
+p{margin:0 0 12px; max-width:var(--read)}
+.card>p,.card>ul,.card>ol{max-width:var(--read)}
+ul,ol{margin:0 0 12px; padding-left:20px}
+li{margin:4px 0}
+ul.tight li,ol.tight li{margin:3px 0}
+strong,b{font-weight:600}
+a{color:inherit; text-decoration:none; border-bottom:1px solid var(--rule)}
+a:hover{border-bottom-color:var(--ink3)}
+code,.mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:.88em; background:var(--paper-2); padding:1px 5px; border-radius:2px}
+
+/* ---------- 说明文字 ---------- */
+.note{font-size:12.5px; line-height:1.65; color:var(--ink2); max-width:var(--read)}
+.note b,.note strong{color:var(--ink2); font-weight:600}
+.muted{color:var(--ink2)}
+.flag{border-left:2px solid var(--warn); padding:8px 0 8px 12px; font-size:13px; color:var(--ink2); margin:12px 0; max-width:var(--read)}
+.check{display:flex; gap:18px; flex-wrap:wrap; font-size:12px; color:var(--ink3); border-top:1px solid var(--rule-soft); padding-top:8px; margin-top:12px}
+
+/* ---------- 核心洞察 ---------- */
+.insight{border-top:1px solid var(--rule-soft); padding:14px 0 4px}
+.insight-head{display:flex; align-items:baseline; gap:10px; flex-wrap:wrap; margin-bottom:6px}
+.insight-no{font-size:12px; letter-spacing:.12em; color:var(--ink3)}
+.insight-head h3{margin:0; font-size:17px}
+.insight-kicker{font-size:12px; color:var(--ink3)}
+.insight-body{display:grid; grid-template-columns:4.4em minmax(0,1fr); gap:4px 12px; margin:0 0 4px; max-width:var(--read)}
+.insight-body dt{font-size:12px; color:var(--ink3); line-height:1.9}
+.insight-body dd{margin:0; font-size:15px; line-height:1.7}
+.insight-body dt:first-of-type+dd{font-weight:600}
+@media (max-width:768px){
+  .insight-body{grid-template-columns:1fr; gap:2px}
+  .insight-body dt{margin-top:6px}
+}
+
+/* ---------- 表格 ---------- */
+.table-wrap{overflow-x:auto; -webkit-overflow-scrolling:touch; margin:8px 0 14px; max-width:100%}
+table{width:100%; border-collapse:collapse; font-size:13px; line-height:1.55}
+thead th{
+  position:sticky; top:0; z-index:1;
+  background:var(--paper); color:var(--ink3);
+  font-size:12px; font-weight:600; letter-spacing:.04em; text-align:left;
+  padding:8px 10px; border-bottom:1px solid var(--ink); white-space:nowrap;
+}
+tbody th{text-align:left; font-weight:600; padding:9px 10px; border-bottom:1px solid var(--rule-soft)}
+td{padding:9px 10px; border-bottom:1px solid var(--rule-soft); vertical-align:top}
+td.num,th.num,.num{text-align:right; white-space:nowrap; font-variant-numeric:tabular-nums}
+tbody tr:hover td{background:var(--paper-2)}
+table caption{caption-side:top; text-align:left; font-size:12px; color:var(--ink3); padding-bottom:6px}
+
+/* ---------- 标签 / 状态（去胶囊，改文字） ---------- */
+.tag,.chip{
+  display:inline; border:0!important; background:none!important; padding:0!important;
+  border-radius:0!important; font-size:12px; color:var(--ink2); font-weight:500;
+}
+.tag+.tag:before,.chip+.chip:before{content:" / "; color:var(--ink3); font-weight:400}
+.tag.neg,.chip.neg,.is-bad .tag{color:var(--neg)}
+.tag.ok,.is-ok .tag{color:var(--ink2)}
+.state-bad{color:var(--neg); font-weight:600}
+.state-bad:before{content:"▍"; margin-right:2px}
+
+/* ---------- 分组 / 折叠 ---------- */
+details.grp{border-top:1px solid var(--rule-soft); padding:8px 0}
+details.grp>summary{cursor:pointer; font-size:14px; font-weight:600; padding:4px 0; list-style:none}
+details.grp>summary::-webkit-details-marker{display:none}
+details.grp>summary:before{content:"▸"; color:var(--ink3); margin-right:8px; font-size:11px}
+details.grp[open]>summary:before{content:"▾"}
+.brand{margin:0 0 18px}
+.bhead{display:flex; justify-content:space-between; align-items:baseline; gap:12px; flex-wrap:wrap; padding:8px 0; border-bottom:1px solid var(--rule-soft)}
+.bhead b{font-size:15px}
+.bhead span{font-size:12px; color:var(--ink3)}
+
+/* ---------- 页脚 ---------- */
+footer{margin-top:36px; border-top:1px solid var(--ink); padding-top:12px; font-size:12px; color:var(--ink3); display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap}
+
+/* ---------- 打印 ---------- */
+@media print{
+  :root{--paper:#fff;--paper-2:#fff;--ink:#000;--ink2:#333;--ink3:#666;--rule:#bbb;--rule-soft:#ddd;--neg:#8a1c1c;--pos:#14603c}
+  .toc{display:none}
+  .table-wrap{overflow:visible}
+  thead th{position:static}
+  table{page-break-inside:auto}
+  tr,img{page-break-inside:avoid}
+  h2,h3{page-break-after:avoid}
+  .card{page-break-inside:auto}
+  body{font-size:10.5pt}
+  h1{font-size:20pt}
+  a{border-bottom:0; text-decoration:none}
+}
+
+.tscroll{overflow-x:auto; -webkit-overflow-scrolling:touch; margin:8px 0 12px}
+.panel{border-top:1px solid var(--rule-soft); padding:12px 0 4px; margin:10px 0}
+.panel h3{font-size:14px; margin:0 0 6px}
+.kv{display:grid; grid-template-columns:7em minmax(0,1fr); gap:4px 12px; font-size:13px}
+.tags{display:flex; flex-wrap:wrap; gap:6px 10px}
+.st{font-size:12px; color:var(--ink2)}
+.st-diff{color:var(--ink)}
+.st-ok{color:var(--ink2)}
+.st-empty,.st-error{color:var(--neg); font-weight:600}
+.st-empty:before,.st-error:before{content:"▍"; margin-right:2px}
+.st-baseline{color:var(--ink3)}
+.caliber{font-size:12px; color:var(--ink3)}
+.item{padding:8px 0; border-bottom:1px solid var(--rule-soft)}
+.rep-link{font-size:12px}
+.takeaway{border-left:2px solid var(--ink); padding:8px 0 8px 12px; margin:10px 0; font-size:14px; max-width:var(--read)}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="masthead"><span>Lianshun · 市场情报</span><span class="issue">COMPETITOR · MEXICO</span></div>
+  <h1>墨西哥 CarPlay 车机屏 · 竞品全量分析</h1>
+  <p class="lead">本期全量池 40 款 CarPlay 车机屏（池 180 条）。</p>
+  
+  
+  
+</header><nav class="toc" aria-label="章节目录">
+  <ol class="toc-list"><li><a href="#sec-1-一-核心洞察">一、核心洞察</a></li><li><a href="#sec-2-二-价格与尺寸">二、价格与尺寸</a></li><li><a href="#sec-3-三-产品形态">三、产品形态</a></li><li><a href="#sec-4-四-交叉分析">四、交叉分析</a></li><li><a href="#sec-5-五-代表性商品-10-款">五、代表性商品（10 款）</a></li><li><a href="#sec-6-六-商品明细-按形态折叠">六、商品明细（按形态折叠）</a></li><li><a href="#sec-7-七-历史对比">七、历史对比</a></li><li><a href="#sec-8-八-消费者评价与声量-独立样本">八、消费者评价与声量（独立样本）</a></li><li><a href="#sec-9-九-数据口径与限制">九、数据口径与限制</a></li></ol>
+  <details class="toc-fold">
+    <summary><span>章节目录</span><span class="toc-cur">一、核心洞察</span></summary>
+    <ol><li><a href="#sec-1-一-核心洞察">一、核心洞察</a></li><li><a href="#sec-2-二-价格与尺寸">二、价格与尺寸</a></li><li><a href="#sec-3-三-产品形态">三、产品形态</a></li><li><a href="#sec-4-四-交叉分析">四、交叉分析</a></li><li><a href="#sec-5-五-代表性商品-10-款">五、代表性商品（10 款）</a></li><li><a href="#sec-6-六-商品明细-按形态折叠">六、商品明细（按形态折叠）</a></li><li><a href="#sec-7-七-历史对比">七、历史对比</a></li><li><a href="#sec-8-八-消费者评价与声量-独立样本">八、消费者评价与声量（独立样本）</a></li><li><a href="#sec-9-九-数据口径与限制">九、数据口径与限制</a></li></ol>
+  </details>
+</nav>
+<div class="sub">数据日期 2026-11-18 · 渠道：Amazon.com.mx 单渠道 · 全量池 180 条 → CarPlay 车机屏 40 款 · 有效价格 40/40 · 评分/评论 0/40 · 周度检查，池龄 ≥7 天重建 · 报告生成 2026-11-19 21:18</div>
+<nav class="toc">
+<a href="#s1">一 · 核心洞察</a><a href="#s2">二 · 价格与尺寸</a><a href="#s3">三 · 产品形态</a><a href="#s4">四 · 交叉分析</a><a href="#s5">五 · 代表性商品</a><a href="#s6">六 · 商品明细</a><a href="#s7">七 · 历史对比</a><a href="#s8">八 · 消费者声量</a><a href="#s9">九 · 数据口径与限制</a>
+</nav>
+
+<div class="card" id="s1"><h2 id="sec-1-一-核心洞察">一、核心洞察</h2>
+<div class="kpi">
+<div><span>全量池 · CarPlay 屏</span><b>40 款</b><em>池 180 条</em></div>
+<div><span>有效价格</span><b>40 款</b><em>缺失 0 款</em></div>
+<div><span>价格中位</span><b>MXN 1,599</b><em>P25–P75 1,145–2,017</em></div>
+<div><span>≤ MXN 3,000</span><b>90.0%</b><em>36 / 40 款</em></div>
+<div><span>尺寸可识别</span><b>34 款</b><em>85.0% · 6 款未标注</em></div>
+</div>
+<p class="note">以下 5 条均来自本期全量池实际计算。事实、分析判断、业务参考分列；商品数与样本占比不等于销量或市场份额，榜单/评分/评论/BSR 均未被当作销量。</p>
+
+  <div class="insight">
+    <div class="insight-h"><span class="insight-no">01</span><b>产品形态结构</b></div>
+    <dl>
+      <dt>事实</dt><dd>本期全量池 40 款 CarPlay 车机屏（池 180 条）。按标题关键词规则：通用车机 26 款（65.0%）、便携屏 9 款（22.5%）、其他屏 5 款（12.5%）；后视镜屏 0 款。价格 40/40 有效；尺寸 34/40 可识别；评分/评论 0/40。</dd>
+      <dt>分析判断</dt><dd>供给以通用车机为主（65.0%），便携屏是第二形态（22.5%）；后视镜屏为 0，9 款标题含 Mirror Link（投屏功能），其中 5 款为便携屏、4 款归入通用车机。这是样本结构，不是销量结构。</dd>
+      <dt>业务参考</dt><dd>产品定义优先覆盖通用 7/9 寸与便携 10.26 寸；后视镜形态本期无样本，不能据此判断该形态没有市场。</dd>
+    </dl>
+  </div>
+  <div class="insight">
+    <div class="insight-h"><span class="insight-no">02</span><b>价格分布与供给集中区间</b></div>
+    <dl>
+      <dt>事实</dt><dd>40 款有效价格：P25 MXN 1,145、中位 MXN 1,599、P75 MXN 2,017；≤ MXN 1,500 18 款（45.0%）、MXN 1,501–3,000 18 款（45.0%）、MXN 3,001–5,000 1 款（2.5%）、> MXN 5,000 3 款（7.5%）。</dd>
+      <dt>分析判断</dt><dd>供给集中在 ≤ MXN 1,500 与 MXN 1,501–3,000 两带，各占 45.0%，合计 90.0%；中位 MXN 1,599 位于 1,501–3,000 下沿。这是样本供给占比，不是销量或市场份额。</dd>
+      <dt>业务参考</dt><dd>主推价格带可放在 MXN 1,500–2,000；用 MXN 1,599 / MXN 2,017 做价格锚点。不要把样本占比写成市场份额。</dd>
+    </dl>
+  </div>
+  <div class="insight">
+    <div class="insight-h"><span class="insight-no">03</span><b>标称尺寸与功能关键词</b></div>
+    <dl>
+      <dt>事实</dt><dd>尺寸可识别 34/40 款（85.0%）：7″ 10 款、9″ 8 款、10.26″ 5 款，其余为 5–11″ 的小样本；6 款标题未写尺寸。标题功能关键词：CarPlay 39/40（97.5%）、Android Auto 32/40（80.0%）、无线 24/40（60.0%）、触控 17/40（42.5%）、GPS 5/40（12.5%）、DSP 0/40、倒车影像 0/40。</dd>
+      <dt>分析判断</dt><dd>7″ 与 9″ 是通用车机的主要标称尺寸，10.26″ 集中在便携屏；CarPlay 覆盖接近 100% 是样本按 CarPlay 车机屏筛选所致。DSP 与倒车影像在标题中为 0，只说明卖家未在标题里写，不等于没有配置，也不能直接判定为需求缺口。</dd>
+      <dt>业务参考</dt><dd>以 7/9 寸 + 无线 + 触控为基本盘；DSP、倒车影像、GPS 作为待验证卖点，先做小批量 Listing 标题/主图测试，不凭标题提及率直接扩 SKU。</dd>
+    </dl>
+  </div>
+  <div class="insight">
+    <div class="insight-h"><span class="insight-no">04</span><b>代表性品牌及商品</b></div>
+    <dl>
+      <dt>事实</dt><dd>品牌字段非空 39/40（97.5%），1 款为“未知”；标题首词归一还会产生 visualización、Pantalla、Radio、Estéreo、Genérico 等非品牌词。样本内 HIMICAR 5 款、Rimoody 5 款、Haudio 4 款；前 3 合计 14/40（35.0%）。形态中位价：通用 MXN 1,609、便携 MXN 1,261、其他 MXN 1,991。高端样本含 Pioneer（6.8″，MXN 5,581），以及标题含 Sony 的 2 款（MXN 6,949–MXN 8,999）。</dd>
+      <dt>分析判断</dt><dd>品牌相对分散（前 3 合计 35.0%），HIMICAR、Rimoody、Haudio 以多 SKU 覆盖中低价带；高端由 Pioneer 与标题含 Sony 的样本占据。品牌字段含非品牌词，集中度只作样本结构参考，不是市场份额。</dd>
+      <dt>业务参考</dt><dd>对标 HIMICAR/Rimoody 的 SKU 宽度与 7/9 寸价格带；高端对标 Pioneer 6.8 寸与标题含 Sony 的样本。不要用品牌商品数推算市场份额。</dd>
+    </dl>
+  </div>
+  <div class="insight">
+    <div class="insight-h"><span class="insight-no">05</span><b>消费者声量及待验证问题</b></div>
+    <dl>
+      <dt>事实</dt><dd>独立声量样本 49 款（2026-11-16；与本期 40 款池、上期 49 款池均不同源），有摘要 28 款，45 款有评论数，评论合计 10,805 条，均分 4.05。正面主题：性价比高 9 次、安装简便 4 次、运行良好 4 次；负面主题：功能评价不一 6 次、性价比评价不一 4 次、质量评价不一 3 次、连接评价不一 3 次。</dd>
+      <dt>分析判断</dt><dd>声量主题计数最高 9 次，且只有 28 款有摘要，证据有限；只能形成待验证问题清单，不能据此判断需求规模或满意度分布。</dd>
+      <dt>业务参考</dt><dd>优先验证连接稳定性/蓝牙断连、按键手感与物理按键、安装适配、长期耐用性；用退货原因、1–3 星评论抽样、售后工单复核后再排改进优先级。</dd>
+    </dl>
+  </div>
+</div>
+
+<div class="card" id="s2"><h2 id="sec-2-二-价格与尺寸">二、价格与尺寸</h2>
+<p>价格分位：P25 MXN 1,145 · 中位 MXN 1,599 · P75 MXN 2,017（有效价格 40/40；升序线性插值，展示值四舍五入到整数，P25 精确值 1,144.5）。</p>
+<div class="bandrow">
+    <div class="bandlabel">≤ MXN 1,500</div>
+    <div class="bandtrack"><div class="bandfill" style="width:100.0%"></div></div>
+    <div class="bandval">18 款 · 45.0%</div>
+  </div><div class="bandrow">
+    <div class="bandlabel">MXN 1,501–3,000</div>
+    <div class="bandtrack"><div class="bandfill" style="width:100.0%"></div></div>
+    <div class="bandval">18 款 · 45.0%</div>
+  </div><div class="bandrow">
+    <div class="bandlabel">MXN 3,001–5,000</div>
+    <div class="bandtrack"><div class="bandfill" style="width:5.6%"></div></div>
+    <div class="bandval">1 款 · 2.5%</div>
+  </div><div class="bandrow">
+    <div class="bandlabel">&gt; MXN 5,000</div>
+    <div class="bandtrack"><div class="bandfill" style="width:16.7%"></div></div>
+    <div class="bandval">3 款 · 7.5%</div>
+  </div>
+<p class="note">分母 = 40 款有效价格；价格带互斥且穷尽：≤ MXN 1,500 / MXN 1,501–3,000 / MXN 3,001–5,000 / > MXN 5,000。本期无恰好 1,500 / 3,000 / 5,000 的样本；合计 18+18+1+3=40。</p>
+<p style="margin-top:10px"><span class="tag">CarPlay 39/40 · 97.5%</span><span class="tag">Android Auto 32/40 · 80.0%</span><span class="tag">无线 24/40 · 60.0%</span><span class="tag">触控 17/40 · 42.5%</span><span class="tag">GPS 5/40 · 12.5%</span><span class="tag">DSP 0/40 · 0.0%</span><span class="tag">倒车影像 0/40 · 0.0%</span></p>
+<p class="note">功能为标题关键词识别，分母 40 款全样本；样本本身按 CarPlay 车机屏筛选，CarPlay 覆盖接近 100% 是样本定义所致。标题未提及不代表未装配，也不能据此判断需求缺口。</p>
+<h3 style="margin:16px 0 6px">标称尺寸分布（标题解析）</h3>
+<div class="table-wrap"><table><thead><tr><th>尺寸</th><th class="num">款数</th><th class="num">占可识别</th></tr></thead><tbody>
+<tr><td>5″</td><td class="num">1</td><td class="num">2.9%</td></tr><tr><td>5.5″</td><td class="num">1</td><td class="num">2.9%</td></tr><tr><td>6.8″</td><td class="num">2</td><td class="num">5.9%</td></tr><tr><td>6.86″</td><td class="num">1</td><td class="num">2.9%</td></tr><tr><td>6.9″</td><td class="num">2</td><td class="num">5.9%</td></tr><tr><td>6.95″</td><td class="num">1</td><td class="num">2.9%</td></tr><tr><td>7″</td><td class="num">10</td><td class="num">29.4%</td></tr><tr><td>9″</td><td class="num">8</td><td class="num">23.5%</td></tr><tr><td>9.26″</td><td class="num">1</td><td class="num">2.9%</td></tr><tr><td>10.1″</td><td class="num">1</td><td class="num">2.9%</td></tr><tr><td>10.26″</td><td class="num">5</td><td class="num">14.7%</td></tr><tr><td>11″</td><td class="num">1</td><td class="num">2.9%</td></tr>
+<tr><td><b>未标注</b></td><td class="num">6</td><td class="num">—</td></tr>
+<tr><td><b>合计</b></td><td class="num">40</td><td class="num">—</td></tr>
+</tbody></table></div>
+<p class="note">尺寸按标题解析（支持 “10,26 Pulgadas”“10.26in”“7''”“6.95” 以及 “7 Pulg.” 等写法），可识别 34/40；商品池 inch 字段本身只有 18/40，报告不修改原始字段。剩余 6 款标题未写尺寸，保留为“未标注”，不推断。</p>
+</div>
+
+<div class="card" id="s3"><h2 id="sec-3-三-产品形态">三、产品形态</h2>
+<div class="grid kinds"><div class="kcard"><b>通用车机</b> 26 款<div class="note">占样本 65.0% · 价格中位 MXN 1,609</div><div class="note">尺寸有效 22 款 · 中位 7″</div><div class="note">示例：Pioneer DMH-1800NEX Receptor Multi / Boss Audio Systems BVCP9700A - Est</div></div><div class="kcard"><b>便携屏</b> 9 款<div class="note">占样本 22.5% · 价格中位 MXN 1,261</div><div class="note">尺寸有效 9 款 · 中位 10.26″</div><div class="note">示例：9.26" Carplay Screen for Car, Wire / CARPURIDE 10,26 Pulgadas Inalámbri</div></div><div class="kcard"><b>其他屏</b> 5 款<div class="note">占样本 12.5% · 价格中位 MXN 1,991</div><div class="note">尺寸有效 3 款 · 中位 7″</div><div class="note">示例：Receptor Multimedia Digital Sony X / Pantalla Táctil con Bluetooth y Ap</div></div></div>
+<p class="note">归类规则：标题含 portátil / portable → 便携屏；含 espejo / retrovisor → 后视镜屏；含 doble din / single din / 1 din / 2 din / estéreo → 通用车机；其余 → 其他屏。Mirror Link 是投屏功能，不按后视镜屏计；本期 9 款标题含 Mirror Link，其中 5 款为便携屏、4 款归入通用车机，后视镜屏实际为 0 款。</p>
+</div>
+
+<div class="card" id="s4"><h2 id="sec-4-四-交叉分析">四、交叉分析</h2>
+<h3 style="margin:8px 0 6px">形态 × 价格 / 尺寸</h3>
+<div class="table-wrap"><table><thead><tr><th>形态</th><th class="num">样本</th><th class="num">有效价格</th><th class="num">价格中位</th><th class="num">尺寸有效</th><th class="num">尺寸中位</th></tr></thead><tbody>
+<tr><td>通用车机</td><td class="num">26</td><td class="num">26</td><td class="num">MXN 1,609</td><td class="num">22</td><td class="num">7″</td></tr><tr><td>便携屏</td><td class="num">9</td><td class="num">9</td><td class="num">MXN 1,261</td><td class="num">9</td><td class="num">10.26″</td></tr><tr><td>其他屏</td><td class="num">5</td><td class="num">5</td><td class="num">MXN 1,991</td><td class="num">3</td><td class="num">7″</td></tr>
+</tbody></table></div>
+<p class="note">价格中位按形态内有效价格样本；尺寸中位按标题解析的样本，未标注不计入。本期 40/40 有价格，故样本=有效价格。</p>
+<h3 style="margin:16px 0 6px">价格带 × 形态</h3>
+<div class="table-wrap"><table><thead><tr><th>价格带</th><th class="num">通用车机</th><th class="num">便携屏</th><th class="num">其他屏</th><th class="num">合计</th></tr></thead><tbody>
+<tr><td>≤ MXN 1,500</td><td class="num">11</td><td class="num">6</td><td class="num">1</td><td class="num"><b>18</b></td></tr><tr><td>MXN 1,501–3,000</td><td class="num">13</td><td class="num">3</td><td class="num">2</td><td class="num"><b>18</b></td></tr><tr><td>MXN 3,001–5,000</td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num"><b>1</b></td></tr><tr><td>&gt; MXN 5,000</td><td class="num">1</td><td class="num">0</td><td class="num">2</td><td class="num"><b>3</b></td></tr>
+<tr><td><b>合计</b></td><td class="num"><b>26</b></td><td class="num"><b>9</b></td><td class="num"><b>5</b></td><td class="num"><b>40</b></td></tr>
+</tbody></table></div>
+<p class="note">格内为款数；合计 40 款，价格带合计与形态合计一致。该表描述样本供给结构，不代表销量或市场份额。</p>
+</div>
+
+<div class="card" id="s5"><h2 id="sec-5-五-代表性商品-10-款">五、代表性商品（10 款）</h2>
+<p class="note">选取规则：按形态配额（通用 5 / 便携 3 / 其他 2），同形态内先覆盖价格带，同品牌不重复，品牌优先样本内商品数较多者；仅作样本示例，不是销量、评分或榜单排名。本期榜单/BSR 字段 0/40。</p>
+<div class="table-wrap"><table><thead><tr><th>#</th><th>商品</th><th>品牌</th><th class="num">价格 MXN</th><th class="nw">价格带</th><th class="nw">尺寸</th><th class="nw">形态</th></tr></thead>
+<tbody><tr class="hl"><td>1</td><td>Rimoody - Estéreo de coche doble DIN Carplay inalámbrico Android Auto, radio para auto de 7 pulgadas pantalla táctil de 2 ...</td><td>Rimoody</td><td class="num">620</td><td class="nw">≤1.5k</td><td class="nw">7″</td><td class="nw">通用车机</td></tr><tr class="hl"><td>2</td><td>HIMICAR Autoestéreo Android 13 con 2+64GB, 7'' IPS HD Pantalla Completa Táctil, WiFi/GPS, Inalámbrico Apple CarPlay &amp; Andr...</td><td>HIMICAR</td><td class="num">1,899</td><td class="nw">1.5-3k</td><td class="nw">7″</td><td class="nw">通用车机</td></tr><tr class="hl"><td>3</td><td>Boss Audio Systems BVCP9700A - Estéreo de Coche - Apple CarPlay, Android Auto, Doble DIN, visualización táctil de 7 Pulgad...</td><td>Boss</td><td class="num">3,836</td><td class="nw">3-5k</td><td class="nw">未标注</td><td class="nw">通用车机</td></tr><tr><td>4</td><td>Pioneer DMH-1800NEX Receptor Multimedia Digital Doble DIN de 6.8 Pulgadas, Bluetooth Integrado, Apple CarPlay y Android Au...</td><td>Pioneer</td><td class="num">5,581</td><td class="nw">&gt;5k</td><td class="nw">6.8″</td><td class="nw">通用车机</td></tr><tr><td>5</td><td>BOJOOM Pantalla Carplay para Auto 10.26in HD Táctil Portátil,Estereo Carplay,Android Auto,Mirror Link,Multimedia Digital M...</td><td>BOJOOM</td><td class="num">999</td><td class="nw">≤1.5k</td><td class="nw">10.26″</td><td class="nw">便携屏</td></tr><tr><td>6</td><td>CARPURIDE 10,26 Pulgadas Inalámbrico/Cableado CarPlay, Android Auto&amp;MirrorLink-Estéreo Portátil para Automóvil Pantalla Tá...</td><td>CARPURIDE</td><td class="num">2,339</td><td class="nw">1.5-3k</td><td class="nw">10.26″</td><td class="nw">便携屏</td></tr><tr><td>7</td><td>STEREN Pantalla con CarPlay* y Android Auto* CAR-300</td><td>STEREN</td><td class="num">999</td><td class="nw">≤1.5k</td><td class="nw">未标注</td><td class="nw">其他屏</td></tr><tr><td>8</td><td>Volxcereo Radio de Coche de 7 Pulgadas con Pantalla Táctil Abatible de Un Solo DIN con Carplay y Android Auto</td><td>Volxcereo</td><td class="num">1,634</td><td class="nw">1.5-3k</td><td class="nw">7″</td><td class="nw">其他屏</td></tr><tr><td>9</td><td>Haudio Estéreo inalámbrico de doble DIN de 9 pulgadas, radio de coche con Apple Carplay y Android Auto, Bluetooth 5.4, cám...</td><td>Haudio</td><td class="num">2,004</td><td class="nw">1.5-3k</td><td class="nw">9″</td><td class="nw">通用车机</td></tr><tr><td>10</td><td>Podofo Estéreo de Coche Portátil Inalámbrico Carplay Android Auto, Radio de Coche con Pantalla Táctil de 7 Pulgadas con Bl...</td><td>Podofo</td><td class="num">1,261</td><td class="nw">≤1.5k</td><td class="nw">7″</td><td class="nw">便携屏</td></tr></tbody></table></div>
+</div>
+
+<div class="card" id="s6"><h2 id="sec-6-六-商品明细-按形态折叠">六、商品明细（按形态折叠）</h2>
+<p class="note">本期全量池评分/评论 0/40，故不设评分、评论列；不以 30 款详情线或上期数据填补。BSR/榜单/图片字段 0/40，不设入榜、图列。尺寸 34/40 由标题解析，6 款标为“未标注”；品牌 1 款为“未知”。</p>
+<details open><summary><b>通用车机</b>（26 款）</summary>
+  <div class="table-wrap"><table><thead><tr><th>ASIN</th><th>标题</th><th>品牌</th><th class="num">价格 MXN</th><th class="nw">价格带</th><th class="nw">尺寸</th></tr></thead>
+  <tbody><tr>
+    <td><a href="https://www.amazon.com.mx/dp/B0BLH6LZDP" target="_blank" rel="noopener">B0BLH6LZDP</a></td>
+    <td>HIMICAR Autoestéreo Carplay &amp; Android Auto Inalámbrico Estereo Mirror Link 6.8 Pulgada MP5, Tipo C, FM/Am, GPS, AUX, Bluet...</td>
+    <td>HIMICAR</td>
+    <td class="num">349</td>
+    <td class="nw">≤1.5k</td>
+    <td class="nw">6.8″</td>
+  </tr><tr>
+    <td><a href="https://www.amazon.com.mx/dp/B0FDVHVG8D" target="_blank" rel="noopener">B0FDVHVG8D</a></td>
+    <td>Rimoody - Estéreo de coche doble DIN Carplay inalámbrico Android Auto, radio para auto de 7 pulgadas pantalla táctil de 2 ...</td>
+    <td>Rimoody</td>
+    <td class="num">620</td>
+    <td class="nw">≤1.5k</td>
+    <td class="nw">7″</td>
+  </tr><tr>
+    <td><a href="https://www.amazon.com.mx/dp/B0FDFFS8JC" target="_blank" rel="noopener">B0FDFFS8JC</a></td>
+    <td>Rimoody Estéreo de Coche Single Din de 6.86" con CarPlay Inalámbrico y | Con botones físicos, radio de auto con Bluetooth ...</td>
+    <td>Rimoody</td>
+    <td class="num">818</td>
+    <td class="nw">≤1.5k</td>
+    <td class="nw">6.86″</td>
+  </tr><tr>
+    <td><a href="https://www.amazon.com.mx/dp/B0D5B39VKH" target="_blank" rel="noopener">B0D5B39VKH</a></td>
+    <td>FINYQBET Auto Estéreo Radio de Coche 1 DIN,Apple CarPlay y Android Auto | USB Tipo C, visualización táctil de 6.9 Pulgada...</td>
+    <td>FINYQBET</td>
+    <td class="num">899</td>
+    <td class="nw">≤1.5k</td>
+    <td class="nw">6.9″</td>
+  </tr><tr>
+    <td><a href="https://www.amazon.com.mx/dp/B0GYHL3KQX" target="_blank" rel="noopener">B0GYHL3KQX</a></td>
+    <td>Rimoody Estéreo de Coche de un Solo DIN inalámbrico Carplay 5 Pulgadas con visualización táctil Android Auto, Radio de Coc...</td>
+    <td>Rimoody</td>
+    <td class="num">899</td>
+    <td class="nw">≤1.5k</td>
+    <td class="nw">5″</td>
+  </tr><tr>
+    <td><a href="https://www.amazon.com.mx/dp/B0GYHJ56GN" target="_blank" rel="noopener">B0GYHJ56GN</a></td>
+    <td>Rimoody Radio Coche 1 DIN con Pantalla Táctil IPS HD de 5,5", CarPlay Inalámbrico y por Cable, Android Auto, Mirror Link, ...</td>
+    <td>Rimoody</td>
+    <td class="num">999</td>
+    <td class="nw">≤1.5k</td>
+    <td class="nw">5.5″</td>
+  </tr><tr>
+    <td><a href="https://www.amazon.com.mx/dp/B0F7PV8HJP" target="_blank" rel="noopener">B0F7PV8HJP</a></td>
+    <td>Radio Carplay doble DIN de 7 pulgadas | Estéreo de coche, Carplay inalámbrico, Android Auto inalámbrico, Bluetooth, canal ...</td>
+    <td>Radio</td>
+    <td class="num">1,193</td>
+    <td class="nw">≤1.5k</td>
+    <td class="nw">7″</td>
+  </tr><tr>
+    <td><a href="https://www.amazon.com.mx/dp/B0GYHMKQC8" target="_blank" rel="noopener">B0GYHMKQC8</a></td>
+    <td>Rimoody Estéreo de Coche de Doble DIN, inalámbrico, Carplay, visualización táctil de 7 Pulgadas, Android Auto Radio de Coc...</td>
+    <td>Rimoody</td>
+    <td class="num">1,199</td>
+    <td class="nw">≤1.5k</td>
+    <td class="nw">7″</td>
+  </tr><tr>
+    <td><a href="https://www.amazon.com.mx/dp/B0FNN156Z4" target="_blank" rel="noopener">B0FNN156Z4</a></td>
+    <td>Estéreo de coche de un solo DIN de 6.9 pulgadas con CarPlay inalámbrico/Android Auto/Mirror Link, 1 Din IPS Pantalla tácti...</td>
+    <td>Estéreo</td>
+    <td class="num">1,301</td>
+    <td class="nw">≤1.5k</td>
+    <td class="nw">6.9″</td>
+  </tr><tr>
+    <td><a href="https://www.amazon.com.mx/dp/B0GJR5S7ZX" target="_blank" rel="noopener">B0GJR5S7ZX</a></td>
+    <td>Radio Din doble 4+64G Android15 estéreo para coche inalámbrico Carplay | Unidad principal de visualización táctil de 7 pul...</td>
+    <td>Radio</td>
+    <td class="num">1,443</td>
+    <td class="nw">≤1.5k</td>
+    <td class="nw">7″</td>
+  </tr><tr>
+    <td><a href="https://www.amazon.com.mx/dp/B0D982XW4D" target="_blank" rel="noopener">B0D982XW4D</a></td>
+    <td>FINYQBET Estéreo Auto 7 Pulgadas Android con CarPlay GPS | Estructura robusta, arnés de 5 puntos, bandeja lavable, plegabl...</td>
+    <td>FINYQBET</td>
+    <td class="num">1,499</td>
+    <td class="nw">≤1.5k</td>
+    <td class="nw">7″</td>
+  </tr><tr>
+    <td><a href="https://www.amazon.com.mx/dp/B0FMRJ1RCV" target="_blank" rel="noopener">B0FMRJ1RCV</a></td>
+    <td>Estéreo de pantalla táctil IPS inalámbrico CarPlay y Android Auto de una sola ranura DIN, Upriding de 9 pulgadas, radio Bl...</td>
+    <td>Estéreo</td>
+    <td class="num">1,523</td>
+    <td class="nw">1.5-3k</td>
+    <td class="nw">9″</td>
+  </tr><tr>
+    <td><a href="https://www.amazon.com.mx/dp/B0GYJF8GDC" target="_blank" rel="noopener">B0GYJF8GDC</a></td>
+    <td>STAPON 9 pulgadas CarPlay Android Auto 1280X720P pantalla IPS 2.5D estéreo de coche 2DIN unidad principal con FM Bluetooth...</td>
+    <td>STAPON</td>
+    <td class="num">1,599</td>
+    <td class="nw">1.5-3k</td>
+    <td class="nw">9″</td>
+  </tr><tr>
+    <td><a href="https://www.amazon.com.mx/dp/B0FQBT31RX" target="_blank" rel="noopener">B0FQBT31RX</a></td>
+    <td>Haudio Estéreo de coche doble DIN de 9 pulgadas, CarPlay inalámbrico y | La visualización táctil IPS de 9 pulgadas combina...</td>
+    <td>Haudio</td>
+    <td class="num">1,619</td>
+    <td class="nw">1.5-3k</td>
+    <td class="nw">9″</td>
+  </tr><tr>
+    <td><a href="https://www.amazon.com.mx/dp/B0F7H1MPJ6" target="_blank" rel="noopener">B0F7H1MPJ6</a></td>
+    <td>Haudio - Estéreo de auto de doble DIN de 9 pulgadas, radio Android 13 con soporte para Apple Carplay y Android Auto, radio...</td>
+    <td>Haudio</td>
+    <td class="num">1,671</td>
+    <td class="nw">1.5-3k</td>
+    <td class="nw">9″</td>
+  </tr><tr>
+    <td><a href="https://www.amazon.com.mx/dp/B0DG8TQ54K" target="_blank" rel="noopener">B0DG8TQ54K</a></td>
+    <td>Huadio Estéreo para Auto Doble DIN de 9", Android 13, 2GB+64GB, CarPlay y Android Auto Inalámbricos, Pantalla IPS Táctil, ...</td>
+    <td>Huadio</td>
+    <td class="num">1,742</td>
+    <td class="nw">1.5-3k</td>
+    <td class="nw">9″</td>
+  </tr><tr>
+    <td><a href="https://www.amazon.com.mx/dp/B0F7GZHVCM" target="_blank" rel="noopener">B0F7GZHVCM</a></td>
+    <td>Haudio Estéreo de coche doble DIN de 9 pulgadas, Apple Carplay y Android Auto 8 núcleos Radio IPS, compatible con enlace d...</td>
+    <td>Haudio</td>
+    <td class="num">1,847</td>
+    <td class="nw">1.5-3k</td>
+    <td class="nw">9″</td>
+  </tr><tr>
+    <td><a href="https://www.amazon.com.mx/dp/B0FHC62QX4" target="_blank" rel="noopener">B0FHC62QX4</a></td>
+    <td>Genérico Haudio Pantalla Táctil Inalámbrica de HD para Auto con CarPlay y Android Auto, Doble DIN, GPS, WiFi, BT5.1, Proce...</td>
+    <td>Genérico</td>
+    <td class="num">1,884</td>
+    <td class="nw">1.5-3k</td>
+    <td class="nw">未标注</td>
+  </tr><tr>
+    <td><a href="https://www.amazon.com.mx/dp/B0FLDJ7F41" target="_blank" rel="noopener">B0FLDJ7F41</a></td>
+    <td>HIMICAR Autoestéreo Android 13 con 2+64GB, 7'' IPS HD Pantalla Completa Táctil, WiFi/GPS, Inalámbrico Apple CarPlay &amp; Andr...</td>
+    <td>HIMICAR</td>
+    <td class="num">1,899</td>
+    <td class="nw">1.5-3k</td>
+    <td class="nw">7″</td>
+  </tr><tr>
+    <td><a href="https://www.amazon.com.mx/dp/B0F62NV2Z4" target="_blank" rel="noopener">B0F62NV2Z4</a></td>
+    <td>Haudio Estéreo inalámbrico de doble DIN de 9 pulgadas, radio de coche con Apple Carplay y Android Auto, Bluetooth 5.4, cám...</td>
+    <td>Haudio</td>
+    <td class="num">2,004</td>
+    <td class="nw">1.5-3k</td>
+    <td class="nw">9″</td>
+  </tr><tr>
+    <td><a href="https://www.amazon.com.mx/dp/B0CHDDD4SS" target="_blank" rel="noopener">B0CHDDD4SS</a></td>
+    <td>Pomya Radio Estéreo para Coche para Carplay Inalámbrico Android Auto Mirror Link,Reproductor MP5 Reproductor Multimedia co...</td>
+    <td>Pomya</td>
+    <td class="num">2,056</td>
+    <td class="nw">1.5-3k</td>
+    <td class="nw">未标注</td>
+  </tr><tr>
+    <td><a href="https://www.amazon.com.mx/dp/B0G4RFM37K" target="_blank" rel="noopener">B0G4RFM37K</a></td>
+    <td>LSLYA Estéreo de Coche Individual DIN con Apple CarPlay Inalámbrico y Android Auto – Salida de 240W, 2 Puertos de Subwoofe...</td>
+    <td>LSLYA</td>
+    <td class="num">2,368</td>
+    <td class="nw">1.5-3k</td>
+    <td class="nw">未标注</td>
+  </tr><tr>
+    <td><a href="https://www.amazon.com.mx/dp/B0FFFZ56R3" target="_blank" rel="noopener">B0FFFZ56R3</a></td>
+    <td>Volam - Pantalla inalámbrica Carplay de 11 pulgadas para auto con aplicaciones integradas de Net-Flix y YouTube, estéreo p...</td>
+    <td>Volam</td>
+    <td class="num">2,440</td>
+    <td class="nw">1.5-3k</td>
+    <td class="nw">11″</td>
+  </tr><tr>
+    <td><a href="https://www.amazon.com.mx/dp/B0FLDL6YYW" target="_blank" rel="noopener">B0FLDL6YYW</a></td>
+    <td>HIMICAR Estéreo para Automóvil 2DIN 10.1" con CarPlay y Android Auto, Autoestéreos para Carro Android 13(4+64G), Pantalla ...</td>
+    <td>HIMICAR</td>
+    <td class="num">2,599</td>
+    <td class="nw">1.5-3k</td>
+    <td class="nw">10.1″</td>
+  </tr><tr>
+    <td><a href="https://www.amazon.com.mx/dp/B08N5LXNY4" target="_blank" rel="noopener">B08N5LXNY4</a></td>
+    <td>Boss Audio Systems BVCP9700A - Estéreo de Coche - Apple CarPlay, Android Auto, Doble DIN, visualización táctil de 7 Pulgad...</td>
+    <td>Boss</td>
+    <td class="num">3,836</td>
+    <td class="nw">3-5k</td>
+    <td class="nw">未标注</td>
+  </tr><tr>
+    <td><a href="https://www.amazon.com.mx/dp/B0F1PHCV4F" target="_blank" rel="noopener">B0F1PHCV4F</a></td>
+    <td>Pioneer DMH-1800NEX Receptor Multimedia Digital Doble DIN de 6.8 Pulgadas, Bluetooth Integrado, Apple CarPlay y Android Au...</td>
+    <td>Pioneer</td>
+    <td class="num">5,581</td>
+    <td class="nw">&gt;5k</td>
+    <td class="nw">6.8″</td>
+  </tr></tbody></table></div></details><details ><summary><b>便携屏</b>（9 款）</summary>
+  <div class="table-wrap"><table><thead><tr><th>ASIN</th><th>标题</th><th>品牌</th><th class="num">价格 MXN</th><th class="nw">价格带</th><th class="nw">尺寸</th></tr></thead>
+  <tbody><tr>
+    <td><a href="https://www.amazon.com.mx/dp/B0F625HHPJ" target="_blank" rel="noopener">B0F625HHPJ</a></td>
+    <td>visualización portátil inalámbrica Carplay para Coche, 7 Pulgadas estéreo de Coche inalámbrico Carplay y Android Auto, cám...</td>
+    <td>visualización</td>
+    <td class="num">659</td>
+    <td class="nw">≤1.5k</td>
+    <td class="nw">7″</td>
+  </tr><tr>
+    <td><a href="https://www.amazon.com.mx/dp/B0CYQ9YGZK" target="_blank" rel="noopener">B0CYQ9YGZK</a></td>
+    <td>BOJOOM Pantalla Carplay para Auto 10.26in HD Táctil Portátil,Estereo Carplay,Android Auto,Mirror Link,Multimedia Digital M...</td>
+    <td>BOJOOM</td>
+    <td class="num">999</td>
+    <td class="nw">≤1.5k</td>
+    <td class="nw">10.26″</td>
+  </tr><tr>
+    <td><a href="https://www.amazon.com.mx/dp/B0GDZCM756" target="_blank" rel="noopener">B0GDZCM756</a></td>
+    <td>BOJOOM Pantalla Carplay para Auto 10.26in HD Táctil Portátil,Estereo Carplay,Android Auto,Mirror Link,Multimedia Digital M...</td>
+    <td>BOJOOM</td>
+    <td class="num">999</td>
+    <td class="nw">≤1.5k</td>
+    <td class="nw">10.26″</td>
+  </tr><tr>
+    <td><a href="https://www.amazon.com.mx/dp/B0FLDNXNH2" target="_blank" rel="noopener">B0FLDNXNH2</a></td>
+    <td>HIMICAR Autoestéreo Portátil 10.26" CarPlay y Android Auto Inalámbrico | Mirror Link, Pantalla IPS HD 1280x600, Bluetooth ...</td>
+    <td>HIMICAR</td>
+    <td class="num">1,259</td>
+    <td class="nw">≤1.5k</td>
+    <td class="nw">10.26″</td>
+  </tr><tr>
+    <td><a href="https://www.amazon.com.mx/dp/B0BZV25TPC" target="_blank" rel="noopener">B0BZV25TPC</a></td>
+    <td>Podofo Estéreo de Coche Portátil Inalámbrico Carplay Android Auto, Radio de Coche con Pantalla Táctil de 7 Pulgadas con Bl...</td>
+    <td>Podofo</td>
+    <td class="num">1,261</td>
+    <td class="nw">≤1.5k</td>
+    <td class="nw">7″</td>
+  </tr><tr>
+    <td><a href="https://www.amazon.com.mx/dp/B0GJCDYGH7" target="_blank" rel="noopener">B0GJCDYGH7</a></td>
+    <td>OBEST Carplay Bluetooth de Pantalla Inalámbrica 7 Pulgadas, WiFi, GPS | Autoestereo Portátil Estéreo, Compatible con CarPl...</td>
+    <td>OBEST</td>
+    <td class="num">1,279</td>
+    <td class="nw">≤1.5k</td>
+    <td class="nw">7″</td>
+  </tr><tr>
+    <td><a href="https://www.amazon.com.mx/dp/B0FLDJX3SX" target="_blank" rel="noopener">B0FLDJX3SX</a></td>
+    <td>HIMICAR Autoestéreo Portátil 10.26" Carplay Android Auto Mirror Link | Inalámbrico Apple Carplay, Android Auto, Mirror Lin...</td>
+    <td>HIMICAR</td>
+    <td class="num">1,599</td>
+    <td class="nw">1.5-3k</td>
+    <td class="nw">10.26″</td>
+  </tr><tr>
+    <td><a href="https://www.amazon.com.mx/dp/B0DHGPQDK7" target="_blank" rel="noopener">B0DHGPQDK7</a></td>
+    <td>CARPURIDE 10,26 Pulgadas Inalámbrico/Cableado CarPlay, Android Auto&amp;MirrorLink-Estéreo Portátil para Automóvil Pantalla Tá...</td>
+    <td>CARPURIDE</td>
+    <td class="num">2,339</td>
+    <td class="nw">1.5-3k</td>
+    <td class="nw">10.26″</td>
+  </tr><tr>
+    <td><a href="https://www.amazon.com.mx/dp/B0DNZMCN1R" target="_blank" rel="noopener">B0DNZMCN1R</a></td>
+    <td>9.26" Carplay Screen for Car, Wireless Portable Car Play Screen for Apple CarPlay &amp; Android Auto, OTA Updates, Backup Came...</td>
+    <td>未知</td>
+    <td class="num">2,422</td>
+    <td class="nw">1.5-3k</td>
+    <td class="nw">9.26″</td>
+  </tr></tbody></table></div></details><details ><summary><b>其他屏</b>（5 款）</summary>
+  <div class="table-wrap"><table><thead><tr><th>ASIN</th><th>标题</th><th>品牌</th><th class="num">价格 MXN</th><th class="nw">价格带</th><th class="nw">尺寸</th></tr></thead>
+  <tbody><tr>
+    <td><a href="https://www.amazon.com.mx/dp/B0HRJ24KDK" target="_blank" rel="noopener">B0HRJ24KDK</a></td>
+    <td>STEREN Pantalla con CarPlay* y Android Auto* CAR-300</td>
+    <td>STEREN</td>
+    <td class="num">999</td>
+    <td class="nw">≤1.5k</td>
+    <td class="nw">未标注</td>
+  </tr><tr>
+    <td><a href="https://www.amazon.com.mx/dp/B0H2W3JPWF" target="_blank" rel="noopener">B0H2W3JPWF</a></td>
+    <td>Volxcereo Radio de Coche de 7 Pulgadas con Pantalla Táctil Abatible de Un Solo DIN con Carplay y Android Auto</td>
+    <td>Volxcereo</td>
+    <td class="num">1,634</td>
+    <td class="nw">1.5-3k</td>
+    <td class="nw">7″</td>
+  </tr><tr>
+    <td><a href="https://www.amazon.com.mx/dp/B0H36G49Q1" target="_blank" rel="noopener">B0H36G49Q1</a></td>
+    <td>Surcsa Pantalla CarPlay de 9" para Coche, Apple CarPlay inalámbrico y Android Auto</td>
+    <td>Surcsa</td>
+    <td class="num">1,991</td>
+    <td class="nw">1.5-3k</td>
+    <td class="nw">9″</td>
+  </tr><tr>
+    <td><a href="https://www.amazon.com.mx/dp/B09HRHPGH9" target="_blank" rel="noopener">B09HRHPGH9</a></td>
+    <td>Pantalla Táctil con Bluetooth y Apple CarPlay/Android Auto de 6.95” Sony XAV-AX3200</td>
+    <td>Pantalla</td>
+    <td class="num">6,949</td>
+    <td class="nw">&gt;5k</td>
+    <td class="nw">6.95″</td>
+  </tr><tr>
+    <td><a href="https://www.amazon.com.mx/dp/B0B52CVLVX" target="_blank" rel="noopener">B0B52CVLVX</a></td>
+    <td>Receptor Multimedia Digital Sony XAV-AX4000 con Apple Car Play/Android Auto Inalámbrico</td>
+    <td>Receptor</td>
+    <td class="num">8,999</td>
+    <td class="nw">&gt;5k</td>
+    <td class="nw">未标注</td>
+  </tr></tbody></table></div></details>
+</div>
+
+<div class="card" id="s7"><h2 id="sec-7-七-历史对比">七、历史对比</h2><div class="table-wrap"><table><thead><tr><th>指标</th><th class="num">上期（2026-11-13）</th><th class="num">本期（2026-11-18）</th><th class="num">变化</th></tr></thead><tbody>
+  <tr><td>原始采集回收记录（池总量）</td><td class="num">623</td><td class="num">180</td><td class="num">-443</td></tr>
+  <tr><td>有效竞品（CarPlay 屏）</td><td class="num">49</td><td class="num">40</td><td class="num">-9</td></tr>
+  <tr><td>价格中位</td><td class="num">MXN 1,743</td><td class="num">MXN 1,599</td><td class="num">-8.3%</td></tr>
+  <tr><td>P25 / P75</td><td class="num">MXN 1,227 / MXN 2,599</td><td class="num">MXN 1,145 / MXN 2,017</td><td class="num">—</td></tr>
+  <tr><td>评分有效</td><td class="num">0 / 49</td><td class="num">0 / 40</td><td class="num">—</td></tr>
+  <tr><td>评论有效</td><td class="num">0 / 49</td><td class="num">0 / 40</td><td class="num">—</td></tr>
+  </tbody></table></div>
+  <p class="note" style="margin-top:8px">样本重叠 30 款；本期新出现 10 款；上期 19 款本期未出现。形态结构：上期通用 30 / 便携 11 / 其他 8，本期通用 26 / 便携 9 / 其他 5。</p>
+  <p class="note">本期采集请求 89 次、失败 23 次；上期请求 98 次、失败 0 次。覆盖下降与失败增加同时出现，但具体原因尚待排查。</p>
+  <div class="limitbox">
+    <p><b>商品减少不代表产品退市</b>，不能据此认为市场规模缩小或竞争减少；<b>两期价格中位数变化也不代表整个市场普遍降价</b>。两期样本不同、形态结构不同（专用车型机 63 → 11、其他屏 105 → 21），中位变化含结构效应。历史对比仅描述两期样本之间可观察的变化。</p>
+  </div></div>
+
+<div class="card" id="s8"><h2 id="sec-8-八-消费者评价与声量-独立样本">八、消费者评价与声量（独立样本）</h2><p class="note">来源：Amazon「Customers say」摘要 + 评分/评论数。样本 49 款，有摘要 28 款，有评论数 45 款；数据日期 2026-11-16。<b>该样本与本期 40 款全量池、上期 49 款池均不是同一统计样本</b>，不可合并计算，也不代表整体市场。</p><div class="kpi"><div><span>总评论数</span><b>10,805</b><em>历史累积，不等于销量</em></div><div><span>平均评分</span><b>4.05</b><em>样本内均分</em></div><div><span>有摘要商品</span><b>28</b><em>共 49 款样本</em></div></div><p style="margin-top:10px"><b>正面主题</b>：<span class="tag">性价比高 9</span><span class="tag">安装简便 4</span><span class="tag">运行良好 4</span><span class="tag">易用 3</span><span class="tag">音质好 3</span><span class="tag">整体优秀 3</span></p><p><b>负面主题</b>：<span class="tag">功能评价不一 6</span><span class="tag">性价比评价不一 4</span><span class="tag">质量评价不一 3</span><span class="tag">连接评价不一 3</span><span class="tag">控制按键手感廉价 1</span><span class="tag">缺少物理按键 1</span></p><p class="note">主题计数为提及次数，最高为个位数到十位数；样本小、摘要覆盖有限，只作为待验证问题清单，不据此判断需求规模或满意度分布。</p><h3 style="margin:14px 0 6px">品牌口碑（样本内）</h3><div class="table-wrap"><table><thead><tr><th>品牌</th><th class="num">商品</th><th class="num">评论数</th><th class="num">均分</th><th>正面点</th><th>负面点</th></tr></thead><tbody><tr><td>未知</td><td class="num">14</td><td class="num">5,339</td><td class="num">4.14</td><td>音质好 / 性价比高 / 表现出色</td><td>功能评价不一 / 连接不稳定 / 蓝牙频繁断连</td></tr><tr><td>Podofo</td><td class="num">1</td><td class="num">1,658</td><td class="num">4</td><td>易用 / 性价比高 / 值得购买</td><td>长期耐用性存疑</td></tr><tr><td>HIMICAR</td><td class="num">4</td><td class="num">836</td><td class="num">3.65</td><td>性价比高 / 安装简便 / 易用</td><td>接收效果差 / 整体质量评价不一 / 功能评价不一</td></tr><tr><td>CarpodGo</td><td class="num">1</td><td class="num">603</td><td class="num">4.4</td><td>运行出色 / 屏幕稳定 / 画面清晰</td><td></td></tr><tr><td>Pioneer</td><td class="num">3</td><td class="num">508</td><td class="num">4.3</td><td>性价比高 / 音质出色 / 安装简便</td><td>连接评价不一 / 调节评价不一</td></tr><tr><td>CARPURIDE</td><td class="num">2</td><td class="num">482</td><td class="num">3.85</td><td>GPS导航好 / 物有所值 / 兼容性好</td><td>部分方面评价不一 / 功能评价不一 / 连接评价不一</td></tr><tr><td>Volam</td><td class="num">1</td><td class="num">294</td><td class="num">4.1</td><td>AV接收器运行良好 / CarPlay正常 / Android Auto正常</td><td></td></tr><tr><td>NHOPEEW</td><td class="num">1</td><td class="num">242</td><td class="num">4.2</td><td></td><td>评价存在分歧</td></tr></tbody></table></div><h3 style="margin:16px 0 6px">评论数最多的商品（评论数 ≠ 销量）</h3><div class="table-wrap"><table><thead><tr><th>商品</th><th>品牌</th><th class="num">评分</th><th class="num">评论</th><th>评价摘要</th><th>正面</th><th>负面</th></tr></thead><tbody><tr><td>9.26" Carplay Screen for Car, Wireless Portable Car Play Screen for Apple CarPlay &amp; Android Auto, OTA Updates, Backup Came...</td><td>未知</td><td class="num">4.5</td><td class="num">3,524</td><td>表现出色，安装简便配件齐全，屏幕清晰美观，连接充电正常</td><td>表现出色 / 安装简便 / 配件齐全</td><td></td></tr><tr><td>Podofo Estéreo de Coche Portátil Inalámbrico Carplay Android Auto, Radio de Coche con Pantalla Táctil de 7 Pulgadas con Bl...</td><td>Podofo</td><td class="num">4</td><td class="num">1,658</td><td>用户认为产品易用、性价比高，是值得买的好选择，但部分人担心长期耐用性。</td><td>易用 / 性价比高 / 值得购买</td><td>长期耐用性存疑</td></tr><tr><td>Boss Audio Systems BVCP9700A - Estéreo de Coche - Apple CarPlay, Android Auto, Doble DIN, visualización táctil de 7 Pulgad...</td><td>未知</td><td class="num">4.1</td><td class="num">1,201</td><td>AV接收器质量优秀，音质好，但设备控制令人不满，功能评价不一。</td><td>质量优秀 / 音质好</td><td>设备控制不满 / 功能评价不一</td></tr><tr><td>HIMICAR Autoestéreo Carplay &amp; Android Auto Inalámbrico Estereo Mirror Link 6.8 Pulgada MP5, Tipo C, FM/Am, GPS, AUX, Bluetoot</td><td>HIMICAR</td><td class="num">4.1</td><td class="num">646</td><td>AV接收器性价比高，安装简便易用；但用户对接收效果不满。</td><td>性价比高 / 安装简便 / 易用</td><td>接收效果差</td></tr><tr><td>CarpodGo T4 8.9 pulgadas 1000-Nit 60 fps Pantalla CarPlay Portátil para Auto, Apple Car Play Inalámbrico y Android Auto, Sopo</td><td>CarpodGo</td><td class="num">4.4</td><td class="num">603</td><td>运行出色，屏幕稳定清晰，性价比高，值得购买。</td><td>运行出色 / 屏幕稳定 / 画面清晰</td><td></td></tr><tr><td>Volam - Pantalla inalámbrica Carplay de 11 pulgadas para auto con aplicaciones integradas de Net-Flix y YouTube, estéreo p...</td><td>Volam</td><td class="num">4.1</td><td class="num">294</td><td>AV接收器运行良好，CarPlay和Android Auto正常，屏幕清晰明亮、大而实用。</td><td>AV接收器运行良好 / CarPlay正常 / Android Auto正常</td><td></td></tr><tr><td>CARPURIDE Pantalla Carplay de 9 Pulgadas para Coche, Compatible con Modo | Apple CarPlay, Android Auto y Mirror Link - Aud...</td><td>CARPURIDE</td><td class="num">3.7</td><td class="num">248</td><td>用户认为产品优秀且喜欢，设置简单易用，屏幕和音质好，但功能与连接评价不一。</td><td>整体优秀 / 设置简单 / 易用</td><td>功能评价不一 / 连接评价不一</td></tr><tr><td>NHOPEEW Radio 1 DIN con Carplay y Android Auto - 9 Pulgadas Pantalla Táctil Autoradio Pantalla 1 DIN con Igualador, Enlace...</td><td>NHOPEEW</td><td class="num">4.2</td><td class="num">242</td><td>用户对这款1 DIN CarPlay收音机持有不同看法。</td><td></td><td>评价存在分歧</td></tr><tr><td>CARPURIDE 10,26 Pulgadas Inalámbrico/Cableado CarPlay, Android Auto&amp;MirrorLink-Estéreo Portátil para Automóvil Pantalla Tá...</td><td>CARPURIDE</td><td class="num">4</td><td class="num">234</td><td>GPS导航很好，物有所值，兼容性好，但部分方面评价不一。</td><td>GPS导航好 / 物有所值 / 兼容性好</td><td>部分方面评价不一</td></tr><tr><td>Pioneer DMH-WT3800NEX Receptor Multimedia Digital con Apple CarPlay y Android Auto, visualización Flotante capacitiva de 9...</td><td>Pioneer</td><td class="num">4.3</td><td class="num">213</td><td>AV接收器出色，性价比高，屏幕够好且外观美观，彻底改变车内氛围。</td><td>表现出色 / 性价比高 / 屏幕质量好</td><td></td></tr><tr><td>HIMICAR Autoestéreo Portátil 7 Pulgadas Apple Carplay y Android Auto | Mirror Link, Pantalla Completa Táctil IPS HD, Control </td><td>HIMICAR</td><td class="num">4</td><td class="num">181</td><td>屏幕质量受认可；但整体质量、功能、性价比、连接性等评价不一。</td><td>屏幕质量好</td><td>整体质量评价不一 / 功能评价不一 / 性价比评价不一</td></tr><tr><td>Pioneer DMH-1600NEX Receptor Multimedia Digital Doble DIN de 6.8 Pulgadas, Bluetooth Integrado, Apple CarPlay y Android Au...</td><td>Pioneer</td><td class="num">4.2</td><td class="num">170</td><td>用户认为该AV接收器优秀，收音机悦耳，性价比高，是实惠的多媒体升级，音质获好评。</td><td>整体优秀 / 收音机悦耳 / 性价比高</td><td></td></tr><tr><td>Surcsa Pantalla CarPlay de 9" para Coche, Apple CarPlay inalámbrico y Android Auto</td><td>Surcsa</td><td class="num">4.2</td><td class="num">146</td><td>GPS导航出色，质量高，运行良好，安装配置简便，连接容易。</td><td>导航出色 / 质量高 / 运行良好</td><td></td></tr><tr><td>visualización portátil inalámbrica Carplay para Coche, 7 Pulgadas estéreo de Coche inalámbrico Carplay y Android Auto, cám...</td><td>未知</td><td class="num">4</td><td class="num">144</td><td>音质好性价比高，但连接不稳定常断连</td><td>音质好 / 性价比高</td><td>连接不稳定 / 蓝牙频繁断连</td></tr><tr><td>Pioneer DMH-1800NEX Receptor Multimedia Digital Doble DIN de 6.8 Pulgadas, Bluetooth Integrado, Apple CarPlay y Android Au...</td><td>Pioneer</td><td class="num">4.4</td><td class="num">125</td><td>音质出色安装简便物有所值，连接与调节评价不一</td><td>音质出色 / 安装简便 / 物有所值</td><td>连接评价不一 / 调节评价不一</td></tr></tbody></table></div></div>
+
+<div class="card" id="s9"><h2 id="sec-9-九-数据口径与限制">九、数据口径与限制</h2>
+<h3 style="margin:8px 0 6px">三套口径并列（不互相替代）</h3>
+<div class="table-wrap"><table><thead><tr><th>口径</th><th>样本 / 报价</th><th class="num">日期</th><th class="num">价格中位</th><th class="num">评分/评论</th><th>用途</th></tr></thead><tbody><tr><td>全量竞品池</td><td>40 款 CarPlay 屏（池 180 条）</td><td class="num">2026-11-18</td><td class="num">MXN 1,599</td><td class="num">0/40</td><td>结构与价格分布（本报告正文）</td></tr><tr><td>30 款详情线</td><td>30 款（Amazon 28 + Steren 2）</td><td class="num">2026-11-18</td><td class="num">MXN 1,099</td><td class="num">28/30</td><td>详情与评分参考；不并入全量池</td></tr><tr><td>锁定 SKU 价格监控</td><td>10 个锁定 / 10 个报价（Amazon 8 + Steren 2）</td><td class="num">2026-11-19</td><td class="num">MXN 1,080</td><td class="num">—</td><td>价格变动；不并入全量池</td></tr></tbody></table></div>
+<p class="note">全量池只含 Amazon.com.mx 的 CarPlay 车机屏；30 款详情线含 Steren 2 款；锁定 SKU 价格监控含 Amazon 7 个与 Steren 2 个报价。三套口径样本不同，不合并、不互相填补。</p>
+
+<h3 style="margin:18px 0 6px">有效字段覆盖率</h3>
+<div class="table-wrap"><table><thead><tr><th>字段</th><th class="num">有效</th><th class="num">分母</th><th class="num">覆盖率</th><th>说明</th></tr></thead><tbody><tr><td>价格</td><td class="num">40</td><td class="num">40</td><td class="num">100.0%</td><td>40 款均有价格</td></tr><tr><td>品牌（非空）</td><td class="num">39</td><td class="num">40</td><td class="num">97.5%</td><td>1 款为“未知”；含少量标题首词非品牌词</td></tr><tr><td>尺寸（标题解析）</td><td class="num">34</td><td class="num">40</td><td class="num">85.0%</td><td>商品池 inch 字段仅 18/40；6 款标题未写尺寸</td></tr><tr><td>形态（标题规则）</td><td class="num">40</td><td class="num">40</td><td class="num">100.0%</td><td>便携/后视镜/通用/其他；本期后视镜 0 款</td></tr><tr><td>评分</td><td class="num">0</td><td class="num">40</td><td class="num">0.0%</td><td>全量池未获取；不以 30 款线或上期填补</td></tr><tr><td>评论</td><td class="num">0</td><td class="num">40</td><td class="num">0.0%</td><td>全量池未获取；不以 30 款线或上期填补</td></tr><tr><td>BSR</td><td class="num">0</td><td class="num">40</td><td class="num">0.0%</td><td>字段未采集</td></tr><tr><td>榜单/入榜</td><td class="num">0</td><td class="num">40</td><td class="num">0.0%</td><td>列表为空，不设入榜列</td></tr><tr><td>图片</td><td class="num">0</td><td class="num">40</td><td class="num">0.0%</td><td>字段为空，不设图列</td></tr><tr><td>功能关键词</td><td class="num">40</td><td class="num">40</td><td class="num">100.0%</td><td>仅代表标题可检索；各关键词计数见第二节</td></tr></tbody></table></div>
+
+<h3 style="margin:18px 0 6px">与新版墨西哥月报的一致性核对</h3>
+<div class="table-wrap"><table><thead><tr><th>指标</th><th class="num">月报引用</th><th class="num">本报告重算</th><th>结论</th></tr></thead><tbody><tr><td>数据日期</td><td class="num">2026-11-18</td><td class="num">2026-11-18</td><td>一致</td></tr><tr><td>有效商品</td><td class="num">40 款</td><td class="num">40 款</td><td>一致</td></tr><tr><td>P25</td><td class="num">MXN 1,193</td><td class="num">MXN 1,145</td><td><b>不一致（算法）</b></td></tr><tr><td>中位数</td><td class="num">MXN 1,599</td><td class="num">MXN 1,599</td><td>一致</td></tr><tr><td>P75</td><td class="num">MXN 2,056</td><td class="num">MXN 2,017</td><td><b>不一致（算法）</b></td></tr><tr><td>上期有效商品</td><td class="num">49 款</td><td class="num">49 款</td><td>一致</td></tr><tr><td>上期中位</td><td class="num">MXN 1,743</td><td class="num">MXN 1,743</td><td>一致</td></tr></tbody></table></div>
+<p class="note">5/7 项一致：数据日期、有效商品 40、中位 MXN 1,599、上期 49 款与 1,743 均与月报一致。P25/P75 不一致，原因是分位算法不同，不是样本差异：月报（及商品池 priceStats 字段）使用旧版 floor 索引法，40 个价格升序后取 index=floor(n×f)，P25 为第 11 个值 1,193、P75 为第 31 个值 2,056；本报告按印度最新版统一为升序线性插值，P25=1,144.5→1,145、P75=2,017。中位在两种方法下均为 1,599。未修改已发布月报，也未为对齐而改回旧算法。</p>
+
+<h3 style="margin:18px 0 6px">限制</h3>
+<ul>
+<li>渠道：全量池仅 Amazon.com.mx 单渠道；30 款详情线与价格监控另含 Steren，已在三套口径中单列。</li>
+<li>样本：全量池 180 条 → CarPlay 车机屏 40 款；Android Auto 屏 1 款、专用车型机 11 款、其他屏 21 款等其余类别不进入本报告统计。</li>
+<li>商品数与价格带占比是样本内结构，不是销量、销售额或市场份额。</li>
+<li>本期全量池评分/评论 0/40；BSR、榜单、图片均为 0/40，因此不做销量、口碑或排名推断，也不使用上期或 30 款线填补。</li>
+<li>形态为标题关键词规则；功能为标题关键词识别，均不代表平台类目或真实配置。</li>
+<li>尺寸为标题解析（34/40）；6 款未标注，商品池 inch 字段仅 18/40。</li>
+<li>品牌为标题首词归一，1 款未知，并含 visualización、Pantalla、Radio、Estéreo、Genérico 等非品牌词；品牌分布只作样本结构参考。</li>
+<li>消费者声量为独立样本（49 款、2026-11-16），与本期 40 款池、上期 49 款池均不同源，不合并计算。</li>
+<li>历史对比：上期取自只读备份（2026-11-13），本期快照不覆盖已有文件；两期样本不同，价格与数量变化只描述样本，不代表市场整体降价、退市或竞争减少。</li>
+<li>采集覆盖下降（池 623→180、CarPlay 49→40，本期失败 23 次/上期 0 次）原因尚待排查。</li>
+</ul>
+</div>
+<footer class="note">由 工作台/scripts/build-mx-competitor-full-report.mjs 生成 · 数据 data/mx-competitor-pool.json · 数据日期 2026-11-18 · 口径版本 v2（2026-11-19）</footer>
+</div>
+<footer>
+  <span>Lianshun · 市场情报 ｜ 展示规范 v1</span>
+  <span>数据与结论同源；生成于 2026-11-19</span>
+</footer>
+</div>
+<script>
+(function () {
+  var all = Array.prototype.slice.call(document.querySelectorAll('.toc a[href^="#"]'))
+  if (!all.length) return
+  var seen = {}, uniq = []
+  all.forEach(function (a) {
+    var h = a.getAttribute('href')
+    if (!seen[h]) { seen[h] = 1; uniq.push(a) }
+  })
+  var targets = uniq.map(function (a) { return document.querySelector(a.getAttribute('href')) })
+  var cur = document.querySelector('.toc-cur')
+  var fold = document.querySelector('.toc-fold')
+  var raf = 0
+  function update () {
+    raf = 0
+    var idx = 0
+    targets.forEach(function (el, i) { if (el && el.getBoundingClientRect().top <= 72) idx = i })
+    var active = '#' + (targets[idx] ? targets[idx].id : '')
+    all.forEach(function (a) { a.classList.toggle('cur', a.getAttribute('href') === active) })
+    if (cur && uniq[idx]) cur.textContent = uniq[idx].textContent
+  }
+  window.addEventListener('scroll', function () { if (!raf) raf = requestAnimationFrame(update) }, { passive: true })
+  if (fold) fold.addEventListener('click', function (e) { if (e.target.closest('a')) fold.open = false })
+  update()
+})()
+</script>
+</body>
+</html>
