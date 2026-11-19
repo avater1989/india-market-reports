@@ -44,27 +44,45 @@ body{
 }
 .masthead .issue{letter-spacing:.06em}
 h1{font-size:34px; line-height:1.18; margin:18px 0 8px; font-weight:700; letter-spacing:-.015em}
-.lead{font-size:17px; line-height:1.6; font-weight:600; margin:0 0 10px; max-width:52ch}
+.lead{font-size:19px; line-height:1.55; font-weight:650; letter-spacing:-.01em; margin:0 0 12px; max-width:46ch}
+.scope{font-size:12.5px; line-height:1.65; color:var(--ink3); margin:0 0 6px; max-width:var(--read)}
+.kpi.secondary .value{font-size:22px; letter-spacing:0; color:var(--ink2); font-weight:600}
+.kpi.secondary .label{color:var(--ink3)}
 .dek{font-size:15px; line-height:1.7; color:var(--ink); margin:0 0 10px; max-width:var(--read)}
 .cuts{font-size:12px; color:var(--ink3); line-height:1.6; margin:0 0 4px}
 .cuts b{color:var(--ink2); font-weight:600}
 
 /* ---------- 目录 ---------- */
+/* 目录：宽屏完整换行；窄屏折叠为「当前章节」单选 */
 .toc{
-  position:sticky; top:0; z-index:5; display:flex; gap:18px; flex-wrap:nowrap;
-  overflow-x:auto; scrollbar-width:thin;
-  padding:9px 0; margin:18px 0 26px;
-  background:color-mix(in srgb, var(--paper) 94%, transparent);
-  backdrop-filter:saturate(140%) blur(6px);
-  border-top:1px solid var(--ink); border-bottom:1px solid var(--rule-soft);
-  font-size:12px; color:var(--ink2); white-space:nowrap;
+  position:sticky; top:0; z-index:6;
+  background:color-mix(in srgb, var(--paper) 95%, transparent);
+  backdrop-filter:saturate(140%) blur(8px);
+  border-bottom:1px solid var(--rule-soft);
+  margin:18px 0 26px; padding:7px 0;
+  font-size:12px; color:var(--ink2);
 }
-.toc::-webkit-scrollbar{height:3px}
-.toc::-webkit-scrollbar-thumb{background:var(--rule)}
-.toc a{white-space:nowrap}
-.toc a{color:inherit; text-decoration:none; border-bottom:1px solid transparent; padding-bottom:1px}
-.toc a:hover{border-bottom-color:var(--ink3)}
-.toc .cur{color:var(--ink); font-weight:600}
+.toc-list{display:flex; flex-wrap:wrap; gap:6px 18px; list-style:none; margin:0; padding:0}
+.toc-list a{color:inherit; text-decoration:none; border-bottom:1px solid transparent; padding-bottom:1px; white-space:nowrap}
+.toc-list a:hover{border-bottom-color:var(--ink3)}
+.toc-list a.cur{color:var(--ink); font-weight:600; border-bottom-color:var(--ink)}
+.toc-fold{display:none}
+.toc-fold>summary{
+  cursor:pointer; list-style:none; display:flex; align-items:center; gap:8px;
+  font-size:12px; color:var(--ink2); padding:2px 0;
+}
+.toc-fold>summary::-webkit-details-marker{display:none}
+.toc-fold>summary:after{content:"▾"; margin-left:auto; color:var(--ink3)}
+.toc-fold[open]>summary:after{content:"▴"}
+.toc-fold .toc-cur{color:var(--ink); font-weight:600}
+.toc-fold ol{list-style:none; margin:8px 0 4px; padding:0; display:flex; flex-direction:column; gap:7px; max-height:56vh; overflow:auto}
+.toc-fold a{color:inherit; text-decoration:none}
+.toc-fold a.cur{color:var(--ink); font-weight:600}
+h2[id^="sec-"]{scroll-margin-top:64px}
+@media (max-width:979px){
+  .toc-list{display:none}
+  .toc-fold{display:block}
+}
 
 /* ---------- KPI ---------- */
 .kpis{
@@ -210,10 +228,17 @@ footer{margin-top:36px; border-top:1px solid var(--ink); padding-top:12px; font-
 <header>
   <div class="masthead"><span>Lianshun · 市场情报</span><span class="issue">INDIA MONTHLY · 2026-10</span></div>
   <h1>印度市场月报 · 2026 年 10 月</h1>
+  <p class="lead">单月同比 -14.2% 主要是去年同月基数高（592,032 辆），2026-08~2026-10 三个月累计 1,337,379 辆、同比 +10.1%，需求没有单月同比显示的那么弱。</p>
+  <p class="scope">零售 2026-10 507,768 辆（同比 -14.2%，三个月累计同比 +10.1%）；上牌停在 2026-08（12 品牌子集 382,950 辆）；批发直采 2026-10（Top10 合计 209,116 辆）。三条线口径不同，不可互相换算。</p>
   
-  <div class="dek">零售 2026-10 507,768 辆（同比 -14.2%，三个月累计同比 +10.1%）；上牌停在 2026-08（12 品牌子集 382,950 辆）；批发直采 2026-10（Top10 合计 209,116 辆）。三条线口径不同，不可互相换算。</div>
   <div class="cuts">零售 2026-10 · 上牌 2026-08 · 批发 2026-10 · 区域 2026-08 · 汇率 2026-11-18 · 竞品 2026-11-18 · 声量 2026-11-16 · 媒体 2026-11-19 · 生成 2026-11-19</div>
-</header><nav class="toc" aria-label="章节目录"><a href="#sec-1-核心洞察">核心洞察</a><a href="#sec-2-数据口径与来源">数据口径与来源</a><a href="#sec-3-三口径走势-零售-上牌-批发">三口径走势（零售 / 上牌 / 批发）</a><a href="#sec-4-品牌份额趋势-近-6-期-上牌口径">品牌份额趋势（近 6 期 · 上牌口径）</a><a href="#sec-5-车型榜-CarDekho-2026-10-前10名">车型榜（CarDekho · 2026-10 · 前10名）</a><a href="#sec-6-车型分类排名2026-10">车型分类排名2026-10</a><a href="#sec-7-区域结构-2026-08-上牌口径">区域结构（2026-08 · 上牌口径）</a><a href="#sec-8-保有量近似-VAHAN-累加-2025-01-2026-08">保有量近似（VAHAN 累加 · 2025-01 ~ 2026-08）</a><a href="#sec-9-汇率与成本窗口-2026-10-02-2026-11-18">汇率与成本窗口 2026-10-02~2026-11-18</a><a href="#sec-10-政策-监管-截至-2026-11-19">政策 / 监管（截至 2026-11-19）</a><a href="#sec-11-本月媒体要点-截至-2026-11-19">本月媒体要点（截至 2026-11-19）</a><a href="#sec-12-竞品市场格局-全量爬取-70-款-完整报告">竞品市场格局（全量爬取 · 70 款）完整报告 →</a><a href="#sec-13-竞品口碑体量与正面卖点-2026-11-16">竞品口碑体量与正面卖点（2026-11-16）</a><a href="#sec-14-数据完整性">数据完整性</a></nav><body><div class="kpis">
+</header><nav class="toc" aria-label="章节目录">
+  <ol class="toc-list"><li><a href="#sec-1-核心洞察">核心洞察</a></li><li><a href="#sec-2-数据口径与来源">数据口径与来源</a></li><li><a href="#sec-3-三口径走势-零售-上牌-批发">三口径走势（零售 / 上牌 / 批发）</a></li><li><a href="#sec-4-品牌份额趋势-近-6-期-上牌口径">品牌份额趋势（近 6 期 · 上牌口径）</a></li><li><a href="#sec-5-车型榜-CarDekho-2026-10-前10名">车型榜（CarDekho · 2026-10 · 前10名）</a></li><li><a href="#sec-6-车型分类排名2026-10">车型分类排名2026-10</a></li><li><a href="#sec-7-区域结构-2026-08-上牌口径">区域结构（2026-08 · 上牌口径）</a></li><li><a href="#sec-8-保有量近似-VAHAN-累加-2025-01-2026-08">保有量近似（VAHAN 累加 · 2025-01 ~ 2026-08）</a></li><li><a href="#sec-9-汇率与成本窗口-2026-10-02-2026-11-18">汇率与成本窗口 2026-10-02~2026-11-18</a></li><li><a href="#sec-10-政策-监管-截至-2026-11-19">政策 / 监管（截至 2026-11-19）</a></li><li><a href="#sec-11-本月媒体要点-截至-2026-11-19">本月媒体要点（截至 2026-11-19）</a></li><li><a href="#sec-12-竞品市场格局-全量爬取-70-款-完整报告">竞品市场格局（全量爬取 · 70 款）完整报告 →</a></li><li><a href="#sec-13-竞品口碑体量与正面卖点-2026-11-16">竞品口碑体量与正面卖点（2026-11-16）</a></li><li><a href="#sec-14-数据完整性">数据完整性</a></li></ol>
+  <details class="toc-fold">
+    <summary><span>章节目录</span><span class="toc-cur">核心洞察</span></summary>
+    <ol><li><a href="#sec-1-核心洞察">核心洞察</a></li><li><a href="#sec-2-数据口径与来源">数据口径与来源</a></li><li><a href="#sec-3-三口径走势-零售-上牌-批发">三口径走势（零售 / 上牌 / 批发）</a></li><li><a href="#sec-4-品牌份额趋势-近-6-期-上牌口径">品牌份额趋势（近 6 期 · 上牌口径）</a></li><li><a href="#sec-5-车型榜-CarDekho-2026-10-前10名">车型榜（CarDekho · 2026-10 · 前10名）</a></li><li><a href="#sec-6-车型分类排名2026-10">车型分类排名2026-10</a></li><li><a href="#sec-7-区域结构-2026-08-上牌口径">区域结构（2026-08 · 上牌口径）</a></li><li><a href="#sec-8-保有量近似-VAHAN-累加-2025-01-2026-08">保有量近似（VAHAN 累加 · 2025-01 ~ 2026-08）</a></li><li><a href="#sec-9-汇率与成本窗口-2026-10-02-2026-11-18">汇率与成本窗口 2026-10-02~2026-11-18</a></li><li><a href="#sec-10-政策-监管-截至-2026-11-19">政策 / 监管（截至 2026-11-19）</a></li><li><a href="#sec-11-本月媒体要点-截至-2026-11-19">本月媒体要点（截至 2026-11-19）</a></li><li><a href="#sec-12-竞品市场格局-全量爬取-70-款-完整报告">竞品市场格局（全量爬取 · 70 款）完整报告 →</a></li><li><a href="#sec-13-竞品口碑体量与正面卖点-2026-11-16">竞品口碑体量与正面卖点（2026-11-16）</a></li><li><a href="#sec-14-数据完整性">数据完整性</a></li></ol>
+  </details>
+</nav><body><div class="kpis">
 <div class="kpi"><div class="label">最新月零售</div><div class="value">507,768</div><div class="sub">2026-10 · 同比 -14.2% · 三月累计 +10.1%</div></div>
 <div class="kpi"><div class="label">最新上牌（12 品牌子集）</div><div class="value">382,950</div><div class="sub">2026-08 · 滞后 2 个月</div></div>
 <div class="kpi"><div class="label">批发（直采 Top10 合计）</div><div class="value">209,116</div><div class="sub">2026-10 · 非全市场</div></div>
@@ -393,5 +418,31 @@ footer{margin-top:36px; border-top:1px solid var(--ink); padding-top:12px; font-
   <span>数据与结论同生产版；本文件不替代生产报告</span>
 </footer>
 </div>
+<script>
+(function () {
+  var all = Array.prototype.slice.call(document.querySelectorAll('.toc a[href^="#"]'))
+  if (!all.length) return
+  var seen = {}, uniq = []
+  all.forEach(function (a) {
+    var h = a.getAttribute('href')
+    if (!seen[h]) { seen[h] = 1; uniq.push(a) }
+  })
+  var targets = uniq.map(function (a) { return document.querySelector(a.getAttribute('href')) })
+  var cur = document.querySelector('.toc-cur')
+  var fold = document.querySelector('.toc-fold')
+  var raf = 0
+  function update () {
+    raf = 0
+    var idx = 0
+    targets.forEach(function (el, i) { if (el && el.getBoundingClientRect().top <= 72) idx = i })
+    var active = '#' + (targets[idx] ? targets[idx].id : '')
+    all.forEach(function (a) { a.classList.toggle('cur', a.getAttribute('href') === active) })
+    if (cur && uniq[idx]) cur.textContent = uniq[idx].textContent
+  }
+  window.addEventListener('scroll', function () { if (!raf) raf = requestAnimationFrame(update) }, { passive: true })
+  if (fold) fold.addEventListener('click', function (e) { if (e.target.closest('a')) fold.open = false })
+  update()
+})()
+</script>
 </body>
 </html>
