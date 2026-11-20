@@ -1,13 +1,9 @@
 {
-  "generatedAt": "2026-11-20T04:39:48.943Z",
+  "generatedAt": "2026-11-20T23:31:34.155Z",
   "windowDays": 14,
   "daily": {
     "india": {
       "days": [
-        [
-          "2026-11-07",
-          0
-        ],
         [
           "2026-11-08",
           0
@@ -59,6 +55,10 @@
         [
           "2026-11-20",
           0
+        ],
+        [
+          "2026-11-21",
+          0
         ]
       ],
       "latestNote": {
@@ -68,10 +68,6 @@
     },
     "mexico": {
       "days": [
-        [
-          "2026-11-07",
-          0
-        ],
         [
           "2026-11-08",
           0
@@ -123,6 +119,10 @@
         [
           "2026-11-20",
           2
+        ],
+        [
+          "2026-11-21",
+          0
         ]
       ],
       "latestNote": {
@@ -142,6 +142,7 @@
     "competitor-full-analysis.html": "2026-11-20",
     "daily-brief-2026-11-19.html": "2026-11-19",
     "daily-brief-2026-11-20.html": "2026-11-20",
+    "daily-brief-2026-11-21.html": "2026-11-21",
     "health-latest.html": "2026-11-20",
     "india-competitor-full-analysis.html": "2026-11-19",
     "india-monthly-preview.html": "2026-11-19",
