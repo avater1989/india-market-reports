@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-20T02:41:53.165Z",
+  "generatedAt": "2026-11-20T02:42:20.618Z",
   "windowDays": 14,
   "daily": {
     "india": {
@@ -122,12 +122,12 @@
         ],
         [
           "2026-11-20",
-          0
+          2
         ]
       ],
       "latestNote": {
-        "date": "2026-11-19",
-        "text": "政策/监管：El Gobierno destraba el acuerdo au"
+        "date": "2026-11-20",
+        "text": "汇率：墨西哥比索 贬值 1.6%"
       }
     }
   },
@@ -142,12 +142,12 @@
     "competitor-full-analysis.html": "2026-11-19",
     "daily-brief-2026-11-19.html": "2026-11-19",
     "daily-brief-2026-11-20.html": "2026-11-20",
-    "health-latest.html": "2026-11-19",
+    "health-latest.html": "2026-11-20",
     "india-monthly-preview.html": "2026-11-19",
     "india-monthly-v3-2026-10-cand.html": "2026-11-19",
     "india-monthly-v3-2026-10-ctl.html": "2026-11-19",
     "india-monthly-v3-2026-10.html": "2026-11-19",
-    "monthly-hub.html": "2026-11-19",
+    "monthly-hub.html": "2026-11-20",
     "mx-competitor-full-analysis-cand.html": "2026-11-19",
     "mx-competitor-full-analysis-ctl.html": "2026-11-19",
     "mx-competitor-full-analysis.html": "2026-11-19",
@@ -166,19 +166,19 @@
   },
   "health": {
     "total": 23,
-    "snapshot": "2026-11-19",
-    "checkedAt": "07:34",
+    "snapshot": "2026-11-20",
+    "checkedAt": "10:42",
     "stale": [
       {
         "name": "上牌（品牌 × 邦）",
         "since": "2026-08",
-        "days": 80,
+        "days": 81,
         "fileStale": false
       },
       {
         "name": "保有量（近似）",
         "since": "2026-08",
-        "days": 80,
+        "days": 81,
         "fileStale": false
       }
     ]
