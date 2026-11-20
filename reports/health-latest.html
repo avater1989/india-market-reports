@@ -1,7 +1,7 @@
 <!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light">
-<title>采集健康 · 2026-11-20</title>
+<title>采集健康 · 2026-11-21</title>
 <style>
   :root{
     --paper:#FAF8F4; --ink:#15171B; --ink2:#4A4E55; --ink3:#8A8579;
@@ -84,12 +84,12 @@
 
   <div class="masthead">
     <span>Lianshun · India Desk</span>
-    <span class="issue">数据供给值班表 · 2026-11-20</span>
+    <span class="issue">数据供给值班表 · 2026-11-21</span>
   </div>
 
   <h1>采集健康</h1>
   <p class="summary"><b>2</b> 项待处理，其中 <span class="neg">2 项源头停更</span>（文件在更新、源头没出新数，重跑无效）</p>
-  <div class="meta">共 23 个源 · 文件超期 0 · 数据月停更 2 · 检查于 2026-11-20 02:42 UTC</div>
+  <div class="meta">共 23 个源 · 文件超期 0 · 数据月停更 2 · 检查于 2026-11-20 23:32 UTC</div>
 
   <section>
     <div class="group-head"><span>印度</span><span class="cnt">7 / 9 正常</span></div>
@@ -101,8 +101,8 @@
         <div class="ds">FADA 官方新闻稿 PDF 的乘用车零售量（登记口径），月度</div>
         <div class="ds dim">反映终端需求；≠ 批发 ≠ 上牌。节庆错位月份看 3 个月滚动</div>
       </div>
-      <div class="c-month"><span class="mono">2026-10</span><span class="tiny">· 20 天 / 45</span></div>
-      <div class="c-file"><span class="mono">3.2 h</span><span class="tiny">/ 40d</span></div>
+      <div class="c-month"><span class="mono">2026-10</span><span class="tiny">· 21 天 / 45</span></div>
+      <div class="c-file"><span class="mono">0.0 h</span><span class="tiny">/ 40d</span></div>
       <div class="c-script mono">scripts/fetch-fada-auto.ps1 → import-fada-monthly.mjs</div>
     </div><div class="row">
       <div class="c-mark"><span class="dot ok"></span><span class="mark-text">正常</span></div>
@@ -112,7 +112,7 @@
         <div class="ds dim">已停更在 2026-09：仅 send-monthly-feishu 文案兜底；月报就绪判断与车型结构一律改用「车型榜 Top15（CarDekho）」</div>
       </div>
       <div class="c-month"><span class="tiny">·</span></div>
-      <div class="c-file"><span class="mono">15.0 天</span><span class="tiny">/ 40d</span></div>
+      <div class="c-file"><span class="mono">15.9 天</span><span class="tiny">/ 40d</span></div>
       <div class="c-script mono">scripts/import-shared-exports.mjs</div>
     </div><div class="row is-bad">
       <div class="c-mark"><span class="dot stop"></span><span class="mark-text">停更</span></div>
@@ -121,8 +121,8 @@
         <div class="ds">VAHAN 车辆登记量，按品牌与邦汇总；月度，镜像滞后约 6 周</div>
         <div class="ds dim">最接近真实需求的官方口径；用于品牌份额与区域结构</div>
       </div>
-      <div class="c-month"><span class="mono bad">2026-08</span><span class="tiny">· 81 天 / 60</span></div>
-      <div class="c-file"><span class="mono">1.1 天</span><span class="tiny">/ 50d</span></div>
+      <div class="c-month"><span class="mono bad">2026-08</span><span class="tiny">· 82 天 / 60</span></div>
+      <div class="c-file"><span class="mono">0.0 h</span><span class="tiny">/ 50d</span></div>
       <div class="c-script mono">scripts/refresh-vahan-parquet.ps1</div>
     </div><div class="row">
       <div class="c-mark"><span class="dot ok"></span><span class="mark-text">正常</span></div>
@@ -142,7 +142,7 @@
         <div class="ds dim">只保留有决策价值的新闻；跨天去重，同事件多源合并</div>
       </div>
       <div class="c-month"><span class="tiny">·</span></div>
-      <div class="c-file"><span class="mono">1.1 天</span><span class="tiny">/ 30h</span></div>
+      <div class="c-file"><span class="mono">0.0 h</span><span class="tiny">/ 30h</span></div>
       <div class="c-script mono">scripts/fetch-media.ps1 → collect-highlights.mjs</div>
     </div><div class="row">
       <div class="c-mark"><span class="dot ok"></span><span class="mark-text">正常</span></div>
@@ -152,7 +152,7 @@
         <div class="ds dim">每周刷新；用于功能空白（如 DSP 覆盖率）与价格带判断</div>
       </div>
       <div class="c-month"><span class="tiny">·</span></div>
-      <div class="c-file"><span class="mono">4.1 天</span><span class="tiny">/ 8d</span></div>
+      <div class="c-file"><span class="mono">4.9 天</span><span class="tiny">/ 8d</span></div>
       <div class="c-script mono">markets/in/competitors.mjs</div>
     </div><div class="row">
       <div class="c-mark"><span class="dot ok"></span><span class="mark-text">正常</span></div>
@@ -161,8 +161,8 @@
         <div class="ds">CarDekho 月度畅销车文章（HTML 表格，自动解析）；2026 起为 Top10，2025 及以前为 Top15</div>
         <div class="ds dim">批发口径、ICE+EV 合并；各月条数 10~15 不等，跨月总量不可直接比较；月更，通常次月中下旬发布</div>
       </div>
-      <div class="c-month"><span class="mono">2026-10</span><span class="tiny">· 20 天 / 45</span></div>
-      <div class="c-file"><span class="mono">1.1 天</span><span class="tiny">/ 40d</span></div>
+      <div class="c-month"><span class="mono">2026-10</span><span class="tiny">· 21 天 / 45</span></div>
+      <div class="c-file"><span class="mono">0.0 h</span><span class="tiny">/ 40d</span></div>
       <div class="c-script mono">markets/in/model-top15.mjs</div>
     </div><div class="row is-bad">
       <div class="c-mark"><span class="dot stop"></span><span class="mark-text">停更</span></div>
@@ -171,8 +171,8 @@
         <div class="ds">VAHAN 月度登记量累加得到的品牌结构（近似，非官方保有量）</div>
         <div class="ds dim">窗口仅 2025-01~2026-08，只反映近期新增车结构，不能当真实保有量</div>
       </div>
-      <div class="c-month"><span class="mono bad">2026-08</span><span class="tiny">· 81 天 / 60</span></div>
-      <div class="c-file"><span class="mono">4.1 天</span><span class="tiny">/ 40d</span></div>
+      <div class="c-month"><span class="mono bad">2026-08</span><span class="tiny">· 82 天 / 60</span></div>
+      <div class="c-file"><span class="mono">4.9 天</span><span class="tiny">/ 40d</span></div>
       <div class="c-script mono">markets/in/parc-approx.mjs</div>
     </div><div class="row">
       <div class="c-mark"><span class="dot ok"></span><span class="mark-text">正常</span></div>
@@ -182,7 +182,7 @@
         <div class="ds dim">锁定样本口径，不是市场价基准；中位价仅反映这批商品</div>
       </div>
       <div class="c-month"><span class="tiny">·</span></div>
-      <div class="c-file"><span class="mono">2.7 h</span><span class="tiny">/ 2d</span></div>
+      <div class="c-file"><span class="mono">0.0 h</span><span class="tiny">/ 2d</span></div>
       <div class="c-script mono">scripts/update-competitor-prices.mjs</div>
     </div>
   </section><section>
@@ -195,8 +195,8 @@
         <div class="ds">INEGI RAIAVL：品牌 × 车型 × 月份销量（含轿车与皮卡/SUV），2005 年至今</div>
         <div class="ds dim">墨西哥唯一权威车型级数据；最新月可能是「快报」，后续会修订</div>
       </div>
-      <div class="c-month"><span class="mono">2026-10</span><span class="tiny">· 20 天 / 45</span></div>
-      <div class="c-file"><span class="mono">2.0 天</span><span class="tiny">/ 40d</span></div>
+      <div class="c-month"><span class="mono">2026-10</span><span class="tiny">· 21 天 / 45</span></div>
+      <div class="c-file"><span class="mono">2.9 天</span><span class="tiny">/ 40d</span></div>
       <div class="c-script mono">markets/mx/update-flash.mjs + update-raiavl.mjs</div>
     </div><div class="row">
       <div class="c-mark"><span class="dot ok"></span><span class="mark-text">正常</span></div>
@@ -216,7 +216,7 @@
         <div class="ds dim">样本量 10–12 个 SKU，只作价格带参考，不能推断品牌份额</div>
       </div>
       <div class="c-month"><span class="tiny">·</span></div>
-      <div class="c-file"><span class="mono">1.1 天</span><span class="tiny">/ 30h</span></div>
+      <div class="c-file"><span class="mono">0.0 h</span><span class="tiny">/ 30h</span></div>
       <div class="c-script mono">markets/mx/prices.mjs</div>
     </div><div class="row">
       <div class="c-mark"><span class="dot ok"></span><span class="mark-text">正常</span></div>
@@ -226,7 +226,7 @@
         <div class="ds dim">每周刷新；样本 30 款左右，用于功能空白与价格带判断</div>
       </div>
       <div class="c-month"><span class="tiny">·</span></div>
-      <div class="c-file"><span class="mono">2.0 天</span><span class="tiny">/ 8d</span></div>
+      <div class="c-file"><span class="mono">2.9 天</span><span class="tiny">/ 8d</span></div>
       <div class="c-script mono">markets/mx/competitors.mjs</div>
     </div><div class="row">
       <div class="c-mark"><span class="dot ok"></span><span class="mark-text">正常</span></div>
@@ -236,7 +236,7 @@
         <div class="ds dim">只作市场情绪与事件提示；同一事件多源会合并</div>
       </div>
       <div class="c-month"><span class="tiny">·</span></div>
-      <div class="c-file"><span class="mono">1.1 天</span><span class="tiny">/ 30h</span></div>
+      <div class="c-file"><span class="mono">0.0 h</span><span class="tiny">/ 30h</span></div>
       <div class="c-script mono">markets/mx/signals.mjs</div>
     </div><div class="row">
       <div class="c-mark"><span class="dot ok"></span><span class="mark-text">正常</span></div>
@@ -246,7 +246,7 @@
         <div class="ds dim">月更，只算 CarPlay 车机屏；单渠道</div>
       </div>
       <div class="c-month"><span class="tiny">·</span></div>
-      <div class="c-file"><span class="mono">1.5 天</span><span class="tiny">/ 45d</span></div>
+      <div class="c-file"><span class="mono">2.4 天</span><span class="tiny">/ 45d</span></div>
       <div class="c-script mono">scripts/build-mx-competitor-pool.mjs</div>
     </div><div class="row">
       <div class="c-mark"><span class="dot ok"></span><span class="mark-text">正常</span></div>
@@ -256,7 +256,7 @@
         <div class="ds dim">月更，最新月通常滞后快报 1 个月</div>
       </div>
       <div class="c-month"><span class="tiny">·</span></div>
-      <div class="c-file"><span class="mono">15.6 天</span><span class="tiny">/ 45d</span></div>
+      <div class="c-file"><span class="mono">16.5 天</span><span class="tiny">/ 45d</span></div>
       <div class="c-script mono">markets/mx/update-raiavl.mjs</div>
     </div><div class="row">
       <div class="c-mark"><span class="dot ok"></span><span class="mark-text">正常</span></div>
@@ -266,7 +266,7 @@
         <div class="ds dim">年度数据；登记≠在路</div>
       </div>
       <div class="c-month"><span class="tiny">·</span></div>
-      <div class="c-file"><span class="mono">15.0 天</span><span class="tiny">/ 400d</span></div>
+      <div class="c-file"><span class="mono">15.8 天</span><span class="tiny">/ 400d</span></div>
       <div class="c-script mono">markets/mx/build_parc.py</div>
     </div><div class="row">
       <div class="c-mark"><span class="dot ok"></span><span class="mark-text">正常</span></div>
@@ -276,7 +276,7 @@
         <div class="ds dim">当前源为 Google News（西语）；DOF 官网不可达，后续可替换官方公告</div>
       </div>
       <div class="c-month"><span class="tiny">·</span></div>
-      <div class="c-file"><span class="mono">23.8 h</span><span class="tiny">/ 30h</span></div>
+      <div class="c-file"><span class="mono">0.0 h</span><span class="tiny">/ 30h</span></div>
       <div class="c-script mono">markets/mx/policy.mjs</div>
     </div>
   </section><section>
@@ -290,7 +290,7 @@
         <div class="ds dim">用于成本换算与报价参考；单日波动 &gt;1.5% 才会进日报</div>
       </div>
       <div class="c-month"><span class="tiny">·</span></div>
-      <div class="c-file"><span class="mono">3.2 h</span><span class="tiny">/ 30h</span></div>
+      <div class="c-file"><span class="mono">0.0 h</span><span class="tiny">/ 30h</span></div>
       <div class="c-script mono">update-data.cmd（FX 步骤）</div>
     </div><div class="row">
       <div class="c-mark"><span class="dot ok"></span><span class="mark-text">正常</span></div>
@@ -300,7 +300,7 @@
         <div class="ds dim">周更；仅覆盖有评价的头部商品</div>
       </div>
       <div class="c-month"><span class="tiny">·</span></div>
-      <div class="c-file"><span class="mono">4.1 天</span><span class="tiny">/ 45d</span></div>
+      <div class="c-file"><span class="mono">4.9 天</span><span class="tiny">/ 45d</span></div>
       <div class="c-script mono">scripts/collect-consumer-voice.mjs</div>
     </div><div class="row">
       <div class="c-mark"><span class="dot ok"></span><span class="mark-text">正常</span></div>
@@ -310,7 +310,7 @@
         <div class="ds dim">周更；仅覆盖有评价的头部商品</div>
       </div>
       <div class="c-month"><span class="tiny">·</span></div>
-      <div class="c-file"><span class="mono">4.1 天</span><span class="tiny">/ 45d</span></div>
+      <div class="c-file"><span class="mono">4.9 天</span><span class="tiny">/ 45d</span></div>
       <div class="c-script mono">scripts/collect-consumer-voice.mjs</div>
     </div><div class="row">
       <div class="c-mark"><span class="dot ok"></span><span class="mark-text">正常</span></div>
@@ -320,7 +320,7 @@
         <div class="ds dim">周更；用于发现新品</div>
       </div>
       <div class="c-month"><span class="tiny">·</span></div>
-      <div class="c-file"><span class="mono">4.1 天</span><span class="tiny">/ 10d</span></div>
+      <div class="c-file"><span class="mono">4.9 天</span><span class="tiny">/ 10d</span></div>
       <div class="c-script mono">scripts/brand-newproduct-watch.mjs</div>
     </div><div class="row">
       <div class="c-mark"><span class="dot ok"></span><span class="mark-text">正常</span></div>
@@ -330,7 +330,7 @@
         <div class="ds dim">周更；用于发现官网新品</div>
       </div>
       <div class="c-month"><span class="tiny">·</span></div>
-      <div class="c-file"><span class="mono">18.9 h</span><span class="tiny">/ 10d</span></div>
+      <div class="c-file"><span class="mono">1.7 天</span><span class="tiny">/ 10d</span></div>
       <div class="c-script mono">scripts/website-product-watch.mjs</div>
     </div>
   </section>

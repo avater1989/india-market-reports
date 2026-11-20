@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-20T23:31:34.155Z",
+  "generatedAt": "2026-11-20T23:32:17.046Z",
   "windowDays": 14,
   "daily": {
     "india": {
@@ -122,12 +122,12 @@
         ],
         [
           "2026-11-21",
-          0
+          1
         ]
       ],
       "latestNote": {
-        "date": "2026-11-20",
-        "text": "汇率：墨西哥比索 贬值 1.6%"
+        "date": "2026-11-21",
+        "text": "媒体动态：墨西哥10月汽车累计销量创纪录，日产保持领先（El Economist"
       }
     }
   },
@@ -143,13 +143,13 @@
     "daily-brief-2026-11-19.html": "2026-11-19",
     "daily-brief-2026-11-20.html": "2026-11-20",
     "daily-brief-2026-11-21.html": "2026-11-21",
-    "health-latest.html": "2026-11-20",
+    "health-latest.html": "2026-11-21",
     "india-competitor-full-analysis.html": "2026-11-19",
     "india-monthly-preview.html": "2026-11-19",
     "india-monthly-v3-2026-10-cand.html": "2026-11-19",
     "india-monthly-v3-2026-10-ctl.html": "2026-11-19",
     "india-monthly-v3-2026-10.html": "2026-11-19",
-    "monthly-hub.html": "2026-11-20",
+    "monthly-hub.html": "2026-11-21",
     "mx-competitor-full-analysis-cand.html": "2026-11-19",
     "mx-competitor-full-analysis-ctl.html": "2026-11-19",
     "mx-competitor-full-analysis.html": "2026-11-19",
@@ -168,19 +168,19 @@
   },
   "health": {
     "total": 23,
-    "snapshot": "2026-11-20",
-    "checkedAt": "10:42",
+    "snapshot": "2026-11-21",
+    "checkedAt": "07:32",
     "stale": [
       {
         "name": "上牌（品牌 × 邦）",
         "since": "2026-08",
-        "days": 81,
+        "days": 82,
         "fileStale": false
       },
       {
         "name": "保有量（近似）",
         "since": "2026-08",
-        "days": 81,
+        "days": 82,
         "fileStale": false
       }
     ]
