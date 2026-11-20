@@ -1,13 +1,9 @@
 {
-  "generatedAt": "2026-11-19T08:13:21.688Z",
+  "generatedAt": "2026-11-20T02:41:53.165Z",
   "windowDays": 14,
   "daily": {
     "india": {
       "days": [
-        [
-          "2026-11-06",
-          0
-        ],
         [
           "2026-11-07",
           0
@@ -59,6 +55,10 @@
         [
           "2026-11-19",
           1
+        ],
+        [
+          "2026-11-20",
+          0
         ]
       ],
       "latestNote": {
@@ -68,10 +68,6 @@
     },
     "mexico": {
       "days": [
-        [
-          "2026-11-06",
-          0
-        ],
         [
           "2026-11-07",
           0
@@ -123,6 +119,10 @@
         [
           "2026-11-19",
           3
+        ],
+        [
+          "2026-11-20",
+          0
         ]
       ],
       "latestNote": {
@@ -133,20 +133,36 @@
   },
   "files": {
     "brand-inventory.html": "2026-11-18",
+    "brand-new-products-cand.html": "2026-11-19",
+    "brand-new-products-ctl.html": "2026-11-19",
     "brand-new-products.html": "2026-11-19",
     "competitor-collection-2026-11.html": "2026-11-18",
+    "competitor-full-analysis-cand.html": "2026-11-19",
+    "competitor-full-analysis-ctl.html": "2026-11-19",
     "competitor-full-analysis.html": "2026-11-19",
     "daily-brief-2026-11-19.html": "2026-11-19",
+    "daily-brief-2026-11-20.html": "2026-11-20",
     "health-latest.html": "2026-11-19",
+    "india-monthly-preview.html": "2026-11-19",
+    "india-monthly-v3-2026-10-cand.html": "2026-11-19",
+    "india-monthly-v3-2026-10-ctl.html": "2026-11-19",
     "india-monthly-v3-2026-10.html": "2026-11-19",
     "monthly-hub.html": "2026-11-19",
+    "mx-competitor-full-analysis-cand.html": "2026-11-19",
+    "mx-competitor-full-analysis-ctl.html": "2026-11-19",
     "mx-competitor-full-analysis.html": "2026-11-19",
+    "mx-monthly-report-2026-10-cand.html": "2026-11-19",
+    "mx-monthly-report-2026-10-ctl.html": "2026-11-19",
     "mx-monthly-report-2026-10.html": "2026-11-19",
     "optimization-review-2026-11-12.html": "2026-11-12",
     "optimization-review-2026-11-16.html": "2026-11-16",
     "probe-bestseller-expanded.html": "2026-11-12",
     "probe-bestseller.html": "2026-11-12",
-    "website-new-products.html": "2026-11-19"
+    "website-new-products-cand.html": "2026-11-19",
+    "website-new-products-ctl.html": "2026-11-19",
+    "website-new-products-preview.html": "2026-11-19",
+    "website-new-products.html": "2026-11-19",
+    "_report-ui-demo.html": "2026-11-19"
   },
   "health": {
     "total": 23,
