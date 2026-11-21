@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-21T23:38:29.600Z",
+  "generatedAt": "2026-11-21T23:39:07.851Z",
   "windowDays": 14,
   "daily": {
     "india": {
@@ -122,12 +122,12 @@
         ],
         [
           "2026-11-22",
-          0
+          2
         ]
       ],
       "latestNote": {
-        "date": "2026-11-21",
-        "text": "媒体动态：墨西哥10月汽车累计销量创纪录，日产保持领先（El Economist"
+        "date": "2026-11-22",
+        "text": "政策/监管：El Gobierno destraba el acuerdo au"
       }
     }
   },
@@ -144,13 +144,13 @@
     "daily-brief-2026-11-20.html": "2026-11-20",
     "daily-brief-2026-11-21.html": "2026-11-21",
     "daily-brief-2026-11-22.html": "2026-11-22",
-    "health-latest.html": "2026-11-21",
+    "health-latest.html": "2026-11-22",
     "india-competitor-full-analysis.html": "2026-11-19",
     "india-monthly-preview.html": "2026-11-19",
     "india-monthly-v3-2026-10-cand.html": "2026-11-19",
     "india-monthly-v3-2026-10-ctl.html": "2026-11-19",
     "india-monthly-v3-2026-10.html": "2026-11-19",
-    "monthly-hub.html": "2026-11-21",
+    "monthly-hub.html": "2026-11-22",
     "mx-competitor-full-analysis-cand.html": "2026-11-19",
     "mx-competitor-full-analysis-ctl.html": "2026-11-19",
     "mx-competitor-full-analysis.html": "2026-11-19",
@@ -169,19 +169,19 @@
   },
   "health": {
     "total": 23,
-    "snapshot": "2026-11-21",
-    "checkedAt": "07:32",
+    "snapshot": "2026-11-22",
+    "checkedAt": "07:39",
     "stale": [
       {
         "name": "上牌（品牌 × 邦）",
         "since": "2026-08",
-        "days": 82,
+        "days": 83,
         "fileStale": false
       },
       {
         "name": "保有量（近似）",
         "since": "2026-08",
-        "days": 82,
+        "days": 83,
         "fileStale": false
       }
     ]
