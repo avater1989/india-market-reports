@@ -1,13 +1,9 @@
 {
-  "generatedAt": "2026-11-21T02:33:26.301Z",
+  "generatedAt": "2026-11-21T23:38:29.600Z",
   "windowDays": 14,
   "daily": {
     "india": {
       "days": [
-        [
-          "2026-11-08",
-          0
-        ],
         [
           "2026-11-09",
           0
@@ -59,19 +55,19 @@
         [
           "2026-11-21",
           0
+        ],
+        [
+          "2026-11-22",
+          1
         ]
       ],
       "latestNote": {
-        "date": "2026-11-19",
-        "text": "GST Council’s New Reforms Could Boost In"
+        "date": "2026-11-22",
+        "text": "Import Of Components/ Parts/ Sub-assembl"
       }
     },
     "mexico": {
       "days": [
-        [
-          "2026-11-08",
-          0
-        ],
         [
           "2026-11-09",
           0
@@ -123,6 +119,10 @@
         [
           "2026-11-21",
           1
+        ],
+        [
+          "2026-11-22",
+          0
         ]
       ],
       "latestNote": {
@@ -143,6 +143,7 @@
     "daily-brief-2026-11-19.html": "2026-11-19",
     "daily-brief-2026-11-20.html": "2026-11-20",
     "daily-brief-2026-11-21.html": "2026-11-21",
+    "daily-brief-2026-11-22.html": "2026-11-22",
     "health-latest.html": "2026-11-21",
     "india-competitor-full-analysis.html": "2026-11-19",
     "india-monthly-preview.html": "2026-11-19",
