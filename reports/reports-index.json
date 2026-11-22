@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-21T23:39:07.851Z",
+  "generatedAt": "2026-11-22T07:31:56.331Z",
   "windowDays": 14,
   "daily": {
     "india": {
@@ -122,12 +122,12 @@
         ],
         [
           "2026-11-22",
-          2
+          0
         ]
       ],
       "latestNote": {
-        "date": "2026-11-22",
-        "text": "政策/监管：El Gobierno destraba el acuerdo au"
+        "date": "2026-11-21",
+        "text": "媒体动态：墨西哥10月汽车累计销量创纪录，日产保持领先（El Economist"
       }
     }
   },
