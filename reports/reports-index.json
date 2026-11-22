@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-22T23:31:37.180Z",
+  "generatedAt": "2026-11-22T23:32:08.781Z",
   "windowDays": 14,
   "daily": {
     "india": {
@@ -122,12 +122,12 @@
         ],
         [
           "2026-11-23",
-          0
+          1
         ]
       ],
       "latestNote": {
-        "date": "2026-11-22",
-        "text": "媒体动态：墨西哥五州占汽车销量48.8%（Imagen Radio）"
+        "date": "2026-11-23",
+        "text": "媒体动态：墨西哥10月汽车销量增3%，创十年新高（El Financiero）"
       }
     }
   },
@@ -145,13 +145,13 @@
     "daily-brief-2026-11-21.html": "2026-11-21",
     "daily-brief-2026-11-22.html": "2026-11-22",
     "daily-brief-2026-11-23.html": "2026-11-23",
-    "health-latest.html": "2026-11-22",
+    "health-latest.html": "2026-11-23",
     "india-competitor-full-analysis.html": "2026-11-19",
     "india-monthly-preview.html": "2026-11-19",
     "india-monthly-v3-2026-10-cand.html": "2026-11-19",
     "india-monthly-v3-2026-10-ctl.html": "2026-11-19",
     "india-monthly-v3-2026-10.html": "2026-11-19",
-    "monthly-hub.html": "2026-11-22",
+    "monthly-hub.html": "2026-11-23",
     "mx-competitor-full-analysis-cand.html": "2026-11-19",
     "mx-competitor-full-analysis-ctl.html": "2026-11-19",
     "mx-competitor-full-analysis.html": "2026-11-19",
@@ -170,19 +170,19 @@
   },
   "health": {
     "total": 23,
-    "snapshot": "2026-11-22",
-    "checkedAt": "07:39",
+    "snapshot": "2026-11-23",
+    "checkedAt": "07:32",
     "stale": [
       {
         "name": "上牌（品牌 × 邦）",
         "since": "2026-08",
-        "days": 83,
+        "days": 84,
         "fileStale": false
       },
       {
         "name": "保有量（近似）",
         "since": "2026-08",
-        "days": 83,
+        "days": 84,
         "fileStale": false
       }
     ]
