@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-23T23:31:21.642Z",
+  "generatedAt": "2026-11-23T23:32:14.180Z",
   "windowDays": 14,
   "daily": {
     "india": {
@@ -122,12 +122,12 @@
         ],
         [
           "2026-11-24",
-          0
+          2
         ]
       ],
       "latestNote": {
-        "date": "2026-11-22",
-        "text": "媒体动态：墨西哥五州占汽车销量48.8%（Imagen Radio）"
+        "date": "2026-11-24",
+        "text": "政策/监管：Nueva regulación para motos en Méx"
       }
     }
   },
@@ -146,13 +146,13 @@
     "daily-brief-2026-11-22.html": "2026-11-22",
     "daily-brief-2026-11-23.html": "2026-11-23",
     "daily-brief-2026-11-24.html": "2026-11-24",
-    "health-latest.html": "2026-11-23",
+    "health-latest.html": "2026-11-24",
     "india-competitor-full-analysis.html": "2026-11-19",
     "india-monthly-preview.html": "2026-11-19",
     "india-monthly-v3-2026-10-cand.html": "2026-11-19",
     "india-monthly-v3-2026-10-ctl.html": "2026-11-19",
     "india-monthly-v3-2026-10.html": "2026-11-19",
-    "monthly-hub.html": "2026-11-23",
+    "monthly-hub.html": "2026-11-24",
     "mx-competitor-full-analysis-cand.html": "2026-11-19",
     "mx-competitor-full-analysis-ctl.html": "2026-11-19",
     "mx-competitor-full-analysis.html": "2026-11-19",
@@ -172,19 +172,19 @@
   },
   "health": {
     "total": 23,
-    "snapshot": "2026-11-23",
+    "snapshot": "2026-11-24",
     "checkedAt": "07:32",
     "stale": [
       {
         "name": "上牌（品牌 × 邦）",
         "since": "2026-08",
-        "days": 84,
+        "days": 85,
         "fileStale": false
       },
       {
         "name": "保有量（近似）",
         "since": "2026-08",
-        "days": 84,
+        "days": 85,
         "fileStale": false
       }
     ]
