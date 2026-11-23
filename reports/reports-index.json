@@ -1,13 +1,9 @@
 {
-  "generatedAt": "2026-11-22T23:32:08.781Z",
+  "generatedAt": "2026-11-23T23:31:21.642Z",
   "windowDays": 14,
   "daily": {
     "india": {
       "days": [
-        [
-          "2026-11-10",
-          1
-        ],
         [
           "2026-11-11",
           0
@@ -59,19 +55,19 @@
         [
           "2026-11-23",
           0
+        ],
+        [
+          "2026-11-24",
+          1
         ]
       ],
       "latestNote": {
-        "date": "2026-11-22",
-        "text": "Import Of Components/ Parts/ Sub-assembl"
+        "date": "2026-11-24",
+        "text": "Govt defends ₹11,000 cr customs duty dem"
       }
     },
     "mexico": {
       "days": [
-        [
-          "2026-11-10",
-          0
-        ],
         [
           "2026-11-11",
           0
@@ -122,12 +118,16 @@
         ],
         [
           "2026-11-23",
-          1
+          0
+        ],
+        [
+          "2026-11-24",
+          0
         ]
       ],
       "latestNote": {
-        "date": "2026-11-23",
-        "text": "媒体动态：墨西哥10月汽车销量增3%，创十年新高（El Financiero）"
+        "date": "2026-11-22",
+        "text": "媒体动态：墨西哥五州占汽车销量48.8%（Imagen Radio）"
       }
     }
   },
@@ -145,6 +145,7 @@
     "daily-brief-2026-11-21.html": "2026-11-21",
     "daily-brief-2026-11-22.html": "2026-11-22",
     "daily-brief-2026-11-23.html": "2026-11-23",
+    "daily-brief-2026-11-24.html": "2026-11-24",
     "health-latest.html": "2026-11-23",
     "india-competitor-full-analysis.html": "2026-11-19",
     "india-monthly-preview.html": "2026-11-19",
@@ -160,12 +161,13 @@
     "mx-monthly-report-2026-10.html": "2026-11-19",
     "optimization-review-2026-11-12.html": "2026-11-12",
     "optimization-review-2026-11-16.html": "2026-11-16",
+    "optimization-review-2026-11-23.html": "2026-11-23",
     "probe-bestseller-expanded.html": "2026-11-12",
     "probe-bestseller.html": "2026-11-12",
     "website-new-products-cand.html": "2026-11-19",
     "website-new-products-ctl.html": "2026-11-19",
     "website-new-products-preview.html": "2026-11-19",
-    "website-new-products.html": "2026-11-19",
+    "website-new-products.html": "2026-11-23",
     "_report-ui-demo.html": "2026-11-19"
   },
   "health": {
