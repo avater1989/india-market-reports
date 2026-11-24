@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-24T23:37:08.215Z",
+  "generatedAt": "2026-11-24T23:37:54.048Z",
   "windowDays": 14,
   "daily": {
     "india": {
@@ -122,12 +122,12 @@
         ],
         [
           "2026-11-25",
-          0
+          3
         ]
       ],
       "latestNote": {
-        "date": "2026-11-24",
-        "text": "政策/监管：Nueva regulación para motos en Méx"
+        "date": "2026-11-25",
+        "text": "政策/监管：Electromovilidad en México entra e"
       }
     }
   },
@@ -147,13 +147,13 @@
     "daily-brief-2026-11-23.html": "2026-11-23",
     "daily-brief-2026-11-24.html": "2026-11-24",
     "daily-brief-2026-11-25.html": "2026-11-25",
-    "health-latest.html": "2026-11-24",
+    "health-latest.html": "2026-11-25",
     "india-competitor-full-analysis.html": "2026-11-19",
     "india-monthly-preview.html": "2026-11-19",
     "india-monthly-v3-2026-10-cand.html": "2026-11-19",
     "india-monthly-v3-2026-10-ctl.html": "2026-11-19",
     "india-monthly-v3-2026-10.html": "2026-11-19",
-    "monthly-hub.html": "2026-11-24",
+    "monthly-hub.html": "2026-11-25",
     "mx-competitor-full-analysis-cand.html": "2026-11-19",
     "mx-competitor-full-analysis-ctl.html": "2026-11-19",
     "mx-competitor-full-analysis.html": "2026-11-19",
@@ -173,19 +173,13 @@
   },
   "health": {
     "total": 23,
-    "snapshot": "2026-11-24",
-    "checkedAt": "07:32",
+    "snapshot": "2026-11-25",
+    "checkedAt": "07:37",
     "stale": [
-      {
-        "name": "上牌（品牌 × 邦）",
-        "since": "2026-08",
-        "days": 85,
-        "fileStale": false
-      },
       {
         "name": "保有量（近似）",
         "since": "2026-08",
-        "days": 85,
+        "days": 86,
         "fileStale": false
       }
     ]
