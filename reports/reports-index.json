@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-25T23:36:26.617Z",
+  "generatedAt": "2026-11-25T23:37:59.167Z",
   "windowDays": 14,
   "daily": {
     "india": {
@@ -148,13 +148,13 @@
     "daily-brief-2026-11-24.html": "2026-11-24",
     "daily-brief-2026-11-25.html": "2026-11-25",
     "daily-brief-2026-11-26.html": "2026-11-26",
-    "health-latest.html": "2026-11-25",
+    "health-latest.html": "2026-11-26",
     "india-competitor-full-analysis.html": "2026-11-19",
     "india-monthly-preview.html": "2026-11-19",
     "india-monthly-v3-2026-10-cand.html": "2026-11-19",
     "india-monthly-v3-2026-10-ctl.html": "2026-11-19",
     "india-monthly-v3-2026-10.html": "2026-11-19",
-    "monthly-hub.html": "2026-11-25",
+    "monthly-hub.html": "2026-11-26",
     "mx-competitor-full-analysis-cand.html": "2026-11-19",
     "mx-competitor-full-analysis-ctl.html": "2026-11-19",
     "mx-competitor-full-analysis.html": "2026-11-19",
@@ -174,13 +174,13 @@
   },
   "health": {
     "total": 23,
-    "snapshot": "2026-11-25",
+    "snapshot": "2026-11-26",
     "checkedAt": "07:37",
     "stale": [
       {
         "name": "保有量（近似）",
         "since": "2026-08",
-        "days": 86,
+        "days": 87,
         "fileStale": false
       }
     ]
