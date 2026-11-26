@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-26T23:31:40.536Z",
+  "generatedAt": "2026-11-26T23:33:07.960Z",
   "windowDays": 14,
   "daily": {
     "india": {
@@ -122,12 +122,12 @@
         ],
         [
           "2026-11-27",
-          0
+          2
         ]
       ],
       "latestNote": {
-        "date": "2026-11-25",
-        "text": "政策/监管：Electromovilidad en México entra e"
+        "date": "2026-11-27",
+        "text": "政策/监管：Industria automotriz estima que el"
       }
     }
   },
@@ -149,13 +149,13 @@
     "daily-brief-2026-11-25.html": "2026-11-25",
     "daily-brief-2026-11-26.html": "2026-11-26",
     "daily-brief-2026-11-27.html": "2026-11-27",
-    "health-latest.html": "2026-11-26",
+    "health-latest.html": "2026-11-27",
     "india-competitor-full-analysis.html": "2026-11-19",
     "india-monthly-preview.html": "2026-11-19",
     "india-monthly-v3-2026-10-cand.html": "2026-11-19",
     "india-monthly-v3-2026-10-ctl.html": "2026-11-19",
     "india-monthly-v3-2026-10.html": "2026-11-19",
-    "monthly-hub.html": "2026-11-26",
+    "monthly-hub.html": "2026-11-27",
     "mx-competitor-full-analysis-cand.html": "2026-11-19",
     "mx-competitor-full-analysis-ctl.html": "2026-11-19",
     "mx-competitor-full-analysis.html": "2026-11-19",
@@ -175,13 +175,13 @@
   },
   "health": {
     "total": 23,
-    "snapshot": "2026-11-26",
-    "checkedAt": "07:37",
+    "snapshot": "2026-11-27",
+    "checkedAt": "07:33",
     "stale": [
       {
         "name": "保有量（近似）",
         "since": "2026-08",
-        "days": 87,
+        "days": 88,
         "fileStale": false
       }
     ]
